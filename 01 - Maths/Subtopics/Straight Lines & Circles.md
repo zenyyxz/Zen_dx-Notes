@@ -178,9 +178,9 @@ Centres $C_1(-g_1, -f_1)$, $C_2(-g_2, -f_2)$; radii $r_1, r_2$; distance $d = C_
 
 | Position | Condition | Common Tangents |
 |----------|-----------|-----------------|
-| One inside other, no touch | $d < |r_1 - r_2|$ | 0 |
-| Internal tangency | $d = |r_1 - r_2|$ | 1 |
-| Intersecting at two points | $|r_1 - r_2| < d < r_1 + r_2$ | 2 |
+| One inside other, no touch | $d < \vert r_1 - r_2 \vert$ | 0 |
+| Internal tangency | $d = \vert r_1 - r_2 \vert$ | 1 |
+| Intersecting at two points | $\vert r_1 - r_2 \vert < d < r_1 + r_2$ | 2 |
 | External tangency | $d = r_1 + r_2$ | 3 |
 | Separate (outside each other) | $d > r_1 + r_2$ | 4 |
 
