@@ -141,4 +141,4 @@ State the rule for 2nd Normal Form (2NF). :: The table must be in 1NF, and all p
 State the rule for 3rd Normal Form (3NF). :: The table must be in 2NF, and all transitive functional dependencies must be eliminated (no non-key attribute should depend on another non-key attribute).
 
 What is the difference between DDL and DML in SQL? :: DDL defines/modifies database structures (e.g., `CREATE`, `ALTER`, `DROP`, `TRUNCATE`); DML changes records inside tables (e.g., `INSERT`, `UPDATE`, `DELETE`). `SELECT` retrieves data and is often treated as DQL.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-02,15,290-->

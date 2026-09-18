@@ -157,7 +157,7 @@ Why are NAND and NOR gates called Universal Gates? :: Because any Boolean functi
 State De Morgan's First Law. :: $\overline{A \cdot B} = \overline{A} + \overline{B}$.
 
 State De Morgan's Second Law. :: $\overline{A + B} = \overline{A} \cdot \overline{B}$.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-01,14,290-->
 
 What is the Boolean expression for the output of an XOR gate with inputs A and B? :: $F = A \oplus B = A\overline{B} + \overline{A}B$.
 

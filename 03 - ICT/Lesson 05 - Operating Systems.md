@@ -101,7 +101,7 @@ What is Paging in memory management? :: A memory management scheme that divides 
 <!--SR:!2026-09-08,10,270-->
 
 What is Virtual Memory? :: A technique that allows a computer to execute processes larger than physical RAM by storing portions of data on secondary storage and loading pages on demand.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-02,15,290-->
 
 What is Page Fault? :: An interrupt raised when a program accesses a page that is not currently loaded into physical RAM.
 <!--SR:!2026-08-03,3,250-->

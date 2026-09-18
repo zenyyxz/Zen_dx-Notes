@@ -63,7 +63,7 @@ What is the main structural difference between a Microprocessor and a Microcontr
 What is the difference between a Sensor and an Actuator? :: A Sensor converts physical parameters into electrical signals (input); an Actuator converts electrical signals into physical actions (output).
 
 Name 2 Analog Sensors and 2 Digital Sensors used in IoT. :: Analog: LDR (Light Dependent Resistor), LM35 (Temperature); Digital: PIR (Motion Sensor), Ultrasonic (HC-SR04).
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-09-28,11,270-->
 
 List the 4 layers of the IoT Architecture Model. :: 1. Sensing/Perception Layer, 2. Network/Gateway Layer, 3. Service/Cloud Layer, 4. Application Layer.
 <!--SR:!2026-08-07,2,230-->

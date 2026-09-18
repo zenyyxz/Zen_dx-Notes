@@ -105,7 +105,7 @@ List the 7 layers of the OSI reference model from Layer 1 to Layer 7. :: Physica
 What is the difference between TCP and UDP? :: TCP is connection-oriented, reliable, and guarantees packet delivery; UDP is connectionless, faster, but does not guarantee packet delivery (used for streaming).
 
 Which OSI layer is responsible for routing IP packets across networks? :: Layer 3 - Network Layer.
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-09-25,8,250-->
 
 What device connects different networks together by inspecting IP addresses? :: Router.
 

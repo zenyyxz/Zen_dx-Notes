@@ -240,7 +240,7 @@ Convert $(13.625)_{10}$ to Binary. :: $(1101.101)_2$.
 Convert $(11010110.1011)_2$ to Hexadecimal. :: $(D6.B)_{16}$.
 
 What are the two major drawbacks of Sign-Magnitude binary representation? :: 1. Dual representation of zero ($+0$ and $-0$), 2. Requires separate hardware circuits for addition and subtraction.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-03,16,290-->
 
 What is the range of signed integers that can be stored in an 8-bit register using 2's complement? :: $-128 \text{ to } +127$ (Formula: $-2^{n-1} \text{ to } +2^{n-1} - 1$).
 <!--SR:!2026-08-03,3,250-->

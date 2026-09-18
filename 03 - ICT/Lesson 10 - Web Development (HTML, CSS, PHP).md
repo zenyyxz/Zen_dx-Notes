@@ -153,7 +153,7 @@ tags:
 #flashcards
 
 What is the difference between HTML `GET` and `POST` form submission methods? :: `GET` appends form data to the URL visible in the browser address bar (limited data, unsecure for passwords); `POST` sends data inside the HTTP request body (hidden from URL, secure, supports large data).
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-01,14,290-->
 
 What are the 4 components of the CSS Box Model? :: 1. Content, 2. Padding, 3. Border, 4. Margin.
 

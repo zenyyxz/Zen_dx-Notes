@@ -88,7 +88,7 @@ Before developing a system, a **Feasibility Study** evaluates whether the projec
 #flashcards
 
 What is an Open System? :: A system that interacts with its external environment by exchanging inputs, outputs, and feedback.
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-09-19,2,230-->
 
 What does the acronym TELOS stand for in Feasibility Studies? :: Technical, Economic, Legal, Operational, Schedule feasibility.
 
