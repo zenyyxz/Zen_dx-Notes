@@ -17,6 +17,22 @@ tags:
 
 ## 1. Straight Lines
 
+### Distance Between Two Points
+Points $A(x_1, y_1)$ and $B(x_2, y_2)$:
+$$AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+
+### Ratio Theorem (Section Formula)
+Point $P$ dividing $AB$ in ratio $m:n$:
+
+**Internal division** ($m, n > 0$):
+$$P\left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right)$$
+
+**External division** ($m \neq n$, one negative):
+$$P\left(\frac{mx_2 - nx_1}{m-n}, \frac{my_2 - ny_1}{m-n}\right)$$
+
+**Midpoint** ($m = n$):
+$$M\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
+
 ### General Form
 $$Ax + By + C = 0, \quad (A, B \neq 0)$$
 
@@ -32,15 +48,32 @@ $$\frac{y - y_1}{y_2 - y_1} = \frac{x - x_1}{x_2 - x_1}$$
 ### Intercept Form
 $$\frac{x}{a} + \frac{y}{b} = 1 \quad \text{(x-intercept } a, \text{ y-intercept } b)$$
 
-### Distance from Point to Line
+### Parametric Form (Using Parameter $t$)
+Line through $A(x_1, y_1)$ with direction vector $(\cos\theta, \sin\theta)$:
+$$\frac{x - x_1}{\cos\theta} = \frac{y - y_1}{\sin\theta} = t$$
+$$\Rightarrow x = x_1 + t\cos\theta, \quad y = y_1 + t\sin\theta$$
+- $t$ = signed distance from $A$ to point $P(x, y)$
+- **Usage**: Finding points at a given distance from $A$ on the line; solving intersection with curves by substituting parametric equations.
+
+### Normal Form (Perpendicular Distance Form)
+$$x\cos\alpha + y\sin\alpha = p$$
+- $p$ = perpendicular distance from origin to line
+- $\alpha$ = angle the perpendicular makes with +ve x-axis
+
+### Shortest Distance from Point to Line
 Perpendicular distance from $P(x_1, y_1)$ to $Ax + By + C = 0$:
 $$d = \frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}}$$
+
+### Distance Between Two Parallel Lines
+Lines $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$:
+$$d = \frac{|C_1 - C_2|}{\sqrt{A^2 + B^2}}$$
 
 ### Angle Between Two Lines
 Lines $y = m_1x + c_1$ and $y = m_2x + c_2$:
 $$\tan \theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right|$$
-- **Parallel**: $m_1 = m_2$
-- **Perpendicular**: $m_1 m_2 = -1$
+- **Parallel**: $m_1 = m_2$ (or $A_1B_2 = A_2B_1$ in general form)
+- **Perpendicular**: $m_1 m_2 = -1$ (derived from $\tan\theta \to \infty \Rightarrow 1 + m_1m_2 = 0$)
+  - In general form: $A_1A_2 + B_1B_2 = 0$
 
 ### Family of Lines Through Intersection
 Lines $L_1: A_1x + B_1y + C_1 = 0$ and $L_2: A_2x + B_2y + C_2 = 0$ intersect at $P$.
@@ -196,10 +229,16 @@ Circle (except $k = 1$ gives perpendicular bisector)
 
 | Concept | Formula |
 |---------|---------|
-| Distance point to line | $\frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}}$ |
-| Angle between lines | $\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right|$ |
+| Distance between two points | $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ |
+| Internal division (m:n) | $\left(\frac{mx_2+nx_1}{m+n},\frac{my_2+ny_1}{m+n}\right)$ |
+| Midpoint | $\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)$ |
+| Distance point to line | $\frac{\vert Ax_1+By_1+C \vert}{\sqrt{A^2+B^2}}$ |
+| Distance between parallel lines | $\frac{\vert C_1-C_2 \vert}{\sqrt{A^2+B^2}}$ |
+| Angle between lines | $\tan\theta = \left\vert\frac{m_1-m_2}{1+m_1m_2}\right\vert$ |
+| Perpendicular lines (slope form) | $m_1 m_2 = -1$ |
+| Perpendicular lines (general form) | $A_1A_2 + B_1B_2 = 0$ |
 | Circle centre (general) | $(-g, -f)$ |
-| Circle radius (general) | $\sqrt{g^2 + f^2 - c}$ |
+| Circle radius (general) | $\sqrt{g^2+f^2-c}$ |
 | Tangent at $(x_1, y_1)$ | $T = 0$ |
 | Chord of contact | $T = 0$ |
 | Chord with midpoint $M$ | $T = S_{11}$ |
