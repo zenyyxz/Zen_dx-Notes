@@ -58,6 +58,7 @@ tags:
 | **09** | Dynamic Programming | States, transitions, memoisation, tabulation | [[03 - Advanced Algorithms & Math/Lesson 09 - Dynamic Programming\|Lesson 09]] |
 | **11** | Graph Algorithms | Traversals, shortest paths, DSU, MST, topology | [[03 - Advanced Algorithms & Math/Lesson 11 - Graph Algorithms\|Lesson 11]] |
 | **14** | CS Foundations Beyond Contests | Discrete maths, systems, software engineering | [[03 - Advanced Algorithms & Math/Lesson 14 - CS Foundations Beyond Contests\|Lesson 14]] |
+| **17** | Advanced Math — FFT, NTT, CRT & Finite Fields | Polynomial multiplication, Chinese Remainder Theorem, Newton-Raphson, matrix exponentiation | [[03 - Advanced Algorithms & Math/Lesson 17 - Advanced Math - FFT, NTT, CRT & Finite Fields\|Lesson 17]] |
 
 ---
 
