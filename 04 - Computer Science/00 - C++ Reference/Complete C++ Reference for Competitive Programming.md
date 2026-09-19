@@ -396,6 +396,275 @@ int main() {
 
 ---
 
+### 1.10 The `static` Keyword — Four Different Uses
+
+`static` is one of the most overloaded keywords in C++. Its meaning depends entirely on **where** it is written.
+
+| Context | Meaning |
+| :--- | :--- |
+| `static` inside a **function** | Variable persists across calls — only initialized once |
+| `static` at **file/global scope** | Limits symbol visibility to the current translation unit (`.cpp` file) |
+| `static` on a **class/struct member variable** | One shared copy across all instances |
+| `static` on a **class/struct member function** | Can be called without an instance, has no `this` pointer |
+
+---
+
+#### 1. `static` Local Variable (Persistent Across Function Calls)
+
+A `static` local variable is initialized **only once** (the first time the function is called) and retains its value between subsequent calls. It lives in the global memory segment, not on the stack.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int callCount() {
+    static int count = 0; // Initialized to 0 exactly once, never reset!
+    count++;
+    return count;
+}
+
+int main() {
+    cout << callCount() << '\n'; // 1
+    cout << callCount() << '\n'; // 2
+    cout << callCount() << '\n'; // 3
+}
+```
+
+> [!TIP] CP Use Case: Memoization Cache
+> In Competitive Programming, `static` local variables are sometimes used inside functions to cache lookup tables (like precomputed factorials) that should only be built once.
+
+---
+
+#### 2. `static` at File/Global Scope (Internal Linkage)
+
+When placed at global scope or in the global namespace, `static` restricts the symbol to the **current `.cpp` file only** (internal linkage). Other files cannot see or link against it.
+
+```cpp
+// file_a.cpp
+static int helper_value = 42; // Only visible inside file_a.cpp
+
+static void helperFunction() { // Only callable from file_a.cpp
+    // ...
+}
+```
+
+This is less commonly needed since `static` at global scope has largely been superseded by **anonymous namespaces** in modern C++.
+
+---
+
+#### 3. `static` Class/Struct Member Variable (Shared Across All Instances)
+
+A `static` member variable belongs to the **class itself**, not to any individual object instance. All instances share the same single copy.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+struct Counter {
+    static int total_count; // Declared inside struct (one copy for all instances!)
+    int id;
+
+    Counter() {
+        total_count++;
+        id = total_count;
+    }
+};
+
+int Counter::total_count = 0; // Must be defined OUTSIDE the struct
+
+int main() {
+    Counter a, b, c;
+    cout << a.id << '\n';           // 1
+    cout << b.id << '\n';           // 2
+    cout << Counter::total_count << '\n'; // 3 (accessed via class name)
+}
+```
+
+---
+
+#### 4. `static` Member Function (No `this` Pointer)
+
+A `static` member function belongs to the **class** rather than any specific instance. It **cannot access** non-static member variables (because there is no `this` pointer).
+
+```cpp
+#include <iostream>
+using namespace std;
+
+struct MathUtils {
+    static long long power(long long base, long long exp) {
+        long long result = 1;
+        while (exp > 0) {
+            if (exp & 1) result *= base;
+            base *= base;
+            exp >>= 1;
+        }
+        return result;
+    }
+};
+
+int main() {
+    // Call static member function without creating an instance!
+    cout << MathUtils::power(2, 10) << '\n'; // 1024
+}
+```
+
+> [!NOTE] Static Member Functions in CP
+> This pattern is commonly used to create **utility namespaces** or **factory classes** grouping related helper functions together.
+
+---
+
+### 1.11 The `friend` & `virtual` Keywords
+
+---
+
+#### Part A: `friend` — Granting Private Access
+
+By default, `private` and `protected` members of a class are inaccessible to outside code. The `friend` keyword **explicitly grants** a specific function or another class access to those private members. It is *not* mutual — if A is a friend of B, B is not automatically a friend of A.
+
+**Use Cases**:
+- Overloading `operator<<` (stream output) for a class.
+- Tightly coupled helper classes (e.g. Iterator accessing a Container's internals).
+
+```cpp
+#include <iostream>
+using namespace std;
+
+struct Vector2D {
+private:
+    double x, y; // Private members
+
+public:
+    Vector2D(double x, double y) : x(x), y(y) {}
+
+    // Declare the stream output operator as a friend function
+    // so it can read private members x and y directly
+    friend ostream& operator<<(ostream& os, const Vector2D& v);
+
+    // Declare a friend function that adds two vectors
+    friend Vector2D addVectors(const Vector2D& a, const Vector2D& b);
+};
+
+// Definition outside the class — has access to private x and y
+ostream& operator<<(ostream& os, const Vector2D& v) {
+    os << "(" << v.x << ", " << v.y << ")"; // Direct private member access!
+    return os;
+}
+
+Vector2D addVectors(const Vector2D& a, const Vector2D& b) {
+    return Vector2D(a.x + b.x, a.y + b.y); // Direct private member access!
+}
+
+int main() {
+    Vector2D v1(3.0, 4.0);
+    Vector2D v2(1.0, 2.0);
+
+    cout << v1 << '\n';                        // (3, 4)
+    cout << addVectors(v1, v2) << '\n';        // (4, 6)
+}
+```
+
+> [!NOTE] `friend` is not OOP heresy
+> `friend` is intentional — it is a **named, auditable grant** of access. It is far better than making members `public` just because one specific function needs them.
+
+---
+
+#### Part B: `virtual` — Runtime Polymorphism & Inheritance
+
+`virtual` enables **runtime polymorphism**: the decision of *which* function implementation to call is made at runtime based on the actual type of the object, not the declared type of the pointer/reference.
+
+**Without `virtual` (Compile-Time Binding)**:
+```cpp
+struct Shape {
+    void area() { cout << "Shape has no area\n"; }
+};
+
+struct Circle : Shape {
+    void area() { cout << "Area = pi * r^2\n"; }
+};
+
+int main() {
+    Shape* s = new Circle();
+    s->area(); // ❌ Prints "Shape has no area" — wrong! (Pointer is Shape*, so Shape::area() is called)
+}
+```
+
+**With `virtual` (Runtime Binding)**:
+```cpp
+#include <iostream>
+using namespace std;
+
+struct Shape {
+    virtual void area() const {  // 'virtual' marks function for runtime dispatch
+        cout << "Shape has no area\n";
+    }
+
+    virtual ~Shape() {}  // ⚠️ Always declare virtual destructor in base classes!
+};
+
+struct Circle : Shape {
+    double radius;
+    Circle(double r) : radius(r) {}
+
+    void area() const override {  // 'override' guarantees we are overriding a virtual function
+        cout << "Area = " << 3.14159 * radius * radius << '\n';
+    }
+};
+
+struct Rectangle : Shape {
+    double w, h;
+    Rectangle(double w, double h) : w(w), h(h) {}
+
+    void area() const override {
+        cout << "Area = " << w * h << '\n';
+    }
+};
+
+int main() {
+    Shape* shapes[3];
+    shapes[0] = new Circle(5.0);
+    shapes[1] = new Rectangle(4.0, 6.0);
+    shapes[2] = new Circle(3.0);
+
+    for (int i = 0; i < 3; i++) {
+        shapes[i]->area(); // ✅ Correct function called at runtime via vtable!
+    }
+
+    for (int i = 0; i < 3; i++) delete shapes[i];
+}
+```
+
+---
+
+#### `virtual` Vocabulary Table
+
+| Keyword / Feature | Meaning |
+| :--- | :--- |
+| `virtual void func()` | Enables runtime dispatch via vtable for this function |
+| `override` | Asserts that this function overrides a base `virtual` function (compile-time safety check) |
+| `virtual ~Base()` | **Virtual destructor** — ensures derived class destructors are called when deleting through a base pointer |
+| `= 0` (pure virtual) | `virtual void func() = 0;` — makes the class **abstract** (cannot be instantiated directly) |
+
+```cpp
+// Pure Virtual / Abstract Base Class
+struct Animal {
+    virtual void speak() const = 0; // Pure virtual: no implementation
+    virtual ~Animal() {}
+};
+
+struct Dog : Animal {
+    void speak() const override { cout << "Woof!\n"; }
+};
+
+// Animal a; // ❌ Cannot instantiate abstract class!
+Dog d;
+d.speak(); // ✅ "Woof!"
+```
+
+> [!WARNING] Always Use `virtual` Destructor in Base Classes
+> If a base class destructor is **not** `virtual` and you `delete` a derived object through a base class pointer, only the base class destructor runs — the derived class destructor is **silently skipped**, causing resource leaks!
+
+---
+
 ## 2. Modern C++ Contest Template & Fast I/O
 
 ```cpp
@@ -740,3 +1009,21 @@ What is `std::unique_ptr` in C++ and why can't it be copied? :: `std::unique_ptr
 What is the main difference between `std::unique_ptr` and `std::shared_ptr`? :: `std::unique_ptr` has a single exclusive owner with zero overhead, whereas `std::shared_ptr` allows multiple owners using an internal reference counter that deletes memory when count reaches 0.
 
 Why is `std::weak_ptr` used alongside `std::shared_ptr`? :: `std::weak_ptr` observes a `shared_ptr` object without increasing its reference count, preventing cyclic reference memory leaks.
+
+What does `static` mean when applied to a local variable inside a function? :: The variable is initialized only once (the first call) and retains its value between subsequent function calls, living in global memory rather than the stack.
+
+What does `static` mean on a class/struct member variable? :: A single shared copy of that variable is shared across all instances of the class, accessed via `ClassName::variable`.
+
+Why can a `static` member function not access regular (non-static) member variables? :: Because `static` member functions have no `this` pointer — they belong to the class itself, not to any specific object instance.
+
+What does the `friend` keyword do in C++? :: It grants a specific external function or class direct access to a class's `private` and `protected` members.
+
+What is `friend` most commonly used for in C++? :: Overloading stream output (`operator<<`) for custom types, since `operator<<` must be a free function but needs access to private members.
+
+What does `virtual` on a member function enable? :: Runtime polymorphism — the correct overriding function is selected at runtime based on the actual object type, not the static pointer/reference type.
+
+What is the difference between `virtual` and a pure virtual (`= 0`) function? :: A `virtual` function has a default implementation in the base class; a pure virtual function (`= 0`) has no implementation, making the class abstract and impossible to instantiate directly.
+
+Why must base class destructors almost always be `virtual`? :: Without a `virtual` destructor, deleting a derived class through a base class pointer only calls the base destructor — the derived destructor is silently skipped, causing resource leaks.
+
+What does the `override` keyword do? :: It tells the compiler to verify at compile-time that the function is actually overriding a `virtual` function in the base class, catching typos or signature mismatches.
