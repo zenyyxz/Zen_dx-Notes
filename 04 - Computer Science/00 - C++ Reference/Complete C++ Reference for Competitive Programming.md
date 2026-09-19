@@ -223,6 +223,29 @@ void processStudent(const Student& s) {
 > [!IMPORTANT] Why operator< Needs `const` in Structs
 > When defining `bool operator<(const Point& other) const {}` for `std::set` or `std::sort`, the trailing `const` is **required** because `std::set` holds its elements as `const` objects so you cannot accidentally corrupt the BST ordering!
 
+#### 3. `constexpr` (Compile-Time Constant)
+While `const` means "I promise not to change this at runtime," `constexpr` means "this value is known at **compile time**." 
+It forces the compiler to evaluate expressions during compilation, which can drastically improve runtime performance.
+
+```cpp
+// Evaluated at compile-time! No runtime overhead.
+constexpr int factorial(int n) {
+    return n <= 1 ? 1 : (n * factorial(n - 1));
+}
+
+// Constant expressions for sizes
+constexpr int MAX_N = 100005;
+int dp[MAX_N]; // ✅ Valid array size because MAX_N is known at compile time
+
+int main() {
+    constexpr int val = factorial(5); // val becomes 120 at compile time
+    // constexpr int runtime_val = get_input(); // ❌ Error: get_input() happens at runtime
+}
+```
+
+> [!TIP] `const` vs `constexpr`
+> Use `constexpr` whenever you know the value before the program even runs (like array sizes, math constants, or simple precomputed formulas). Use `const` for values that are initialized at runtime but shouldn't change afterward (like function parameters).
+
 ---
 
 ### 1.8 Default & Deleted Functions (`= default`, `= delete`)
@@ -1027,3 +1050,5 @@ What is the difference between `virtual` and a pure virtual (`= 0`) function? ::
 Why must base class destructors almost always be `virtual`? :: Without a `virtual` destructor, deleting a derived class through a base class pointer only calls the base destructor — the derived destructor is silently skipped, causing resource leaks.
 
 What does the `override` keyword do? :: It tells the compiler to verify at compile-time that the function is actually overriding a `virtual` function in the base class, catching typos or signature mismatches.
+
+What is the difference between `const` and `constexpr`? :: `const` means a value cannot be changed after initialization (which can happen at runtime), whereas `constexpr` means the value is strictly evaluated at compile time.
