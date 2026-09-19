@@ -2,70 +2,116 @@
 title: Lesson 12 - Range-Query Data Structures
 subject: Computer Science
 unit: 12
-competency: Support repeated array updates and range queries using Fenwick and segment trees
+competency: Implement Fenwick Trees and Segment Trees for dynamic range queries and point updates
 tags:
   - Computer-Science
   - Competitive-Programming
-  - DataStructures
   - FenwickTree
   - SegmentTree
+  - DataStructures
   - Flashcards
 ---
 ---
 # :LiBook: Lesson 12: Range-Query Data Structures
 
 > [!ABSTRACT] Scope
-> Prefix sums are ideal for static arrays. When values change between queries, use a data structure that updates and queries in logarithmic time.
+> Prefix sums handle static arrays ($O(1)$ query, $O(N)$ update). For dynamic arrays requiring point updates and range queries in $O(\log N)$ time, use Fenwick Trees or Segment Trees.
 
 ---
-## 1. Fenwick Tree (Binary Indexed Tree)
+## 1. Binary Indexed Tree (Fenwick Tree)
 
-Use a Fenwick tree for prefix sums with point updates.
+A Fenwick tree supports **Point Addition** and **Prefix Sum Queries** in $O(\log N)$ time with $O(N)$ space. Uses 1-indexed operations with bitwise lowbit (`idx & -idx`).
 
 ```cpp
-struct Fenwick {
-    int n;
-    vector<long long> bit;
-    Fenwick(int n) : n(n), bit(n + 1, 0) {}
+#include <iostream>
+#include <vector>
+using namespace std;
 
-    void add(int i, long long delta) { // 0-indexed external index
-        for (++i; i <= n; i += i & -i) bit[i] += delta;
+struct FenwickTree {
+    int n;
+    vector<long long> tree;
+
+    FenwickTree(int n) : n(n), tree(n + 1, 0) {}
+
+    // Add 'val' to 1-indexed element 'idx': O(log N)
+    void add(int idx, long long val) {
+        for (; idx <= n; idx += idx & -idx) {
+            tree[idx] += val;
+        }
     }
-    long long sumPrefix(int i) {       // sum [0, i)
-        long long ans = 0;
-        for (; i > 0; i -= i & -i) ans += bit[i];
-        return ans;
+
+    // Query prefix sum from 1 to 'idx': O(log N)
+    long long query(int idx) {
+        long long sum = 0;
+        for (; idx > 0; idx -= idx & -idx) {
+            sum += tree[idx];
+        }
+        return sum;
     }
-    long long sum(int l, int r) { return sumPrefix(r) - sumPrefix(l); }
+
+    // Range sum query [l, r] (1-indexed, inclusive): O(log N)
+    long long queryRange(int l, int r) {
+        return query(r) - query(l - 1);
+    }
 };
 ```
 
-Both update and query take $O(\log n)$.
-
 ---
-## 2. Segment Tree Idea
+## 2. Segment Tree (Point Update, Range Query)
 
-A segment tree stores information for intervals. It can answer operations such as sum, minimum, maximum, or GCD over a range, usually with point updates in $O(\log n)$.
+Segment Trees support flexible range operations (Sum, Min, Max, GCD) in $O(\log N)$ time.
 
-Use a segment tree when the operation is associative and a Fenwick tree is insufficient—for example, range minimum with updates.
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
 
----
-## 3. Choose the Simplest Sufficient Tool
+struct SegmentTree {
+    int n;
+    vector<long long> tree;
 
-| Array situation | Tool |
-| :--- | :--- |
-| no updates, range sums | prefix sums |
-| point updates, range sums | Fenwick tree |
-| point updates, range min/max/GCD | segment tree |
-| offline queries that can be reordered | consider sorting / Mo's algorithm later |
+    SegmentTree(int n) : n(n), tree(4 * n, 0) {}
+
+    void build(const vector<int>& a, int node, int start, int end) {
+        if (start == end) {
+            tree[node] = a[start];
+            return;
+        }
+        int mid = start + (end - start) / 2;
+        build(a, 2 * node, start, mid);
+        build(a, 2 * node + 1, mid + 1, end);
+        tree[node] = tree[2 * node] + tree[2 * node + 1];
+    }
+
+    // Point Update: set a[idx] = val
+    void update(int node, int start, int end, int idx, long long val) {
+        if (start == end) {
+            tree[node] = val;
+            return;
+        }
+        int mid = start + (end - start) / 2;
+        if (idx <= mid) update(2 * node, start, mid, idx, val);
+        else update(2 * node + 1, mid + 1, end, idx, val);
+        tree[node] = tree[2 * node] + tree[2 * node + 1];
+    }
+
+    // Range Query: sum from [l, r]
+    long long query(int node, int start, int end, int l, int r) {
+        if (r < start || end < l) return 0; // Out of range
+        if (l <= start && end <= r) return tree[node]; // Completely inside
+        int mid = start + (end - start) / 2;
+        return query(2 * node, start, mid, l, r) + query(2 * node + 1, mid + 1, end, l, r);
+    }
+};
+```
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-When are prefix sums insufficient? :: When values change between range queries.
+What is the time complexity of point updates and range queries in a Fenwick Tree? :: $O(\log N)$ time for both operations.
 
-What operations does a Fenwick tree support efficiently? :: Point updates and prefix/range sum queries, each in $O(\log n)$.
+What bitwise trick isolates the lowest set bit in a Fenwick Tree index? :: `idx & -idx`.
 
-When is a segment tree more flexible than a Fenwick tree? :: For associative range operations such as minimum, maximum, or GCD with updates.
+How much memory array size should be allocated for a recursive Segment Tree on $N$ elements? :: $4N$ size array.

@@ -2,101 +2,99 @@
 title: Lesson 04 - Sorting, Searching & Binary Search
 subject: Computer Science
 unit: 04
-competency: Use sorting and binary search to reduce search spaces efficiently
+competency: Implement binary search on discrete ranges and monotonic predicate functions
 tags:
   - Computer-Science
   - Competitive-Programming
-  - Sorting
+  - Searching
   - BinarySearch
+  - Sorting
   - Flashcards
 ---
 ---
 # :LiBook: Lesson 04: Sorting, Searching & Binary Search
 
 > [!ABSTRACT] Scope
-> Sorting reveals order. Binary search finds a boundary in a sorted range or in any monotone true/false condition.
+> Master array sorting, built-in binary search functions (`lower_bound`, `upper_bound`), and the Binary Search on Answer technique.
 
 ---
-## 1. Sorting with a Comparator
+## 1. Built-in STL Binary Search Functions
+
+Binary search functions require the input container to be **sorted**.
 
 ```cpp
-vector<pair<int, int>> intervals;
-sort(intervals.begin(), intervals.end(), [](auto x, auto y) {
-    if (x.second != y.second) return x.second < y.second;
-    return x.first < y.first;
-});
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> a = {1, 3, 3, 5, 7, 9};
+
+    // 1. Check existence: O(log N)
+    bool found = binary_search(a.begin(), a.end(), 5); // true
+
+    // 2. lower_bound: First element >= target
+    auto it1 = lower_bound(a.begin(), a.end(), 3);
+    int idx1 = distance(a.begin(), it1); // Index 1
+
+    // 3. upper_bound: First element > target
+    auto it2 = upper_bound(a.begin(), a.end(), 3);
+    int idx2 = distance(a.begin(), it2); // Index 3
+
+    // Count occurrences of 3: upper_bound - lower_bound
+    int count = distance(it1, it2); // 2
+}
 ```
 
-`sort` costs $O(n \log n)$. A comparator must be consistent: do not use `<=` inside it.
-
 ---
-## 2. Library Binary Search
+## 2. Binary Search on Answer Template
 
-For sorted `a`:
+When a problem asks to find the *maximum minimum* or *minimum maximum* value, check if the feasibility function `check(x)` is **monotonic** (`TTTTFFFF` or `FFFFTTTT`).
 
 ```cpp
-auto it = lower_bound(a.begin(), a.end(), x); // first value >= x
-auto jt = upper_bound(a.begin(), a.end(), x); // first value > x
+#include <iostream>
+#include <vector>
+using namespace std;
 
-int first = lower_bound(a.begin(), a.end(), x) - a.begin();
-int count = upper_bound(a.begin(), a.end(), x)
-          - lower_bound(a.begin(), a.end(), x);
-```
-
----
-## 2.5 Basic Binary Search (Manual)
-
-Binary search finds a value in a **sorted** array by repeatedly cutting the range in half. At each step, compare the target `x` to the middle element `a[mid]`:
-
-- If `a[mid] == x` → found it.
-- If `a[mid] < x` → the answer must be in the right half (`low = mid + 1`).
-- If `a[mid] > x` → the answer must be in the left half (`high = mid - 1`).
-
-This gives $O(\log n)$ time because the range size halves every iteration.
-
-```cpp
-int binary_search(vector<int>& a, int x) {
-    int low = 0, high = (int)a.size() - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;   // avoid overflow
-        if (a[mid] == x) return mid;    // found
-        else if (a[mid] < x) low = mid + 1;
-        else high = mid - 1;
+// Monotonic Predicate Function
+bool check(long long val, int k, const vector<int>& a) {
+    // Return true if 'val' is achievable, false otherwise
+    int count = 0;
+    for (int x : a) {
+        count += x / val;
     }
-    return -1; // not found
+    return count >= k;
+}
+
+long long solveBinarySearch(int k, const vector<int>& a) {
+    long long low = 1, high = 1e18;
+    long long ans = -1;
+
+    while (low <= high) {
+        long long mid = low + (high - low) / 2; // Prevents overflow
+
+        if (check(mid, k, a)) {
+            ans = mid;       // 'mid' is feasible; record answer
+            low = mid + 1;   // Try to find a larger feasible value
+        } else {
+            high = mid - 1;  // 'mid' is too large; reduce search space
+        }
+    }
+    return ans;
 }
 ```
 
-**Key invariant:** the answer is always inside `[low, high]`. When `low > high`, it is not present.
-
----
-## 3. Binary Search on the Answer
-
-Use this when you can ask: “Is answer $m$ feasible?” and feasibility changes only once from true to false, or vice versa.
-
-```cpp
-long long low = 0, high = 1'000'000'000LL;
-while (low < high) {
-    long long mid = low + (high - low) / 2;
-    if (feasible(mid)) high = mid;      // seek smallest feasible answer
-    else low = mid + 1;
-}
-cout << low << '\n';
-```
-
-Before coding, write which side is feasible and state the invariant: the optimal answer is still in `[low, high]`.
+> [!WARNING] Overflow Avoidance
+> Avoid writing `mid = (low + high) / 2;` because `low + high` can overflow `long long` when bounds are around $10^{18}$. Always use `mid = low + (high - low) / 2;`.
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-What does `lower_bound` return? :: An iterator to the first element that is greater than or equal to the target.
+What is the difference between `lower_bound` and `upper_bound`? :: `lower_bound` returns an iterator to the first element $\ge$ target, while `upper_bound` returns an iterator to the first element strictly $>$ target.
 
-What property is needed for binary search on an answer? :: The feasibility predicate must be monotone across the search range.
+What property must a problem possess to apply Binary Search on Answer? :: Monotonicity — the predicate function `check(x)` must transition cleanly from `true` to `false` (or `false` to `true`).
 
-Why use `low + (high - low) / 2` for a midpoint? :: It avoids overflow that can occur in `(low + high) / 2`.
-
-What is the time complexity of binary search on a sorted array? :: $O(\log n)$, because the search space halves with every comparison.
-
-What invariant must hold during a manual binary search? :: The target value is always inside the current interval `[low, high]`.
+Why write `low + (high - low) / 2` instead of `(low + high) / 2`? :: To prevent integer overflow when `low + high` exceeds the maximum capacity of the integer type.

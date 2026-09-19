@@ -2,11 +2,10 @@
 title: Lesson 03 - C++ STL & Core Data Structures
 subject: Computer Science
 unit: 03
-competency: Select and use standard C++ containers for common contest tasks
+competency: Select and apply appropriate STL containers based on operational time complexities
 tags:
   - Computer-Science
   - Competitive-Programming
-  - Cpp
   - STL
   - DataStructures
   - Flashcards
@@ -15,91 +14,82 @@ tags:
 # :LiBook: Lesson 03: C++ STL & Core Data Structures
 
 > [!ABSTRACT] Scope
-> The STL gives you tested implementations. Know what each container stores, its main operations, and their costs.
+> Master the standard containers in C++ (`vector`, `pair`, `set`, `map`, `stack`, `queue`, `priority_queue`). Selecting the right container reduces solution complexity.
+
+> [!TIP] Full Reference
+> For deep-dive implementations of STL containers, custom comparators, and hash maps, see [[00 - C++ Reference/Complete C++ Reference for Competitive Programming|Complete C++ Reference for Competitive Programming]].
 
 ---
-## 1. The Everyday Containers
+## 1. Quick Complexity Summary
 
-| Container | Use | Key cost |
-| :--- | :--- | :--- |
-| `vector<T>` | resizable array | indexing $O(1)$, append amortised $O(1)$ |
-| `string` | characters | indexing $O(1)$ |
-| `stack<T>` | last in, first out | push/pop/top $O(1)$ |
-| `queue<T>` | first in, first out | push/pop/front $O(1)$ |
-| `deque<T>` | both ends | push/pop at ends $O(1)$ |
-| `set<T>` | sorted unique values | insert/find $O(\log n)$ |
-| `map<K,V>` | sorted key-value pairs | insert/find $O(\log n)$ |
-| `unordered_map<K,V>` | hash key-value pairs | average insert/find $O(1)$ |
-| `priority_queue<T>` | repeatedly get largest value | push/pop $O(\log n)$ |
+| Container | Internal Structure | Access | Insert/Delete | Find / Search |
+| :--- | :--- | :--- | :--- | :--- |
+| `std::vector` | Dynamic Array | $O(1)$ | $O(1)$ at end, $O(N)$ middle | $O(N)$ ($O(\log N)$ sorted) |
+| `std::set` | Red-Black Tree (BST) | $O(\log N)$ min/max | $O(\log N)$ | $O(\log N)$ |
+| `std::map` | Red-Black Tree | $O(\log N)$ key | $O(\log N)$ | $O(\log N)$ |
+| `std::priority_queue` | Binary Heap | $O(1)$ top | $O(\log N)$ push/pop | N/A |
+| `std::unordered_map` | Hash Table | N/A | $O(1)$ avg, $O(N)$ worst | $O(1)$ avg |
 
 ---
-## 2. `vector`, Sorting, and Iterators
+## 2. Priority Queues (Max-Heap vs Min-Heap)
 
 ```cpp
-vector<int> a = {4, 1, 4, 2};
-a.push_back(7);
-sort(a.begin(), a.end());
+#include <iostream>
+#include <queue>
+#include <vector>
+using namespace std;
 
-for (int x : a) cout << x << ' ';
-// 1 2 4 4 7
-```
+int main() {
+    // 1. Max-Heap (Default: largest element on top)
+    priority_queue<int> max_pq;
+    max_pq.push(10);
+    max_pq.push(50);
+    max_pq.push(20);
+    cout << max_pq.top() << '\n'; // 50
+    max_pq.pop();                 // Removes 50
 
-Use `a.begin()` and `a.end()` for STL algorithms. The end iterator points **one past** the final element.
-
----
-## 3. Frequency Counting
-
-```cpp
-map<int, int> freq;
-for (int x : a) freq[x]++;
-
-for (auto [value, count] : freq) {
-    cout << value << " occurs " << count << " times\n";
+    // 2. Min-Heap (Smallest element on top)
+    priority_queue<int, vector<int>, greater<int>> min_pq;
+    min_pq.push(10);
+    min_pq.push(50);
+    min_pq.push(20);
+    cout << min_pq.top() << '\n'; // 10
+    min_pq.pop();                 // Removes 10
 }
 ```
 
-For values in a small known range, a `vector<int> freq(maxValue + 1)` is simpler and faster.
-
 ---
-## 4. Heap: Always Take the Best Available Item
+## 3. Pairs, Tuples & Auto-Sorting
+
+`std::pair<T1, T2>` automatically sorts by `.first`, then by `.second`.
 
 ```cpp
-priority_queue<int> pq; // max-heap
-pq.push(5);
-pq.push(2);
-pq.push(9);
-cout << pq.top(); // 9
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-priority_queue<int, vector<int>, greater<int>> minHeap;
+int main() {
+    vector<pair<int, int>> events;
+    events.push_back({5, 2});
+    events.push_back({1, 9});
+    events.push_back({5, 1});
+
+    sort(events.begin(), events.end());
+    // Result order: {1, 9}, {5, 1}, {5, 2}
+    for (auto [time, type] : events) {
+        cout << time << " " << type << '\n';
+    }
+}
 ```
 
-A priority queue is not fully sorted. Only `top()` is guaranteed to be the best element.
-
 ---
-
-## 5. Linked List (`std::list`)
-
-`std::list` is a doubly linked list. It does **not** support random access (`O(n)` to reach an element), but insertion and deletion at any known iterator are `O(1)`.
-
-```cpp
-list<int> ll = {1, 2, 3};
-ll.push_front(0);
-ll.push_back(4);
-ll.erase(next(ll.begin())); // remove second element
-```
-
-Use it when you need frequent insertions/deletions in the middle and never need to index by position.
-
----
-
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-Which STL container is usually best for a dynamic indexed array? :: `vector`.
+What is the time complexity of inserting an element into `std::set` or `std::map`? :: $O(\log N)$ time, as it maintains a balanced binary search tree.
 
-What is the difference between `set` and `unordered_set`? :: `set` keeps values sorted with $O(\log n)$ operations; `unordered_set` has average $O(1)$ operations but no sorted order.
+How do you instantiate a Min-Heap in C++ using `std::priority_queue`? :: `priority_queue<int, vector<int>, greater<int>> min_pq;`.
 
-What does `priority_queue<int>` return at `top()`? :: The largest stored integer.
-
-What container supports `O(1)` insertion in the middle but not `O(1)` indexing? :: `std::list` (doubly linked list).
+Why are pairs useful for interval sorting in contests? :: Because `std::pair` naturally sorts by its first element, and breaks ties using its second element.

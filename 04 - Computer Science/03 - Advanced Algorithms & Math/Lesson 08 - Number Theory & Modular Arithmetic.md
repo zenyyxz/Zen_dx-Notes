@@ -2,11 +2,12 @@
 title: Lesson 08 - Number Theory & Modular Arithmetic
 subject: Computer Science
 unit: 08
-competency: Apply core integer algorithms used in contest problems
+competency: Implement prime sieves, modular exponentiation, GCD, and modular inverses
 tags:
   - Computer-Science
   - Competitive-Programming
   - NumberTheory
+  - Math
   - ModularArithmetic
   - Flashcards
 ---
@@ -14,64 +15,98 @@ tags:
 # :LiBook: Lesson 08: Number Theory & Modular Arithmetic
 
 > [!ABSTRACT] Scope
-> Learn GCD, LCM, prime sieves, fast exponentiation, and modular arithmetic—the recurring tools behind divisibility and counting problems.
+> Master fundamental contest number theory: Sieve of Eratosthenes, Euclidean GCD, Fast Binary Exponentiation, and Modular Inverses.
 
 ---
-## 1. GCD and LCM
+## 1. Sieve of Eratosthenes (Prime Generation)
 
-Euclid's algorithm uses
-$$
-\gcd(a,b)=\gcd(b,a\mod b).
-$$
+Find all prime numbers up to $N$ in $O(N \log \log N)$ time:
 
 ```cpp
-long long g = gcd(a, b);                 // <numeric>
-long long l = a / g * b;                 // divide first to reduce overflow risk
-```
+#include <iostream>
+#include <vector>
+using namespace std;
 
----
-## 2. Prime Sieve
+vector<bool> is_prime;
+vector<int> primes;
 
-```cpp
-int n = 1'000'000;
-vector<bool> isPrime(n + 1, true);
-isPrime[0] = isPrime[1] = false;
-for (int p = 2; p * p <= n; p++) {
-    if (!isPrime[p]) continue;
-    for (int x = p * p; x <= n; x += p) isPrime[x] = false;
-}
-```
+void sieve(int n) {
+    is_prime.assign(n + 1, true);
+    is_prime[0] = is_prime[1] = false;
 
-The sieve of Eratosthenes preprocesses primes up to $n$ in about $O(n \log \log n)$.
-
----
-## 3. Fast Modular Exponentiation
-
-```cpp
-long long modPow(long long a, long long e, long long mod) {
-    long long ans = 1 % mod;
-    a %= mod;
-    while (e > 0) {
-        if (e & 1) ans = ans * a % mod;
-        a = a * a % mod;
-        e >>= 1;
+    for (int p = 2; p * p <= n; p++) {
+        if (is_prime[p]) {
+            for (int i = p * p; i <= n; i += p) {
+                is_prime[i] = false;
+            }
+        }
     }
-    return ans;
+
+    for (int p = 2; p <= n; p++) {
+        if (is_prime[p]) primes.push_back(p);
+    }
 }
 ```
 
-It computes $(a^e \mod m)$ in $O(\log e)$.
+---
+## 2. Fast Binary Exponentiation $O(\log B)$
 
-> [!INFO] Modular division
-> You cannot ordinarily divide modulo $m$. If $m$ is prime and $(a \not\equiv 0 \pmod m)$, then the inverse is $(a^{m-2} \mod m)$ by Fermat's little theorem.
+Calculate $(A^B) \pmod M$ efficiently:
+
+```cpp
+long long binpow(long long a, long long b, long long mod) {
+    a %= mod;
+    long long res = 1;
+    while (b > 0) {
+        if (b & 1) res = (res * a) % mod;
+        a = (a * a) % mod;
+        b >>= 1;
+    }
+    return res;
+}
+```
+
+---
+## 3. Modular Inverse via Fermat's Little Theorem
+
+For a prime modulus $M$, the modular inverse of $A$ modulo $M$ is:
+
+$$A^{-1} \equiv A^{M-2} \pmod M$$
+
+This allows division under modulo: $\frac{A}{B} \pmod M \equiv A \cdot B^{M-2} \pmod M$.
+
+```cpp
+long long modInverse(long long a, long long mod) {
+    return binpow(a, mod - 2, mod);
+}
+
+long long modDivide(long long a, long long b, long long mod) {
+    return (a % mod * modInverse(b, mod)) % mod;
+}
+```
+
+---
+## 4. GCD & LCM
+
+```cpp
+#include <numeric>
+
+long long gcd(long long a, long long b) {
+    return std::gcd(a, b); // C++17 built-in
+}
+
+long long lcm(long long a, long long b) {
+    return std::lcm(a, b); // C++17 built-in (or: (a / std::gcd(a, b)) * b)
+}
+```
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-What recurrence powers Euclid's GCD algorithm? :: $(\gcd(a,b)=\gcd(b,a\mod b))$.
+What is the time complexity of the Sieve of Eratosthenes up to $N$? :: $O(N \log \log N)$ time.
 
-How fast is binary modular exponentiation? :: $O(\log e)$ for exponent $e$.
+How do you perform division $\frac{A}{B} \pmod M$ when $M$ is a prime number? :: Multiply $A$ by the modular inverse of $B$: $(A \cdot B^{M-2}) \pmod M$.
 
-Why is ordinary division dangerous in modular arithmetic? :: A modular inverse may not exist; division is valid only when the divisor is invertible modulo the modulus.
+What is the time complexity of binary exponentiation $(A^B) \pmod M$? :: $O(\log B)$ time.

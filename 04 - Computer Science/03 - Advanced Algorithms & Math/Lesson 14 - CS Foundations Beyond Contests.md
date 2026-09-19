@@ -15,52 +15,49 @@ tags:
 # :LiBook: Lesson 14: CS Foundations Beyond Contests
 
 > [!ABSTRACT] Scope
-> Competitive programming builds algorithmic thinking. Computer science is wider: it also asks how computers execute programs, communicate, store data, and support reliable software.
+> Competitive programming builds algorithmic thinking and speed. Computer science is broader: hardware architecture, memory hierarchies, operating systems, networks, databases, and software engineering principles.
 
 ---
-## 1. The Core Areas
+## 1. Computer Science Map & Core Disciplines
 
-| Area | Main question | Why it helps contests / programming |
+| Discipline | Focus Area | Impact on Programming & Contests |
 | :--- | :--- | :--- |
-| Discrete mathematics | How do we prove, count, and model finite things? | proofs, graphs, combinatorics, logic |
-| Algorithms & data structures | How do we compute efficiently? | direct contest foundation |
-| Computer systems | How does hardware and an operating system run code? | performance, memory, processes |
-| Networks | How do machines communicate? | web, distributed systems, protocols |
-| Databases | How is persistent data organised and queried? | real applications |
-| Software engineering | How do teams build reliable software? | testing, Git, design, collaboration |
+| **Algorithms & Data Structures** | Computational efficiency & complexity | Direct contest focus ($O(N \log N)$, DP, Graphs) |
+| **Computer Systems & Architecture** | Memory hierarchy, CPU cache, registers, assembly | Cache locality ($O(N)$ vector traversal vs pointer chasing) |
+| **Operating Systems** | Processes, threads, virtual memory, I/O | Memory limits, stack vs heap allocation |
+| **Computer Networks** | TCP/IP, HTTP, socket communication | Distributed systems, web development |
+| **Databases & Storage** | Indexing (B-Trees, Hash indices), SQL, ACID | Persistent data storage, backend engineering |
+| **Software Engineering** | Design patterns, Git, testing, clean code | Code maintainability, team collaboration |
 
 ---
-## 2. A Sustainable Learning Plan
+## 2. Low-Level Performance: Cache Locality & Stack vs Heap
 
-While contesting, keep a second slower track:
+```
+High Speed, Low Capacity  --->  [ Registers ]
+                                [ L1 / L2 / L3 Cache ]  <--- Vector sequential access (Fast!)
+                                [ Main RAM ]            <--- Linked Lists / Pointers (Slower!)
+Low Speed, High Capacity   ---> [ Hard Drive / SSD ]
+```
 
-1. **Discrete maths:** logic, sets, induction, combinatorics, graph theory.
-2. **Systems:** binary representation, memory, processes, threads, files, networking basics.
-3. **Build projects:** command-line tools, a small web app, or a game—anything you care about.
-4. **Use Git:** make small commits with meaningful messages.
-5. **Read code:** standard-library documentation and small open-source projects teach style.
-
-You do not need to “know all CS” before starting contests. Contests are one excellent way to learn how to think; projects teach a different, equally valuable skill.
+- **Sequential Access**: Iterating through a contiguous `std::vector` hits L1/L2 CPU cache lines, making it 5x–10x faster than pointer-chasing in a Linked List.
+- **Stack Memory**: Fast, fixed size ($\approx 8 \text{ MB}$). Used for local variables and recursion frames.
+- **Heap Memory**: Dynamic size (up to RAM limits). Managed via `new`/`delete` or smart pointers (`unique_ptr`).
 
 ---
-## 3. Contest Practice Strategy
+## 3. Sustainable CS & Software Engineering Learning Path
 
-- Solve problems by topic when learning a new technique.
-- During a contest, read all problems first and secure easy points.
-- Afterward, upsolve without immediately reading an editorial.
-- When you read an editorial, close it and implement from memory.
-- Maintain a mistake log: misunderstood statement, wrong algorithm, proof gap, implementation bug, or time-management issue.
-
-> [!TIP] Your real metric
-> Track whether you can explain your solution and fix your own bug. Rating is feedback, not your worth or your potential.
+1. **Solve & Upsolve**: Participate in Codeforces/AtCoder contests, then upsolve missed problems.
+2. **Build Software Projects**: Build CLI tools, web apps, or games to learn software architecture, modular design, and API integration.
+3. **Master Version Control (Git)**: Use atomic commits and feature branches (`git checkout -b feature`).
+4. **Write Tests**: Write unit tests to verify edge cases automatically.
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-Does someone need to master all of computer science before joining programming contests? :: No. Start contests while learning; build fundamentals steadily and use each problem to discover gaps.
+What is the difference between competitive programming and software engineering? :: Contests focus on algorithm speed, mathematical proofs, and tight constraints; software engineering emphasizes code maintainability, system architecture, testing, and user needs.
 
-What is the difference between contest programming and software projects? :: Contests emphasise algorithms and speed under constraints; projects emphasise design, maintenance, users, testing, and collaboration.
+Why is contiguous `std::vector` iteration faster than pointer-chasing in Linked Lists? :: Due to CPU cache locality — contiguous memory blocks are prefetched into high-speed CPU L1/L2 cache.
 
-What should a useful contest mistake log record? :: The type of failure: statement misunderstanding, algorithm choice, proof gap, implementation bug, or time management.
+What should a contest upsolving routine consist of? :: Understanding why the solution failed, implementing the fix without reading editorials directly, and documenting the mistake in a log.

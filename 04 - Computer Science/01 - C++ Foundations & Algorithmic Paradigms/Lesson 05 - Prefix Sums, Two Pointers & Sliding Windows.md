@@ -15,36 +15,53 @@ tags:
 # :LiBook: Lesson 05: Prefix Sums, Two Pointers & Sliding Windows
 
 > [!ABSTRACT] Scope
-> Many array problems look quadratic because they ask about subarrays. Learn three patterns that avoid recalculating the same work.
+> Avoid recalculating contiguous array work using 1D/2D Prefix Sums, Two Pointers, and Sliding Windows.
 
 ---
-## 1. Prefix Sums
+## 1. 1D & 2D Prefix Sums
 
-Define `pref[i]` as the sum of the first `i` elements, with `pref[0] = 0`.
+### 1.1 1D Range Sum Queries
+Given an array `a` of size $N$, compute range sum $a[L \dots R]$ in $O(1)$ time after $O(N)$ preprocessing.
+
+$$\text{pref}[i] = \sum_{k=0}^{i-1} a[k], \quad \text{Sum}(L \dots R) = \text{pref}[R + 1] - \text{pref}[L]$$
 
 ```cpp
 vector<long long> pref(n + 1, 0);
-for (int i = 0; i < n; i++) {
-    pref[i + 1] = pref[i] + a[i];
-}
+for (int i = 0; i < n; i++) pref[i + 1] = pref[i] + a[i];
 
-// Sum of a[l], a[l+1], ..., a[r], inclusive:
-long long sum = pref[r + 1] - pref[l];
+// Range sum from index L to R (0-indexed, inclusive)
+long long range_sum = pref[R + 1] - pref[L];
 ```
 
-Build once in $O(n)$; answer each fixed range-sum query in $O(1)$.
+### 1.2 2D Subgrid Sum Queries
+Query subgrid sum from $(r_1, c_1)$ to $(r_2, c_2)$ in $O(1)$ time:
+
+$$\text{Sum} = \text{pref}[r_2][c_2] - \text{pref}[r_1-1][c_2] - \text{pref}[r_2][c_1-1] + \text{pref}[r_1-1][c_1-1]$$
+
+```cpp
+// Building 2D Prefix Sum Matrix (1-indexed)
+vector<vector<long long>> pref(n + 1, vector<long long>(m + 1, 0));
+for (int r = 1; r <= n; r++) {
+    for (int c = 1; c <= m; c++) {
+        pref[r][c] = grid[r-1][c-1] + pref[r-1][c] + pref[r][c-1] - pref[r-1][c-1];
+    }
+}
+
+// Subgrid query from (r1, c1) to (r2, c2)
+long long subgrid_sum = pref[r2][c2] - pref[r1-1][c2] - pref[r2][c1-1] + pref[r1-1][c1-1];
+```
 
 ---
-## 2. Two Pointers
+## 2. Two Pointers Pattern
 
-For a sorted array, find whether two values sum to `target`:
+For sorted arrays, find if two elements sum to `target` in $O(N)$ time:
 
 ```cpp
 int l = 0, r = n - 1;
 while (l < r) {
     long long sum = a[l] + a[r];
     if (sum == target) {
-        cout << "yes\n";
+        cout << a[l] << " + " << a[r] << " = " << target << '\n';
         break;
     }
     if (sum < target) l++;
@@ -52,33 +69,31 @@ while (l < r) {
 }
 ```
 
-The decision to move a pointer is justified by sorted order. Each pointer moves at most $n$ times, so this is $O(n)$.
-
 ---
-## 3. Sliding Window
+## 3. Sliding Window Pattern
 
-For positive numbers, find the longest subarray whose sum is at most `k`:
+Find the longest contiguous subarray with sum $\le K$ (for non-negative array elements):
 
 ```cpp
-long long sum = 0;
-int l = 0, best = 0;
+long long current_sum = 0;
+int l = 0, max_len = 0;
+
 for (int r = 0; r < n; r++) {
-    sum += a[r];
-    while (sum > k) sum -= a[l++];
-    best = max(best, r - l + 1);
+    current_sum += a[r];
+    while (current_sum > k) {
+        current_sum -= a[l++];
+    }
+    max_len = max(max_len, r - l + 1);
 }
 ```
-
-> [!WARNING] Important
-> This particular shrinking-window logic needs non-negative values. With negative values, shrinking may not make the sum smaller in the way the proof needs.
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-How do you find the inclusive range sum from index `l` to `r` using prefix sums? :: `pref[r + 1] - pref[l]`.
+What is the 1D prefix sum formula for inclusive range sum $a[L \dots R]$? :: `pref[R + 1] - pref[L]`.
 
-Why is a two-pointer scan often $O(n)$? :: Each pointer moves in only one direction and therefore advances at most $n$ times.
+What is the 2D prefix sum formula for subgrid sum $(r_1, c_1)$ to $(r_2, c_2)$? :: `pref[r2][c2] - pref[r1-1][c2] - pref[r2][c1-1] + pref[r1-1][c1-1]`.
 
-When is the usual sum-based sliding window safe? :: When elements are non-negative, so removing from the left cannot increase the sum.
+Why must elements be non-negative for standard variable-length sliding window? :: Because shrinking the window from the left is guaranteed to decrease (or keep equal) the window sum only when values are non-negative.

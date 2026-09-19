@@ -2,7 +2,7 @@
 title: Lesson 02 - Complexity, Correctness & Debugging
 subject: Computer Science
 unit: 02
-competency: Estimate whether an algorithm fits the constraints and justify that it works
+competency: Estimate whether an algorithm fits time/memory constraints and prove correctness
 tags:
   - Computer-Science
   - Competitive-Programming
@@ -14,70 +14,85 @@ tags:
 # :LiBook: Lesson 02: Complexity, Correctness & Debugging
 
 > [!ABSTRACT] Scope
-> A correct algorithm that is too slow still fails. Learn to read constraints, estimate running time, and build a short proof before trusting your code.
+> A correct algorithm that is too slow or uses too much memory fails. Learn to read constraints, estimate time and memory limits, and verify correctness before writing code.
 
 ---
-## 1. Big-O: Growth, Not Stopwatch Time
+## 1. Time Limits & Operation Rules of Thumb
 
-| Complexity | Usually practical for one test case |
-| :--- | :--- |
-| $O(1)$, $O(\log n)$ | very large $n$ |
-| $O(n)$, $O(n \log n)$ | often up to $10^5$–$10^6$ |
-| $O(n\sqrt n)$ | medium constraints |
-| $O(n^2)$ | often around $n \le 3000$, context dependent |
-| $O(2^n)$ | only small $n$, often $n \le 20$ |
+In competitive programming, standard time limits are **1.0 to 2.0 seconds**, which corresponds to roughly **$10^8$ operations per second** in C++.
 
-These are rough contest instincts, not laws. Always account for the sum of constraints across test cases.
+| Constraint $N$ | Max Allowed Complexity | Common Algorithms |
+| :--- | :--- | :--- |
+| $N \le 10$–$12$ | $O(N!)$ or $O(N^2 2^N)$ | Permutations, TSP Dynamic Programming |
+| $N \le 20$–$22$ | $O(2^N \cdot N)$ | Bitmask DP, Subset Generation |
+| $N \le 500$ | $O(N^3)$ | Floyd-Warshall, Matrix Multiplication |
+| $N \le 3000$–$5000$ | $O(N^2)$ | 2D Dynamic Programming, Nested Loops |
+| $N \le 10^5$–$3 \times 10^5$ | $O(N \log N)$ or $O(N \sqrt{N})$ | Sorting, Segment Trees, Mo's Algorithm |
+| $N \le 10^6$–$10^7$ | $O(N)$ | Linear Scans, Prefix Sums, Sieve |
+| $N \ge 10^9$ | $O(\log N)$ or $O(1)$ | Binary Search, Math / Formula Solutions |
 
 ---
-## 2. Count Nested Work
+## 2. Memory Limit Mathematics
+
+Standard contest memory limit is **256 MB**.
+
+$$\text{256 MB} = 256 \times 1024 \times 1024 \text{ bytes} \approx 2.68 \times 10^8 \text{ bytes}$$
+
+| Data Type | Size per Element | Maximum Array Capacity in 256 MB |
+| :--- | :--- | :--- |
+| `int` / `float` | 4 bytes | $\approx 6.7 \times 10^7$ elements (e.g. $8000 \times 8000$ 2D array) |
+| `long long` / `double` | 8 bytes | $\approx 3.3 \times 10^7$ elements |
+| `bool` / `char` | 1 byte | $\approx 2.6 \times 10^8$ elements |
+
+> [!WARNING] Memory Trap: Vector Overhead & Recursion Stack
+> Creating `vector<int> adj[100000]` has dynamic pointer overhead per vector. Deep recursion can also cause Stack Overflow if stack depth exceeds limit ($\approx 10^5$ frames).
+
+---
+## 3. Counting Nested Work & Amortized Complexity
 
 ```cpp
-for (int i = 0; i < n; i++)       // n times
-    for (int j = 0; j < n; j++)   // n times each
+// ❌ O(N^2) Nested Loop
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
         work();
-```
+    }
+}
 
-This is $O(n^2)$. But this loop is different:
-
-```cpp
+// ✅ O(N) Two Pointers (Amortized Analysis)
 int j = 0;
 for (int i = 0; i < n; i++) {
-    while (j < n && condition(i, j)) j++;
+    while (j < n && condition(i, j)) {
+        j++; // 'j' only advances forward, moving at most N times total across ALL iterations!
+    }
 }
 ```
 
-If `j` never moves backwards, it advances at most $n$ times total, so the whole code is often $O(n)$, not $O(n^2)$.
+---
+## 4. Correctness: Proofs & Invariants
+
+To guarantee an algorithm is correct:
+1. **Claim**: State the target output.
+2. **Invariant**: Identify a property that remains true before and after every loop iteration.
+3. **Termination**: Show why the loop or recursion must end.
+4. **Conclusion**: Verify that when the loop ends, the invariant proves the output is correct.
+
+*Example*: Binary Search invariant — *"The target value is strictly contained within the active range $[L, R]$."*
 
 ---
-## 3. Correctness: State Why the Answer Is Right
+## 5. Contest Debugging Checklist
 
-A useful proof structure:
-
-1. **Claim:** say what your algorithm returns.
-2. **Invariant:** name something that remains true after every loop step.
-3. **Termination:** explain why the loop/recursion ends.
-4. **Conclusion:** show the invariant implies the answer is correct.
-
-Example: binary search invariant—“the answer is still inside the current search interval.”
-
----
-## 4. A Debugging Checklist
-
-- Did you process every test case independently?
-- Is the array indexed from `0` to `n - 1`?
-- Are endpoints included or excluded consistently?
-- Can sums/products overflow `int`?
-- Does the algorithm work for $n=1$, repeated values, and already-sorted input?
-- Did you prove the condition used in a greedy or binary-search solution?
+- **Independent Test Cases**: Reset all global arrays, sets, and counters at the start of each test case.
+- **Index Bounds**: Verify 0-indexed vs 1-indexed boundaries ($0 \le i < n$).
+- **Overflow Check**: Check if intermediate products exceed $2 \times 10^9$ (`use 1LL`).
+- **Edge Cases**: Test $N = 1$, empty arrays, all-identical values, maximum values ($10^9$).
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-What is Big-O notation used for? :: Describing how an algorithm's time or memory use grows as input size grows.
+Roughly how many operations can C++ execute within a 1.0 second time limit? :: Approximately $10^8$ operations.
 
-Why can a nested loop still be $O(n)$? :: If the inner pointer only moves forward a total of at most $n$ times across all outer-loop iterations.
+How many 4-byte `int` elements can be safely stored within a 256 MB memory limit? :: Approximately $6.7 \times 10^7$ integers.
 
-What is a loop invariant? :: A statement that is true before and after every iteration and helps prove correctness.
+What is a loop invariant? :: A logical statement that holds true before and after every iteration, used to prove algorithm correctness.

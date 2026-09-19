@@ -14,61 +14,76 @@ tags:
 # :LiBook: Lesson 09: Dynamic Programming
 
 > [!ABSTRACT] Scope
-> Dynamic programming (DP) stores answers to repeated subproblems. The difficult part is not coding—it is defining exactly what each state means.
+> Dynamic Programming (DP) optimizes recursive problems by storing solutions to overlapping subproblems. Master state definitions, transitions, and space optimizations.
 
 ---
-## 1. A DP Recipe
+## 1. The 5-Step DP Design Framework
 
-1. Define `dp[state]` in one precise sentence.
-2. Find the final state(s) that answer the problem.
-3. List the last decision before each state.
-4. Write the transition from smaller states.
-5. Set base cases.
-6. Check time: number of states × work per transition.
+1. **State Definition**: Define `dp[i]` (or `dp[i][j]`) in one clear sentence.
+2. **Base Cases**: Set starting values (e.g. `dp[0] = 0`).
+3. **Transition Relation**: Express state `dp[i]` in terms of smaller states.
+4. **Order of Computation**: Ensure subproblem states are computed before dependent states (Tabulation vs Memoisation).
+5. **Final Answer Location**: Identify which state stores the final answer.
 
 ---
-## 2. Example: Maximum Non-Adjacent Sum
+## 2. Classic Example 1: 0/1 Knapsack Problem
 
-Let `dp[i]` be the maximum sum using the first `i` elements (`a[0]` through `a[i-1]`) with no adjacent picks.
+**Problem**: Select items with weight $W_i$ and value $V_i$ to maximize total value within capacity $C$.
 
-$$
-dp[i]=\max(dp[i-1],\ dp[i-2]+a[i-1]).
-$$
+**State**: `dp[w]` = Maximum value achievable with exact total weight capacity $w$.
 
 ```cpp
-vector<long long> dp(n + 1, 0);
-if (n >= 1) dp[1] = max(0, a[0]);
-for (int i = 2; i <= n; i++) {
-    dp[i] = max(dp[i - 1], dp[i - 2] + a[i - 1]);
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int knapsack01(int capacity, const vector<int>& weights, const vector<int>& values) {
+    int n = weights.size();
+    // 1D Space-Optimized DP array
+    vector<int> dp(capacity + 1, 0);
+
+    for (int i = 0; i < n; i++) {
+        // Traverse backwards to prevent using the same item multiple times!
+        for (int w = capacity; w >= weights[i]; w--) {
+            dp[w] = max(dp[w], dp[w - weights[i]] + values[i]);
+        }
+    }
+    return dp[capacity];
 }
-cout << dp[n] << '\n';
 ```
 
-The two choices are exhaustive: either element `i-1` is skipped, or it is chosen and the previous one must be skipped.
-
 ---
-## 3. Memoisation vs Tabulation
+## 3. Classic Example 2: Coin Change (Minimum Coins)
 
-- **Memoisation:** recursive, calculate a state only when needed.
-- **Tabulation:** iterative, fill states in dependency order.
+**State**: `dp[x]` = Minimum number of coins to form sum $x$.
 
-Use whichever makes dependencies clearer. In C++, iterative DP avoids recursion-depth issues for large state spaces.
+$$\text{dp}[x] = \min_{c \in \text{coins}} (\text{dp}[x - c] + 1)$$
 
----
-## 4. Common DP Shapes
+```cpp
+int minCoins(int target, const vector<int>& coins) {
+    const int INF = 1e9;
+    vector<int> dp(target + 1, INF);
+    dp[0] = 0; // Base case: 0 coins for sum 0
 
-- `dp[i]`: prefixes, paths, one-dimensional processes.
-- `dp[i][j]`: grids, two strings, intervals.
-- `dp[mask]`: subsets; feasible only for small (n).
-- `dp[node][state]`: trees or graphs with a local state.
+    for (int x = 1; x <= target; x++) {
+        for (int c : coins) {
+            if (x - c >= 0) {
+                dp[x] = min(dp[x], dp[x - c] + 1);
+            }
+        }
+    }
+    return (dp[target] == INF) ? -1 : dp[target];
+}
+```
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-What is the first thing to write for a DP solution? :: A precise sentence defining what each DP state represents.
+Why iterate backwards over capacity $W$ in 1D array 0/1 Knapsack DP? :: To ensure each item is used at most once (iterating forwards allows multiple picks of the same item, which solves Unbounded Knapsack instead).
 
-What causes DP to be useful? :: Overlapping subproblems whose answers can be stored and reused.
+What is the first step when designing a Dynamic Programming solution? :: Define the state `dp[...]` in one precise sentence.
 
-How do you estimate DP complexity? :: Number of states multiplied by the work needed for each transition.
+How do you calculate total DP time complexity? :: Total States $\times$ Time per Transition.

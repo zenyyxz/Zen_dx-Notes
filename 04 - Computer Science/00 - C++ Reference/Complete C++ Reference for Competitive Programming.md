@@ -270,6 +270,132 @@ DisjointSetUnion dsu1(100);
 
 ---
 
+### 1.9 Smart Pointers & Memory Ownership (`unique_ptr`, `shared_ptr`, `weak_ptr`)
+
+In traditional C, dynamic memory allocation uses `malloc`/`free`. In traditional C++, `new`/`delete` is used. However, raw dynamic memory allocation is error-prone:
+- If you forget `delete`, you get a **Memory Leak**.
+- If you call `delete` twice on the same pointer, you get a **Double Free Crash**.
+- If you access memory after deleting it, you get a **Dangling Pointer**.
+
+Modern C++ (C++11 standard and later) introduced **Smart Pointers** (in header `<memory>`). Smart pointers wrap raw heap pointers and automatically free memory when the smart pointer goes out of scope (**RAII**: Resource Acquisition Is Initialization).
+
+| Smart Pointer | Ownership Model | Copyable? | Overhead | Use Case |
+| :--- | :--- | :--- | :--- | :--- |
+| `std::unique_ptr<T>` | Exclusive (Single Owner) | ❌ No (Move-only) | ⚡ Zero overhead (same as raw pointer) | Trees, Graphs, Nodes, Factory objects |
+| `std::shared_ptr<T>` | Shared (Reference Counted) | ✅ Yes | Small (Control block & atomic counter) | Shared graphs, assets, resource caches |
+| `std::weak_ptr<T>` | Non-owning Observer | ✅ Yes | Small | Breaking cyclic references in `shared_ptr` |
+
+---
+
+#### 1. `std::unique_ptr<T>` (Exclusive Ownership)
+`unique_ptr` ensures that **only one pointer owns the heap memory at any given time**. When `unique_ptr` goes out of scope, it automatically calls `delete`.
+
+```cpp
+#include <iostream>
+#include <memory>
+using namespace std;
+
+struct Node {
+    int val;
+    unique_ptr<Node> left;  // Node exclusively owns its children!
+    unique_ptr<Node> right;
+
+    Node(int v) : val(v), left(nullptr), right(nullptr) {}
+};
+
+int main() {
+    // Preferred creation helper (C++14): std::make_unique<T>(constructor_args...)
+    auto root = make_unique<Node>(10);
+    root->left = make_unique<Node>(5);
+    root->right = make_unique<Node>(15);
+
+    cout << "Root value: " << root->val << '\n';       // 10
+    cout << "Left child: " << root->left->val << '\n'; // 5
+
+    // unique_ptr CANNOT be copied!
+    // auto copy_root = root; // ❌ Compiler error! Copy constructor is deleted.
+
+    // unique_ptr CAN be moved (transferring ownership)
+    unique_ptr<Node> moved_root = move(root); // 'root' is now nullptr, 'moved_root' owns the memory!
+    if (root == nullptr) {
+        cout << "Original root is now null after move!\n";
+    }
+
+    // Memory is automatically deleted here when 'moved_root' goes out of scope! No 'delete' needed.
+}
+```
+
+---
+
+#### 2. `std::shared_ptr<T>` (Shared Ownership)
+Multiple `shared_ptr` instances can point to the exact same heap memory. It maintains an internal **Reference Counter**. Memory is deleted only when the last `shared_ptr` pointing to it is destroyed.
+
+```cpp
+#include <iostream>
+#include <memory>
+using namespace std;
+
+int main() {
+    // Creation helper: std::make_shared<T>(constructor_args...)
+    shared_ptr<int> p1 = make_shared<int>(42);
+    cout << "Use count: " << p1.use_count() << '\n'; // 1 owner
+
+    {
+        shared_ptr<int> p2 = p1; // Copying is allowed! Reference count increases.
+        cout << "Use count: " << p1.use_count() << '\n'; // 2 owners (p1 and p2)
+        cout << "*p2 = " << *p2 << '\n';                  // 42
+    } // 'p2' goes out of scope here! Reference count decreases back to 1.
+
+    cout << "Use count after p2 scope ends: " << p1.use_count() << '\n'; // 1 owner
+
+    // Heap integer (42) is automatically deleted here when p1 goes out of scope.
+}
+```
+
+---
+
+#### 3. `std::weak_ptr<T>` (Breaking Cyclic References)
+If two `shared_ptr` objects point to each other (e.g. parent points to child, child points to parent), their reference count will **never reach zero**, causing a memory leak! A `weak_ptr` observes a `shared_ptr` object without increasing its reference count.
+
+```cpp
+#include <iostream>
+#include <memory>
+using namespace std;
+
+struct Person {
+    string name;
+    shared_ptr<Person> friend_ptr;  // Owning reference
+    weak_ptr<Person> weak_friend;   // Non-owning reference (prevents cycles)
+
+    Person(string n) : name(n) {}
+};
+
+int main() {
+    auto alice = make_shared<Person>("Alice");
+    auto bob = make_shared<Person>("Bob");
+
+    alice->weak_friend = bob; // Doesn't increase Bob's reference count
+
+    // Accessing object from weak_ptr: convert to shared_ptr via .lock()
+    if (shared_ptr<Person> temp = alice->weak_friend.lock()) {
+        cout << "Alice's friend is: " << temp->name << '\n';
+    } else {
+        cout << "Friend no longer exists!\n";
+    }
+}
+```
+
+---
+
+> [!NOTE] Smart Pointers vs Competitive Programming Strategy
+> * In **Software Engineering**, smart pointers (`unique_ptr` / `shared_ptr`) are the gold standard for resource safety.
+> * In **Competitive Programming**, allocation overhead matters. For speed and zero overhead, competitive programmers often use:
+>   1. `std::vector` (handles dynamic memory automatically).
+>   2. Flat global arrays / Node pools (`int left_child[MAXN]`, `int right_child[MAXN]`) instead of pointers.
+>   3. `std::unique_ptr` when creating recursive tree nodes dynamically without manual `delete`.
+
+---
+
 ## 2. Modern C++ Contest Template & Fast I/O
 
 ```cpp
@@ -608,3 +734,9 @@ Why do we append `const` to member functions like `void print() const {}`? :: It
 What does `= default` do when attached to a constructor? :: It instructs the compiler to generate its standard default implementation for that constructor (useful when custom constructors were declared).
 
 What does `= delete` do when attached to a function or constructor? :: It explicitly forbids the function or constructor from being called, triggering a compile-time error if used (e.g. disabling copy constructors).
+
+What is `std::unique_ptr` in C++ and why can't it be copied? :: `std::unique_ptr` represents exclusive ownership of heap memory; it cannot be copied (its copy constructor is deleted) to prevent duplicate deletion of the same memory, but it can be moved using `std::move()`.
+
+What is the main difference between `std::unique_ptr` and `std::shared_ptr`? :: `std::unique_ptr` has a single exclusive owner with zero overhead, whereas `std::shared_ptr` allows multiple owners using an internal reference counter that deletes memory when count reaches 0.
+
+Why is `std::weak_ptr` used alongside `std::shared_ptr`? :: `std::weak_ptr` observes a `shared_ptr` object without increasing its reference count, preventing cyclic reference memory leaks.

@@ -2,69 +2,82 @@
 title: Lesson 07 - Greedy Algorithms
 subject: Computer Science
 unit: 07
-competency: Recognise, implement, and justify locally optimal choices
+competency: Formulate greedy choices, prove correctness using exchange arguments, and sort by optimal heuristics
 tags:
   - Computer-Science
   - Competitive-Programming
   - Greedy
-  - Proof
+  - Optimization
   - Flashcards
 ---
 ---
 # :LiBook: Lesson 07: Greedy Algorithms
 
 > [!ABSTRACT] Scope
-> A greedy algorithm makes the best-looking choice now and never revisits it. It is powerful only when a proof shows that choice is safe.
+> Solve optimization problems by making locally optimal choices at each step. Learn how to justify greedy algorithms with exchange arguments.
 
 ---
-## 1. The Greedy Question
+## 1. The Greedy Strategy & Proof Intuition
 
-Before coding, ask:
+A Greedy algorithm makes the choice that looks best right now without looking ahead or undoing past decisions.
 
-> Can an optimal solution always be changed so that it makes my greedy choice first?
-
-If yes, use an **exchange argument**: take any optimal solution, replace its first conflicting choice with the greedy one, and show the replacement does not make it worse.
+To prove a Greedy choice is correct:
+- **Exchange Argument**: Assume an optimal solution exists that differs from the greedy solution. Show that swapping a non-greedy choice for the greedy choice yields a solution that is at least as good.
 
 ---
-## 2. Interval Scheduling
+## 2. Canonical Example: Interval Scheduling (Activity Selection)
 
-To select the maximum number of non-overlapping intervals, choose the interval that finishes earliest among available intervals.
+**Problem**: Given $N$ intervals with start time $S_i$ and finish time $F_i$, select the maximum number of non-overlapping intervals.
+
+**Greedy Choice**: Always pick the interval that finishes **earliest** ($F_i$).
 
 ```cpp
-sort(v.begin(), v.end(), [](auto a, auto b) {
-    return a.second < b.second;
-});
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-int chosen = 0;
-int lastEnd = INT_MIN;
-for (auto [start, end] : v) {
-    if (start >= lastEnd) {
-        chosen++;
-        lastEnd = end;
+struct Interval {
+    int start, finish;
+
+    // Sort intervals by finish time ascending
+    bool operator<(const Interval& other) const {
+        return finish < other.finish;
     }
+};
+
+int maxNonOverlappingIntervals(vector<Interval>& intervals) {
+    sort(intervals.begin(), intervals.end());
+
+    int count = 0;
+    int last_finish = -1;
+
+    for (const auto& iv : intervals) {
+        if (iv.start >= last_finish) {
+            count++;
+            last_finish = iv.finish;
+        }
+    }
+    return count;
 }
 ```
 
-Why it works: replacing the first chosen interval of an optimal solution by an interval that ends no later cannot reduce the room left for later intervals.
+> [!TIP] Proof Intuition for Interval Scheduling
+> Finishing earlier leaves the maximum possible remaining time for future intervals to fit in!
 
 ---
-## 3. Greedy Red Flags
+## 3. When Greedy Fails (Coin Change Warning)
 
-Do not trust a greedy idea merely because it passes samples. Be suspicious when:
-
-- a local choice changes future costs in complex ways;
-- choices interact through a global constraint;
-- you cannot write an exchange argument or invariant.
-
-Many such problems are dynamic programming instead.
+- **Greedy Works**: Standard coin denominations $\{1, 5, 10, 25, 100\}$.
+- **Greedy Fails**: Non-standard coin denominations $\{1, 3, 4\}$ for target sum $6$. Greedy picks $4 + 1 + 1$ (3 coins), but optimal is $3 + 3$ (2 coins!). Use Dynamic Programming when coin systems lack greedy choice properties.
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-What must accompany a greedy algorithm? :: A proof that the local greedy choice can be part of an optimal solution.
+What heuristic should you sort by to solve the classic Interval Scheduling problem? :: Sort intervals by their **finish time** in ascending order.
 
-What is an exchange argument? :: A proof that replaces a choice in an optimal solution with the greedy choice without worsening it.
+What proof technique is commonly used to prove the correctness of a Greedy algorithm? :: The Exchange Argument proof.
 
-What interval order gives the classic maximum-count interval scheduling algorithm? :: Increasing finishing time.
+Why can Greedy fail on general coin change problems? :: Because locally taking the largest coin denomination may leave a remainder that requires more total coins than a smaller initial coin pick would (requires Dynamic Programming).
