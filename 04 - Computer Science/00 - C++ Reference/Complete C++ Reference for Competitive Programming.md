@@ -141,6 +141,135 @@ if (p2 < p1) {
 
 ---
 
+### 1.6 C++ Type Casting Operators
+
+In C, type casting is written as `(type)value` (e.g. `(double)a / b`). In modern C++, explicit cast operators are preferred because they are type-checked at compile time, explicit in intent, and safer.
+
+| Cast Operator | Purpose | Code Example |
+| :--- | :--- | :--- |
+| `static_cast<T>(expr)` | Safe, compile-time checked conversion between compatible types (e.g., `int` to `double`, `int` to `long long`). | `double avg = static_cast<double>(sum) / n;` |
+| `reinterpret_cast<T>(expr)` | Low-level bit reinterpretation of pointer types or integral memory addresses. | `uintptr_t addr = reinterpret_cast<uintptr_t>(ptr);` |
+| `const_cast<T>(expr)` | Adds or strips away `const` or `volatile` qualifiers from a variable. | `int* mutable_p = const_cast<int*>(const_p);` |
+| `dynamic_cast<T>(expr)` | Safe runtime downcasting in polymorphic class hierarchies (requires virtual functions). | `Derived* d = dynamic_cast<Derived*>(base_ptr);` |
+
+#### Code Examples
+
+```cpp
+// 1. static_cast (Most common in CP and general C++)
+int a = 7, b = 2;
+double ratio = static_cast<double>(a) / b; // 3.5 instead of integer division 3
+
+long long big_val = 1000000000000LL;
+int truncated = static_cast<int>(big_val % 1000000007); // Explicit narrowing conversion
+
+// 2. reinterpret_cast (Low-level memory/pointer manipulation)
+int val = 0x12345678;
+char* byte_ptr = reinterpret_cast<char*>(&val); // Inspect raw memory bytes
+
+// 3. const_cast (Removing constness)
+const char* msg = "hello";
+char* mutable_msg = const_cast<char*>(msg);
+```
+
+> [!TIP] Contest Tip
+> In Competitive Programming, use `static_cast<double>(a) / b` or `1.0 * a / b` to force floating-point division and avoid accidental integer truncation!
+
+---
+
+### 1.7 Const Correctness (`const` parameters, return values & `func() const {}`)
+
+The `const` keyword specifies immutability. Understanding where `const` is placed is essential for clean C++ design.
+
+#### 1. Const Function Parameters & Return Types
+```cpp
+// Parameter: 's' cannot be modified inside the function (and avoids copying!)
+void printString(const string& s) {
+    // s += "!"; // ❌ Compiler error! 's' is read-only.
+    cout << s << '\n';
+}
+
+// Return Value: Returns a read-only reference to internal vector
+const vector<int>& getScores() const {
+    return scores;
+}
+```
+
+#### 2. Member Function Constness (`void func() const {}`)
+When a member function is marked `const` **after** the parameter list (e.g. `void show() const {}`), it promises that calling this method **will not alter any member variables of the struct/class** (`this` pointer is treated as `const ClassName*`).
+
+```cpp
+struct Student {
+    string name;
+    int score;
+
+    // Const member function: Promises not to modify 'name' or 'score'
+    void displayInfo() const {
+        // score += 5; // ❌ Compiler error! Cannot mutate member variables inside const function.
+        cout << name << ": " << score << '\n';
+    }
+
+    // Non-const member function: Can modify state
+    void addBonus(int points) {
+        score += points; // ✅ Allowed
+    }
+};
+
+void processStudent(const Student& s) {
+    s.displayInfo(); // ✅ OK: displayInfo() is declared 'const'
+    // s.addBonus(10); // ❌ Compiler error! Cannot call non-const method on a const object/reference!
+}
+```
+
+> [!IMPORTANT] Why operator< Needs `const` in Structs
+> When defining `bool operator<(const Point& other) const {}` for `std::set` or `std::sort`, the trailing `const` is **required** because `std::set` holds its elements as `const` objects so you cannot accidentally corrupt the BST ordering!
+
+---
+
+### 1.8 Default & Deleted Functions (`= default`, `= delete`)
+
+Introduced in modern C++ (C++11), these keywords explicitly control compiler-generated special member functions (constructors, destructors, copy/move operators).
+
+#### 1. `= default`: Explicit Compiler-Generated Default Constructor
+When you define a custom constructor (e.g., `Point(int x, int y)`), the compiler **stops** automatically generating the default zero-argument constructor (`Point()`). Using `= default` tells the compiler to generate its standard default constructor.
+
+```cpp
+struct Vector3D {
+    double x = 0.0;
+    double y = 0.0;
+    double z = 0.0;
+
+    // Compiler generates standard default constructor: Vector3D()
+    Vector3D() = default;
+
+    // Custom constructor
+    Vector3D(double x, double y, double z) : x(x), y(y), z(z) {}
+};
+
+// Usage
+Vector3D v1;           // Uses = default constructor (x=0.0, y=0.0, z=0.0)
+Vector3D v2(1, 2, 3);  // Uses custom constructor
+```
+
+#### 2. `= delete`: Disabling Functions / Constructors
+`= delete` explicitly forbids a function or constructor from being called.
+
+```cpp
+struct DisjointSetUnion {
+    vector<int> parent;
+    
+    DisjointSetUnion(int n) : parent(n) {}
+
+    // Prevent accidental copying of large DSU data structure!
+    DisjointSetUnion(const DisjointSetUnion&) = delete;            // Copy constructor deleted
+    DisjointSetUnion& operator=(const DisjointSetUnion&) = delete; // Copy assignment deleted
+};
+
+DisjointSetUnion dsu1(100);
+// DisjointSetUnion dsu2 = dsu1; // ❌ Compiler error: copy constructor is deleted!
+```
+
+---
+
 ## 2. Modern C++ Contest Template & Fast I/O
 
 ```cpp
@@ -471,3 +600,11 @@ What is the difference between `lower_bound` and `upper_bound` in C++ STL? :: `l
 How do you prevent integer overflow when multiplying two `int` variables `a` and `b` into a `long long` variable? :: Multiply by `1LL` first: `long long ans = 1LL * a * b;`.
 
 What does `ios::sync_with_stdio(false); cin.tie(nullptr);` do? :: Disables synchronization between C stdio and C++ streams and unties `cin` from `cout`, making `cin`/`cout` significantly faster for competitive programming.
+
+What is `static_cast<T>(expr)` used for in C++? :: It performs safe, compile-time checked conversions between compatible types (e.g., converting `int` to `double` or `int` to `long long`).
+
+Why do we append `const` to member functions like `void print() const {}`? :: It promises that the function will not modify any member variables of the struct/class, allowing it to be called on `const` objects and references.
+
+What does `= default` do when attached to a constructor? :: It instructs the compiler to generate its standard default implementation for that constructor (useful when custom constructors were declared).
+
+What does `= delete` do when attached to a function or constructor? :: It explicitly forbids the function or constructor from being called, triggering a compile-time error if used (e.g. disabling copy constructors).
