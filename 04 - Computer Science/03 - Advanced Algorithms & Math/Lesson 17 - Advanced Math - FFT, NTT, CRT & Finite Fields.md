@@ -503,6 +503,90 @@ void computeMobius(int n) {
 
 ---
 
+## 7. Karatsuba Multiplication — Fast Multiplication in $O(N^{1.58})$
+
+### 7.1 The Idea
+Karatsuba multiplication is a divide-and-conquer algorithm that multiplies two large numbers (or polynomials) faster than the standard $O(N^2)$ algorithm. It reduces the number of recursive multiplications from 4 to 3.
+
+Given two large polynomials (or numbers represented in some base) $X$ and $Y$ of degree $N$:
+1. Split them in half:
+   $X = X_1 \cdot B + X_0$
+   $Y = Y_1 \cdot B + Y_0$
+   (where $B$ is the split point, e.g., $x^{N/2}$).
+
+2. A naive multiplication requires 4 products:
+   $X \cdot Y = X_1 Y_1 \cdot B^2 + (X_1 Y_0 + X_0 Y_1) \cdot B + X_0 Y_0$
+
+3. **Karatsuba's trick**: Compute only 3 products!
+   Let $P_1 = X_1 \cdot Y_1$
+   Let $P_2 = X_0 \cdot Y_0$
+   Let $P_3 = (X_1 + X_0) \cdot (Y_1 + Y_0)$
+
+   Then the middle term $(X_1 Y_0 + X_0 Y_1)$ is simply $P_3 - P_1 - P_2$.
+
+By replacing one multiplication with additions/subtractions, the recurrence becomes $T(N) = 3T(N/2) + O(N)$, which resolves to $O(N^{\log_2 3}) \approx O(N^{1.58})$.
+
+### 7.2 Implementation (Polynomials)
+Here is how you'd implement Karatsuba for polynomial multiplication. For BigInt, the logic is identical, just with carrying.
+
+```cpp
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// Adds two polynomials
+vector<long long> add_poly(const vector<long long>& a, const vector<long long>& b) {
+    vector<long long> res(max(a.size(), b.size()), 0);
+    for (size_t i = 0; i < a.size(); ++i) res[i] += a[i];
+    for (size_t i = 0; i < b.size(); ++i) res[i] += b[i];
+    return res;
+}
+
+// Subtracts b from a
+vector<long long> sub_poly(const vector<long long>& a, const vector<long long>& b) {
+    vector<long long> res(a);
+    res.resize(max(a.size(), b.size()), 0);
+    for (size_t i = 0; i < b.size(); ++i) res[i] -= b[i];
+    return res;
+}
+
+vector<long long> karatsuba(const vector<long long>& a, const vector<long long>& b) {
+    int n = a.size();
+    if (n <= 32) { // Base case: fallback to O(N^2) for small N
+        vector<long long> res(a.size() + b.size() - 1, 0);
+        for (size_t i = 0; i < a.size(); ++i)
+            for (size_t j = 0; j < b.size(); ++j)
+                res[i + j] += a[i] * b[j];
+        return res;
+    }
+
+    int half = n / 2;
+    vector<long long> a0(a.begin(), a.begin() + half);
+    vector<long long> a1(a.begin() + half, a.end());
+    vector<long long> b0(b.begin(), b.begin() + half);
+    vector<long long> b1(b.begin() + half, b.end());
+
+    vector<long long> p1 = karatsuba(a1, b1);
+    vector<long long> p2 = karatsuba(a0, b0);
+    vector<long long> p3 = karatsuba(add_poly(a0, a1), add_poly(b0, b1));
+
+    // mid = p3 - p1 - p2
+    vector<long long> mid = sub_poly(sub_poly(p3, p1), p2);
+
+    vector<long long> result(a.size() + b.size() - 1, 0);
+    for (size_t i = 0; i < p2.size(); ++i) result[i] += p2[i];
+    for (size_t i = 0; i < mid.size(); ++i) result[i + half] += mid[i];
+    for (size_t i = 0; i < p1.size(); ++i) result[i + 2 * half] += p1[i];
+
+    return result;
+}
+```
+
+> [!TIP] Karatsuba vs FFT
+> Karatsuba is easier to code than FFT and requires no floating point math or complex NTT primes. It's often used as a fallback for medium-sized multiplications (e.g. $N \approx 10^3$ to $10^4$) where FFT overhead might be large, or as the base case inside FFT implementations!
+
+---
+
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
@@ -520,3 +604,5 @@ What Newton-Raphson iteration computes $\frac{1}{D}$ using only multiplication a
 What does Euler's Totient $\phi(n)$ count? :: The number of integers in $[1, n]$ that are coprime to $n$.
 
 How can you compute $F(N)$ (Fibonacci) in $O(\log N)$ time? :: Using $2 \times 2$ matrix exponentiation: raise the matrix $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$ to the $(N-1)$-th power.
+
+What is the time complexity of Karatsuba multiplication, and how does it achieve it? :: It runs in $O(N^{\log_2 3}) \approx O(N^{1.58})$ time by dividing polynomials/numbers into halves and computing 3 recursive products instead of the naive 4.
