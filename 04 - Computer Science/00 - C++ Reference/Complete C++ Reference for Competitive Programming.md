@@ -688,6 +688,39 @@ d.speak(); // ✅ "Woof!"
 
 ---
 
+### 1.12 The `inline` Keyword
+
+The `inline` keyword is a suggestion to the compiler to **replace a function call with the actual code** of the function itself. This avoids the overhead of a function call (pushing registers to the stack, jumping, returning) at the cost of slightly increasing the binary size if used everywhere.
+
+#### 1. Functions
+For small, frequently called helper functions (like `min`, `max`, or custom math functions), `inline` can provide a micro-optimization in Competitive Programming.
+
+```cpp
+// Suggests the compiler physically places `a < b ? a : b` wherever `my_min` is called
+inline int my_min(int a, int b) {
+    return a < b ? a : b;
+}
+
+int main() {
+    int x = my_min(5, 10); // Compiler turns this into: int x = (5 < 10) ? 5 : 10;
+}
+```
+> [!NOTE] Modern Compilers are Smart
+> Modern C++ compilers (like GCC with `-O2` or `-O3`) automatically inline small functions even if you don't write the `inline` keyword. So while good to know, writing `inline` is rarely strictly necessary for performance today.
+
+#### 2. `inline` Variables (C++17)
+In modern C++, `inline` has gained a new, more important meaning for **header-only libraries**. `inline` allows you to define a global variable or static class member in a header file without causing "Multiple Definition" linkage errors when included in multiple `.cpp` files.
+
+```cpp
+struct MathUtils {
+    // Before C++17: You had to declare this here, and define it outside in exactly one .cpp file
+    // With C++17: You can initialize it directly inside the struct!
+    inline static const double PI = 3.1415926535;
+};
+```
+
+---
+
 ## 2. Modern C++ Contest Template & Fast I/O
 
 ```cpp
@@ -1052,3 +1085,5 @@ Why must base class destructors almost always be `virtual`? :: Without a `virtua
 What does the `override` keyword do? :: It tells the compiler to verify at compile-time that the function is actually overriding a `virtual` function in the base class, catching typos or signature mismatches.
 
 What is the difference between `const` and `constexpr`? :: `const` means a value cannot be changed after initialization (which can happen at runtime), whereas `constexpr` means the value is strictly evaluated at compile time.
+
+What does the `inline` keyword do when applied to a function? :: It suggests to the compiler to replace the function call with the actual code of the function to save function-call overhead, though modern compilers often do this automatically during optimization.
