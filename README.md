@@ -139,6 +139,7 @@ Delta_dxz /
 ├── Past Papers/
 ├── PDFs/
 ├── Templates/
+├── LICENSE
 └── README.md
 ```
 
@@ -177,7 +178,17 @@ CS notes can be more extra — that's the point of that folder.
 - Not a substitute for past papers, your teacher, or actually doing problems.
 - CS folder is personal / enthusiast material, not an A/L Computer Science course.
 
-Use it, share it with your batch, don't sell it as a paid tuition pack.
+Use it, share it with your batch. If someone resells it, they still have to credit this vault and keep the same license — that's the share-alike part.
+
+---
+
+## License
+
+Notes I wrote in this vault are **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)**. Copy them, remix them, share them. Credit the project. Keep derivatives under the same license.
+
+That license is **not** in GitHub's "Add a license" dropdown (that's mostly software licenses). The `LICENSE` file in the repo root is the real source of truth.
+
+`Books/`, `Past Papers/`, and `PDFs/` are only covered if the file is original to this vault. Official papers, textbooks, and other people's PDFs stay theirs.
 
 ---
 
