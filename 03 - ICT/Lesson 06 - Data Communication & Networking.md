@@ -12,109 +12,178 @@ tags:
   - IP-Subnetting
   - Flashcards
 ---
-# Lesson 06: Data Communication & Computer Networking
+# :LiGlobe: Lesson 06: Data Communication & Computer Networking
 
-> [!ABSTRACT] Syllabus Scope (NIE Teacher's Guide)
-> - Signals, Bandwidth, Bit Rate & Transmission Media (Guided vs Unguided)
-> - OSI 7-Layer Model & TCP/IP 4-Layer Architecture
-> - Network Topologies & Devices (Hub, Switch, Router)
-> - IP Addressing (IPv4 Classful & Classless CIDR Subnetting, IPv6)
-> - MAC Protocol (CSMA/CD, CSMA/CA) & Network Security (Firewall, Encryption)
+> [!ABSTRACT] Scope
+> A comprehensive guide to understanding how computers talk to each other. We will cover the physical properties of signals, the media they travel on, how we ensure they arrive intact, the devices that direct them, and the logical models (OSI & TCP/IP) that govern the entire process.
 
 ---
-## 1. Data Communication Fundamentals
 
-- **Signal Types**:
-  - **Analog**: Continuous waveform (varies in frequency, amplitude, phase).
-  - **Digital**: Discrete electrical pulses representing 0s and 1s.
-- **Bit Rate vs. Baud Rate**:
-  - **Bit Rate**: Number of bits transmitted per second (bps).
-  - **Baud Rate**: Number of signal units/changes transmitted per second.
-- **Transmission Modes**:
-  - **Simplex**: Unidirectional (e.g., Radio broadcast).
-  - **Half-Duplex**: Bidirectional, but one direction at a time (e.g., Walkie-talkie).
-  - **Full-Duplex**: Simultaneous bidirectional (e.g., Telephone call).
+## 1. Fundamentals of Data Communication
+
+Data communication is the exchange of data between two or more devices via some form of transmission medium. A complete communication system has five components:
+1. **Message**: The data/information to be communicated.
+2. **Sender**: The device sending the data.
+3. **Receiver**: The device receiving the data.
+4. **Transmission Medium**: The physical path (cable or wireless) the data travels on.
+5. **Protocol**: A set of rules governing the communication (e.g., how to handle errors).
+
+### 1.1 Data Flow Modes
+- **Simplex**: One-way communication only (e.g., Radio broadcast, Keyboard to PC).
+- **Half-Duplex**: Two-way, but **not simultaneously** (e.g., Walkie-Talkies).
+- **Full-Duplex**: Two-way, **simultaneous** communication (e.g., Telephone calls).
+
+### 1.2 Waves vs. Signals
+- **Wave**: A physical phenomenon that carries energy (e.g., light, sound).
+- **Signal**: An electronic voltage or current that carries **data/information**. A wave becomes a signal when it is used to carry information.
+
+#### Properties of Waves/Signals:
+- **Amplitude**: The height of the wave. Determines the strength/intensity.
+- **Frequency ($f$)**: Number of cycles per second. Measured in Hertz (Hz).
+- **Period ($T$)**: Time taken for one cycle. ($T = 1/f$).
+- **Wavelength ($\lambda$)**: Distance between two consecutive identical points on the wave.
+- **Phase**: The position of the wave at a specific point in time (often measured in degrees from 0 to 360).
 
 ---
-## 2. Transmission Media
+
+## 2. Signal Transmission and Impairments
+
+When a signal travels through a medium, it loses energy or gets distorted.
+
+### 2.1 Transmission Impairments
+1. **Attenuation**: The gradual loss of signal strength over a distance. (Solution: Use amplifiers for analog, or repeaters for digital signals).
+2. **Distortion**: The signal changes its shape or form. Happens because different frequency components travel at different speeds.
+3. **Noise**: Unwanted electrical/electromagnetic energy added to the signal (e.g., Thermal noise, Crosstalk, Impulse noise).
+
+### 2.2 Latency, Bandwidth, and Throughput
+- **Bandwidth**: The theoretical maximum capacity of a channel (how much data it *could* handle).
+- **Throughput**: The actual, realized data rate (how much data successfully arrives). Always $\le$ Bandwidth.
+- **Latency (Delay)**: The total time it takes for a message to travel from sender to receiver. It consists of:
+  1. **Propagation Delay**: Time taken to travel the physical distance.
+  2. **Transmission Delay**: Time taken to push all bits into the wire (Depends on file size and bandwidth).
+  3. **Processing Delay**: Time taken by routers/switches to inspect the packet.
+  4. **Queuing Delay**: Time the packet spends waiting in a router's buffer due to traffic.
+
+---
+
+## 3. Digital Encoding & Modulation
+
+Computers understand binary (0s and 1s), but physical media carry waves.
+
+### 3.1 Digital Encoding (Digital Data to Digital Signal)
+Converting bits into electrical pulses.
+- **NRZ (Non-Return to Zero)**: High voltage for 1, low voltage for 0. Fails to maintain synchronization if there's a long sequence of 0s or 1s.
+- **Manchester Encoding**: Uses **transitions** to represent data. E.g., High-to-Low means 0, Low-to-High means 1. Because there is a transition in the middle of *every* bit, the receiver can easily synchronize its clock.
+
+### 3.2 Modulation (Digital Data to Analog Signal)
+Used when we need to send digital data over analog mediums (like telephone lines or radio waves). We use a high-frequency **Carrier Wave** and modify one of its properties:
+- **ASK (Amplitude Shift Keying)**: Change the amplitude to represent 0 and 1.
+- **FSK (Frequency Shift Keying)**: Change the frequency.
+- **PSK (Phase Shift Keying)**: Change the phase (shift the wave).
+
+### 3.3 Multiplexing
+Sending multiple signals over a **single** communication link simultaneously.
+- **TDM (Time Division Multiplexing)**: Devices take turns. Each gets a "time slot".
+- **FDM (Frequency Division Multiplexing)**: The total bandwidth is divided into separate frequency bands (like radio stations).
+- **WDM (Wavelength Division Multiplexing)**: Used in Fiber Optics. Different signals use different colors of light.
+
+---
+
+## 4. Transmission Media
 
 ```mermaid
 graph LR
     TM["Transmission Media"]
+    G["Guided (Wired)"]
+    UG["Unguided (Wireless)"]
     
-    TM --> G["Guided Media (Wired)"]
-    TM --> UG["Unguided Media (Wireless)"]
+    TM --> G
+    TM --> UG
     
-    G --> TP["Twisted Pair Cable<br>(UTP / STP)"]
+    G --> TP["Twisted Pair (UTP / STP)"]
     G --> Coax["Coaxial Cable"]
-    G --> FO["Fiber Optic Cable<br>(Light signals)"]
+    G --> FO["Fiber Optic"]
     
     UG --> Radio["Radio Waves"]
     UG --> Micro["Microwaves"]
-    UG --> Infra["Infrared & Satellite"]
+    UG --> Infra["Infrared"]
 ```
 
-
-
-- **Fiber Optic**: Transmits data as light pulses through glass/plastic core; immune to Electromagnetic Interference (EMI), highest bandwidth.
-
----
-## 3. Reference Models: OSI 7-Layer vs TCP/IP
-
-| Layer # | OSI 7-Layer Model | TCP/IP Model | Protocol / Device Examples |
-| :---: | :--- | :--- | :--- |
-| **7** | Application | Application | HTTP, HTTPS, FTP, SMTP, DNS |
-| **6** | Presentation | Application | SSL/TLS, ASCII, Data Compression |
-| **5** | Session | Application | NetBIOS, RPC, Session Management |
-| **4** | Transport | Transport | TCP (connection-oriented), UDP (connectionless) |
-| **3** | Network | Internet | IP (IPv4/IPv6), ICMP, Router |
-| **2** | Data Link | Network Interface | Ethernet, Wi-Fi, MAC Address, Switch |
-| **1** | Physical | Network Interface | Cables, Hub, Repeater, Signals |
+1. **Twisted Pair**: Wires are twisted to cancel out Electromagnetic Interference (EMI). Can be Unshielded (UTP) or Shielded (STP). Uses RJ-45 connectors.
+2. **Coaxial Cable**: Has a central copper core, dielectric insulator, metallic shield, and outer jacket. Highly resistant to noise.
+3. **Fiber Optic**: Uses light (Total Internal Reflection) to transmit data. Immune to EMI, very high bandwidth, but expensive and fragile.
 
 ---
-## 4. IP Addressing & Subnetting
 
-> [!INFO] Deep Dive Note
-> For complete step-by-step subnetting calculations, CIDR notation (`/24`, `/26`), Network ID & Broadcast ID determination, read: [[Subtopics/IP Addressing & Subnetting|IPv4 Addressing & Subnetting Guide]].
+## 5. Network Topologies
 
-- **IPv4 Format**: 32-bit dotted-decimal notation (`192.168.1.1`).
-- **Classful Addressing**:
-  - Class A: `1.0.0.0` - `127.255.255.255` (Default Mask: `255.0.0.0` / `/8`)
-  - Class B: `128.0.0.0` - `191.255.255.255` (Default Mask: `255.255.0.0` / `/16`)
-  - Class C: `192.0.0.0` - `223.255.255.255` (Default Mask: `255.255.255.0` / `/24`)
-- **Private IP Ranges**: `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`.
-- **IPv6**: 128-bit hexadecimal address system to solve IPv4 exhaustion.
+How devices are arranged and connected.
+- **Point-to-Point**: Direct link between two devices.
+- **Bus**: All devices connect to a single central cable (backbone). Easy to install, but if the backbone fails, the network fails. Uses CSMA/CD to handle collisions.
+- **Star**: All devices connect to a central device (Hub/Switch). If a cable breaks, only that PC is affected. If the Switch fails, the network fails.
+- **Ring**: Devices connect in a closed loop. Data travels in one direction. A single break brings down the network.
+- **Mesh**: Every device connects to every other device. High reliability and redundancy, but very expensive and complex to wire.
+- **Tree**: A combination of Bus and Star.
 
 ---
-## 5. Network Devices & MAC Protocol
 
-- **Hub**: Physical layer device; broadcasts incoming signals to all ports (high collision).
-- **Switch**: Data Link layer device; inspects **MAC Address** and forwards data only to destination port via internal MAC table.
-- **Router**: Network layer device; routes packets between different IP networks using **IP Addresses**.
-- **Media Access Control (MAC)**:
-  - **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)**: Used in Ethernet wired networks.
-  - **CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)**: Used in Wi-Fi wireless networks.
+## 6. Network Devices & Media Access Control
+
+When multiple devices share a medium, they need rules to avoid talking over each other (**Collisions**).
+- **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)**: Used in wired Ethernet. Devices "listen" to the wire. If clear, they transmit. If two transmit at once, a collision occurs, they detect it, stop, wait a random time, and retry.
+- **CSMA/CA (Collision Avoidance)**: Used in Wi-Fi.
+
+### Devices
+- **Repeater**: (Layer 1) Amplifies a weak signal to extend its range.
+- **Hub**: (Layer 1) Connects multiple devices. It is a "dumb" device—when it receives data on one port, it broadcasts it to **all** other ports. Creates high traffic and collisions.
+- **Switch**: (Layer 2) Intelligent. It learns the **MAC Addresses** of connected devices. When data arrives, it forwards it *only* to the specific destination port.
+- **Router**: (Layer 3) Connects different networks together (e.g., your LAN to the Internet). Routes packets based on **IP Addresses**.
+- **Modem**: Modulates digital data into analog signals (for phone lines) and demodulates them back.
+- **Firewall**: Filters incoming and outgoing traffic based on security rules to protect the network.
 
 ---
+
+## 7. The OSI & TCP/IP Reference Models
+
+To make networking standard, the ISO created the 7-Layer OSI model. The Internet actually uses the simpler 4-Layer TCP/IP model.
+
+| OSI Layer (1 to 7) | TCP/IP Layer | Function | Protocol/Device | Data Unit |
+| :--- | :--- | :--- | :--- | :--- |
+| **7. Application** | Application | Interfaces with user apps (browsers, email) | HTTP, FTP, DNS | Data |
+| **6. Presentation** | Application | Data formatting, encryption, compression | SSL/TLS, JPEG | Data |
+| **5. Session** | Application | Establishes and maintains connections | RPC, NetBIOS | Data |
+| **4. Transport** | Transport | End-to-end reliable delivery, Error recovery | TCP, UDP, Port #'s | Segment |
+| **3. Network** | Internet | Routing across different networks, logical addressing | IP, Routers | Packet |
+| **2. Data Link** | Network Access | Physical addressing, node-to-node delivery | MAC, Ethernet, Switch | Frame |
+| **1. Physical** | Network Access | Transmitting raw bits over physical media | Cables, Hubs | Bits |
+
+### Encapsulation & Decapsulation
+- As data moves **down** the sender's OSI layers, each layer adds its own header (like putting a letter in an envelope, and then putting that envelope in a box). This is **Encapsulation**.
+- As data moves **up** the receiver's layers, headers are stripped off. This is **Decapsulation**.
+
+> [!INFO] IPv4 & Subnetting
+> For a detailed breakdown of IP Classes, CIDR, and how to calculate subnets, see the [[Subtopics/IP Addressing & Subnetting|IP Addressing & Subnetting Guide]].
+
+---
+
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-List the 7 layers of the OSI reference model from Layer 1 to Layer 7. :: Physical, Data Link, Network, Transport, Session, Presentation, Application.
+What is the difference between Bandwidth and Throughput? :: Bandwidth is the theoretical maximum capacity of a channel, while throughput is the actual, realized data transfer rate (which is always less than or equal to bandwidth due to overhead and latency).
 
-What is the difference between TCP and UDP? :: TCP is connection-oriented, reliable, and guarantees packet delivery; UDP is connectionless, faster, but does not guarantee packet delivery (used for streaming).
+What is the purpose of Manchester Encoding? :: It ensures there is a voltage transition in the middle of every bit, allowing the receiver to easily synchronize its clock with the sender and prevent timing errors.
 
-Which OSI layer is responsible for routing IP packets across networks? :: Layer 3 - Network Layer.
-<!--SR:!2026-09-25,8,250-->
+Why is Fiber Optic cable immune to Electromagnetic Interference (EMI)? :: Because it transmits data using light pulses through glass/plastic instead of electrical signals through copper.
 
-What device connects different networks together by inspecting IP addresses? :: Router.
+In a Star Topology, what happens if the central switch fails? :: The entire network goes down, as all devices rely on the central switch to communicate.
 
-What is the function of a Switch in a LAN? :: Connects devices in a local network and forwards data frames directly to destination devices using MAC addresses.
-<!--SR:!2026-08-03,3,250-->
+What is the difference between a Hub and a Switch? :: A hub broadcasts incoming data to all connected ports (causing collisions), whereas a switch inspects the MAC address and forwards the data only to the specific destination port.
 
-What is the length of an IPv4 address and an IPv6 address? :: IPv4 is 32 bits; IPv6 is 128 bits.
+What is the main function of the Network Layer (Layer 3) in the OSI model? :: Routing packets across different networks using logical IP addresses.
 
-State the private IPv4 address range for Class C. :: `192.168.0.0` to `192.168.255.255` (`192.168.0.0/16`).
-<!--SR:!2026-08-03,3,250-->
+What is Encapsulation in networking? :: The process of adding protocol headers (and sometimes trailers) to data as it moves down the OSI layers from the Application layer to the Physical layer.
 
-What collision handling protocol is used in Ethernet wired networks? :: CSMA/CD (Carrier Sense Multiple Access with Collision Detection).
+What does CSMA/CD stand for and where is it used? :: Carrier Sense Multiple Access with Collision Detection. It is used in wired Ethernet networks to manage medium access and handle collisions.
+
+What is the difference between TCP and UDP? :: TCP is reliable, connection-oriented, and guarantees ordered delivery. UDP is fast, connectionless, and does not guarantee delivery (used for live streaming).
