@@ -159,3 +159,7 @@ Which computer bus carries information from the processor to the I/O devices?::D
 
 Who is the father of modern computer science?::Alan Turing.
 <!--SR:!2026-08-04,4,270-->
+
+Name first general purpose computer, commercially sold computer and store program computer.:: ENIAC, UNIVAC, and EDSAC
+
+Explain the differences of Direct access, Sequential access, and Random access.::**Sequential access** reads data linearly from the beginning (like a cassette tape), **direct access** jumps to a specific block's physical vicinity and then searches locally (like a hard drive), while **random access** reaches any exact location instantly with uniform, constant time (like RAM).

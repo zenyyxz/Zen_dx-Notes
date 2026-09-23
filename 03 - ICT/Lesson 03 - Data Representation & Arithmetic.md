@@ -194,7 +194,7 @@ Non-numeric data (letters, punctuation, symbols, emojis) must be encoded into bi
 - **8-bit** code developed by IBM for mainframes ($2^8 = 256$ characters).
 
 ### 3. ASCII (American Standard Code for Information Interchange):
-- Developed in 1963; became the universal standard for personal computers and UNIX.
+- Developed in 1963 by ANSI; became the universal standard for personal computers and UNIX.
 - **Standard ASCII (7-bit)**: Represents $2^7 = 128$ characters (Codes `0` to `127`).
   - **33 Non-printable Control Characters** (Codes `0 - 31` and `127`; e.g., Line Feed `10`, Carriage Return `13`, Escape `27`).
   - **95 Printable Characters** (Codes `32 - 126`; e.g., Space `32`).
