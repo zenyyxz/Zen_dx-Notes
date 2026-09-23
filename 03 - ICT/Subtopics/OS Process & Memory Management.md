@@ -210,7 +210,7 @@ Requirements: **Mutual Exclusion**, **Progress**, **Bounded Waiting**.
 - **Compaction**: Shuffle memory to combine free space (requires dynamic relocation).
 
 ### Paging Architecture:
-Logical address divided into **Page Number ($p$)** and **Page Offset ($d$)**. Frames 512B–8KB, same size as pages. OS keeps free-frame list, builds page table.
+Logical address divided into **Page Number ($p$)** and **Page Offset ($d$)**. **Frame** = fixed-size block of physical RAM; **Page** = same-size block of logical memory. Frames 512B–8KB, same size as pages. OS keeps free-frame list, builds page table.
 ``` mermaid
 flowchart LR
     p[Page Number p] --> PT[Page Table]

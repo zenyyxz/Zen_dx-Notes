@@ -108,6 +108,7 @@ OS tracks every location, decides who gets how much/when, allocates/deallocates.
 
 - **MMU (Memory Management Unit)**: hardware mapping virtual -> physical. Base + offset: e.g. base `10000` + user `100` = `10100`. User never sees real addresses.
 - **Physical Memory**: actual RAM frames.
+- **Frame**: fixed-size block of physical RAM (e.g. one 4KB slot). **Page**: same-size block of a process's logical memory mapped to a frame.
 - **Paging**: logical = pages, physical = fixed frames (512B-8KB). Non-contiguous, page table translates. Internal fragmentation only.
 - **Mapping**: OS maps logical to physical at allocation; MMU does runtime translation.
 - **Segmentation**: variable logical segments (functions/arrays). External fragmentation.
