@@ -118,7 +118,8 @@ WHERE StudentID = 101;
 ## 5. SELECT Queries
 
 ```sql
-SELECT * FROM Student;
+SELECT * FROM Student; -- * = all columns
+SELECT Student.* FROM Student; -- all columns of Student (useful in JOINs)
 
 SELECT StudentID, Name, Marks
 FROM Student
@@ -141,9 +142,11 @@ WHERE ClassID = 12 OR ClassID = 13;
 WHERE NOT ClassID = 12;
 WHERE Marks BETWEEN 50 AND 75;
 WHERE ClassID IN (12, 13, 14);
-WHERE Name LIKE 'K%';
+WHERE Name LIKE 'K%'; -- % = any sequence, _ = single char ('K_mal' matches Kamal)
 WHERE Email IS NULL;
 ```
+
+> `*`: `SELECT *` all columns, `COUNT(*)` counts rows including NULLs. Avoid `SELECT *` in production — list columns explicitly.
 
 ---
 ## 6. Sorting, Grouping, and Aggregate Functions
