@@ -48,6 +48,33 @@ flowchart LR
 | **Exponent** | 8 | Determines scale (biased by 127) |
 | **Mantissa** | 23 | Represents significant digits |
 
+### 2.1b Double Precision (64-bit)
+
+Same formula, wider fields:
+
+```mermaid
+flowchart LR
+    A[64-bit IEEE 754 Double Precision]
+    A --> B[Sign Bit: 1 bit]
+    A --> C[Exponent: 11 bits]
+    A --> D[Mantissa / Fraction: 52 bits]
+```
+
+| Component | Bits (64-bit) | Purpose |
+|:---|:---|:---|
+| **Sign** | 1 | `0` = positive; `1` = negative |
+| **Exponent** | 11 | Scale (biased by 1023, range 1–2046 normal) |
+| **Mantissa** | 52 | Significant digits (~15–17 decimal digits) |
+
+| | Single (32-bit) | Double (64-bit) |
+|:---|:---|:---|
+| Total | 32 | 64 |
+| Exponent / bias | 8 / 127 | 11 / 1023 |
+| Mantissa | 23 (~7 digits) | 52 (~15–17 digits) |
+| C++ type | `float` | `double` |
+
+> Use double when you need precision (money-adjacent science, iteration). Same special-value idea with wider exponent: all-0s = subnormal, all-1s (`2047`) + zero mantissa = `±∞`, + non-zero = NaN.
+
 ### 2.2 Special Values
 
 | Representation | Meaning |
@@ -154,6 +181,8 @@ What does IEEE stand for? :: Institute of Electrical and Electronics Engineers �
 What is the purpose of IEEE 754? :: It defines how floating-point numbers are represented in binary (sign, exponent, mantissa) for consistent computation across systems.
 
 How many bits for the exponent in 32-bit IEEE 754 single precision? :: 8 bits (biased by 127).
+
+How is 64-bit IEEE 754 double laid out? :: 1 sign + 11 exponent (bias 1023) + 52 mantissa (~15-17 digits); C++ `double`.
 
 What does IEEE 802.11 refer to? :: The family of wireless LAN (Wi-Fi) standards.
 
