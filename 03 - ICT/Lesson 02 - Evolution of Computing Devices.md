@@ -15,6 +15,7 @@ tags:
 
 > [!ABSTRACT] Syllabus Scope (NIE Teacher's Guide)
 > - Historical milestones & Computer Generations (1st to 5th)
+> - Classification (technology / purpose / size)
 > - Functional components of a computer system & System Buses
 > - Von Neumann Architecture vs Harvard Architecture
 > - Memory Hierarchy (Registers, Cache, Primary, Secondary)
@@ -41,7 +42,25 @@ tags:
 | **5th Gen** (Present & Beyond) | **Ultra Large Scale Integration (ULSI) & AI** | Artificial intelligence, parallel processing, quantum computing, voice recognition. |
 
 ---
-## 3. Computer Hardware Components & System Buses
+## 3. Classification of Computers
+
+### By Technology
+- **Analog**: works on continuous physical quantities (voltage, temperature, pressure). E.g. old analog speedometer, thermometer, tide predictor.
+- **Digital**: works on discrete `0/1`. All modern computers (ENIAC onwards).
+- **Hybrid**: both — digital control + analog sensing. E.g. hospital ICU monitors, petrol pump, weather station.
+
+### By Purpose
+- **Special-purpose**: one dedicated task (ATM, washing-machine controller, router). Fast for that job, inflexible.
+- **General-purpose**: many tasks via stored programs (PC, laptop, phone).
+
+### By Size / Capacity
+- **Supercomputer**: fastest, parallel thousands of CPUs (weather, nuclear simulation, AI training).
+- **Mainframe**: large, multi-user, high I/O (banks, airlines).
+- **Minicomputer**: mid-range server for a department (now called midrange server).
+- **Microcomputer**: single-user chip-based — desktop, laptop, tablet, smartphone, phablet.
+
+---
+## 4. Computer Hardware Components & System Buses
 
 A computer system consists of:
 1. **Central Processing Unit (CPU)**:
@@ -58,7 +77,7 @@ Buses are sets of parallel wires that transmit electrical signals between compon
 - **Control Bus**: Carries control and timing signals (Read/Write signals, interrupts, clock signals).
 
 ---
-## 4. Von Neumann Architecture
+## 5. Von Neumann Architecture
 
 The **Von Neumann Architecture** is based on the **Stored Program Concept**, where both program instructions and data share the **same physical memory and bus system**.
 
@@ -83,11 +102,19 @@ graph TD
 ```
 
 ---
-## 5. Memory Hierarchy
+## 6. Memory Hierarchy
 
 Computers arrange memory in a hierarchy balancing **speed, capacity, and cost per bit**:
 
-$$\text{Fastest, Smallest, Highest Cost} \longrightarrow \text{Registers} \longrightarrow \text{Cache Memory} \longrightarrow \text{Main Memory (RAM)} \longrightarrow \text{Secondary Storage (SSD/HDD)} \longrightarrow \text{Slowest, Largest, Lowest Cost}$$
+``` mermaid
+flowchart TB
+    R[Registers<br/>fastest · smallest · costly]
+    C[Cache L1 / L2 / L3]
+    M[Main Memory - RAM]
+    S[Secondary - SSD / HDD<br/>slowest · largest · cheap]
+    R --> C --> M --> S
+```
+
 
 ### Memory Classification:
 ```mermaid
@@ -133,6 +160,12 @@ Who was the first computer programmer? :: Ada Lovelace.
 <!--SR:!2026-08-04,4,270-->
 
 What key technological innovation characterized Second Generation computers? :: Transistors.
+
+Classify computers by technology with one example each. :: Analog (continuous, e.g. thermometer), Digital (discrete 0/1, e.g. PC), Hybrid (both, e.g. ICU monitor).
+
+What is special vs general purpose? :: Special = one dedicated task (ATM); General = many tasks via programs (PC).
+
+Order super/mainframe/mini/micro by size. :: Super (fastest parallel) > Mainframe (multi-user) > Mini (department server) > Micro (single-user PC/phone).
 
 What technology enabled Fourth Generation computers? :: Very Large Scale Integration (VLSI) microprocessors.
 <!--SR:!2026-08-04,4,270-->
