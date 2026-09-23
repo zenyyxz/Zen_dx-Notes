@@ -78,7 +78,7 @@ A **Process** is a program in execution.
 ---
 ## 5. File System & User Interfaces
 
-- **File Management**: File naming, extensions, access attributes, hierarchical directory tree structures.
+- **File Management**: File naming, extensions, access attributes, hierarchical directory tree structures. How the *media* retrieves a record: [[Subtopics/Sequential Direct & Random Access|Sequential vs Direct vs Random Access]].
 - **CLI (Command Line Interface)**: Text-based interface; low resource overhead, powerful for scripting (e.g., Linux shell, MS-DOS).
 - **GUI (Graphical User Interface)**: Uses WIMP (Windows, Icons, Menus, Pointer); user-friendly, higher resource demand.
 

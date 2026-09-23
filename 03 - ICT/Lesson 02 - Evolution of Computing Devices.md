@@ -111,6 +111,9 @@ flowchart LR
     SS --> SSD["Solid State / Optical (SSD, DVD)"]
 ```
 
+> [!INFO] Access methods (sequential / direct / random)
+> Tape is **sequential**, HDD/CD are **direct**, RAM is **random** — they are not the same. Full definitions and the exam trap: [[Subtopics/Sequential Direct & Random Access|Sequential, Direct & Random Access]].
+
 - **SRAM (Static RAM)**: Made of flip-flops; faster, no refresh required, used for **Cache memory** (L1, L2, L3).
 - **DRAM (Dynamic RAM)**: Made of capacitors & transistors; requires periodic refreshing, used for **Main memory (RAM)**.
 - **ROM Types**:

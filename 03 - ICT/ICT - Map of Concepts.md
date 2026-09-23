@@ -43,6 +43,7 @@ Below are deep-dive technical notes for core exam topics:
 - :LiBrain: **Computer Architecture**: [[Subtopics/Von Neumann Architecture|Von Neumann Architecture & Registers]]
 - :LiCloudLightning: **Digital Logic**: [[Subtopics/Karnaugh Maps & Boolean Simplification|Karnaugh Maps & Boolean Simplification]]
 - :LiSettings: **Operating Systems**: [[Subtopics/OS Process & Memory Management|OS Process & Memory Management]]
+- :LiHardDrive: **Storage Access**: [[Subtopics/Sequential Direct & Random Access|Sequential, Direct & Random Access]]
 - :LiGlobe2: **Networking**: [[Subtopics/IP Addressing & Subnetting|IPv4 Addressing & Subnetting Guide]]
 - :LiBarChartBig: **Systems Design**: [[Subtopics/System Analysis DFD & ER Modeling|DFD & ER Diagram Modeling]]
 - :LiCuboid: **Databases**: [[Subtopics/Database Normalization (1NF, 2NF, 3NF)|Database Normalization (1NF, 2NF, 3NF)]]
