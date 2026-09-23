@@ -115,6 +115,17 @@ print("Hi", name, "age", age)  # output to screen
 - Primitive types: `int, float, bool, str`.
 - Operators: arithmetic `+ - * / // % **` (`**` right-to-left, `2**3**2=512`), relational `== != > < >= <=`, logical `and or not`, bitwise `& | ^ ~ << >>`, membership `in/not in`, identity `is/is not`, assignment `= += -= *=`.
 - Precedence: `() > ** > * / // % > + -`. Same level left-to-right; use `()` to override.
+- Output formatting (format-spec mini-language): `f"{value:spec}"` where spec = `[[fill]align][width][,][.precision][type]`:
+```python
+pi = 3.14159
+print(f"{pi:.2f}")      # 3.14 — .2f = 2 decimals
+print(f"{85:05d}")      # 00085 — width 5, zero-pad int
+print(f"{255:x}")       # ff — hex, X = upper, o = oct, b = binary
+print(f"{0.85:.0%}")    # 85% — percent
+print(f"{1234567:,}")   # 1,234,567 — thousands separator
+print(f"{'Hi':>10}|")   # right-align width 10 (< left, ^ center, = sign-aware)
+```
+Older forms `"%05d" % n` and `"{}".format(n)` do the same; f-strings are preferred. C++ view: like `printf("%.2f", x)` / `setw` + `setprecision`, but inline in the string.
 
 ### 9.8 Control Structures:
 1. **Sequence**: Step-by-step execution.
