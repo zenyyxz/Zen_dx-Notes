@@ -13,7 +13,7 @@ tags:
 # :LiSettings: Subtopic: OS Process & Memory Management
 
 > [!ABSTRACT] Core Focus
-> Process Control Block (PCB), 5-state process transition model, CPU scheduling algorithms (Gantt charts), Paging, Segmentation, and Virtual Memory page faults.
+> Process Control Block (PCB), 5-state + 7-state models, interrupts, schedulers (long/medium/short + FCFS/SJF/RR Gantt charts), Paging, Segmentation, Virtual Memory, file allocation, MMU, drivers/spooling. Sections marked Extension are beyond NIE 5.1-5.4.
 
 ---
 ## 1. Process Control Block (PCB)
@@ -33,16 +33,43 @@ The OS stores information about each active process in a **Process Control Block
 stateDiagram-v2
     [*] --> New
     New --> Ready: Admitted
-    
-    Ready --> Running: Scheduler Dispatch
+    Ready --> Running: Dispatch
     Running --> Terminated: Exit
-    
-    Running --> Ready: Interrupt / Quantum Expired
-    Running --> Waiting: I/O or Event Wait
-    Waiting --> Ready: I/O or Event Completion
-    
+    Running --> Ready: Interrupt
+    Running --> Waiting: I/O wait
+    Waiting --> Ready: I/O done
     Terminated --> [*]
 ```
+
+### 2b. Seven-State Model (syllabus)
+
+Medium-term scheduler swaps processes to disk to control multiprogramming. Adds `Suspended Ready` and `Suspended Blocked`.
+
+``` mermaid
+stateDiagram-v2
+    [*] --> New
+    New --> Ready: Admitted
+    Ready --> Running: Dispatch
+    Running --> Terminated: Exit
+    Running --> Ready: Interrupt
+    Running --> Waiting: I/O wait
+    Waiting --> Ready: I/O done
+    Ready --> SuspendedReady: Suspend
+    Waiting --> SuspendedBlocked: Suspend
+    SuspendedBlocked --> SuspendedReady: I/O done
+    SuspendedReady --> Ready: Resume
+    SuspendedBlocked --> Ready: Resume
+    Terminated --> [*]
+```
+
+### 2c. Interrupts, Creation & Schedulers (syllabus)
+
+- **Process vs Program**: program = static code; process = execution with PID/context.
+- **Types**: I/O-bound vs CPU-bound. Needs PID, code, data, context.
+- **Creation**: new batch job, user starts program, OS service, child spawn. OS assigns PID/PCB/memory, queues Ready.
+- **Termination**: normal exit, time-limit, resource unavailable, error/memory violation, OS/parent kill. OS reclaims resources.
+- **Interrupts**: async event (timer, I/O done) altering sequence. OS saves state to PCB, runs another, restores on completion.
+- **Schedulers**: Long-term (job, admit, slowest, degree of multiprogramming) / Medium-term (swapping, middle) / Short-term (CPU dispatcher, fastest).
 
 ---
 ## 3. CPU Scheduling Algorithms & Gantt Chart Example
@@ -58,8 +85,8 @@ gantt
     axisFormat %s ms
     section Tasks
     P1 : active, p1, 0, 6
-    P2 : p2, after p1, 8
-    P3 : p3, after p2, 9
+    P2 : p2, after p1, 2
+    P3 : p3, after p2, 1
 ```
 - Waiting Time: $P_1 = 0$, $P_2 = 6$, $P_3 = 8$.
 - **Average Waiting Time**: $(0 + 6 + 8) / 3 = 4.67\text{ ms}$.
@@ -73,8 +100,8 @@ gantt
     axisFormat %s ms
     section Tasks
     P3 : active, p3, 0, 1
-    P2 : p2, after p3, 3
-    P1 : p1, after p2, 9
+    P2 : p2, after p3, 2
+    P1 : p1, after p2, 6
 ```
 - Waiting Time: $P_3 = 0$, $P_2 = 1$, $P_1 = 3$.
 - **Average Waiting Time**: $(0 + 1 + 3) / 3 = 1.33\text{ ms}$.
@@ -91,10 +118,10 @@ gantt
     axisFormat %s ms
     section Tasks
     P1 : active, p1_1, 0, 2
-    P2 : p2_1, after p1_1, 4
-    P3 : p3_1, after p2_1, 5
-    P1 : p1_2, after p3_1, 7
-    P1 : p1_3, after p1_2, 9
+    P2 : p2_1, after p1_1, 2
+    P3 : p3_1, after p2_1, 1
+    P1 : p1_2, after p3_1, 2
+    P1 : p1_3, after p1_2, 2
 ```
 - Waiting Time: $P_1 = 3$, $P_2 = 2$, $P_3 = 4$.
 - **Average Waiting Time**: $(3 + 2 + 4) / 3 = 3.00\text{ ms}$.
@@ -109,8 +136,8 @@ gantt
     axisFormat %s ms
     section Tasks
     P2 : active, p2, 0, 2
-    P3 : p3, after p2, 3
-    P1 : p1, after p3, 9
+    P3 : p3, after p2, 1
+    P1 : p1, after p3, 6
 ```
 - Waiting Time: $P_2 = 0$, $P_3 = 2$, $P_1 = 3$.
 - **Average Waiting Time**: $(0 + 2 + 3) / 3 = 1.67\text{ ms}$.
@@ -127,7 +154,7 @@ gantt
 - **Non-Preemptive**: Process runs to completion/block (FCFS, Non-preemptive SJF/Priority).
 
 ---
-## 5. Process Synchronization
+## 5. Process Synchronization (Extension — beyond NIE 5.3)
 
 ### Critical Section Problem:
 Requirements: **Mutual Exclusion**, **Progress**, **Bounded Waiting**.
@@ -145,7 +172,7 @@ Requirements: **Mutual Exclusion**, **Progress**, **Bounded Waiting**.
 - **Dining Philosophers**
 
 ---
-## 6. Deadlocks
+## 6. Deadlocks (Extension — beyond NIE 5.3)
 
 ### Necessary Conditions (Coffman):
 1. **Mutual Exclusion**
@@ -183,21 +210,13 @@ Requirements: **Mutual Exclusion**, **Progress**, **Bounded Waiting**.
 - **Compaction**: Shuffle memory to combine free space (requires dynamic relocation).
 
 ### Paging Architecture:
-Logical address divided into **Page Number ($p$)** and **Page Offset ($d$)**.
+Logical address divided into **Page Number ($p$)** and **Page Offset ($d$)**. Frames 512B–8KB, same size as pages. OS keeps free-frame list, builds page table.
 ``` mermaid
 flowchart LR
-    subgraph Logical Address
-        p[Page Number p]
-        d1[Offset d]
-    end
-
-    p --> PT[Page Table]
+    p[Page Number p] --> PT[Page Table]
     PT --> f[Frame Number f]
-
-    subgraph Physical Address
-        f
-        d2[Offset d]
-    end
+    f --> PA((Physical Address))
+    d[Offset d] --> PA
 ```
 
 ---
@@ -206,18 +225,12 @@ flowchart LR
 Logical address = **Segment Number ($s$)** + **Offset ($d$)**.
 ``` mermaid
 flowchart LR
-    subgraph Logical Address
-        s[Segment Number s]
-        d1[Offset d]
-    end
-
-    s --> ST[Segment Table]
+    s[Segment Number s] --> ST[Segment Table]
     ST --> base[Base Address]
     ST --> limit[Limit/Length]
-
-    base --> PA((Physical Address))
-    d1 --> PA
-    PA --> calc[Base + Offset]
+    base --> calc[Base + Offset]
+    d[Offset d] --> calc
+    calc --> PA((Physical Address))
 ```
 - Segment Table entry: **Base** (start physical address) + **Limit** (length).
 - Protection bits: Read/Write/Execute per segment.
@@ -230,7 +243,15 @@ flowchart LR
 - Pages loaded only when needed.
 - **Page Fault** rate critical for performance.
 
-### Page Replacement Algorithms:
+### MMU Mapping, Drivers & Spooling (syllabus 5.4)
+
+- **MMU**: hardware virtual->physical. Base + offset, e.g. base `10000` + user `100` = `10100`.
+- **Mapping**: OS maps at allocation; MMU translates at runtime. Goals of virtual memory: larger-than-RAM apps, partial load, higher multiprogramming, portability, sharing.
+- **Device driver**: software interface to hardware, depends on hardware + OS; install per peripheral.
+- **Spooling (Simultaneous Peripheral Operations On-Line)**: disk/memory buffer for slow I/O, overlaps I/O with CPU, disk as large buffer.
+- **File allocation** (syllabus 5.2): Contiguous (adjacent, simple, external frag) / Linked (FAT example, links, many seeks) / Indexed (UNIX example, index table).
+
+### Page Replacement Algorithms (Extension — beyond NIE 5.4):
 Reference string: 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5 (3 frames)
 
 | Algorithm | Page Faults | Description |
@@ -258,7 +279,8 @@ FIFO can have **more page faults with more frames**.
 | Topic | Key Points |
 |-------|------------|
 | **PCB** | PID, State, PC, Registers, Memory ptrs, I/O info |
-| **5 States** | New $\leftrightarrow$ Ready $\leftrightarrow$ Running $\leftrightarrow$ Waiting $\rightarrow$ Terminated |
+| **5 States** | New -> Ready <-> Running <-> Waiting -> Terminated |
+| **7 States** | + Suspended Ready, Suspended Blocked (medium-term swapping) |
 | **Scheduling** | FCFS, SJF, RR, Priority (Preemptive/Non-preemptive) |
 | **Metrics** | Turnaround, Waiting, Response Time |
 | **Sync** | Mutex, Semaphore, Monitor; Producer-Consumer, Readers-Writers |
