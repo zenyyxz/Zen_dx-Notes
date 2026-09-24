@@ -141,15 +141,32 @@ gantt
 ```
 - Waiting Time: $P_2 = 0$, $P_3 = 2$, $P_1 = 3$.
 - **Average Waiting Time**: $(0 + 2 + 3) / 3 = 1.67\text{ ms}$.
+- Risk: **starvation** — low-priority processes may wait forever. Fix with **aging** (raise priority over time).
 
-### E. Key Metrics:
+### E. Multilevel Queue Scheduling:
+Separate ready queue into classes, each with its own algorithm. E.g. System (RR) > Interactive (RR) > Batch (FCFS). Fixed priority between queues; **Multilevel Feedback Queue** lets processes move between queues (e.g. demote CPU-hogs, promote long waiters) to prevent starvation.
+
+### F. Comparison Table:
+
+| Algorithm | Preemptive? | Primary criteria | Major advantage | Drawbacks |
+|:---|:---:|:---|:---|:---|
+| **FCFS** | No | Arrival time | Simple, fair in order | Convoy effect, long avg wait |
+| **SJF** | Both versions | Shortest burst | Optimal avg waiting | Needs burst estimate, starves long jobs |
+| **Round Robin** | Yes | Time quantum + arrival | Fair, responsive, no starvation | Many context switches if quantum small; large quantum ≈ FCFS |
+| **Priority** | Both versions | Priority number | Urgent jobs first | Starvation (fix: aging) |
+| **Multilevel Queue / Feedback** | Yes (usually) | Queue class + feedback | Matches policy per type (system/interactive/batch), flexible | Complex to tune, possible starvation if queues fixed |
+
+> [!TIP] Real world: what Arch Linux uses
+> Arch (mainline kernel ≥6.6) uses **EEVDF** (Earliest Eligible Virtual Deadline First, successor of CFS), not textbook FCFS/SJF/RR.
+> Why advanced: tracks **vruntime** per task in a red-black tree $O(\log N)$, gives fair CPU share instead of fixed order/quantum; latency-aware for interactive apps; cgroup-aware; does **SMP load balancing** across cores; avoids starvation without manual aging. Textbook models assume one CPU, known bursts, static priorities — EEVDF handles unknown bursts, sleep/wake, priorities (`nice`), and multi-core.
+
+### G. Key Metrics:
 | Metric | Formula |
 |--------|---------|
 | **Turnaround Time** | Completion Time - Arrival Time |
 | **Waiting Time** | Turnaround Time - Burst Time |
 | **Response Time** | First CPU Start - Arrival Time |
-
-### F. Preemptive vs Non-Preemptive:
+### H. Preemptive vs Non-Preemptive:
 - **Preemptive**: OS can interrupt running process (RR, Preemptive SJF/Priority).
 - **Non-Preemptive**: Process runs to completion/block (FCFS, Non-preemptive SJF/Priority).
 
