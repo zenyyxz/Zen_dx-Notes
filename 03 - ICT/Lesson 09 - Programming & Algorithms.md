@@ -164,7 +164,17 @@ print(greet("Alice"))
 ```
 - Structure: `def name(params): body + return`.
 - Parameter passing (arguments -> parameters), return values, defaults.
-- Scope: **local** (inside func) vs **global** (outside); lifetime = duration variable lives. Use `global x` to modify global inside func.
+- Scope: **local** (inside func) vs **global** (outside); lifetime = duration variable lives. Use `global x` to modify global inside func. `nonlocal x` (Extension) modifies the nearest *enclosing* — not global — binding in nested funcs:
+```python
+x = 1
+def outer():
+    x = 10
+    def inner():
+        nonlocal x  # refers to outer's x, not global
+        x = 20
+    inner()
+    return x  # 20; global x still 1
+```
 
 ---
 ## 4. Data, Files, Databases
