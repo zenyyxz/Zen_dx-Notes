@@ -251,6 +251,7 @@ Syntax only for internal/external, not inline.
 - **Group Selector**: `h1, h2, p { text-align: center; }`
 - **Universal**: `* { margin:0; padding:0; box-sizing:border-box; }`
 - **Compound** (no spaces): `p.highlight`, `h1#title`, `.btn.primary`
+- **Adjacent sibling (`+`)**: `h2 + p { margin-top: 0; }` — only the first `<p>` immediately after an `<h2>`. With `<h2></h2><p>A</p><p>B</p>`, only A is styled.
 
 ### Appearance Formatting
 
