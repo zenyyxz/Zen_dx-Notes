@@ -255,6 +255,16 @@ Syntax only for internal/external, not inline.
 
 ### Appearance Formatting
 
+**Shorthand**: one property setting several related longhands at once. Order matters; omitted values reset to defaults.
+```css
+div { margin: 10px 20px; }          /* top/bottom 10, left/right 20 (1-4 values: top right bottom left) */
+div { padding: 5px 10px 15px 20px; }
+div { border: 2px solid black; }    /* width + style + color */
+p { font: italic bold 18px Arial; } /* style + weight + size + family */
+ul { list-style: square inside url('bullet.png'); } /* type + position + image */
+```
+Longhands (`margin-top`, `border-width`, `background-color`) still work for single-side overrides — your Backgrounds/Lists/Borders below mix both.
+
 **Fonts**: `font-style/weight/size/family/variant/line-height`
 ```css
 p { font-family: Arial, Helvetica, sans-serif; font-size:18px; font-weight:bold; }
