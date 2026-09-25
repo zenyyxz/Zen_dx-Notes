@@ -143,5 +143,6 @@ Keep your starter template small and clean. Avoid huge, unmaintainable macro hea
 Why use `long long` in contest programs? :: It stores integers up to $\approx 9 \times 10^{18}$, preventing overflow in large sums and products.
 
 What does `cin.tie(nullptr)` help with? :: It removes automatic flushing of `cout` before `cin` operations, improving I/O speed.
+<!--SR:!2026-09-28,3,250-->
 
 Why is `1LL * a * b` safer than `a * b` when `a` and `b` are `int`? :: It promotes the multiplication to `long long` before the operation takes place.

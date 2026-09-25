@@ -67,5 +67,7 @@ Why is a Potentiometer preferred over a Voltmeter to measure EMF? :: A Potentiom
 What is the formula for internal resistance $r$ using a Potentiometer? :: $r = R \left(\frac{l_1 - l_2}{l_2}\right)$ (where $l_1$ is open-circuit balance length, $l_2$ is closed-circuit balance length across shunt resistance $R$).
 
 State Faraday's Law and Lenz's Law of Electromagnetic Induction. :: Faraday's Law: Induced EMF is proportional to the rate of change of magnetic flux linkage ($\mathcal{E} = -N \frac{d\Phi}{dt}$); Lenz's Law: Induced current flows in a direction opposing the flux change causing it.
+<!--SR:!2026-09-26,1,230-->
 
 What is the relationship between peak voltage $V_0$ and RMS voltage $V_{\text{rms}}$ in a sinusoidal AC circuit? :: $V_{\text{rms}} = \frac{V_0}{\sqrt{2}} \approx 0.707 V_0$.
+<!--SR:!2026-09-26,1,230-->

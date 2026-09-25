@@ -54,9 +54,12 @@ graph LR
 What is the relationship between a complex number $z$ and its conjugate $\bar{z}$ regarding modulus? :: $z \cdot \bar{z} = |z|^2$.
 
 State De Moivre's Theorem for an integer $n$. :: $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the range of the Principal Argument $\text{Arg}(z)$ of a complex number? :: $-\pi < \text{Arg}(z) \le \pi$.
+<!--SR:!2026-09-26,1,230-->
 
 Geometrically describe the locus given by $|z - z_0| = r$. :: A circle with center at complex point $z_0$ and radius $r$.
 
 Geometrically describe the locus given by $|z - z_1| = |z - z_2|$. :: The perpendicular bisector of the line segment joining complex points $z_1$ and $z_2$.
+<!--SR:!2026-09-26,1,230-->

@@ -171,20 +171,25 @@ OS tracks every location, decides who gets how much/when, allocates/deallocates.
 What is an Operating System? :: System software that acts as an interface between computer hardware and the user/applications, managing hardware resources and execution.
 
 What are the 4 stages of OS evolution? :: No OS (serial), Simple Batch (tape), Multiprogrammed Batch (multi-program memory), Time-Sharing (context switch, interactive).
+<!--SR:!2026-09-29,4,270-->
 
 What are the NIE main functions of an OS? :: Providing interfaces/abstractions, process management, resource management, security and protection.
 
 Classify OS by NIE users/tasks. :: Single-single, single-multi, multi-multi, plus multi-threading, real-time, time-sharing.
 
 What is multiprogramming vs time-sharing? :: Multiprogramming maximises CPU use by many in-memory programs; time-sharing minimises response via rapid switching.
+<!--SR:!2026-09-28,3,250-->
 
 What is a file (logical vs physical view)? :: Named bytes; logical = user records/pixels, physical = OS possibly non-contiguous blocks.
+<!--SR:!2026-09-29,4,270-->
 
 List 4 file attributes. :: Name, type/extension, owner, location, organization, permissions, dates, size.
 
 What is FAT vs NTFS? :: FAT = MS-DOS table at fixed location, 2 copies; NTFS = recovery, Unicode, large disks, permissions/encryption.
+<!--SR:!2026-09-29,4,270-->
 
 What are the 3 disk allocation methods with examples? :: Contiguous (adjacent, external frag), Linked (FAT, links, many seeks), Indexed (UNIX, index table).
+<!--SR:!2026-09-28,3,250-->
 
 What is defragmentation? :: Rearranging scattered fragments to eliminate unusable small free areas.
 
@@ -193,6 +198,7 @@ What are the 3 parts of disk formatting? :: Low-level prep, partitioning (visibl
 What is a Process vs Program? :: Program is static code; process is program in execution with PID/PCB/state.
 
 Name I/O-bound vs CPU-bound processes. :: I/O-bound needs much I/O; CPU-bound needs much computation.
+<!--SR:!2026-09-29,4,270-->
 
 What is an interrupt and handling? :: Async event altering execution (I/O done); OS saves state to PCB, runs another, restores on interrupt.
 
@@ -205,17 +211,23 @@ What extra states does the 7-state model add? :: Suspended Ready and Suspended B
 Compare long, short, medium-term schedulers. :: Long (job, admit, slowest), short (CPU/dispatcher, fastest), medium (swapping, middle).
 
 What is the difference between Preemptive and Non-Preemptive CPU scheduling? :: Preemptive scheduling allows the OS to forcibly interrupt a running process (e.g., Round Robin); Non-Preemptive scheduling lets a process run until it voluntarily yields or terminates (e.g., FCFS).
+<!--SR:!2026-09-29,4,270-->
 
 Define turnaround, waiting, response, throughput. :: Turnaround completion-arrival; waiting in ready queue; response first CPU-arrival; throughput procs/time.
 
 What is a context switch? :: Saving/restoring CPU registers + PCB to share CPU; pure overhead.
 
 What is Paging in memory management? :: A memory management scheme that divides logical memory into fixed-size Pages and physical memory into fixed-size Frames.
+<!--SR:!2026-09-26,1,230-->
 
 What is the MMU base-register example? :: Base 10000 + user 100 = physical 10100; user never sees real address.
+<!--SR:!2026-09-26,1,230-->
 
 What is Virtual Memory? :: A technique that allows a computer to execute processes larger than physical RAM by storing portions of data on secondary storage and loading pages on demand.
+<!--SR:!2026-09-29,4,270-->
 
 What is Page Fault? :: An interrupt raised when a program accesses a page that is not currently loaded into physical RAM.
+<!--SR:!2026-09-26,1,230-->
 
 What is spooling and a device driver? :: Spooling = simultaneous peripheral buffer for slow I/O overlap; driver = software interface depending on hardware+OS.
+<!--SR:!2026-09-26,1,230-->

@@ -52,6 +52,7 @@ graph LR
 #flashcards
 
 State the relations between roots $\alpha, \beta$ and coefficients of $ax^2 + bx + c = 0$. :: $\alpha + \beta = -\frac{b}{a}$ and $\alpha \beta = \frac{c}{a}$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the expression for $\alpha^2 + \beta^2$ in terms of $(\alpha + \beta)$ and $\alpha \beta$? :: $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$.
 

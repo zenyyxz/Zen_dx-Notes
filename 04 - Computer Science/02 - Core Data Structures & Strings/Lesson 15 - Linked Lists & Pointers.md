@@ -99,7 +99,9 @@ ListNode* reverseList(ListNode* head) {
 #flashcards
 
 What is the space complexity of Floyd's Cycle Detection algorithm? :: $O(1)$ auxiliary space.
+<!--SR:!2026-09-26,1,230-->
 
 How fast do the two pointers move in Floyd's Cycle Detection? :: The `slow` pointer advances 1 step per iteration, while the `fast` pointer advances 2 steps.
 
 What is the time complexity of reversing a singly linked list iteratively? :: $O(N)$ time.
+<!--SR:!2026-09-26,1,230-->

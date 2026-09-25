@@ -132,11 +132,13 @@ ORDER BY Student.Name ASC;
 What is the difference between Cardinality and Degree in relational database terminology? :: Cardinality is the total number of tuples (rows); Degree is the total number of attributes (columns) in a relation.
 
 What is a Foreign Key, and what rule does it enforce? :: An attribute in a table that references the Primary Key of another table; it enforces Referential Integrity.
+<!--SR:!2026-09-26,1,230-->
 
 State the rule for 1st Normal Form (1NF). :: All attributes must contain atomic (indivisible) values, and a Primary Key must be defined.
-<!--SR:!2026-08-20,15,290-->
+<!--SR:!2026-11-24,60,310-->
 
 State the rule for 2nd Normal Form (2NF). :: The table must be in 1NF, and all partial functional dependencies must be eliminated (every non-key attribute must fully depend on the primary key).
+<!--SR:!2026-09-29,4,270-->
 
 State the rule for 3rd Normal Form (3NF). :: The table must be in 2NF, and all transitive functional dependencies must be eliminated (no non-key attribute should depend on another non-key attribute).
 

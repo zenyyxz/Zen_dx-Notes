@@ -117,19 +117,26 @@ Suggested extras worth knowing:
 #flashcards
 
 What is the stored program concept? :: Instructions and data share the same primary memory (RAM) and are executed sequentially.
+<!--SR:!2026-09-29,4,270-->
 
 Name the 3 buses and directions. :: Address (CPU->memory, one-way), Data (two-way), Control (commands/interrupts).
 
 What does the PC hold and when does it change? :: Address of next instruction; incremented after Fetch (or overwritten on jump).
+<!--SR:!2026-09-28,3,250-->
 
 What do MAR, MDR, IR, ACC hold? :: MAR = address on bus; MDR = data on bus; IR = current instruction being decoded; ACC = ALU result.
+<!--SR:!2026-09-28,3,250-->
 
 Who runs each stage of Fetch-Decode-Execute-Store? :: Fetch = CU + PC/MAR/MDR/IR; Decode = CU; Execute = ALU led by CU; Store = CU + ACC/MDR/MAR.
+<!--SR:!2026-09-29,4,270-->
 
 Does the ALU ever fetch from RAM? :: No. CU fetches via MAR/MDR into IR; ALU only computes when CU feeds it operands.
 
 What is the Von Neumann Bottleneck? :: Single shared bus means CPU cannot fetch instruction and access data simultaneously; bus speed limits CPU.
+<!--SR:!2026-09-28,3,250-->
 
 Name two cures for the bottleneck. :: Cache (L1/L2/L3) and Harvard-style separate instruction/data paths.
+<!--SR:!2026-09-26,1,230-->
 
 Von Neumann vs Harvard in one line? :: Von Neumann = one memory/bus for all; Harvard = separate instruction and data memories/buses.
+<!--SR:!2026-09-26,1,230-->

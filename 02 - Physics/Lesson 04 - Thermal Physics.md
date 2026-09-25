@@ -69,9 +69,12 @@ State the Kinetic Theory pressure equation for an ideal gas. :: $P = \frac{1}{3}
 What is the average kinetic energy of a single ideal gas molecule at temperature $T$? :: $E_k = \frac{3}{2} k_B T$.
 
 State the First Law of Thermodynamics. :: $\Delta Q = \Delta U + \Delta W$ (heat supplied equals change in internal energy plus work done by the system).
+<!--SR:!2026-09-26,1,230-->
 
 What is an Adiabatic process, and what is its governing equation? :: A process in which no heat enters or leaves the system ($\Delta Q = 0$); governed by $PV^\gamma = \text{constant}$.
+<!--SR:!2026-09-26,1,230-->
 
 State Fourier's Law of Thermal Conduction. :: $\frac{\Delta Q}{\Delta t} = k A \frac{T_1 - T_2}{d}$.
+<!--SR:!2026-09-26,1,230-->
 
 State Stefan-Boltzmann Law for a blackbody radiator. :: $P = \sigma A T^4$.

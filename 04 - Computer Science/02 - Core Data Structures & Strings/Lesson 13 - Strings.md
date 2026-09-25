@@ -102,7 +102,9 @@ void insertTrie(TrieNode* root, const string& word) {
 #flashcards
 
 What does KMP prefix function $\pi[i]$ store? :: The length of the longest proper prefix of $S[0 \dots i]$ that is also a suffix of $S[0 \dots i]$.
+<!--SR:!2026-09-26,1,230-->
 
 What prime base $p$ is commonly used for lowercase ASCII polynomial string hashing? :: $p = 31$ (or $p = 131$).
 
 What is the query time complexity for checking if a word of length $L$ exists in a Trie? :: $O(L)$ time.
+<!--SR:!2026-09-26,1,230-->

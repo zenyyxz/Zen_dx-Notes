@@ -100,10 +100,12 @@ flowchart TD
 Define sequential (serial) access. :: Data is retrieved in a fixed linear order; to reach the nth item the device must pass over the previous n−1 items. Access time depends on position. Example: magnetic tape.
 
 Define direct access. :: An item is reached by computing its storage address and moving the read/write mechanism there without reading intervening records. Access time is not constant (seek + rotational latency). Example: HDD, CD/DVD.
+<!--SR:!2026-09-26,1,230-->
 
 Define random access. :: Any addressable location can be selected independently, with approximately equal access time for every address. Example: RAM (also ROM).
 
 Why is a hard disk direct access but not random access? :: The disk can jump to a sector by address (direct), but time still depends on seek and rotation, so it is not uniform (not random).
+<!--SR:!2026-09-29,4,270-->
 
 Why is RAM called random access memory? :: Any memory cell can be read or written in approximately the same time, independent of address and of the previous access.
 

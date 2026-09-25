@@ -113,14 +113,18 @@ This expresses how the wedge’s motion influences the block’s **relative acce
 #flashcards
 
 What does $\dot{x}$ represent in kinematics? :: $\dot{x} = \frac{dx}{dt}$ — the **velocity** (first derivative of displacement).
+<!--SR:!2026-09-29,4,270-->
 
 What does $\ddot{x}$ represent in kinematics? :: $\ddot{x} = \frac{d^2x}{dt^2}$ — the **acceleration** (second derivative of displacement, rate of change of velocity).
+<!--SR:!2026-09-29,4,270-->
 
 State the vector equation for the acceleration of $A$ relative to $B$. :: $\mathbf{a}_{A/B} = \mathbf{a}_A - \mathbf{a}_B = \ddot{\mathbf{r}}_A - \ddot{\mathbf{r}}_B$.
 
 In a simple two‑mass pulley system with string constraint $x_1 + x_2 = \text{const}$, what is the relative‑acceleration relation? :: $\ddot{x}_1 = -\ddot{x}_2$ (equal magnitudes, opposite directions).
+<!--SR:!2026-09-29,4,270-->
 
 In a movable wedge problem, how is the block’s absolute acceleration expressed? :: $\mathbf{a}_{\text{block}} = \ddot{x}_{\text{wedge}}\,\hat{\mathbf{i}} + \ddot{s}_{\text{rel}}\,\hat{\mathbf{t}}$ — wedge acceleration plus relative acceleration down the slope.
+<!--SR:!2026-09-26,1,230-->
 
 ---
 

@@ -64,13 +64,16 @@ graph LR
 #flashcards
 
 State the change of base formula for logarithms. :: $\log_b x = \frac{\log_a x}{\log_a b}$.
+<!--SR:!2026-09-28,3,250-->
 
 What is the golden rule when solving algebraic inequalities involving fractions? :: Never cross-multiply by an expression containing the variable unless its sign is known to be strictly positive; bring all terms to one side and use a sign diagram.
 
 What is the equivalent algebraic condition for $|f(x)| \le a$ (where $a > 0$)? :: $-a \le f(x) \le a$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the equivalent algebraic condition for $|f(x)| \ge a$ (where $a > 0$)? :: $f(x) \le -a$ or $f(x) \ge a$.
 
 How can an inequality of the form $|f(x)| \le |g(x)|$ be solved efficiently without case splitting? :: By squaring both sides: $[f(x)]^2 \le [g(x)]^2 \iff [f(x)]^2 - [g(x)]^2 \le 0 \iff (f(x)-g(x))(f(x)+g(x)) \le 0$.
 
 State the Triangle Inequality for real numbers. :: $|a + b| \le |a| + |b|$.
+<!--SR:!2026-09-26,1,230-->

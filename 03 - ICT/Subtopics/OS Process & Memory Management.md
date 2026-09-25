@@ -148,13 +148,13 @@ Separate ready queue into classes, each with its own algorithm. E.g. System (RR)
 
 ### F. Comparison Table:
 
-| Algorithm | Preemptive? | Primary criteria | Major advantage | Drawbacks |
-|:---|:---:|:---|:---|:---|
-| **FCFS** | No | Arrival time | Simple, fair in order | Convoy effect, long avg wait |
-| **SJF** | Both versions | Shortest burst | Optimal avg waiting | Needs burst estimate, starves long jobs |
-| **Round Robin** | Yes | Time quantum + arrival | Fair, responsive, no starvation | Many context switches if quantum small; large quantum ≈ FCFS |
-| **Priority** | Both versions | Priority number | Urgent jobs first | Starvation (fix: aging) |
-| **Multilevel Queue / Feedback** | Yes (usually) | Queue class + feedback | Matches policy per type (system/interactive/batch), flexible | Complex to tune, possible starvation if queues fixed |
+| Algorithm                       |  Preemptive?  | Primary criteria       | Major advantage                                              | Drawbacks                                                    |
+| :------------------------------ | :-----------: | :--------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| **FCFS**                        |      No       | Arrival time           | Simple, fair in order                                        | Convoy effect, long avg wait                                 |
+| **SJF**                         | Both versions | Shortest burst         | Optimal avg waiting                                          | Needs burst estimate, starves long jobs                      |
+| **Round Robin**                 |      Yes      | Time quantum + arrival | Fair, responsive, no starvation                              | Many context switches if quantum small; large quantum ≈ FCFS |
+| **Priority**                    | Both versions | Priority number        | Urgent jobs first                                            | Starvation (fix: aging)                                      |
+| **Multilevel Queue / Feedback** | Yes (usually) | Queue class + feedback | Matches policy per type (system/interactive/batch), flexible | Complex to tune, possible starvation if queues fixed         |
 
 > [!TIP] Real world: what Arch Linux uses
 > Arch (mainline kernel ≥6.6) uses **EEVDF** (Earliest Eligible Virtual Deadline First, successor of CFS), not textbook FCFS/SJF/RR.

@@ -113,5 +113,6 @@ struct SegmentTree {
 What is the time complexity of point updates and range queries in a Fenwick Tree? :: $O(\log N)$ time for both operations.
 
 What bitwise trick isolates the lowest set bit in a Fenwick Tree index? :: `idx & -idx`.
+<!--SR:!2026-09-26,1,230-->
 
 How much memory array size should be allocated for a recursive Segment Tree on $N$ elements? :: $4N$ size array.

@@ -1045,18 +1045,22 @@ g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -fsanitize=address solution.cpp -o sol
 #flashcards
 
 Why should you pass vectors by `const vector<int>&` in C++ functions? :: To prevent creating a complete copy of the vector, avoiding $O(N)$ time and memory overhead per function call.
+<!--SR:!2026-09-28,3,250-->
 
 What is the difference between `lower_bound` and `upper_bound` in C++ STL? :: `lower_bound` returns an iterator to the first element $\ge$ target value, while `upper_bound` returns an iterator to the first element strictly $>$ target value.
 
 How do you prevent integer overflow when multiplying two `int` variables `a` and `b` into a `long long` variable? :: Multiply by `1LL` first: `long long ans = 1LL * a * b;`.
+<!--SR:!2026-09-29,4,270-->
 
 What does `ios::sync_with_stdio(false); cin.tie(nullptr);` do? :: Disables synchronization between C stdio and C++ streams and unties `cin` from `cout`, making `cin`/`cout` significantly faster for competitive programming.
 
 What is `static_cast<T>(expr)` used for in C++? :: It performs safe, compile-time checked conversions between compatible types (e.g., converting `int` to `double` or `int` to `long long`).
 
 Why do we append `const` to member functions like `void print() const {}`? :: It promises that the function will not modify any member variables of the struct/class, allowing it to be called on `const` objects and references.
+<!--SR:!2026-09-29,4,270-->
 
 What does `= default` do when attached to a constructor? :: It instructs the compiler to generate its standard default implementation for that constructor (useful when custom constructors were declared).
+<!--SR:!2026-09-26,1,230-->
 
 What does `= delete` do when attached to a function or constructor? :: It explicitly forbids the function or constructor from being called, triggering a compile-time error if used (e.g. disabling copy constructors).
 
@@ -1067,23 +1071,31 @@ What is the main difference between `std::unique_ptr` and `std::shared_ptr`? :: 
 Why is `std::weak_ptr` used alongside `std::shared_ptr`? :: `std::weak_ptr` observes a `shared_ptr` object without increasing its reference count, preventing cyclic reference memory leaks.
 
 What does `static` mean when applied to a local variable inside a function? :: The variable is initialized only once (the first call) and retains its value between subsequent function calls, living in global memory rather than the stack.
+<!--SR:!2026-09-29,4,270-->
 
 What does `static` mean on a class/struct member variable? :: A single shared copy of that variable is shared across all instances of the class, accessed via `ClassName::variable`.
+<!--SR:!2026-09-29,4,270-->
 
 Why can a `static` member function not access regular (non-static) member variables? :: Because `static` member functions have no `this` pointer — they belong to the class itself, not to any specific object instance.
+<!--SR:!2026-09-28,3,250-->
 
 What does the `friend` keyword do in C++? :: It grants a specific external function or class direct access to a class's `private` and `protected` members.
 
 What is `friend` most commonly used for in C++? :: Overloading stream output (`operator<<`) for custom types, since `operator<<` must be a free function but needs access to private members.
+<!--SR:!2026-09-28,3,250-->
 
 What does `virtual` on a member function enable? :: Runtime polymorphism — the correct overriding function is selected at runtime based on the actual object type, not the static pointer/reference type.
 
 What is the difference between `virtual` and a pure virtual (`= 0`) function? :: A `virtual` function has a default implementation in the base class; a pure virtual function (`= 0`) has no implementation, making the class abstract and impossible to instantiate directly.
+<!--SR:!2026-09-26,1,230-->
 
 Why must base class destructors almost always be `virtual`? :: Without a `virtual` destructor, deleting a derived class through a base class pointer only calls the base destructor — the derived destructor is silently skipped, causing resource leaks.
 
 What does the `override` keyword do? :: It tells the compiler to verify at compile-time that the function is actually overriding a `virtual` function in the base class, catching typos or signature mismatches.
+<!--SR:!2026-09-28,3,250-->
 
 What is the difference between `const` and `constexpr`? :: `const` means a value cannot be changed after initialization (which can happen at runtime), whereas `constexpr` means the value is strictly evaluated at compile time.
+<!--SR:!2026-09-28,3,250-->
 
 What does the `inline` keyword do when applied to a function? :: It suggests to the compiler to replace the function call with the actual code of the function to save function-call overhead, though modern compilers often do this automatically during optimization.
+<!--SR:!2026-09-28,3,250-->

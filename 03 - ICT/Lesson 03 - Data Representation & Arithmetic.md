@@ -223,33 +223,35 @@ Non-numeric data (letters, punctuation, symbols, emojis) must be encoded into bi
 Why did the Babylonian base-60 number system prove advantageous for calculations? :: Base 60 is highly divisible by many numbers ($2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$), simplifying fraction calculations.
 
 What major contribution did mathematician Brahmagupta make to number systems in 628 CE? :: He formally defined zero ($0$) as a number and established mathematical rules for arithmetic involving zero.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-11,16,290-->
 
 State 3 major drawbacks of Non-Positional Number Systems like Roman Numerals. :: 1. Lack of a symbol for zero, 2. Absence of place-value notation, 3. Extreme complexity in performing arithmetic calculations.
-<!--SR:!2026-09-13,15,290-->
+<!--SR:!2026-11-23,59,310-->
 
 What is the difference between face value and place value of a digit in a positional system? :: Face value is the intrinsic value of the digit itself; place value is the weight assigned to the position of the digit ($r^{\text{position}}$).
 
 Why do digital computers use the Binary number system instead of Decimal? :: Computer electronic circuits operate reliably on two voltage states (High/Low, ON/OFF), making binary highly noise-tolerant and physically reliable.
 
 List 4 modern computer applications of Hexadecimal numbers. :: 1. RAM/CPU memory addresses, 2. HTML/CSS color codes (`#FF5733`), 3. IPv6 addresses, 4. Windows error codes (`0x0000007B`).
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-05,10,270-->
 
 Convert $(13.625)_{10}$ to Binary. :: $(1101.101)_2$.
 
 Convert $(11010110.1011)_2$ to Hexadecimal. :: $(D6.B)_{16}$.
+<!--SR:!2026-09-29,4,270-->
 
 What are the two major drawbacks of Sign-Magnitude binary representation? :: 1. Dual representation of zero ($+0$ and $-0$), 2. Requires separate hardware circuits for addition and subtraction.
 <!--SR:!2026-10-03,16,290-->
 
 What is the range of signed integers that can be stored in an 8-bit register using 2's complement? :: $-128 \text{ to } +127$ (Formula: $-2^{n-1} \text{ to } +2^{n-1} - 1$).
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-10-07,12,270-->
 
 What is the 8-bit 2's complement representation of $-25_{10}$? :: `11100111`.
 
 How is arithmetic overflow detected in 2's complement addition? :: When adding two numbers of the same sign produces a result with an opposite sign bit, or when carry-in to MSB differs from carry-out of MSB.
 
 How many non-printable control characters and printable characters exist in standard 7-bit ASCII? :: 33 non-printable control characters and 95 printable characters (Total $2^7 = 128$).
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-10-05,10,270-->
 
 What are the decimal ASCII values for `'0'`, `'A'`, and `'a'`? :: `'0'` = 48, `'A'` = 65, `'a'` = 97.
+<!--SR:!2026-09-29,4,270-->

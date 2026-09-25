@@ -177,15 +177,19 @@ mindmap
 #flashcards
 
 What does IEEE stand for? :: Institute of Electrical and Electronics Engineers — a global standards organization.
+<!--SR:!2026-09-29,4,270-->
 
 What is the purpose of IEEE 754? :: It defines how floating-point numbers are represented in binary (sign, exponent, mantissa) for consistent computation across systems.
 
 How many bits for the exponent in 32-bit IEEE 754 single precision? :: 8 bits (biased by 127).
+<!--SR:!2026-09-29,4,270-->
 
 How is 64-bit IEEE 754 double laid out? :: 1 sign + 11 exponent (bias 1023) + 52 mantissa (~15-17 digits); C++ `double`.
 
 What does IEEE 802.11 refer to? :: The family of wireless LAN (Wi-Fi) standards.
+<!--SR:!2026-09-29,4,270-->
 
 What is the common name for IEEE 802.3? :: Ethernet (wired local area network standard).
 
 What is IEEE 1394 better known as? :: FireWire (high-speed serial bus for peripherals and media devices).
+<!--SR:!2026-09-28,3,250-->

@@ -72,5 +72,6 @@ int main() {
 Why can standard `std::unordered_map<int, int>` be hacked to $O(N^2)$ on Codeforces? :: Because standard GCC hash uses identity hash function, allowing targeted test cases to cause $O(N)$ hash bucket collisions per operation.
 
 What fixes the Codeforces $O(N^2)$ unordered_map hack? :: Passing a `custom_hash` functor with a randomized seed (`chrono::steady_clock`).
+<!--SR:!2026-09-26,1,230-->
 
 What is the worst-case time complexity of `std::map` vs `std::unordered_map`? :: `std::map` is guaranteed $O(\log N)$ worst-case, while un-customized `std::unordered_map` is $O(N)$ worst-case.

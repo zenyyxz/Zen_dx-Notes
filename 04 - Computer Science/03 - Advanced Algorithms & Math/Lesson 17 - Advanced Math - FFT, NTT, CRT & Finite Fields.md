@@ -592,17 +592,22 @@ vector<long long> karatsuba(const vector<long long>& a, const vector<long long>&
 #flashcards
 
 What time complexity does FFT/NTT achieve for polynomial multiplication? :: $O(N \log N)$, compared to $O(N^2)$ for naive multiplication.
+<!--SR:!2026-09-28,3,250-->
 
 Why is NTT preferred over FFT when exact integer results are needed? :: NTT operates in a finite field (modular arithmetic) with exact integers, while FFT uses floating-point complex numbers which introduce rounding errors.
+<!--SR:!2026-09-28,3,250-->
 
 Why is $998244353$ a popular modulus in competitive programming? :: It is an NTT-friendly prime: $998244353 - 1 = 2^{23} \times 119$, allowing NTT transforms of size up to $2^{23}$.
 
 What does the Chinese Remainder Theorem guarantee? :: A unique solution modulo $M = m_1 \cdot m_2 \cdots m_k$ for a system of simultaneous congruences with pairwise coprime moduli.
+<!--SR:!2026-09-26,1,230-->
 
 What Newton-Raphson iteration computes $\frac{1}{D}$ using only multiplication and subtraction? :: $x_{n+1} = x_n \cdot (2 - D \cdot x_n)$.
 
 What does Euler's Totient $\phi(n)$ count? :: The number of integers in $[1, n]$ that are coprime to $n$.
+<!--SR:!2026-09-26,1,230-->
 
 How can you compute $F(N)$ (Fibonacci) in $O(\log N)$ time? :: Using $2 \times 2$ matrix exponentiation: raise the matrix $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$ to the $(N-1)$-th power.
+<!--SR:!2026-09-26,1,230-->
 
 What is the time complexity of Karatsuba multiplication, and how does it achieve it? :: It runs in $O(N^{\log_2 3}) \approx O(N^{1.58})$ time by dividing polynomials/numbers into halves and computing 3 recursive products instead of the naive 4.

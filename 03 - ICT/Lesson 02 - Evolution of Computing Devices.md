@@ -28,7 +28,7 @@ tags:
 - **Analytical Engine (Charles Babbage)**: First general-purpose mechanical computer concept featuring input, mill (CPU), store (memory), and output. ==Charles Babbage== is the *Father of Computing*. ==**Ada Lovelace**== was the *First Computer Programmer*.
 - **ENIAC (Electronic Numerical Integrator and Computer)**: First general-purpose fully electronic digital computer (used vacuum tubes).
 - **EDVAC (Electronic Discrete Variable Automatic Computer)**: First computer to implement the **Stored Program Concept**.
-<!--SR:!2026-08-04,4,270!2000-01-01,1,250-->
+<!--SR:!2026-10-09,14,290!2026-09-29,4,270-->
 
 ---
 ## 2. Generations of Computers
@@ -155,11 +155,13 @@ flowchart LR
 #flashcards
 
 Who is known as the Father of Computing, and what machine did he design? :: Charles Babbage; the Analytical Engine.
+<!--SR:!2026-09-29,4,270-->
 
 Who was the first computer programmer? :: Ada Lovelace.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-09,14,290-->
 
 What key technological innovation characterized Second Generation computers? :: Transistors.
+<!--SR:!2026-09-29,4,270-->
 
 Classify computers by technology with one example each. :: Analog (continuous, e.g. thermometer), Digital (discrete 0/1, e.g. PC), Hybrid (both, e.g. ICU monitor).
 
@@ -168,30 +170,33 @@ What is special vs general purpose? :: Special = one dedicated task (ATM); Gener
 Order super/mainframe/mini/micro by size. :: Super (fastest parallel) > Mainframe (multi-user) > Mini (department server) > Micro (single-user PC/phone).
 
 What technology enabled Fourth Generation computers? :: Very Large Scale Integration (VLSI) microprocessors.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-09,14,290-->
 
 What is the Stored Program Concept? :: The concept where both data and program instructions are stored together in the same memory space of a computer system.
+<!--SR:!2026-09-29,4,270-->
 
 Name the 3 main components of the CPU. :: 1. Control Unit (CU), 2. Arithmetic Logic Unit (ALU), 3. Registers.
 
 What is the difference between a Data Bus and an Address Bus? :: Data Bus is bidirectional and carries actual data; Address Bus is unidirectional and carries memory location addresses from the CPU.
 
 If an address bus has 16 lines (16-bit), how many unique memory locations can it address? :: $2^{16} = 65,536$ memory locations (64 KB).
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-10,15,290-->
 
 What is the difference between SRAM and DRAM? :: SRAM uses flip-flops, is faster, does not require refreshing, and is used for cache; DRAM uses capacitors, requires periodic refreshing, and is used for main memory.
 
 How is data erased in an EPROM compared to an EEPROM? :: EPROM is erased using Ultraviolet (UV) light; EEPROM is erased electrically.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-09,14,290-->
 
 Which is faster, DRAM or SRAM? :: SRAM.
 
 Who invented transistor at Bell Labs in 1947?::William Shockley, John Barden and Walter Brattain.
+<!--SR:!2026-09-26,1,230-->
 
 Which computer bus carries information from the processor to the I/O devices?::Data bus.
+<!--SR:!2026-09-29,4,270-->
 
 Who is the father of modern computer science?::Alan Turing.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-11,16,290-->
 
 Name first general purpose computer, commercially sold computer and store program computer.:: ENIAC, UNIVAC, and EDSAC
 

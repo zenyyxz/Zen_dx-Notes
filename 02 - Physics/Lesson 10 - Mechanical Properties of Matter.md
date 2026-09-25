@@ -33,8 +33,10 @@ tags:
 #flashcards
 
 State Young's Modulus formula. :: $Y = \frac{\text{Tensile Stress}}{\text{Tensile Strain}} = \frac{F L}{A \Delta L}$.
+<!--SR:!2026-09-26,1,230-->
 
 State Stokes' Law for viscous drag force on a sphere of radius $r$ moving at velocity $v$ in fluid of viscosity $\eta$. :: $F = 6\pi\eta r v$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the terminal velocity formula $v_t$ for a sphere falling in a viscous fluid? :: $v_t = \frac{2 r^2 (\rho - \sigma) g}{9 \eta}$ (where $\rho$ is sphere density and $\sigma$ is fluid density).
 

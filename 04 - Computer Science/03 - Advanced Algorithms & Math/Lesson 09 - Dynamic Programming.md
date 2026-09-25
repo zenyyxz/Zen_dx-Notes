@@ -83,7 +83,9 @@ int minCoins(int target, const vector<int>& coins) {
 #flashcards
 
 Why iterate backwards over capacity $W$ in 1D array 0/1 Knapsack DP? :: To ensure each item is used at most once (iterating forwards allows multiple picks of the same item, which solves Unbounded Knapsack instead).
+<!--SR:!2026-09-26,1,230-->
 
 What is the first step when designing a Dynamic Programming solution? :: Define the state `dp[...]` in one precise sentence.
 
 How do you calculate total DP time complexity? :: Total States $\times$ Time per Transition.
+<!--SR:!2026-09-26,1,230-->

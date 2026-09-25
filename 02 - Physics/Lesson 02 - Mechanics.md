@@ -82,15 +82,22 @@ $$\frac{V_{\text{submerged}}}{V_{\text{total}}} = \frac{\rho_{\text{object}}}{\r
 State the 4 equations of linear motion for uniform acceleration. :: $v = u + at$, $s = ut + \frac{1}{2}at^2$, $v^2 = u^2 + 2as$, $s = \left(\frac{u+v}{2}\right)t$.
 
 What are the formulas for Time of Flight $T$ and Horizontal Range $R$ of a projectile launched at speed $u$ and angle $\theta$? :: $T = \frac{2u\sin\theta}{g}$, $R = \frac{u^2\sin 2\theta}{g}$.
+<!--SR:!2026-09-29,4,270-->
 
 State Newton's Second Law of Motion in vector form. :: $\mathbf{F}_{\text{net}} = \frac{d\mathbf{p}}{dt} = m\mathbf{a}$.
+<!--SR:!2026-09-26,1,230-->
 
 What is Impulse, and how is it related to momentum? :: Impulse $\mathbf{J} = \mathbf{F}\Delta t = \Delta \mathbf{p}$ (change in momentum).
+<!--SR:!2026-09-29,4,270-->
 
 What is the relationship between linear velocity $v$ and angular velocity $\omega$? :: $v = r\omega$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the rotational analogue of Newton's 2nd Law $F = ma$? :: $\tau = I\alpha$ (where $\tau$ is torque, $I$ is moment of inertia, $\alpha$ is angular acceleration).
+<!--SR:!2026-09-26,1,230-->
 
 State Archimedes' Principle. :: When a body is completely or partially immersed in a fluid, it experiences an upward upthrust equal to the weight of the fluid displaced by the body.
+<!--SR:!2026-09-29,4,270-->
 
 State the condition for a body to float in a liquid. :: The weight of the floating body must equal the upthrust (weight of the displaced liquid).
+<!--SR:!2026-09-28,3,250-->

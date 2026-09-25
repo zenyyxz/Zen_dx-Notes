@@ -57,13 +57,16 @@ An **Embedded System** is a specialized computer system designed to perform dedi
 #flashcards
 
 What is an Embedded System? :: A specialized computer system designed to perform dedicated control functions within a larger mechanical or electrical system.
+<!--SR:!2026-09-26,1,230-->
 
 What is the main structural difference between a Microprocessor and a Microcontroller? :: A Microprocessor contains only the CPU; a Microcontroller integrates the CPU, RAM, ROM/Flash, Timers, and I/O ports on a single silicon chip.
+<!--SR:!2026-09-29,4,270-->
 
 What is the difference between a Sensor and an Actuator? :: A Sensor converts physical parameters into electrical signals (input); an Actuator converts electrical signals into physical actions (output).
+<!--SR:!2026-09-26,1,230-->
 
 Name 2 Analog Sensors and 2 Digital Sensors used in IoT. :: Analog: LDR (Light Dependent Resistor), LM35 (Temperature); Digital: PIR (Motion Sensor), Ultrasonic (HC-SR04).
 <!--SR:!2026-09-28,11,270-->
 
 List the 4 layers of the IoT Architecture Model. :: 1. Sensing/Perception Layer, 2. Network/Gateway Layer, 3. Service/Cloud Layer, 4. Application Layer.
-<!--SR:!2026-08-07,2,230-->
+<!--SR:!2026-10-02,7,250-->

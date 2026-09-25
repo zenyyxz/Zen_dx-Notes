@@ -44,11 +44,14 @@ graph LR
 #flashcards
 
 What is the relationship between Emitter ($I_E$), Base ($I_B$), and Collector ($I_C$) currents in a transistor? :: $I_E = I_B + I_C$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the DC current gain $\beta$ of a common-emitter transistor? :: $\beta = \frac{I_C}{I_B}$.
+<!--SR:!2026-09-26,1,230-->
 
 List 4 ideal characteristics of an Operational Amplifier (Op-Amp). :: 1. Infinite input impedance ($R_{\text{in}} = \infty$), 2. Zero output impedance ($R_{\text{out}} = 0$), 3. Infinite open-loop voltage gain ($A_{OL} = \infty$), 4. Infinite bandwidth.
 
 What is the voltage gain $A_v$ of an Inverting Op-Amp circuit? :: $A_v = -\frac{R_f}{R_{\text{in}}}$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the voltage gain $A_v$ of a Non-Inverting Op-Amp circuit? :: $A_v = 1 + \frac{R_f}{R_{\text{in}}}$.

@@ -67,11 +67,13 @@ tags:
 #flashcards
 
 What is the difference between E-Business and E-Commerce? :: E-Business includes all electronically conducted internal and external business activities; E-Commerce is specifically the buying and selling of goods/services online over the internet.
+<!--SR:!2026-09-26,1,230-->
 
 Give an example of a C2C E-Commerce platform. :: eBay or ikman.lk.
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-10-07,12,270-->
 
 What is a Payment Gateway? :: An e-commerce application service provider that authorizes and securely processes credit card or digital payments for online merchants.
+<!--SR:!2026-09-28,3,250-->
 
 What is an ERP (Enterprise Resource Planning) system? :: An integrated software system that manages core business functions (Finance, HR, Inventory, Sales) across an entire organization in a single centralized database.
 

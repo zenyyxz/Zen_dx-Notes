@@ -35,9 +35,12 @@ For direct collision of two spheres of masses $m_1, m_2$ with initial velocities
 #flashcards
 
 State Newton's Law of Restitution for direct impact of two bodies. :: $v_2 - v_1 = -e (u_2 - u_1)$ (where $e$ is coefficient of restitution $0 \le e \le 1$).
+<!--SR:!2026-09-26,1,230-->
 
 State Hooke's Law for tension $T$ in an elastic string of natural length $l_0$, modulus of elasticity $\lambda$, and extension $x$. :: $T = \frac{\lambda x}{l_0}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the addition rule of probability for two events $A$ and $B$. :: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
 
 State the formula for conditional probability $P(A|B)$. :: $P(A|B) = \frac{P(A \cap B)}{P(B)}$ (provided $P(B) > 0$).
+<!--SR:!2026-09-26,1,230-->

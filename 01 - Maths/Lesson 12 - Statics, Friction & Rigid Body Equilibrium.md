@@ -42,9 +42,11 @@ $$\frac{P}{\sin\alpha} = \frac{Q}{\sin\beta} = \frac{R}{\sin\gamma}$$
 #flashcards
 
 State Lami's Theorem for three coplanar forces in equilibrium. :: $\frac{P}{\sin\alpha} = \frac{Q}{\sin\beta} = \frac{R}{\sin\gamma}$ (where $\alpha, \beta, \gamma$ are angles opposite forces $P, Q, R$).
+<!--SR:!2026-09-29,4,270-->
 
 What is the concurrency property of three non-parallel coplanar forces in equilibrium acting on a rigid body? :: Their lines of action must meet at a single common point.
 
 State the relationship between coefficient of static friction $\mu$ and angle of friction $\lambda$. :: $\mu = \tan\lambda$.
 
 State the 3 scalar conditions for equilibrium of a system of coplanar forces acting on a rigid body. :: $\sum F_x = 0$, $\sum F_y = 0$, and $\sum M_O = 0$ (sum of moments about any point $O$ is zero).
+<!--SR:!2026-09-28,3,250-->

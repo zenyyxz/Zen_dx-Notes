@@ -61,3 +61,4 @@ What is the difference between competitive programming and software engineering?
 Why is contiguous `std::vector` iteration faster than pointer-chasing in Linked Lists? :: Due to CPU cache locality — contiguous memory blocks are prefetched into high-speed CPU L1/L2 cache.
 
 What should a contest upsolving routine consist of? :: Understanding why the solution failed, implementing the fix without reading editorials directly, and documenting the mistake in a log.
+<!--SR:!2026-09-29,4,270-->

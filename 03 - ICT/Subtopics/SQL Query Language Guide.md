@@ -244,19 +244,26 @@ WHERE Marks > 80;
 What are the main DDL commands in SQL? :: `CREATE`, `ALTER`, `DROP`, and `TRUNCATE`.
 
 What is the purpose of `TRUNCATE`? :: It removes all rows from a table while keeping the table structure.
+<!--SR:!2026-09-29,4,270-->
 
 What is the difference between `DROP`, `TRUNCATE`, and `DELETE`? :: `DROP` removes the whole table; `TRUNCATE` removes all rows but keeps the table; `DELETE` removes selected/all rows and is DML.
+<!--SR:!2026-09-29,4,270-->
 
 What is the difference between `WHERE` and `HAVING`? :: `WHERE` filters rows before grouping; `HAVING` filters groups after `GROUP BY`.
+<!--SR:!2026-09-28,3,250-->
 
 Name five SQL aggregate functions. :: `COUNT()`, `SUM()`, `AVG()`, `MIN()`, and `MAX()`.
 
 What does `INNER JOIN` return? :: Only records with matching values in both joined tables.
+<!--SR:!2026-09-29,4,270-->
 
 What is the difference between `CHAR(n)` and `VARCHAR(n)`? :: `CHAR(n)` is **fixed-length** (always uses n bytes, pads with spaces); `VARCHAR(n)` is **variable-length** (uses only needed bytes + 1-2 overhead).
 
 When would you use `DECIMAL(p,s)` instead of `FLOAT`/`DOUBLE`? :: For **exact** numeric values (e.g., money) — `DECIMAL` avoids floating-point rounding errors.
+<!--SR:!2026-09-29,4,270-->
 
 What does `AUTO_INCREMENT` (or `IDENTITY`) do? :: Automatically generates a unique sequential integer for new rows (commonly used for surrogate primary keys).
+<!--SR:!2026-09-29,4,270-->
 
 Name three date/time data types and their formats. :: `DATE` (YYYY-MM-DD), `TIME` (HH:MM:SS), `DATETIME` (YYYY-MM-DD HH:MM:SS).
+<!--SR:!2026-09-28,3,250-->

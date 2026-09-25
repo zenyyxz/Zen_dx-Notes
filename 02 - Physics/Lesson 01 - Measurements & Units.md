@@ -81,11 +81,16 @@ graph LR
 What are the 7 SI base quantities? :: Mass (kg), Length (m), Time (s), Electric Current (A), Temperature (K), Amount of Substance (mol), Luminous Intensity (cd).
 
 What is the principle of dimensional homogeneity? :: In any physically valid equation, all terms added or subtracted must have identical dimensions.
+<!--SR:!2026-09-26,1,230-->
 
 What is the difference between systematic errors and random errors? :: Systematic errors consistently bias readings in one direction and can be corrected; Random errors cause unpredictable scatter and are reduced by taking repeated average readings.
+<!--SR:!2026-09-29,4,270-->
 
 State the rule for fractional uncertainty when calculating $Z = A^n / B^m$. :: $\frac{\Delta Z}{Z} = n \left(\frac{\Delta A}{A}\right) + m \left(\frac{\Delta B}{B}\right)$.
+<!--SR:!2026-09-28,3,250-->
 
 What is the formula for the radius of curvature $R$ using a Spherometer? :: $R = \frac{a^2}{6h} + \frac{h}{2}$ (where $a$ is distance between legs and $h$ is height of spherical surface).
+<!--SR:!2026-09-28,3,250-->
 
 How is the Least Count (LC) of a Vernier Caliper calculated? :: $\text{Least Count} = 1\text{ Main Scale Division (MSD)} - 1\text{ Vernier Scale Division (VSD)}$.
+<!--SR:!2026-09-29,4,270-->

@@ -93,5 +93,7 @@ Competitive programming uses maths as a tool:
 #flashcards
 
 What should you study before advanced contest algorithms? :: C++ fluency, complexity analysis, basic data structures, sorting/searching, and careful problem solving.
+<!--SR:!2026-09-28,3,250-->
 
 What is the most useful post-contest habit? :: Upsolve problems: understand, implement, and explain at least one problem you could not solve during the contest.
+<!--SR:!2026-09-29,4,270-->

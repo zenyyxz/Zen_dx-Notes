@@ -52,13 +52,16 @@ graph LR
 #flashcards
 
 State the general solution of $\sin\theta = \sin\alpha$. :: $\theta = n\pi + (-1)^n \alpha \quad (n \in \mathbb{Z})$.
+<!--SR:!2026-09-29,4,270-->
 
 State the general solution of $\cos\theta = \cos\alpha$. :: $\theta = 2n\pi \pm \alpha \quad (n \in \mathbb{Z})$.
 
 State the general solution of $\tan\theta = \tan\alpha$. :: $\theta = n\pi + \alpha \quad (n \in \mathbb{Z})$.
+<!--SR:!2026-09-29,4,270-->
 
 State the 3 forms of the $\cos 2A$ identity. :: $\cos 2A = \cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A$.
 
 State the Sine Rule for a triangle $ABC$ with circumradius $R$. :: $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$.
+<!--SR:!2026-09-28,3,250-->
 
 State the Cosine Rule for side $a$ of triangle $ABC$. :: $a^2 = b^2 + c^2 - 2bc \cos A$.

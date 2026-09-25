@@ -40,11 +40,14 @@ tags:
 #flashcards
 
 State the perpendicular distance formula from point $(x_1, y_1)$ to line $Ax + By + C = 0$. :: $p = \frac{|A x_1 + B y_1 + C|}{\sqrt{A^2 + B^2}}$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the center and radius of the general circle $x^2 + y^2 + 2gx + 2fy + c = 0$? :: Center is $(-g, -f)$ and Radius is $r = \sqrt{g^2 + f^2 - c}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the tangent equation to circle $x^2 + y^2 + 2gx + 2fy + c = 0$ at point $(x_1, y_1)$ on the circle. :: $x x_1 + y y_1 + g(x + x_1) + f(y + y_1) + c = 0$.
 
 What is the length of the tangent drawn from external point $(x_1, y_1)$ to circle $x^2 + y^2 + 2gx + 2fy + c = 0$? :: $T = \sqrt{x_1^2 + y_1^2 + 2gx_1 + 2fy_1 + c}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the condition for two circles $x^2 + y^2 + 2g_1 x + 2f_1 y + c_1 = 0$ and $x^2 + y^2 + 2g_2 x + 2f_2 y + c_2 = 0$ to cut orthogonally. :: $2 g_1 g_2 + 2 f_1 f_2 = c_1 + c_2$.

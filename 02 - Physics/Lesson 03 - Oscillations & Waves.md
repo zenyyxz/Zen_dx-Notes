@@ -77,15 +77,21 @@ Where end correction $e = 0.6r$. Speed of sound $v = f\lambda = 2f(L_2 - L_1)$.
 #flashcards
 
 State the defining equation of Simple Harmonic Motion. :: $a = -\omega^2 x$ (where $a$ is acceleration, $\omega$ is angular frequency, $x$ is displacement from equilibrium).
+<!--SR:!2026-09-26,1,230-->
 
 What is the expression for maximum velocity in SHM? :: $v_{\text{max}} = \omega A$.
 
 What is the period of a Simple Pendulum? :: $T = 2\pi \sqrt{\frac{l}{g}}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the fundamental frequency formula for a stretched string of length $L$, tension $T$, and mass per unit length $m$. :: $f = \frac{1}{2L}\sqrt{\frac{T}{m}}$.
+<!--SR:!2026-09-26,1,230-->
 
 How is the speed of sound $v$ determined using first and second resonance lengths $L_1, L_2$ in a resonance tube? :: $v = 2f(L_2 - L_1)$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the critical angle condition for Total Internal Reflection? :: $\sin C = \frac{n_2}{n_1} = \frac{1}{n}$ (when light travels from denser to rarer medium).
+<!--SR:!2026-09-26,1,230-->
 
 State the magnification formula for an Astronomical Telescope in normal adjustment. :: $M = \frac{f_o}{f_e}$ (and tube length $L = f_o + f_e$).
+<!--SR:!2026-09-26,1,230-->

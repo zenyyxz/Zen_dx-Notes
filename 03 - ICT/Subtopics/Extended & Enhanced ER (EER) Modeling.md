@@ -192,11 +192,14 @@ erDiagram
 What is the difference between Specialization and Generalization in EER? :: Specialization defines subclasses from a superclass (top-down); Generalization combines common features into a superclass (bottom-up). Both represent the same inheritance relationship.
 
 What does a disjoint (`d`) inheritance constraint mean? :: Subclass instances are mutually exclusive. A superclass instance can belong to **at most one** subclass.
+<!--SR:!2026-09-26,1,230-->
 
 What does an overlapping (`o`) inheritance constraint allow? :: A superclass instance may belong to **more than one** subclass simultaneously.
 
 What is the difference between total (`t`) and partial (`p`) participation in inheritance? :: Total means every superclass instance **must** belong to at least one subclass (double line). Partial means a superclass instance **may** exist without belonging to any subclass (single line).
+<!--SR:!2026-09-26,1,230-->
 
 When should Aggregation be used in EER? :: When a relationship needs to be treated as an entity so it can participate in other relationships (e.g., `Project_Task` relating to `Department`).
 
 What distinguishes Composition (`◆`) from Aggregation (`◇`)? :: Composition implies **strong ownership and life dependency** — the child cannot exist without the parent (e.g., `Engine` without `Car`). Aggregation implies weaker shared association.
+<!--SR:!2026-09-26,1,230-->

@@ -171,12 +171,16 @@ $$
 State the standard limit $\lim_{x \to 0} \frac{\sin x}{x}$. :: $1$.
 
 State the Quotient Rule for differentiation $\frac{d}{dx}\left[\frac{u}{v}\right]$. :: $\frac{v u' - u v'}{v^2}$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the second derivative formula for parametric equations $x = f(t), y = g(t)$? :: $\frac{d^2 y}{dx^2} = \frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}$.
+<!--SR:!2026-09-29,4,270-->
 
 How do you test if a stationary point ($f'(x_0) = 0$) is a local minimum or local maximum using the second derivative test? :: If $f''(x_0) > 0$, it is a local minimum; if $f''(x_0) < 0$, it is a local maximum.
+<!--SR:!2026-09-29,4,270-->
 
 What is the slope of the normal to a curve $y = f(x)$ at point $(x_0, y_0)$ where $f'(x_0) \ne 0$? :: $m_{normal} = -\frac{1}{f'(x_0)}$.
+<!--SR:!2026-09-26,1,230-->
 
 ---
 ## 3.5 Substitution Flashcards
@@ -184,22 +188,30 @@ What is the slope of the normal to a curve $y = f(x)$ at point $(x_0, y_0)$ wher
 #flashcards
 
 What substitution simplifies $\sqrt{a^2 - x^2}$? :: $x = a\sin\theta$ (or $a\cos\theta$).
+<!--SR:!2026-09-26,1,230-->
 
 What substitution simplifies $\sqrt{a^2 + x^2}$? :: $x = a\tan\theta$.
 
 What substitution simplifies $\sqrt{x^2 - a^2}$? :: $x = a\sec\theta$.
+<!--SR:!2026-09-29,4,270-->
 
 What substitution simplifies $\frac{2x}{1+x^2}$? :: $x = \tan\theta$ (gives $\sin 2\theta$).
+<!--SR:!2026-09-29,4,270-->
 
 What substitution simplifies $\frac{1-x^2}{1+x^2}$? :: $x = \tan\theta$ (gives $\cos 2\theta$).
+<!--SR:!2026-09-29,4,270-->
 
 What substitution simplifies $\frac{2x}{1-x^2}$? :: $x = \tan\theta$ (gives $\tan 2\theta$).
+<!--SR:!2026-09-29,4,270-->
 
 What substitution simplifies $\sqrt{\frac{a-x}{a+x}}$? :: $x = a\cos 2\theta$ (gives $\tan\theta$).
+<!--SR:!2026-09-28,3,250-->
 
 State the half-angle identity for $\frac{1-\cos\theta}{\sin\theta}$. :: $\tan\frac{\theta}{2}$.
+<!--SR:!2026-09-29,4,270-->
 
 State the half-angle identity for $\frac{\sin\theta}{1+\cos\theta}$. :: $\tan\frac{\theta}{2}$.
+<!--SR:!2026-09-29,4,270-->
 
 State the half-angle identity for $\sqrt{\frac{1-\cos\theta}{1+\cos\theta}}$. :: $\tan\frac{\theta}{2}$.
 
@@ -208,5 +220,6 @@ What is the derivative of $y = \tan^{-1}\left(\frac{\sqrt{1+x^2}-1}{x}\right)$? 
 What is the derivative of $y = \sin^{-1}\left(\frac{2x}{1+x^2}\right)$ for $|x| < 1$? :: $\frac{2}{1+x^2}$.
 
 What is the derivative of $y = \cos^{-1}\left(\frac{1-x^2}{1+x^2}\right)$ for $x > 0$? :: $\frac{2}{1+x^2}$.
+<!--SR:!2026-09-29,4,270-->
 
 Why must you check the principal range after substitution? :: The inverse trig function only cancels if the angle lies in its principal range; otherwise piecewise definitions with $\pi$ adjustments are needed.

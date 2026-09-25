@@ -45,11 +45,15 @@ graph LR
 #flashcards
 
 What is the magnetic force on a charge $q$ moving with velocity $v$ at angle $\theta$ to magnetic field $B$? :: $F = q v B \sin\theta$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the force per unit length between two parallel long straight conductors carrying currents $I_1, I_2$ separated by distance $d$? :: $\frac{F}{L} = \frac{\mu_0 I_1 I_2}{2\pi d}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the magnetic field $B$ inside a long solenoid of $n$ turns per unit length carrying current $I$. :: $B = \mu_0 n I$.
+<!--SR:!2026-09-26,1,230-->
 
 How is the SI unit of current (Ampere) defined using magnetic force? :: 1 Ampere is the constant current which, if maintained in two straight parallel conductors of infinite length placed 1 meter apart in vacuum, produces a force of $2 \times 10^{-7}\text{ N/m}$ between them.
+<!--SR:!2026-09-26,1,230-->
 
 What is the deflecting torque $\tau$ on an $N$-turn coil of area $A$ carrying current $I$ in a radial magnetic field $B$? :: $\tau = N I A B$.

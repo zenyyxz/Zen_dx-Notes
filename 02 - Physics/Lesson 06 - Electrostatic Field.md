@@ -56,7 +56,9 @@ State Coulomb's Law of electrostatics. :: $F = \frac{1}{4\pi\varepsilon_0 \varep
 State Gauss's Law for electrostatics. :: The net electric flux through any closed surface equals the total enclosed charge divided by $\varepsilon_0$ ($\Phi = \oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q}{\varepsilon_0}$).
 
 What is the relation between electric field $E$ and electric potential $V$? :: $E = -\frac{dV}{dr}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the capacitance formula for a parallel-plate capacitor with dielectric constant $\varepsilon_r$. :: $C = \frac{\varepsilon_0 \varepsilon_r A}{d}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the 3 equivalent expressions for energy stored in a capacitor. :: $U = \frac{1}{2} Q V = \frac{1}{2} C V^2 = \frac{Q^2}{2C}$.

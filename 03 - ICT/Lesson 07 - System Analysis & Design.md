@@ -88,16 +88,18 @@ Before developing a system, a **Feasibility Study** evaluates whether the projec
 #flashcards
 
 What is an Open System? :: A system that interacts with its external environment by exchanging inputs, outputs, and feedback.
-<!--SR:!2026-09-19,2,230-->
+<!--SR:!2026-09-26,1,210-->
 
 What does the acronym TELOS stand for in Feasibility Studies? :: Technical, Economic, Legal, Operational, Schedule feasibility.
 
 What is the main characteristic of the Spiral SDLC model? :: High emphasis on risk analysis and iterative development cycles.
-<!--SR:!2026-08-03,3,250-->
+<!--SR:!2026-09-27,2,230-->
 
 What is the difference between Alpha Testing and Beta Testing? :: Alpha testing is conducted by developers/testers at the developer's site; Beta testing is performed by actual end-users in their real operational environment.
+<!--SR:!2026-09-28,3,250-->
 
 What is Direct Changeover deployment, and what is its major risk? :: Stopping the old system completely and immediately switching to the new system; high risk if the new system fails as there is no backup.
+<!--SR:!2026-09-29,4,270-->
 
 What is Parallel Running deployment? :: Operating the old system and new system simultaneously for a period until the new system is proven reliable.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-10,15,290-->

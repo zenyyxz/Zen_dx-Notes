@@ -228,15 +228,20 @@ long long nCr(int n, int r) {
 #flashcards
 
 What is the time complexity of the Sieve of Eratosthenes up to $N$? :: $O(N \log \log N)$ time.
+<!--SR:!2026-09-26,1,230-->
 
 How do you perform division $\frac{A}{B} \pmod M$ when $M$ is prime? :: Multiply $A$ by the modular inverse of $B$: $(A \cdot B^{M-2}) \pmod M$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the time complexity of binary exponentiation $(A^B) \pmod M$? :: $O(\log B)$ time.
 
 Why must you write `((a % m) - (b % m) + m) % m` instead of `(a - b) % m` in C++? :: Because C++ modulo can return negative values for negative operands, so adding `m` before the final mod ensures a non-negative result.
 
 Why write `a / gcd(a, b) * b` instead of `a * b / gcd(a, b)` for LCM? :: Dividing first prevents intermediate overflow of the product `a * b`.
+<!--SR:!2026-09-26,1,230-->
 
 How do you compute $\binom{n}{r} \bmod p$ in $O(1)$ per query? :: Precompute `fact[]` and `inv_fact[]` arrays in $O(N)$ time, then $\binom{n}{r} = \text{fact}[n] \cdot \text{inv\_fact}[r] \cdot \text{inv\_fact}[n-r] \bmod p$.
+<!--SR:!2026-09-26,1,230-->
 
 When should you use Extended GCD instead of Fermat's Little Theorem for modular inverse? :: When the modulus $m$ is **not prime** — Fermat's theorem only works for prime moduli, while ExtGCD works for any modulus where $\gcd(a, m) = 1$.
+<!--SR:!2026-09-26,1,230-->

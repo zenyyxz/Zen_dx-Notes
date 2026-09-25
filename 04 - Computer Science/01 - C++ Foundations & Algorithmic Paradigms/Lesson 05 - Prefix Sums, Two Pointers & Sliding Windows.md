@@ -93,7 +93,10 @@ for (int r = 0; r < n; r++) {
 #flashcards
 
 What is the 1D prefix sum formula for inclusive range sum $a[L \dots R]$? :: `pref[R + 1] - pref[L]`.
+<!--SR:!2026-09-26,1,230-->
 
 What is the 2D prefix sum formula for subgrid sum $(r_1, c_1)$ to $(r_2, c_2)$? :: `pref[r2][c2] - pref[r1-1][c2] - pref[r2][c1-1] + pref[r1-1][c1-1]`.
+<!--SR:!2026-09-26,1,230-->
 
 Why must elements be non-negative for standard variable-length sliding window? :: Because shrinking the window from the left is guaranteed to decrease (or keep equal) the window sum only when values are non-negative.
+<!--SR:!2026-09-26,1,230-->

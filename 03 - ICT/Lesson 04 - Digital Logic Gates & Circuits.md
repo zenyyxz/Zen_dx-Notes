@@ -124,6 +124,7 @@ K-Maps visually simplify Boolean expressions into **Sum of Products (SOP)** form
 ## 5. Combinational Logic Circuits
 
 A **Combinational Circuit** is a circuit whose ==output depends **solely on current inputs** (no memory).==
+<!--SR:!2026-09-29,4,270-->
 
 ### A. Half Adder
 Adds two 1-bit binary numbers ($A, B$):
@@ -153,6 +154,7 @@ A **Sequential Circuit**'s ==output depends on **both current inputs and past st
 #flashcards
 
 Why are NAND and NOR gates called Universal Gates? :: Because any Boolean function or basic logic gate can be implemented using exclusively NAND gates or exclusively NOR gates.
+<!--SR:!2026-09-29,4,270-->
 
 State De Morgan's First Law. :: $\overline{A \cdot B} = \overline{A} + \overline{B}$.
 
@@ -160,15 +162,20 @@ State De Morgan's Second Law. :: $\overline{A + B} = \overline{A} \cdot \overlin
 <!--SR:!2026-10-01,14,290-->
 
 What is the Boolean expression for the output of an XOR gate with inputs A and B? :: $F = A \oplus B = A\overline{B} + \overline{A}B$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the Boolean simplified result of $A + \overline{A}B$? :: $A + B$ (Absorption Law).
 
 What is a minterm? :: An AND (product) term containing every variable exactly once; it is 1 for exactly one truth-table input combination. For a row, use an uncomplemented variable for input 1 and a complemented variable for input 0.
+<!--SR:!2026-09-29,4,270-->
 
 What is a maxterm? :: An OR (sum) term containing every variable exactly once; it is 0 for exactly one truth-table input combination. For a row, use a complemented variable for input 1 and an uncomplemented variable for input 0.
 
 What are the Boolean expressions for Sum and Carry in a Half Adder? :: $Sum = A \oplus B$, $Carry = A \cdot B$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the key structural difference between Combinational and Sequential logic circuits? :: Combinational circuits output depends only on current inputs (no memory); Sequential circuits output depends on current inputs and past state (has memory).
+<!--SR:!2026-09-29,4,270-->
 
 What is the function of a Multiplexer (MUX)? :: It selects one data signal from multiple ($2^n$) input lines and routes it to a single output line based on $n$ select lines.
+<!--SR:!2026-09-29,4,270-->

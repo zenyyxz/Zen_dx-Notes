@@ -47,8 +47,10 @@ graph LR
 #flashcards
 
 State the Remainder Theorem for a polynomial $P(x)$ divided by $(ax - b)$. :: The remainder is $R = P\left(\frac{b}{a}\right)$.
+<!--SR:!2026-09-29,4,270-->
 
 State the Factor Theorem. :: $(ax - b)$ is a factor of polynomial $P(x)$ if and only if $P\left(\frac{b}{a}\right) = 0$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the general form of the remainder when a polynomial $P(x)$ is divided by a quadratic expression $(x - a)(x - b)$? :: A linear expression $R(x) = A x + B$.
 
@@ -57,3 +59,4 @@ What must be done before resolving a rational fraction $\frac{P(x)}{Q(x)}$ into 
 What is the partial fraction template for a repeated linear factor $(x - a)^2$ in the denominator? :: $\frac{A}{x - a} + \frac{B}{(x - a)^2}$.
 
 What is the partial fraction template for an irreducible quadratic factor $(x^2 + px + q)$ in the denominator? :: $\frac{A x + B}{x^2 + px + q}$.
+<!--SR:!2026-09-29,4,270-->

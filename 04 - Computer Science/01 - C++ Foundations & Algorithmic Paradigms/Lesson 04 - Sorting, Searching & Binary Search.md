@@ -94,7 +94,10 @@ long long solveBinarySearch(int k, const vector<int>& a) {
 #flashcards
 
 What is the difference between `lower_bound` and `upper_bound`? :: `lower_bound` returns an iterator to the first element $\ge$ target, while `upper_bound` returns an iterator to the first element strictly $>$ target.
+<!--SR:!2026-09-26,1,230-->
 
 What property must a problem possess to apply Binary Search on Answer? :: Monotonicity — the predicate function `check(x)` must transition cleanly from `true` to `false` (or `false` to `true`).
+<!--SR:!2026-09-26,1,230-->
 
 Why write `low + (high - low) / 2` instead of `(low + high) / 2`? :: To prevent integer overflow when `low + high` exceeds the maximum capacity of the integer type.
+<!--SR:!2026-09-29,4,270-->

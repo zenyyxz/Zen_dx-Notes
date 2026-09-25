@@ -38,10 +38,12 @@ $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatr
 #flashcards
 
 State the inverse formula for a 2x2 matrix $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$. :: $A^{-1} = \frac{1}{ad - bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$ (provided $\det A = ad - bc \ne 0$).
+<!--SR:!2026-09-26,1,230-->
 
 What is a non-singular matrix? :: A square matrix whose determinant is non-zero ($\det A \ne 0$), meaning its inverse exists.
 
 State the transpose reversal rule for matrix multiplication $(A B)^T$. :: $(A B)^T = B^T A^T$.
+<!--SR:!2026-09-26,1,230-->
 
 State the inverse reversal rule for matrix multiplication $(A B)^{-1}$. :: $(A B)^{-1} = B^{-1} A^{-1}$.
 

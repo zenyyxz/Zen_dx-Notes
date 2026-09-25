@@ -58,5 +58,7 @@ What is the gravitational potential $V$ at distance $r$ from mass $M$? :: $V = -
 State Kepler's Third Law of Planetary Motion. :: The square of the orbital period $T$ of a satellite is directly proportional to the cube of the orbital radius $r$ ($T^2 \propto r^3$).
 
 What is the orbital speed $v_o$ of a satellite orbiting at distance $r$ from Earth's center? :: $v_o = \sqrt{\frac{GM}{r}}$.
+<!--SR:!2026-09-26,1,230-->
 
 What is Escape Velocity, and what is its value at Earth's surface? :: The minimum initial velocity required for an object to escape a body's gravitational field permanently; $v_e = \sqrt{2gR} \approx 11.2\text{ km/s}$.
+<!--SR:!2026-09-26,1,230-->

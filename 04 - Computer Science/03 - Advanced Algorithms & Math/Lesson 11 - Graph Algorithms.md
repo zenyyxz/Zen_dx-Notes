@@ -138,3 +138,4 @@ When is Dijkstra's algorithm valid? :: When all edge weights in the graph are no
 What does Kahn's algorithm use to perform Topological Sorting? :: A queue tracking vertices with an indegree of 0.
 
 What is the time complexity of Kruskal's Minimum Spanning Tree algorithm? :: $O(E \log E)$ time for sorting edges.
+<!--SR:!2026-09-26,1,230-->

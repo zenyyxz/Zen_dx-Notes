@@ -92,7 +92,9 @@ To guarantee an algorithm is correct:
 #flashcards
 
 Roughly how many operations can C++ execute within a 1.0 second time limit? :: Approximately $10^8$ operations.
+<!--SR:!2026-09-28,3,250-->
 
 How many 4-byte `int` elements can be safely stored within a 256 MB memory limit? :: Approximately $6.7 \times 10^7$ integers.
 
 What is a loop invariant? :: A logical statement that holds true before and after every iteration, used to prove algorithm correctness.
+<!--SR:!2026-09-26,1,230-->

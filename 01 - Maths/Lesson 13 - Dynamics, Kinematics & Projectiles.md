@@ -36,9 +36,12 @@ tags:
 #flashcards
 
 State the relative velocity vector equation of body $A$ relative to body $B$. :: $\mathbf{v}_{A/B} = \mathbf{v}_A - \mathbf{v}_B$.
+<!--SR:!2026-09-29,4,270-->
 
 What are the calculus expressions for acceleration $a$ in terms of displacement $s$ and velocity $v$? :: $a = \frac{dv}{dt} = v \frac{dv}{ds} = \frac{d^2 s}{dt^2}$.
+<!--SR:!2026-09-29,4,270-->
 
 State the Cartesian trajectory equation of a projectile launched at speed $u$ and angle $\theta$. :: $y = x \tan\theta - \frac{g x^2}{2u^2 \cos^2\theta}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the formula for maximum horizontal range $R_{\max}$ of a projectile on level ground. :: $R_{\max} = \frac{u^2}{g}$ (achieved at launch angle $\theta = 45^\circ$).

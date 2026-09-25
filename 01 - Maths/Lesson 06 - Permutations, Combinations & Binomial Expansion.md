@@ -50,9 +50,12 @@ $$(a + b)^n = \binom{n}{0} a^n + \binom{n}{1} a^{n-1}b + \binom{n}{2} a^{n-2}b^2
 State the formula for $^nP_r$ and $^nC_r$. :: $^nP_r = \frac{n!}{(n-r)!}$ and $^nC_r = \frac{n!}{r!(n-r)!}$.
 
 State Pascal's Identity for combinations. :: $^nC_r + ^nC_{r-1} = ^{n+1}C_r$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the number of distinct circular permutations of $n$ distinct objects? :: $(n-1)!$.
+<!--SR:!2026-09-26,1,230-->
 
 What is the general term $T_{r+1}$ in the binomial expansion of $(a + b)^n$? :: $T_{r+1} = \binom{n}{r} a^{n-r} b^r$.
 
 What is the sum of all binomial coefficients $\sum_{r=0}^n \binom{n}{r}$? :: $2^n$.
+<!--SR:!2026-09-26,1,230-->

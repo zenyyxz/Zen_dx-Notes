@@ -52,9 +52,12 @@ State Einstein's Photoelectric Equation. :: $h f = \Phi + E_{k,\text{max}} = h f
 What is the cut-off wavelength $\lambda_{\text{min}}$ of continuous X-rays produced in a tube operating at voltage $V$? :: $\lambda_{\text{min}} = \frac{h c}{e V}$.
 
 State de Broglie's wavelength formula for a particle of mass $m$ moving at velocity $v$. :: $\lambda = \frac{h}{p} = \frac{h}{m v}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the Radioactive Decay Law equation. :: $N(t) = N_0 e^{-\lambda t}$ (or Activity $A(t) = A_0 e^{-\lambda t}$).
+<!--SR:!2026-09-26,1,230-->
 
 What is the relationship between decay constant $\lambda$ and half-life $T_{1/2}$? :: $T_{1/2} = \frac{\ln 2}{\lambda} \approx \frac{0.693}{\lambda}$.
+<!--SR:!2026-09-26,1,230-->
 
 What is mass defect $\Delta m$ and how is binding energy calculated? :: Mass defect is the difference between total mass of individual nucleons and actual mass of nucleus; Binding Energy $E_b = \Delta m \cdot c^2$.

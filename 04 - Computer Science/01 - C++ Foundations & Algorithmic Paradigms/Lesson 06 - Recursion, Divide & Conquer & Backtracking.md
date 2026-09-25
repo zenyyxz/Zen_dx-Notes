@@ -95,7 +95,10 @@ long long mergeSort(int l, int r, vector<int>& a) {
 #flashcards
 
 What is the fundamental step in Backtracking after returning from a recursive call? :: Restoring the state (e.g., `current.pop_back()` or `used[i] = false`) so other branches start with clean data.
+<!--SR:!2026-09-28,3,250-->
 
 What is the time complexity of generating all subsets vs all permutations of $N$ items? :: Subsets take $O(2^N)$ time, while permutations take $O(N!)$ time.
+<!--SR:!2026-09-26,1,230-->
 
 What are the three core steps of Divide & Conquer? :: Divide the problem into subproblems, Conquer subproblems recursively, and Combine their solutions.
+<!--SR:!2026-09-26,1,230-->

@@ -88,24 +88,28 @@ For information to be valuable to decision-makers, it must possess:
 #flashcards
 
 What is data? :: Raw, unorganized facts, figures, and symbols that lack context and meaning on their own.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-11,16,290-->
 
 What is information? :: Data that has been processed, structured, and presented within a context so that it becomes meaningful and useful for decision making.
-<!--SR:!2026-08-19,14,290-->
+<!--SR:!2026-11-19,55,310-->
 
 What are the 3 main phases of the Data Life Cycle? :: 1. Data Creation/Capture, 2. Data Management/Storage, 3. Removal of Obsolete Data.
+<!--SR:!2026-09-29,4,270-->
 
 List 5 key characteristics of valuable information. :: Timeliness, Accuracy, Contextual relevance, Enhanced understandability, Less uncertainty.
+<!--SR:!2026-09-29,4,270-->
 
 What is Big Data? :: Extremely large and complex datasets that traditional data processing software cannot handle effectively.
+<!--SR:!2026-09-29,4,270-->
 
 Name the 5 V's of Big Data. :: Volume, Velocity, Variety, Veracity, Value.
-<!--SR:!2026-09-12,14,290-->
+<!--SR:!2026-11-20,56,310-->
 
 What does the Velocity characteristic of Big Data refer to? :: The high speed at which data is generated, collected, and processed in real-time.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-11,16,290-->
 
 State 4 main drawbacks of manual data processing methods. :: 1. Inconsistency and data duplication, 2. Room for human error, 3. Processing delays, 4. Difficulty in sharing information.
-<!--SR:!2026-08-04,4,270-->
+<!--SR:!2026-10-09,14,290-->
 
 What are the 3 main types of E-Governance services? :: 1. G2C (Government to Citizen), 2. G2B (Government to Business), 3. G2G (Government to Government).
+<!--SR:!2026-09-29,4,270-->

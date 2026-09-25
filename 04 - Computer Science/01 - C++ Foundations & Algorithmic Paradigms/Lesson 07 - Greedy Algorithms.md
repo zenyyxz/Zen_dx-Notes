@@ -77,7 +77,9 @@ int maxNonOverlappingIntervals(vector<Interval>& intervals) {
 #flashcards
 
 What heuristic should you sort by to solve the classic Interval Scheduling problem? :: Sort intervals by their **finish time** in ascending order.
+<!--SR:!2026-09-26,1,230-->
 
 What proof technique is commonly used to prove the correctness of a Greedy algorithm? :: The Exchange Argument proof.
 
 Why can Greedy fail on general coin change problems? :: Because locally taking the largest coin denomination may leave a remainder that requires more total coins than a smaller initial coin pick would (requires Dynamic Programming).
+<!--SR:!2026-09-26,1,230-->

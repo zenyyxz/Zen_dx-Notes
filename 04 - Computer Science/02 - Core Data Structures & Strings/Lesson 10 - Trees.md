@@ -102,5 +102,7 @@ int getTreeDiameter() {
 How many edges does a tree with $N$ vertices have? :: Exactly $N - 1$ edges.
 
 Why is a `visited` array not strictly necessary during a Tree DFS? :: Because passing `parent` is sufficient to prevent walking back on the edge you arrived from (since trees have no cycles).
+<!--SR:!2026-09-26,1,230-->
 
 How do you find the diameter of an unweighted tree in $O(N)$ time using DFS? :: Run 1st DFS from any node to find the farthest node $A$, then run 2nd DFS from $A$ to find the farthest node $B$. The distance between $A$ and $B$ is the diameter.
+<!--SR:!2026-09-26,1,230-->

@@ -266,34 +266,47 @@ C++ equivalents: neither `f(int x)` (copy) nor `f(int& x)` (true alias). There i
 #flashcards
 
 What are the 4 steps of problem solving (9.1)? :: Understand problem, define boundaries, plan solution, implement.
+<!--SR:!2026-09-29,4,270-->
 
 What is modularization + stepwise refinement? :: Split into modules, refine top-down from main task to detailed steps; show with structure charts.
 
 Name 3 ways to represent algorithms. :: Flowcharts, pseudocode, hand traces.
+<!--SR:!2026-09-28,3,250-->
 
 What is the difference between a Compiler and an Interpreter? :: A Compiler translates the entire source code into machine code at once prior to execution; an Interpreter translates and executes source code line-by-line at runtime.
+<!--SR:!2026-09-29,4,270-->
 
 What is source vs object code? :: Source is human-readable .py/.c; object is machine-readable .o/.obj linked then run.
+<!--SR:!2026-09-29,4,270-->
 
 What is hybrid translation + linker? :: Compile to intermediate then interpret (Java/Python); linker joins objects + libraries to exe.
+<!--SR:!2026-09-29,4,270-->
 
 Which flowchart symbol is used for Decision making? :: Diamond.
+<!--SR:!2026-09-29,4,270-->
 
 What are the 3 fundamental control structures in programming? :: 1. Sequence, 2. Selection, 3. Iteration.
+<!--SR:!2026-09-29,4,270-->
 
 Compare imperative vs declarative vs OOP. :: Imperative how (C/Python), declarative what (SQL/HTML), OOP objects/classes with encapsulation/inheritance.
+<!--SR:!2026-09-29,4,270-->
 
 What are IDE basic features? :: Open/save, compile/execute, debugging (breakpoints/step).
+<!--SR:!2026-09-29,4,270-->
 
 What does input() return and how to get int? :: Always string; use int(input()) / float() / str() casting.
+<!--SR:!2026-09-29,4,270-->
 
 What is operator precedence in Python? :: () > ** > * / // % > + -; left-to-right, ** right-to-left.
 
 What is local vs global scope? :: Local inside func, global outside; lifetime is duration variable exists.
+<!--SR:!2026-09-28,3,250-->
 
 What is the difference between a Python List and a Tuple? :: A List is mutable (can be modified) and defined using square brackets `[]`; a Tuple is immutable (cannot be modified) and defined using parentheses `()`.
+<!--SR:!2026-09-29,4,270-->
 
 What are basic file operations/modes? :: Open, close, read, write, append; modes w/r/a, use with for auto-close.
+<!--SR:!2026-09-28,3,250-->
 
 How to manage DB data in Python? :: Connect (sqlite3), embed SQL to retrieve/add/modify/delete, commit, close.
 
@@ -302,6 +315,7 @@ What is sequential search complexity? :: O(N), check 0 to N-1.
 What is the precondition for executing a Binary Search algorithm on an array? :: The array must be sorted in ascending or descending order.
 
 What is the worst-case Time Complexity of Bubble Sort? :: $O(N^2)$.
+<!--SR:!2026-09-29,4,270-->
 
 What is Python argument passing (C++ view)? :: Pass-by-object-reference: function gets copy of reference; rebinding param does not affect caller, mutating shared object does.
 
