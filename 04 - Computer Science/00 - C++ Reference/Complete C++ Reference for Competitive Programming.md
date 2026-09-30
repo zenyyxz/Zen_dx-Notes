@@ -1040,7 +1040,56 @@ g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -fsanitize=address solution.cpp -o sol
 
 ---
 
-## 7. Spaced Repetition Flashcards
+## 7. Synchronous vs Asynchronous + Threads Primer (non-CP, real-world C++)
+
+> CP judges are single-threaded — threads usually **hurt** (nondeterminism, overhead, TLE). This section is for understanding, not contests.
+
+- **Synchronous**: caller blocks until done (`f(); g();` — `g` waits for `f`).
+- **Asynchronous**: caller launches work and continues; result collected later (callback / future / coroutine).
+
+### Threads
+```cpp
+#include <thread>
+void work(int x) { /* ... */ }
+
+std::thread t(work, 42); // launches concurrently
+t.join();                // wait (blocks); use t.detach() to let run free (rare)
+```
+- C++20 `std::jthread` joins automatically on destruction — prefer it.
+- Each thread has its own stack; heap/globals shared → **data races** if two threads touch same memory with ≥1 write and no sync.
+
+### Mutex (mutual exclusion)
+```cpp
+#include <mutex>
+std::mutex m; int counter = 0;
+void inc() {
+    std::lock_guard<std::mutex> lk(m); // RAII: locks, auto-unlocks
+    ++counter; // safe now
+}
+```
+- `lock_guard` = simple scoped lock. `unique_lock` = flexible (defer, try, timed, with `condition_variable`).
+- Rule: shared mutable state → hold same mutex. Prefer smallest critical section; never hold across I/O/sleep.
+
+### Futures / async / promise
+```cpp
+#include <future>
+auto fut = std::async(std::launch::async, work, 42); // runs async
+// ... do other work ...
+fut.get(); // blocks for result, rethrows exceptions
+
+std::promise<int> p; auto f = p.get_future();
+// producer thread: p.set_value(99); consumer: int v = f.get();
+```
+- `std::async` = fire-and-collect. `promise/future` = manual handoff between threads. Exceptions cross via `.get()`.
+
+### Related tools
+- `std::condition_variable`: thread sleeps until notified (`wait(lk, pred)` + `notify_one/all`) — producer/consumer queues.
+- `std::atomic<int>`: lock-free single-variable sync (counters, flags). Cheaper than mutex for one word; `memory_order` beyond scope.
+- Coroutines (C++20 `co_await/co_return`): async *without* threads (single-threaded concurrency) — used in networking, not CP.
+
+---
+
+## 8. Spaced Repetition Flashcards
 
 #flashcards
 
@@ -1099,3 +1148,11 @@ What is the difference between `const` and `constexpr`? :: `const` means a value
 
 What does the `inline` keyword do when applied to a function? :: It suggests to the compiler to replace the function call with the actual code of the function to save function-call overhead, though modern compilers often do this automatically during optimization.
 <!--SR:!2026-09-28,3,250-->
+
+What is the difference between synchronous and asynchronous execution? :: Synchronous blocks the caller until done; asynchronous launches work and collects the result later via future/callback/coroutine.
+
+When must you use `join()` on a `std::thread`? :: Before the thread object is destroyed — `join()` blocks until it finishes; C++20 `std::jthread` joins automatically.
+
+Why does shared `counter++` across threads need a mutex? :: `++` is read-modify-write; without a mutex two threads race and updates get lost — guard with `lock_guard<mutex>`.
+
+What do `std::async` + `.get()` do? :: `async` runs work concurrently and returns a `future`; `.get()` blocks for the result and rethrows any exception from the worker.
