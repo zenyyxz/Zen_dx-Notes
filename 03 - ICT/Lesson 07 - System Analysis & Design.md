@@ -15,91 +15,168 @@ tags:
 ---
 # :LiBook: Lesson 07: System Analysis & Design
 
-> [!ABSTRACT] Syllabus Scope (NIE Teacher's Guide)
-> - Systems Concept (Open vs Closed Systems)
-> - SDLC Phases & Software Process Models (Waterfall, Spiral, Agile, Prototyping)
-> - Feasibility Study (TELOS Framework)
-> - SSADM: Data Flow Diagrams (DFD Context & Level 1)
-> - System Testing Types & Deployment Strategies
+> [!ABSTRACT] Syllabus Scope (NIE Teacher's Guide 7.1-7.10)
+> - 7.1 Systems concept + characteristics + classification
+> - 7.2 Manmade information systems (OAS-TPS-MIS-DSS-ESS-GIS-KMS-CMS-ERPS-Smart)
+> - 7.3 SDLC models (Waterfall/Spiral/Agile/Prototyping/RAD) + Structured/OO
+> - 7.4 SSADM intro + stages covered
+> - 7.5 Preliminary investigation + feasibility (Technical/Economic/Operational/Organizational)
+> - 7.6 Analysis: requirements + BAM/DFD/EPD/LDS + BSO
+> - 7.7 Logical + physical design (UI, tables, data dictionary)
+> - 7.8 Build + test (white/black, unit/integration/system/acceptance)
+> - 7.9 Deployment (parallel/direct/pilot/phase) + aftercare
+> - 7.10 Off-the-shelf packages (gap analysis, mapping, reengineering)
 
 ---
-## 1. Systems Concept
+## 1. Systems Concept (7.1)
 
 A **System** is a collection of interrelated components working together towards a common goal by accepting inputs, processing them, and producing outputs within a boundary.
-- **Open System**: Interacts with its environment (exchanges info/energy; e.g., Information System).
-- **Closed System**: Isolated from its environment.
+
+- Characteristics: boundary, inputs/outputs, processing, feedback, hierarchy of subsystems.
+- **Open vs Closed**: open exchanges with environment (e.g. Information System); closed isolated.
+- **Natural vs Manmade**: natural (river ecosystem) vs manmade (school system).
+- **Living vs Physical**: living (organisms) vs physical (machines).
 
 ---
-## 2. Systems Development Life Cycle (SDLC)
+## 2. Manmade Information Systems (7.2)
 
-SDLC consists of sequential/iterative phases:
-1. **Identification / Planning**: System request, defining scope.
-2. **Analysis**: Feasibility study, requirement gathering, DFD modeling.
-3. **Design**: Architectural design, database schema, UI design, algorithm design.
-4. **Development / Coding**: Software encoding in programming languages.
-5. **Testing**: Verifying correctness and removing bugs.
-6. **Implementation / Deployment**: Installing system, user training, data conversion.
-7. **Maintenance**: Corrective, Adaptive, Perfective maintenance.
+Compare by objective + functionality:
 
----
-## 3. SDLC Software Models
-
-- **Waterfall Model**: Linear sequential model. Easy to manage, but inflexible to requirement changes.
-- **Prototyping Model**: Builds a quick prototype for user feedback. Ideal when requirements are unclear.
-- **Spiral Model**: Iterative model focusing heavily on **Risk Analysis**. Suitable for large, high-risk projects.
-- **Agile Model**: Iterative & incremental development delivering functional software in short sprints. Highly adaptable.
+- **OAS**: office automation (word processing, email).
+- **TPS**: transaction processing (POS billing, ATM).
+- **MIS**: management reports from TPS data.
+- **DSS**: decision support with models/what-if.
+- **ESS**: executive dashboards for seniors.
+- **GIS**: geographic/mapped data.
+- **KMS**: captures/shares knowledge.
+- **CMS**: creates/manages web content.
+- **ERPS**: integrates all resources (HR, stock, finance).
+- **Smart systems**: sensor-driven automated (IoT).
 
 ---
-## 4. Feasibility Study (TELOS Framework)
+## 3. SDLC Models + SSADM (7.3-7.4)
 
-Before developing a system, a **Feasibility Study** evaluates whether the project should proceed:
-- **T - Technical Feasibility**: Is required technology and expertise available?
-- **E - Economic Feasibility**: Is cost-benefit ratio favorable (ROI, financial viability)?
-- **L - Legal Feasibility**: Does system comply with laws, regulations, and copyright?
-- **O - Operational Feasibility**: Will users accept and operate the system effectively?
-- **S - Schedule Feasibility**: Can system be completed within target timeframe?
+### SDLC (Waterfall stages):
+Planning -> Analysis -> Design -> Development -> Testing -> Implementation -> Maintenance.
+
+### Models:
+- **Waterfall**: linear sequential. Easy to manage, inflexible to change.
+- **Prototyping**: quick prototype for feedback. Best when requirements unclear.
+- **Spiral**: iterative + **Risk Analysis** each loop. Best for large/high-risk.
+- **Agile**: short sprints, working software fast. Highly adaptable.
+- **RAD**: rapid app dev with reusable components/tools.
+
+### Methodologies:
+- **Structured**: process/data-driven (DFD, ER). Syllabus focus via SSADM.
+- **Object-Oriented**: class/object-driven (UML).
+
+**SSADM** = Structured Systems Analysis and Design Methodology. Covers analysis + logical/physical design stages of SDLC (not coding/testing directly).
 
 ---
-## 5. DFD & SSADM Structured Modeling
+## 4. Preliminary Investigation + Feasibility (7.5)
+
+### Preliminary investigation tasks:
+1. Identify problems in current system.
+2. Suggest alternative solutions.
+3. Prioritize information-system needs.
+
+### Feasibility (TG = 4 types):
+- **Technical**: technology + expertise available?
+- **Economic**: cost-benefit favourable?
+- **Operational**: users will accept/operate it?
+- **Organizational**: fits org structure/policies?
+
+> [!WARNING] TELOS vs TG
+> Industry uses TELOS (+Legal +Schedule). NIE 7.5 lists only the 4 above. Write the 4 on paper; mention Legal/Schedule only if asked as extra.
+
+---
+## 5. Analysis: Requirements + Tools + BSO (7.6)
+
+### Requirement analysis:
+- **Functional**: what system does (e.g. calculate bill).
+- **Non-functional**: how well (speed, security, usability). IEEE: requirements must be unambiguous, verifiable, traceable.
+
+### Analytical tools:
+- **BAM (Business Activity Model)**: high-level activities of the business.
+- **DFM**: Data Flow Modeling — **Context diagram** (whole system as one process + entities), **Level 1 DFD** (decompose into sub-processes + data stores), **Document flow diagram** (paper flow before computerisation).
+- **EPD (Elementary Process Description)**: text/pseudocode for each lowest-level process.
+- **LDM/LDS**: Logical Data Modeling — entities/attributes/relationships without physical detail.
+
+### BSO (Business System Options):
+Propose several system options -> compare cost/benefit/risk -> select most appropriate.
 
 > [!INFO] Deep Dive Note
-> For DFD symbols (Gane & Sarson), Context Diagram rules, Level 1 DFD decomposition, and Data Dictionary, read: [[Subtopics/System Analysis DFD & ER Modeling|DFD & ER Modeling Guide]].
+> For DFD symbols (Gane & Sarson), Context rules, Level 1 decomposition, EPD writing, LDS, and Data Dictionary, read: [[Subtopics/System Analysis DFD & ER Modeling|DFD & ER Modeling Guide]].
 
 ---
-## 6. System Testing & Deployment Strategies
+## 6. Design: Logical + Physical (7.7)
 
-### System Testing Levels:
-- **Unit Testing**: Testing individual modules/functions.
-- **Integration Testing**: Testing interactions between combined modules.
-- **System Testing**: Testing the complete integrated system against functional requirements.
-- **Acceptance Testing**:
-  - **Alpha Testing**: Conducted by internal test team at developer site.
-  - **Beta Testing**: Conducted by real end-users in real operating environment.
+- **Logical DFDs** for proposed system (from EPDs up to context).
+- **EPD in pseudocode** for each elementary process.
+- **UI design**: input screens, outputs, navigation.
+- **Logical Data Structure (LDS)** for proposed system.
+- **Physical DB design**: tables + record specs (field/type/size/key), **data dictionary** (metadata catalogue), database construction.
 
-### Deployment Strategies:
-- **Direct Changeover**: Immediately replaces old system with new system (High risk, lowest cost).
-- **Parallel Running**: Runs old and new systems simultaneously (Lowest risk, expensive).
-- **Pilot Implementation**: Deploys system in one department/branch first; expands after success.
-- **Phased Implementation**: Deploys system module by module gradually.
+---
+## 7. Build + Test (7.8)
+
+- **Program development** (coding) + **Database development**.
+- **Test cases**: planned inputs + expected outputs.
+- **White box**: tests internal logic/code paths.
+- **Black box**: tests inputs/outputs without seeing code.
+- **Unit**: single module. **Integrated**: combined modules. **System**: whole system vs requirements. **Acceptance**: user accepts (alpha internal / beta real users).
+
+---
+## 8. Deployment + Aftercare (7.9)
+
+- **Parallel**: old + new run together (safest, costly).
+- **Direct**: instant cutover (cheapest, riskiest).
+- **Pilot**: one branch/department first, then expand.
+- **Phase**: module-by-module gradual rollout.
+- Aftercare: hardware/software install, **data migration**, **user training**, review, support, maintenance (corrective/adaptive/perfective).
+
+---
+## 9. Off-the-Shelf Packages (7.10)
+
+- **Pros**: cheaper/faster, tried, supported. **Cons**: misfit, customization cost, vendor dependence.
+- Steps: identify package capabilities/workflows -> **gap analysis** (business need vs package) -> **mapping** (activities onto package flow) -> **reengineering** (change business process) or **customization** (change package).
+- Compare investment/operational/maintenance cost vs custom build.
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
 
-What is an Open System? :: A system that interacts with its external environment by exchanging inputs, outputs, and feedback.
-<!--SR:!2026-09-26,1,210-->
+Name 3 classifications of systems with examples. :: Open/closed, natural/manmade, living/physical; e.g. open IS vs closed lab experiment.
 
-What does the acronym TELOS stand for in Feasibility Studies? :: Technical, Economic, Legal, Operational, Schedule feasibility.
+What is the difference between TPS, MIS, and DSS? :: TPS records transactions; MIS reports from TPS for managers; DSS models/what-if for decisions.
 
 What is the main characteristic of the Spiral SDLC model? :: High emphasis on risk analysis and iterative development cycles.
-<!--SR:!2026-09-27,2,230-->
 
-What is the difference between Alpha Testing and Beta Testing? :: Alpha testing is conducted by developers/testers at the developer's site; Beta testing is performed by actual end-users in their real operational environment.
-<!--SR:!2026-09-28,3,250-->
+When to use Prototyping vs Spiral? :: Prototyping when requirements unclear; Spiral for large high-risk projects.
+
+What does SSADM cover? :: Structured analysis + logical/physical design stages (not coding/testing).
+
+What are the 3 preliminary investigation tasks? :: Identify current problems, suggest alternatives, prioritize needs.
+
+What are the 4 NIE feasibility types? :: Technical, Economic, Operational, Organizational (Legal/Schedule are TELOS extras, not TG 7.5).
+
+Distinguish functional vs non-functional requirements. :: Functional = what it does; non-functional = how well (speed/security/usability).
+
+What tools draw in 7.6? :: BAM, context/Level 1 DFD, document flow, EPD, LDS; then propose/select BSO.
+
+What must every DFD process have? :: At least one input AND one output flow (else black hole/miracle).
+
+What is an EPD and data dictionary? :: EPD = pseudocode for each elementary process; dictionary = metadata catalogue of tables/fields.
+
+White box vs black box? :: White tests internal code paths; black tests inputs/outputs without code.
+
+Name 4 tests in order. :: Unit -> integrated -> system -> acceptance (alpha internal, beta real users).
 
 What is Direct Changeover deployment, and what is its major risk? :: Stopping the old system completely and immediately switching to the new system; high risk if the new system fails as there is no backup.
-<!--SR:!2026-09-29,4,270-->
 
 What is Parallel Running deployment? :: Operating the old system and new system simultaneously for a period until the new system is proven reliable.
-<!--SR:!2026-10-10,15,290-->
+
+Pilot vs phased deployment? :: Pilot = one site first then expand; phased = module-by-module rollout.
+
+What is gap analysis for off-the-shelf? :: Compare business process needs vs package features to find misfits, then reengineer process or customize package.
