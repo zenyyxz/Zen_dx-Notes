@@ -94,6 +94,10 @@ ListNode* reverseList(ListNode* head) {
 ```
 
 ---
+## 4. Related Problem Walkthroughs
+- [[04 - Problem Solutions/LC-0002 - Add Two Numbers|LC-0002: Add Two Numbers]] — Digit-by-digit list simulation using the dummy head pattern ($O(\max(N,M))$).
+
+---
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards

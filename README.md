@@ -134,7 +134,8 @@ Delta_dxz /
 │   ├── 00 - C++ Reference/
 │   ├── 01 - C++ Foundations & Algorithmic Paradigms/
 │   ├── 02 - Core Data Structures & Strings/
-│   └── 03 - Advanced Algorithms & Math/
+│   ├── 03 - Advanced Algorithms & Math/
+│   └── 04 - Problem Solutions/
 ├── Books/
 ├── Past Papers/
 ├── PDFs/

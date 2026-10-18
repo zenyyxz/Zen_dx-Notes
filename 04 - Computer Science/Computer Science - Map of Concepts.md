@@ -60,6 +60,11 @@ tags:
 | **14** | CS Foundations Beyond Contests | Discrete maths, systems, software engineering | [[03 - Advanced Algorithms & Math/Lesson 14 - CS Foundations Beyond Contests\|Lesson 14]] |
 | **17** | Advanced Math — FFT, NTT, CRT & Finite Fields | Polynomial multiplication, Chinese Remainder Theorem, Newton-Raphson, matrix exponentiation | [[03 - Advanced Algorithms & Math/Lesson 17 - Advanced Math - FFT, NTT, CRT & Finite Fields\|Lesson 17]] |
 
+### 04 — Problem Solutions & Upsolving Log
+| Section | Focus | Link |
+| :--- | :--- | :---: |
+| **Problem Solutions Hub** | Upsolving log: First attempt (brute force) vs optimal solution, patterns, & vault links | [[04 - Problem Solutions/Problems - Map of Concepts\|Problems - Map of Concepts]] |
+
 ---
 
 ## :LiPin:in: Suggested Practice Loop
