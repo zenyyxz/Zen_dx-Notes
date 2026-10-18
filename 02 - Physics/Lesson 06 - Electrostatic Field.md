@@ -62,3 +62,4 @@ State the capacitance formula for a parallel-plate capacitor with dielectric con
 <!--SR:!2026-09-26,1,230-->
 
 State the 3 equivalent expressions for energy stored in a capacitor. :: $U = \frac{1}{2} Q V = \frac{1}{2} C V^2 = \frac{Q^2}{2C}$.
+<!--SR:!2026-09-26,1,230-->

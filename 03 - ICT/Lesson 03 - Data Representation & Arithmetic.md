@@ -231,6 +231,7 @@ State 3 major drawbacks of Non-Positional Number Systems like Roman Numerals. ::
 What is the difference between face value and place value of a digit in a positional system? :: Face value is the intrinsic value of the digit itself; place value is the weight assigned to the position of the digit ($r^{\text{position}}$).
 
 Why do digital computers use the Binary number system instead of Decimal? :: Computer electronic circuits operate reliably on two voltage states (High/Low, ON/OFF), making binary highly noise-tolerant and physically reliable.
+<!--SR:!2026-09-28,3,250-->
 
 List 4 modern computer applications of Hexadecimal numbers. :: 1. RAM/CPU memory addresses, 2. HTML/CSS color codes (`#FF5733`), 3. IPv6 addresses, 4. Windows error codes (`0x0000007B`).
 <!--SR:!2026-10-05,10,270-->
@@ -249,6 +250,7 @@ What is the range of signed integers that can be stored in an 8-bit register usi
 What is the 8-bit 2's complement representation of $-25_{10}$? :: `11100111`.
 
 How is arithmetic overflow detected in 2's complement addition? :: When adding two numbers of the same sign produces a result with an opposite sign bit, or when carry-in to MSB differs from carry-out of MSB.
+<!--SR:!2026-09-29,4,270-->
 
 How many non-printable control characters and printable characters exist in standard 7-bit ASCII? :: 33 non-printable control characters and 95 printable characters (Total $2^7 = 128$).
 <!--SR:!2026-10-05,10,270-->

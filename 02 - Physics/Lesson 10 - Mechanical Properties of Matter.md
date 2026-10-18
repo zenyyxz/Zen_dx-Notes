@@ -41,5 +41,6 @@ State Stokes' Law for viscous drag force on a sphere of radius $r$ moving at vel
 What is the terminal velocity formula $v_t$ for a sphere falling in a viscous fluid? :: $v_t = \frac{2 r^2 (\rho - \sigma) g}{9 \eta}$ (where $\rho$ is sphere density and $\sigma$ is fluid density).
 
 State the excess pressure inside a liquid drop of radius $R$ and a soap bubble of radius $R$. :: Drop: $\Delta P = \frac{2\gamma}{R}$; Soap Bubble: $\Delta P = \frac{4\gamma}{R}$.
+<!--SR:!2026-09-26,1,230-->
 
 State the Capillary Tube height formula $h$. :: $h = \frac{2\gamma \cos\theta}{r \rho g}$.

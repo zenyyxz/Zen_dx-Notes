@@ -46,6 +46,7 @@ graph LR
 #flashcards
 
 State the formula for the sum of an infinite Geometric Series ($S_\infty$). :: $S_\infty = \frac{a}{1 - r}$ (valid only when $|r| < 1$).
+<!--SR:!2026-09-26,1,230-->
 
 State the standard formula for $\sum_{r=1}^n r^2$. :: $\sum_{r=1}^n r^2 = \frac{n(n+1)(2n+1)}{6}$.
 <!--SR:!2026-09-29,4,270-->
@@ -53,5 +54,7 @@ State the standard formula for $\sum_{r=1}^n r^2$. :: $\sum_{r=1}^n r^2 = \frac{
 State the standard formula for $\sum_{r=1}^n r^3$. :: $\sum_{r=1}^n r^3 = \left[\frac{n(n+1)}{2}\right]^2$.
 
 What is the telescoping sum result for $\sum_{r=1}^n (V_r - V_{r+1})$? :: $V_1 - V_{n+1}$.
+<!--SR:!2026-09-26,1,230-->
 
 What are the 3 steps of a Proof by Mathematical Induction? :: 1. Base Step (verify $P(1)$ is true), 2. Inductive Hypothesis (assume $P(k)$ is true for integer $k \ge 1$), 3. Inductive Step (prove $P(k+1)$ is true).
+<!--SR:!2026-09-26,1,230-->

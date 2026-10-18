@@ -192,6 +192,7 @@ What are the 3 disk allocation methods with examples? :: Contiguous (adjacent, e
 <!--SR:!2026-09-28,3,250-->
 
 What is defragmentation? :: Rearranging scattered fragments to eliminate unusable small free areas.
+<!--SR:!2026-09-28,3,250-->
 
 What are the 3 parts of disk formatting? :: Low-level prep, partitioning (visible to OS), high-level new file system.
 
@@ -203,10 +204,12 @@ Name I/O-bound vs CPU-bound processes. :: I/O-bound needs much I/O; CPU-bound ne
 What is an interrupt and handling? :: Async event altering execution (I/O done); OS saves state to PCB, runs another, restores on interrupt.
 
 What is a Process Control Block (PCB)? :: A data structure in the OS containing all information about a specific process (PID, state, CPU registers, memory pointers).
+<!--SR:!2026-09-28,3,250-->
 
 Name the 5 states in the standard Process State Model. :: 1. New, 2. Ready, 3. Running, 4. Waiting (Blocked), 5. Terminated.
 
 What extra states does the 7-state model add? :: Suspended Ready and Suspended Blocked for swapped-out processes.
+<!--SR:!2026-09-28,3,250-->
 
 Compare long, short, medium-term schedulers. :: Long (job, admit, slowest), short (CPU/dispatcher, fastest), medium (swapping, middle).
 
@@ -214,6 +217,7 @@ What is the difference between Preemptive and Non-Preemptive CPU scheduling? :: 
 <!--SR:!2026-09-29,4,270-->
 
 Define turnaround, waiting, response, throughput. :: Turnaround completion-arrival; waiting in ready queue; response first CPU-arrival; throughput procs/time.
+<!--SR:!2026-09-29,4,270-->
 
 What is a context switch? :: Saving/restoring CPU registers + PCB to share CPU; pure overhead.
 

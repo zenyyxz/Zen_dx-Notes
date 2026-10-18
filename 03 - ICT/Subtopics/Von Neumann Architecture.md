@@ -131,6 +131,7 @@ Who runs each stage of Fetch-Decode-Execute-Store? :: Fetch = CU + PC/MAR/MDR/IR
 <!--SR:!2026-09-29,4,270-->
 
 Does the ALU ever fetch from RAM? :: No. CU fetches via MAR/MDR into IR; ALU only computes when CU feeds it operands.
+<!--SR:!2026-09-29,4,270-->
 
 What is the Von Neumann Bottleneck? :: Single shared bus means CPU cannot fetch instruction and access data simultaneously; bus speed limits CPU.
 <!--SR:!2026-09-28,3,250-->

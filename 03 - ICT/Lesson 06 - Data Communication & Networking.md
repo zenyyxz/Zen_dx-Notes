@@ -171,6 +171,7 @@ To make networking standard, the ISO created the 7-Layer OSI model. The Internet
 #flashcards
 
 What is the difference between Bandwidth and Throughput? :: Bandwidth is the theoretical maximum capacity of a channel, while throughput is the actual, realized data transfer rate (which is always less than or equal to bandwidth due to overhead and latency).
+<!--SR:!2026-09-26,1,230-->
 
 What is the purpose of Manchester Encoding? :: It ensures there is a voltage transition in the middle of every bit, allowing the receiver to easily synchronize its clock with the sender and prevent timing errors.
 <!--SR:!2026-09-26,1,230-->
@@ -179,13 +180,16 @@ Why is Fiber Optic cable immune to Electromagnetic Interference (EMI)? :: Becaus
 <!--SR:!2026-09-29,4,270-->
 
 In a Star Topology, what happens if the central switch fails? :: The entire network goes down, as all devices rely on the central switch to communicate.
+<!--SR:!2026-09-28,3,250-->
 
 What is the difference between a Hub and a Switch? :: A hub broadcasts incoming data to all connected ports (causing collisions), whereas a switch inspects the MAC address and forwards the data only to the specific destination port.
 <!--SR:!2026-09-26,1,230-->
 
 What is the main function of the Network Layer (Layer 3) in the OSI model? :: Routing packets across different networks using logical IP addresses.
+<!--SR:!2026-09-29,4,270-->
 
 What is Encapsulation in networking? :: The process of adding protocol headers (and sometimes trailers) to data as it moves down the OSI layers from the Application layer to the Physical layer.
+<!--SR:!2026-09-26,1,230-->
 
 What does CSMA/CD stand for and where is it used? :: Carrier Sense Multiple Access with Collision Detection. It is used in wired Ethernet networks to manage medium access and handle collisions.
 

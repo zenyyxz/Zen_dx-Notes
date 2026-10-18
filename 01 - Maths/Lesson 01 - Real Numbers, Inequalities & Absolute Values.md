@@ -74,6 +74,7 @@ What is the equivalent algebraic condition for $|f(x)| \le a$ (where $a > 0$)? :
 What is the equivalent algebraic condition for $|f(x)| \ge a$ (where $a > 0$)? :: $f(x) \le -a$ or $f(x) \ge a$.
 
 How can an inequality of the form $|f(x)| \le |g(x)|$ be solved efficiently without case splitting? :: By squaring both sides: $[f(x)]^2 \le [g(x)]^2 \iff [f(x)]^2 - [g(x)]^2 \le 0 \iff (f(x)-g(x))(f(x)+g(x)) \le 0$.
+<!--SR:!2026-09-28,3,250-->
 
 State the Triangle Inequality for real numbers. :: $|a + b| \le |a| + |b|$.
 <!--SR:!2026-09-26,1,230-->

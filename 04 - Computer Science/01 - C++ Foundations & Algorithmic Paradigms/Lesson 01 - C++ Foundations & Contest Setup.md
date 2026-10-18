@@ -146,3 +146,4 @@ What does `cin.tie(nullptr)` help with? :: It removes automatic flushing of `cou
 <!--SR:!2026-09-28,3,250-->
 
 Why is `1LL * a * b` safer than `a * b` when `a` and `b` are `int`? :: It promotes the multiplication to `long long` before the operation takes place.
+<!--SR:!2026-09-29,4,270-->

@@ -214,8 +214,10 @@ State the half-angle identity for $\frac{\sin\theta}{1+\cos\theta}$. :: $\tan\fr
 <!--SR:!2026-09-29,4,270-->
 
 State the half-angle identity for $\sqrt{\frac{1-\cos\theta}{1+\cos\theta}}$. :: $\tan\frac{\theta}{2}$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the derivative of $y = \tan^{-1}\left(\frac{\sqrt{1+x^2}-1}{x}\right)$? :: $\frac{1}{2(1+x^2)}$.
+<!--SR:!2026-09-29,4,270-->
 
 What is the derivative of $y = \sin^{-1}\left(\frac{2x}{1+x^2}\right)$ for $|x| < 1$? :: $\frac{2}{1+x^2}$.
 

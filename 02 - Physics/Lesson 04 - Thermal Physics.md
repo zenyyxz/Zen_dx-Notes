@@ -78,3 +78,4 @@ State Fourier's Law of Thermal Conduction. :: $\frac{\Delta Q}{\Delta t} = k A \
 <!--SR:!2026-09-26,1,230-->
 
 State Stefan-Boltzmann Law for a blackbody radiator. :: $P = \sigma A T^4$.
+<!--SR:!2026-09-26,1,230-->

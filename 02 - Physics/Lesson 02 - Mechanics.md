@@ -80,6 +80,7 @@ $$\frac{V_{\text{submerged}}}{V_{\text{total}}} = \frac{\rho_{\text{object}}}{\r
 #flashcards
 
 State the 4 equations of linear motion for uniform acceleration. :: $v = u + at$, $s = ut + \frac{1}{2}at^2$, $v^2 = u^2 + 2as$, $s = \left(\frac{u+v}{2}\right)t$.
+<!--SR:!2026-09-29,4,270-->
 
 What are the formulas for Time of Flight $T$ and Horizontal Range $R$ of a projectile launched at speed $u$ and angle $\theta$? :: $T = \frac{2u\sin\theta}{g}$, $R = \frac{u^2\sin 2\theta}{g}$.
 <!--SR:!2026-09-29,4,270-->

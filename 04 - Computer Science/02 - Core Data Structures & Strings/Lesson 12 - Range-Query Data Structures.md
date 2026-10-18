@@ -116,3 +116,4 @@ What bitwise trick isolates the lowest set bit in a Fenwick Tree index? :: `idx 
 <!--SR:!2026-09-26,1,230-->
 
 How much memory array size should be allocated for a recursive Segment Tree on $N$ elements? :: $4N$ size array.
+<!--SR:!2026-09-26,1,230-->

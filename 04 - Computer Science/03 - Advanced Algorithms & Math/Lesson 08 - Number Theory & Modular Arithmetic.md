@@ -234,6 +234,7 @@ How do you perform division $\frac{A}{B} \pmod M$ when $M$ is prime? :: Multiply
 <!--SR:!2026-09-26,1,230-->
 
 What is the time complexity of binary exponentiation $(A^B) \pmod M$? :: $O(\log B)$ time.
+<!--SR:!2026-09-26,1,230-->
 
 Why must you write `((a % m) - (b % m) + m) % m` instead of `(a - b) % m` in C++? :: Because C++ modulo can return negative values for negative operands, so adding `m` before the final mod ensures a non-negative result.
 

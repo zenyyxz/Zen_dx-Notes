@@ -57,6 +57,7 @@ State the relations between roots $\alpha, \beta$ and coefficients of $ax^2 + bx
 What is the expression for $\alpha^2 + \beta^2$ in terms of $(\alpha + \beta)$ and $\alpha \beta$? :: $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$.
 
 What is the condition for $a x^2 + b x + c > 0$ to hold for all real values of $x$? :: $a > 0$ and Discriminant $\Delta = b^2 - 4ac < 0$ (Positive Definite).
+<!--SR:!2026-09-28,3,250-->
 
 What is the condition for $a x^2 + b x + c < 0$ to hold for all real values of $x$? :: $a < 0$ and Discriminant $\Delta = b^2 - 4ac < 0$ (Negative Definite).
 

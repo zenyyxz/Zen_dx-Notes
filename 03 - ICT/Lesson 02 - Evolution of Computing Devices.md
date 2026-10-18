@@ -166,6 +166,7 @@ What key technological innovation characterized Second Generation computers? :: 
 Classify computers by technology with one example each. :: Analog (continuous, e.g. thermometer), Digital (discrete 0/1, e.g. PC), Hybrid (both, e.g. ICU monitor).
 
 What is special vs general purpose? :: Special = one dedicated task (ATM); General = many tasks via programs (PC).
+<!--SR:!2026-09-29,4,270-->
 
 Order super/mainframe/mini/micro by size. :: Super (fastest parallel) > Mainframe (multi-user) > Mini (department server) > Micro (single-user PC/phone).
 
@@ -183,11 +184,13 @@ If an address bus has 16 lines (16-bit), how many unique memory locations can it
 <!--SR:!2026-10-10,15,290-->
 
 What is the difference between SRAM and DRAM? :: SRAM uses flip-flops, is faster, does not require refreshing, and is used for cache; DRAM uses capacitors, requires periodic refreshing, and is used for main memory.
+<!--SR:!2026-09-29,4,270-->
 
 How is data erased in an EPROM compared to an EEPROM? :: EPROM is erased using Ultraviolet (UV) light; EEPROM is erased electrically.
 <!--SR:!2026-10-09,14,290-->
 
 Which is faster, DRAM or SRAM? :: SRAM.
+<!--SR:!2026-09-29,4,270-->
 
 Who invented transistor at Bell Labs in 1947?::William Shockley, John Barden and Walter Brattain.
 <!--SR:!2026-09-26,1,230-->

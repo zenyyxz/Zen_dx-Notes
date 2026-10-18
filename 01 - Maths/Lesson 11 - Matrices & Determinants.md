@@ -41,6 +41,7 @@ State the inverse formula for a 2x2 matrix $A = \begin{pmatrix} a & b \\ c & d \
 <!--SR:!2026-09-26,1,230-->
 
 What is a non-singular matrix? :: A square matrix whose determinant is non-zero ($\det A \ne 0$), meaning its inverse exists.
+<!--SR:!2026-09-26,1,230-->
 
 State the transpose reversal rule for matrix multiplication $(A B)^T$. :: $(A B)^T = B^T A^T$.
 <!--SR:!2026-09-26,1,230-->

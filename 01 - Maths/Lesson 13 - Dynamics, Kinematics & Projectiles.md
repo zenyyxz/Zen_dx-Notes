@@ -45,3 +45,4 @@ State the Cartesian trajectory equation of a projectile launched at speed $u$ an
 <!--SR:!2026-09-26,1,230-->
 
 State the formula for maximum horizontal range $R_{\max}$ of a projectile on level ground. :: $R_{\max} = \frac{u^2}{g}$ (achieved at launch angle $\theta = 45^\circ$).
+<!--SR:!2026-09-28,3,250-->

@@ -242,6 +242,7 @@ WHERE Marks > 80;
 #flashcards
 
 What are the main DDL commands in SQL? :: `CREATE`, `ALTER`, `DROP`, and `TRUNCATE`.
+<!--SR:!2026-09-29,4,270-->
 
 What is the purpose of `TRUNCATE`? :: It removes all rows from a table while keeping the table structure.
 <!--SR:!2026-09-29,4,270-->
