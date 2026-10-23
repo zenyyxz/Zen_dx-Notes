@@ -74,6 +74,7 @@ Handling: CPU is slower than I/O wait, so OS saves current process state (in PCB
 
 > [!INFO] Deep Dive Note
 > For PCB fields, 5-state + 7-state diagrams, long/medium/short schedulers, and FCFS/SJF/RR worked examples, read: [[Subtopics/OS Process & Memory Management|OS Process & Memory Management Guide]].
+> For what the PC, SP and status flags actually hold, and how a context switch saves them, read: [[Subtopics/CPU Architecture & the Instruction Cycle|CPU Architecture, Registers, ALU & the Instruction Cycle]].
 
 ### States & Transitions
 

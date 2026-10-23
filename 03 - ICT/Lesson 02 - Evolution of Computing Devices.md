@@ -83,6 +83,7 @@ The **Von Neumann Architecture** is based on the **Stored Program Concept**, whe
 
 > [!INFO] Deep Dive Note
 > For register details (PC, MAR, MDR, IR, ACC), fetch-execute steps, and Von Neumann Bottleneck, read: [[Subtopics/Von Neumann Architecture|Von Neumann Architecture]].
+> For the complete CPU deep dive (CU, ALU, registers, instruction formats, worked traces), read: [[Subtopics/CPU Architecture & the Instruction Cycle|CPU Architecture & the Instruction Cycle]].
 
 ```mermaid
 graph TD

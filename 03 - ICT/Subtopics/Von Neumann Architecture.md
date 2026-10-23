@@ -14,6 +14,8 @@ tags:
 
 > [!ABSTRACT] Core Focus
 > Detailed breakdown of the **Von Neumann Architecture**, CPU internal registers, fetch-decode-execute machine cycle, and the **Von Neumann Bottleneck**.
+>
+> :LiCpu: For the full internal treatment of the CU, ALU, every register, instruction formats and worked register-transfer traces, see [[CPU Architecture & the Instruction Cycle]].
 
 ---
 ## 1. Key Principles of Von Neumann Architecture

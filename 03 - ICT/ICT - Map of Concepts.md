@@ -41,6 +41,7 @@ tags:
 Below are deep-dive technical notes for core exam topics:
 
 - :LiBrain: **Computer Architecture**: [[Subtopics/Von Neumann Architecture|Von Neumann Architecture & Registers]]
+- :LiCpu: **CPU Internals**: [[Subtopics/CPU Architecture & the Instruction Cycle|CPU Architecture, Registers, ALU & the Instruction Cycle]]
 - :LiCloudLightning: **Digital Logic**: [[Subtopics/Karnaugh Maps & Boolean Simplification|Karnaugh Maps & Boolean Simplification]]
 - :LiSettings: **Operating Systems**: [[Subtopics/OS Process & Memory Management|OS Process & Memory Management]]
 - :LiHardDrive: **Storage Access**: [[Subtopics/Sequential Direct & Random Access|Sequential, Direct & Random Access]]
