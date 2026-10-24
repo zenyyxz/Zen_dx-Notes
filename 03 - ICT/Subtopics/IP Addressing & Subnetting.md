@@ -293,18 +293,18 @@ Even with subnetting and NAT, we ran out of IPv4 addresses (there are only $\app
 
 ## 8. Common Exam Traps
 
-| Wrong idea | Correct idea |
-| :--- | :--- |
-| "4 subnets means `/4`." | 4 = $2^2$ → **`/2`**. `/4` gives **16** subnets. |
-| "Number of subnets = $2^{h}$ (host bits)." | Subnets = $2^{n}$ (**borrowed** bits); hosts = $2^{h} - 2$. |
-| "Subtract 2 from the number of subnets." | The −2 applies only to **hosts per subnet**. |
-| "A `/26` provides 26 hosts." | A `/26` provides $2^{6} - 2 = $ **62** hosts. |
-| "Block size = number of subnets." | Block size = **addresses per subnet** = $2^{h}$. |
-| "The network address is the given IP." | Network address = `IP AND Mask`; the given IP is usually a host. |
-| "The first address in the block is usable." | The first is the **network ID**; usable range starts at network + 1. |
-| "Broadcast = next network + 1." | Broadcast = **next network address − 1**. |
-| "Masks can be `255.0.255.0`." | Mask bits must be **contiguous 1s from the left**. |
-| "The class fixes the mask." | With **CIDR**, any prefix is legal; class only matters for the default/legacy mask. |
+| Wrong idea                                  | Correct idea                                                                        |
+| :------------------------------------------ | :---------------------------------------------------------------------------------- |
+| "4 subnets means `/4`."                     | 4 = $2^2$ → **`/2`**. `/4` gives **16** subnets.                                    |
+| "Number of subnets = $2^{h}$ (host bits)."  | Subnets = $2^{n}$ (**borrowed** bits); hosts = $2^{h} - 2$.                         |
+| "Subtract 2 from the number of subnets."    | The −2 applies only to **hosts per subnet**.                                        |
+| "A `/26` provides 26 hosts."                | A `/26` provides $2^{6} - 2$ = **62** hosts.                                        |
+| "Block size = number of subnets."           | Block size = **addresses per subnet** = $2^{h}$.                                    |
+| "The network address is the given IP."      | Network address = `IP AND Mask`; the given IP is usually a host.                    |
+| "The first address in the block is usable." | The first is the **network ID**; usable range starts at network + 1.                |
+| "Broadcast = next network + 1."             | Broadcast = **next network address − 1**.                                           |
+| "Masks can be `255.0.255.0`."               | Mask bits must be **contiguous 1s from the left**.                                  |
+| "The class fixes the mask."                 | With **CIDR**, any prefix is legal; class only matters for the default/legacy mask. |
 
 ---
 

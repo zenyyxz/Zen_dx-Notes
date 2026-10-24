@@ -127,7 +127,7 @@ How devices are arranged and connected.
 
 ---
 
-## 6. Network Devices & Media Access Control
+## 6. Network Devices & Media Access Control (MAC)
 
 When multiple devices share a medium, they need rules to avoid talking over each other (**Collisions**).
 - **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)**: Used in wired Ethernet. Devices "listen" to the wire. If clear, they transmit. If two transmit at once, a collision occurs, they detect it, stop, wait a random time, and retry.
