@@ -51,6 +51,7 @@ Below are deep-dive technical notes for core exam topics:
 - :LiDatabase: **SQL**: [[Subtopics/SQL Query Language Guide|SQL Query Language Guide]]
 - :LiGitCompare: **Programming**: [[Subtopics/Python Control & Data Structures|Python Control & Data Structures]]
 - :LiWebhook: **Web Scripting**: [[Subtopics/PHP & MySQL Server-Side Scripting|PHP & MySQL Server-Side Scripting]]
+- :LiCode: **Markup & Data**: [[Subtopics/XML Basics|XML Basics — What It Is & Rules]]
 - :LiCircuitBoard: **Embedded Tech**: [[Subtopics/IoT Microcontrollers & Sensor Interfacing|IoT Microcontrollers & Sensor Interfacing]]
 
 ---

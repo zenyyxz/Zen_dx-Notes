@@ -86,6 +86,9 @@ Text (headings/paragraphs), images/graphics/animations, video/audio, hyperlinks,
 
 HTML (Hypertext Markup Language) is the standard markup language for creating web pages.
 
+> [!INFO] XML — the other markup language
+> HTML **displays** data with fixed tags; **XML** **describes and transports** data with tags you define, under strict syntax rules. For what XML is, its well-formedness rules, and DTD/XSD, see [[Subtopics/XML Basics|XML Basics]].
+
 ### Workflow
 
 1. **Edit**: text editor (`Notepad, TextEdit, Gedit`) or code editor (`VS Code, Sublime, Atom, Notepad++`) — syntax highlight + autocomplete. Word processors (`MS Word`) are *not* for coding.
