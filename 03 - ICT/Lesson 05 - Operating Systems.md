@@ -9,8 +9,6 @@ tags:
   - OperatingSystem
   - ProcessManagement
   - MemoryManagement
-  - Encryption
-  - Security
   - Flashcards
 ---
 # :LiBook: Lesson 05: Operating Systems
@@ -20,7 +18,6 @@ tags:
 > - 5.2 File/directory management, allocation, defrag, formatting
 > - 5.3 Process management, interrupts, states, PCB, context switch, schedulers
 > - 5.4 Memory management (MMU, paging, virtual memory) + I/O (drivers, spooling)
-> - Security tie-in: encryption, hashing & digital signatures (OS application; core 6.11)
 
 ---
 
@@ -39,7 +36,7 @@ An **Operating System (OS)** is system software that provides a virtual machine 
 1. **Providing interfaces / abstractions**: directories, files, data to user.
 2. **Process Management**: creating, scheduling, terminating processes; CPU allocation (traffic controller).
 3. **Resource Management**: memory, I/O devices, storage.
-4. **Security & Protection**: authentication, permissions, encryption, resource protection.
+4. **Security & Protection**: authentication, permissions, resource protection.
 5. **Device / IO Management**: via Device Drivers, spooling.
 
 ## 2. Types of Operating Systems
@@ -148,7 +145,7 @@ OS tracks every location, decides who gets how much/when, allocates/deallocates.
 
 - Passwords + access privileges (read/write/delete per user).
 - **Authentication** (OS duty): username/password, user attribute (fingerprint/retina/signature via input device).
-- **Encryption** (see §6) protects file contents at rest; permissions control who can open the file.
+- **Encryption** ([[Lesson 06 - Data Communication & Networking|Lesson 06]], Competency 6.11) protects file contents at rest; permissions control who can open the file.
 
 ### Storage Allocation (how OS gives disk blocks)
 
