@@ -96,6 +96,10 @@ Simplified 5-state: `New` $\rightarrow$ `Ready` $\rightleftarrows$ `Running` $\r
 | **Medium-term** | Swapping scheduler | Swaps processes main memory <-> secondary storage. Medium speed. |
 | **Short-term** | CPU scheduler / dispatcher | Picks next Ready process for CPU. Fastest. |
 
+> [!NOTE] Scheduler vs dispatcher — exam wording vs technical truth
+> Technically, the **short-term scheduler selects** the next Ready process, while the **dispatcher performs the context switch** and hands it the CPU.
+> The NIE TG uses the two terms interchangeably (“the short term scheduler is known as the dispatcher”), so write that for exam answers.
+
 ### CPU Scheduling Algorithms (common examples):
 - **FCFS (First-Come, First-Served)**: Non-preemptive; arrival order (convoy effect).
 - **SJF (Shortest Job First)**: Preemptive or not; smallest burst first (optimal avg wait).
