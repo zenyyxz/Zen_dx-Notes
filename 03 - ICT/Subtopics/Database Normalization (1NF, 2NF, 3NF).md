@@ -60,3 +60,43 @@ flowchart LR
   - `Course(CourseID, CourseName, InstructorID)`
   - `Instructor(InstructorID, InstructorName, InstructorOffice)`
   - `Student_Course(StudentID, CourseID)`
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+What is a functional dependency $X \rightarrow Y$? :: Each value of $X$ determines exactly one value of $Y$.
+
+What is a partial dependency? :: A non-key attribute depends on only part of a composite primary key.
+
+What is a transitive dependency? :: A non-key attribute depends on another non-key attribute: $X \rightarrow Y$ and $Y \rightarrow Z$.
+
+What is the goal of normalization? :: To reduce data redundancy and insertion, deletion and update anomalies by organising data into related tables.
+
+What does 1NF require? :: Atomic values, no repeating groups, and a primary key.
+
+What does 2NF require? :: 1NF plus no partial dependencies; every non-key attribute must depend on the whole primary key.
+
+What does 3NF require? :: 2NF plus no transitive dependencies; non-key attributes must depend only on keys.
+
+How do you convert UNF to 1NF? :: Flatten repeating groups into atomic values and assign a primary key.
+
+How do you convert 1NF to 2NF? :: Remove partial dependencies by splitting attributes into separate tables and a junction table if needed.
+
+How do you convert 2NF to 3NF? :: Remove transitive dependencies by moving dependent non-key attributes into a new table.
+
+What is a composite primary key? :: A primary key made of two or more attributes, such as `(StudentID, CourseID)` in the worked example.
+
+Which partial dependencies are removed in the worked example? :: `StudentID -> StudentName` and `CourseID -> CourseName, Instructor, InstructorOffice`.
+
+Which transitive dependency is removed in the 3NF step? :: `Instructor -> InstructorOffice`.
+
+Why is `Student_Course` a junction table? :: It links Student and Course in a many-to-many relationship using both foreign keys.
+
+Name the three normalization anomalies. :: Insertion, deletion and update anomalies.
+
+What causes these anomalies? :: Data redundancy and dependencies between attributes.
+
+Does normalization usually increase the number of tables? :: Yes; it reduces redundancy but may require more joins.

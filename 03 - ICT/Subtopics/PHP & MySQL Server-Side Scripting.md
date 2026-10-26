@@ -191,3 +191,49 @@ mysqli_close($conn);
 
 > [!WARNING] Sanitise + Feedback
 > Always `mysqli_real_escape_string($conn, $input)` (or prepared statements) so input is data not code. On success show confirmation/redirect; on error log it, don't expose sensitive info. To refill a form from DB: `value="<?php echo $row['username']; ?>"`.
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+What is PHP, and where does it run? :: A server-side scripting language; PHP code runs on the web server and sends generated HTML to the browser.
+
+How is PHP embedded in an HTML page? :: Inside `<?php ... ?>` tags.
+
+What are PHP variable naming rules? :: A variable starts with `$`, followed by a letter or underscore; names are case-sensitive.
+
+What operator concatenates strings in PHP? :: `.`; `.=` appends to a string.
+
+What is `var_dump()` used for? :: Printing a variable's type and value for debugging.
+
+What is the difference between `isset()` and `empty()`? :: `isset()` is true if a variable is set and not NULL; `empty()` is true for values such as `""`, `0`, `"0"`, NULL, false or an empty array.
+
+What is the difference between `==` and `===` in PHP? :: `==` compares values after type juggling; `===` requires the same value and the same type.
+
+Why is POST not automatically secure? :: POST hides data from the URL, but it still needs HTTPS and validation; POST by itself does not encrypt data.
+
+How do you confirm a POST request and read a form field? :: Check `$_SERVER["REQUEST_METHOD"] == "POST"`, then read `$_POST['fieldname']`.
+
+Why use `htmlspecialchars()` when displaying user input? :: It escapes HTML characters and helps prevent cross-site scripting (XSS).
+
+What does `mysqli_query()` return for a SELECT versus an INSERT? :: A result object for SELECT; `true` or `false` for non-SELECT queries.
+
+How do you fetch the next row as an associative array? :: `mysqli_fetch_assoc($result)`; it returns `null` when there are no more rows.
+
+How do you count the rows in a MySQLi result? :: `mysqli_num_rows($result)`.
+
+What is SQL injection, and what is the best defence? :: Malicious input changes the SQL query; use prepared statements (or at least `mysqli_real_escape_string()`) so input is treated as data.
+
+What is the difference between procedural and OOP MySQLi querying? :: Procedural: `mysqli_query($conn, $sql)`; OOP: `$conn->query($sql)`.
+
+What does `die()` do? :: Stops script execution and optionally outputs a message.
+
+What is the difference between `implode()` and `explode()`? :: `implode()` joins array elements into a string; `explode()` splits a string into an array.
+
+What is the difference between `sort()`, `asort()` and `ksort()`? :: `sort()` sorts values and reindexes; `asort()` sorts by value while preserving keys; `ksort()` sorts by key.
+
+What does XAMPP or WAMP provide? :: A local Apache/PHP/MySQL environment for running PHP scripts.
+
+Which PHP extension does the syllabus use for MySQL? :: MySQLi; PDO is another available extension.

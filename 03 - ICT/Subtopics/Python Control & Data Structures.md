@@ -115,3 +115,51 @@ def linear_search(arr, target):  # sequential, O(N)
     return -1
 ```
 Binary search, sets, recursion, try/except are Extension — not required by 9.10-9.13.
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+What is the difference between a Python list and a tuple? :: A list is mutable and uses `[]`; a tuple is immutable and uses `()`.
+
+What is a Python dictionary? :: A mutable collection of key-value pairs with unique keys.
+
+What is a Python set? :: An unordered, mutable collection with no duplicate elements. It is an extension topic in this note.
+
+What does `input()` return? :: Always a string; use `int()` or `float()` to convert it for calculations.
+
+What is the difference between `/` and `//` in Python? :: `/` performs true division; `//` performs floor division (rounds down).
+
+What is the precedence and associativity of `**`? :: It has higher precedence than `* / // %`, and it is evaluated right-to-left.
+
+What is the difference between `append()` and `insert()`? :: `append()` adds an item to the end; `insert(i, x)` inserts at index `i`.
+
+What does `pop()` do? :: Removes and returns the last item by default, or the item at a given index.
+
+What does the slice `s[1:3]` return? :: Items from index 1 up to but not including index 3.
+
+How do you add or update a dictionary key? :: `d[key] = value`.
+
+How do you iterate over a dictionary's key-value pairs? :: `for key, value in d.items():`.
+
+What does `range(1, 6)` produce? :: 1, 2, 3, 4, 5; the stop value is excluded.
+
+What is a default parameter? :: A parameter value used when the caller omits the argument, e.g. `def greet(name="Guest")`.
+
+What is the difference between local and global scope? :: Local variables exist inside a function; global variables exist outside. Use `global x` to modify a global inside a function.
+
+What do file modes `w`, `r` and `a` do? :: `w` writes/truncates, `r` reads, and `a` appends.
+
+Why use `with open(...)`? :: It automatically closes the file after the block, even if an error occurs.
+
+What does `line.strip().split(",")` do? :: Removes surrounding whitespace/newline and splits the line into a list at commas.
+
+What are the steps to query SQLite from Python? :: Connect, create a cursor, execute SQL, commit changes, fetch results and close the connection.
+
+Why use `?` placeholders in SQL? :: They pass values safely as data, preventing SQL injection and handling quoting.
+
+What is the time complexity of linear search? :: O(N).
+
+What is the difference between a list and a dictionary? :: A list is an ordered sequence indexed by position; a dictionary stores key-value pairs accessed by key.
