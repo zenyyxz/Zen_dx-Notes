@@ -15,7 +15,7 @@ tags:
 # :LiBook: Lesson 09: Programming & Algorithms
 
 > [!ABSTRACT] Syllabus Scope (NIE Teacher's Guide 9.1-9.13)
-> - 9.1-9.3 Problem solving, top-down, algorithms (flowchart/pseudocode/trace)
+> - 9.1-9.3 Problem solving, top-down design/structure charts, algorithms (flowchart/pseudocode/trace)
 > - 9.4-9.6 Paradigms, translators, IDE
 > - 9.7-9.9 Python basics, control structures, subprograms
 > - 9.10-9.13 Data structures, files, databases, search/sort
@@ -27,12 +27,31 @@ tags:
 1. **Understanding the problem**
 2. **Defining problem + boundaries**
 3. **Planning solution**
-4. **Implementation**
+4. **Implementation**: write the code, test it, and debug until it solves the problem.
 
 ### 9.2 Top-down design
-- **Modularization**: split large problem into sub-modules.
-- **Top-down + stepwise refinement**: start from main task, refine step-by-step into smaller steps.
-- **Structure charts**: boxes showing modules + hierarchy (not flow, just organization).
+- **Modularization**: split a large problem into smaller, independent modules. Each module performs one task; modules can be reused and tested separately.
+- **Top-down design**: start with the main task, then break it into sub-tasks.
+- **Stepwise refinement**: repeat the breakdown until each step is simple enough to code.
+- **Structure charts**: show the hierarchy of modules (who calls whom). Boxes = modules; lines/arrows = control or data flow; decision and repetition symbols may also appear. They show organization, not execution order like a flowchart.
+
+| Structure chart type | What it shows | Typical use |
+| :--- | :--- | :--- |
+| **Transaction** | Control goes to one of several modules based on user choice | Menu-driven systems |
+| **Transform** | Sequential data-processing steps | Input → process → output systems |
+| **Hybrid** | Combination of transaction and transform | Complex systems |
+
+```mermaid
+flowchart TD
+    S[Student Report System] --> I[Input Module]
+    S --> C[Calculate Module]
+    S --> R[Report Module]
+    C --> A[Average]
+    C --> G[Grade]
+```
+
+> [!NOTE] Supporting detail
+> Transaction, transform and hybrid structure charts are explained in the NIE lesson-09 reading. The TG requires structure charts in general.
 
 An **Algorithm** is a finite sequence of step-by-step instructions to solve a given problem.
 
@@ -58,6 +77,17 @@ ELSE grade = "F"
 PRINT grade
 ```
 
+**Hand trace** for `marks = 70`:
+
+| Step | marks | grade | Output |
+| :--- | :---: | :---: | :---: |
+| Input | 70 | — | — |
+| `marks >= 75`? | 70 | — | No |
+| `grade = "F"` | 70 | F | — |
+| `PRINT grade` | 70 | F | F |
+
+A hand trace records each variable after each step, so you can check the logic without running the program.
+
 **Flowchart for the same logic:**
 
 ``` mermaid
@@ -77,16 +107,16 @@ flowchart TD
 ### 9.4 Paradigms & Evolution
 - **Generations**: 1GL machine, 2GL assembly, 3GL procedural (C), 4GL query/report (SQL), 5GL AI/constraint.
 - **Imperative**: *how* via commands/state (C, Python, Java).
-- **Declarative**: *what* without how (SQL `SELECT * FROM Users WHERE age>30`, HTML structure).
+- **Declarative**: *what* without how (SQL `SELECT * FROM Users WHERE age>30`, Prolog). HTML is markup, not a programming paradigm.
 - **Object-Oriented**: objects = data + methods; class = blueprint, object = instance. Encapsulation, inheritance, polymorphism, abstraction (Java, C++, Python).
 
 ### 9.5 Translation
 Computers only run `0/1`, so high-level code must be translated.
 - **Source program**: human-readable (`.py`, `.c`).
 - **Object program**: machine-readable (`.o`, `.obj`), linked then executed.
-- **Compiler**: whole source -> object at once. Faster run, `.exe`, stops after full check (e.g., C, C++).
+- **Compiler**: translates the whole source into object code before execution; reports errors after checking the whole program; faster run (e.g., C, C++).
 - **Interpreter**: line-by-line translate + run. Stops at first error; slower (e.g., Python, PHP).
-- **Hybrid**: compile to intermediate then interpret (e.g. Java bytecode, Python `.pyc`).
+- **Hybrid**: compile to intermediate code, then interpret it (classic example: Java bytecode). Python also compiles to bytecode before interpretation, but it is usually classified as interpreted.
 - **Linker**: joins object files + libraries into executable.
 - Loader (Extension): loads executable into memory.
 
@@ -105,16 +135,26 @@ Computers only run `0/1`, so high-level code must be translated.
 ### 9.7 Python basics
 ```python
 # Structure: imports, constants, functions, main logic
-# Comments: # line, '''block''' or """docstring"""
-PI = 3.14  # constant (convention UPPER)
+# Comments: use #; triple-quoted strings are string literals (often docstrings), not true comments
+PI = 3.14  # constant by convention (UPPER); Python has no true constant
 name = input("Name: ")  # keyboard input (always string)
 age = int(input("Age: "))  # casting: int(), float(), str()
 print("Hi", name, "age", age)  # output to screen
 ```
-- Variables: dynamically typed, no declaration. `5 + 2.0 = 7.0`, `6/2 = 3.0` (always float).
+
+**Typical program skeleton:**
+```python
+import math                         # 1. imports
+PI = 3.14                           # 2. constants
+def area(r):                        # 3. functions
+    return PI * r * r
+radius = float(input("Radius: "))   # 4. main logic
+print(f"Area: {area(radius):.2f}")
+```
+- Variables: dynamically typed, no declaration. `5 + 2.0` gives `7.0`; `6/2` gives `3.0` (always float).
 - Primitive types: `int, float, bool, str`.
 - Operators: arithmetic `+ - * / // % **` (`**` right-to-left, `2**3**2=512`), relational `== != > < >= <=`, logical `and or not`, bitwise `& | ^ ~ << >>`, membership `in/not in`, identity `is/is not`, assignment `= += -= *=`.
-- Precedence: `() > ** > * / // % > + -`. Same level left-to-right; use `()` to override.
+- Precedence (main levels, high → low): `()` > `**` > unary `+x -x ~x` > `* / // %` > `+ -` > `<< >>` > `&` > `^` > `|` > comparisons (`== != > < >= <=`, `in`, `not in`, `is`, `is not`) > `not` > `and` > `or` > conditional expression > assignment statements. `**` is right-to-left; assignment is right-to-left; most other binary operators are left-to-right.
 - Output formatting (format-spec mini-language): `f"{value:spec}"` where spec = `[[fill]align][width][,][.precision][type]`:
 ```python
 pi = 3.14159
@@ -151,6 +191,12 @@ while count < 5:
     count += 1
 ```
 - Nested structures allowed (if inside loop, loop inside if).
+```python
+# Nested: selection inside repetition
+for n in range(1, 6):
+    if n % 2 == 0:
+        print(n, "even")
+```
 
 ### 9.9 Subprograms / Functions
 - **Built-in** (`print, len, input`) vs **User-defined** (`def`).
@@ -182,8 +228,8 @@ def outer():
 ### 9.10 Data structures (syllabus: strings, lists, tuples, dicts)
 - **String**: immutable sequence. `s="hello"; s[0], s[1:3], len(s)`.
 - **List**: mutable, ordered, duplicates, `[]`. `append/insert/pop/slicing`.
-- **Tuple**: immutable, ordered, `()`. Faster, key for dict safety.
-- **Dictionary**: key-value, keys unique, `{"id":101}`. `d["name"], d["grade"]="A", d.items()`.
+- **Tuple**: immutable, ordered, `()`. Can be slightly faster and more memory-efficient; if all elements are hashable, it can be used as a dictionary key.
+- **Dictionary**: key-value, keys unique and hashable, `{"id":101}`. `d["name"], d["grade"]="A", d.items()`.
 - Set (`{1,2,3}`, no duplicates) is Extension — not in 9.10.
 
 ### 9.11 File handling
@@ -194,6 +240,8 @@ with open("results.txt", "w") as f:
 with open("results.txt", "r") as f:
     for line in f:
         print(line.strip())
+with open("results.txt", "a") as f:
+    f.write("Nimal,92\n")  # append without erasing existing data
 # basic ops: open, close, read, write, append
 ```
 - Always `close()` unless using `with` (auto-close).
@@ -206,14 +254,27 @@ conn = sqlite3.connect("school.db")
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS Student(id INTEGER PRIMARY KEY, name TEXT)")
 cur.execute("INSERT INTO Student VALUES (?, ?)", (101, "Kamal"))
+cur.execute("INSERT INTO Student VALUES (?, ?)", (102, "Nimal"))
+
+cur.execute("UPDATE Student SET name = ? WHERE id = ?", ("Kamal Perera", 101))
+print("Updated rows:", cur.rowcount)
+cur.execute("DELETE FROM Student WHERE id = ?", (102,))
+print("Deleted rows:", cur.rowcount)
 conn.commit()
-for row in cur.execute("SELECT * FROM Student"):
+
+cur.execute("SELECT * FROM Student")
+rows = cur.fetchall()
+for row in rows:
     print(row)
+cur.close()
 conn.close()
 ```
+- `?` placeholders pass values as data, not SQL, which prevents SQL injection.
+- `commit()` is needed after INSERT, UPDATE or DELETE; SELECT does not change data, so it does not need commit.
+- `fetchone()` gets one row; `fetchall()` gets all remaining rows; `rowcount` reports how many rows the last statement changed.
 
 ---
-## 5. Searching & Sorting Algorithms
+## 5. Searching & Sorting Algorithms (9.13)
 
 Syllabus requires **Sequential search + Bubble sort** only. Binary search is Extension.
 
@@ -235,6 +296,7 @@ Requires **sorted array**. Compares target with middle element and halves search
 
 ### C. Bubble Sort:
 Repeatedly steps through list, compares adjacent elements, and swaps them if in wrong order.
+- After pass `i`, the largest `i` elements are in their final positions; at most `n - 1` passes are needed.
 - Time Complexity: $O(N^2)$
 
 ```python
@@ -253,7 +315,7 @@ def bubble_sort(arr):
 ## 6. C++ Brain Notes: What Python Hides (not for exam, for sanity)
 
 > [!WARNING] Exam vs Truth
-> Teachers / papers say "Python passes by reference". Write that if asked. Truth: Python passes **by object-reference** (aka pass-by-assignment / sharing). No `&`, no pointers, no copies by default.
+> Some simplified notes say "Python passes by reference". The precise term is **pass-by-object-reference** (also called call-by-sharing): the function receives a reference to the same object, but rebinding the parameter does not change the caller's variable.
 
 - **Variables are names, not boxes.** `int x = 5;` in C++ reserves 4 bytes. `x = 5` in Python binds name `x` to a `PyObject`. `y = x` binds a second name to the *same* object. Check with `id(x) == id(y)`, not values.
 - **Assignment never copies mutables.** `b = a` on a list shares it (`b.append(1)` hits `a` too). C++ `vector<int> b = a;` copies. To copy: `b = a[:]`, `list(a)`, `copy.copy(a)`, `copy.deepcopy(a)` for nested.
@@ -280,8 +342,12 @@ What are the 4 steps of problem solving (9.1)? :: Understand problem, define bou
 
 What is modularization + stepwise refinement? :: Split into modules, refine top-down from main task to detailed steps; show with structure charts.
 
+What is a structure chart? :: It shows the module hierarchy: boxes are modules, lines/arrows show control or data flow; it is not an execution-order flowchart.
+
 Name 3 ways to represent algorithms. :: Flowcharts, pseudocode, hand traces.
 <!--SR:!2026-11-07,11,270-->
+
+What is a hand trace? :: Manually recording each variable's value step by step in a trace table to verify an algorithm's logic.
 
 What is the difference between a Compiler and an Interpreter? :: A Compiler translates the entire source code into machine code at once prior to execution; an Interpreter translates and executes source code line-by-line at runtime.
 <!--SR:!2026-11-10,14,290-->
@@ -289,7 +355,7 @@ What is the difference between a Compiler and an Interpreter? :: A Compiler tran
 What is source vs object code? :: Source is human-readable .py/.c; object is machine-readable .o/.obj linked then run.
 <!--SR:!2026-11-10,14,290-->
 
-What is hybrid translation + linker? :: Compile to intermediate then interpret (Java/Python); linker joins objects + libraries to exe.
+What is hybrid translation + linker? :: Compile to intermediate then interpret (Java bytecode); linker joins objects + libraries to exe. Python also uses bytecode but is usually called interpreted.
 <!--SR:!2026-11-06,10,270-->
 
 Which flowchart symbol is used for Decision making? :: Diamond.
@@ -298,7 +364,7 @@ Which flowchart symbol is used for Decision making? :: Diamond.
 What are the 3 fundamental control structures in programming? :: 1. Sequence, 2. Selection, 3. Iteration.
 <!--SR:!2026-11-11,15,290-->
 
-Compare imperative vs declarative vs OOP. :: Imperative how (C/Python), declarative what (SQL/HTML), OOP objects/classes with encapsulation/inheritance.
+Compare imperative vs declarative vs OOP. :: Imperative how (C/Python), declarative what (SQL/Prolog), OOP objects/classes with encapsulation/inheritance.
 <!--SR:!2026-11-10,14,290-->
 
 What are IDE basic features? :: Open/save, compile/execute, debugging (breakpoints/step).
@@ -307,7 +373,9 @@ What are IDE basic features? :: Open/save, compile/execute, debugging (breakpoin
 What does input() return and how to get int? :: Always string; use int(input()) / float() / str() casting.
 <!--SR:!2026-11-10,14,290-->
 
-What is operator precedence in Python? :: () > ** > * / // % > + -; left-to-right, ** right-to-left.
+What is the typical structure of a Python program? :: Imports, constants, function definitions, then the main logic.
+
+What is operator precedence in Python? :: Main order: () > ** > unary (+x -x ~x) > * / // % > + - > << >> > & > ^ > | > comparisons/in/not in/is/is not > not > and > or > conditional > assignment; ** right-to-left.
 
 What is local vs global scope? :: Local inside func, global outside; lifetime is duration variable exists.
 <!--SR:!2026-11-06,10,270-->
@@ -318,7 +386,9 @@ What is the difference between a Python List and a Tuple? :: A List is mutable (
 What are basic file operations/modes? :: Open, close, read, write, append; modes w/r/a, use with for auto-close.
 <!--SR:!2026-11-04,8,250-->
 
-How to manage DB data in Python? :: Connect (sqlite3), embed SQL to retrieve/add/modify/delete, commit, close.
+How to manage DB data in Python? :: Connect (sqlite3), create a cursor, execute SELECT/INSERT/UPDATE/DELETE, commit changes, fetch results and close.
+
+How do you update or delete a row in SQLite from Python? :: Run UPDATE or DELETE with `?` placeholders, then `commit()`; `rowcount` reports the affected rows.
 
 What is sequential search complexity? :: O(N), check 0 to N-1.
 

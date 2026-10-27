@@ -22,21 +22,21 @@ tags:
 | **String** | `"hello"` | No | Yes | Yes |
 | **List** | `[1, 2, 3]` | Yes | Yes | Yes |
 | **Tuple** | `(1, 2, 3)` | No (Immutable) | Yes | Yes |
-| **Dictionary** | `{"a": 1, "b": 2}` | Yes (Keys unique) | Yes (3.7+) | Values: Yes |
+| **Dictionary** | `{"a": 1, "b": 2}` | Yes (Keys unique, hashable) | Yes (3.7+) | Values: Yes |
 | **Set** (Extension) | `{1, 2, 3}` | Yes | No | No |
 
 ---
 ## 2. Basics: Structure, I/O, Operators (syllabus 9.7)
 
 ```python
-# Comments: # line, '''block''', """docstring for funcs"""
-PI = 3.14
+# Comments: use #; triple-quoted strings are string literals (docstrings), not true comments
+PI = 3.14  # constant by convention; Python has no true constant
 name = input("Name: ")       # always string
 age = int(input("Age: "))    # casting: int(), float(), str()
 print("Hi", name, age)
 # Primitive: int, float, bool, str
-# Operators: + - * / // % ** | == != > < | and or not | & | ^ ~ << >> | in, is | += -=
-# Precedence: () > ** > * / // % > + - ; ** right-to-left
+# Operators: + - * / // % ** | == != > < >= <= | and or not | & | ^ ~ << >> | in, not in, is, is not | += -=
+# Precedence (main levels, high → low): () > ** > unary (+x -x ~x) > * / // % > + - > << >> > & > ^ > | > comparisons/in/not in/is/is not > not > and > or > conditional > assignment; ** right-to-left
 ```
 
 ## 3. Key Code Examples
@@ -54,7 +54,7 @@ print(numbers[0:2])       # Slicing: [10, 15]
 ```python
 s = "hello"
 print(s[0], s[1:3], len(s))  # h, el, 5
-t = (1, 2, 3)  # immutable, faster
+t = (1, 2, 3)  # immutable; can be slightly faster and usable as a dict key if hashable
 # t[0] = 9  # error
 ```
 
@@ -103,9 +103,16 @@ import sqlite3
 conn = sqlite3.connect("school.db")
 cur = conn.cursor()
 cur.execute("INSERT INTO Student VALUES (?, ?)", (101, "Kamal"))
-conn.commit()
-for row in cur.execute("SELECT * FROM Student"):
+cur.execute("INSERT INTO Student VALUES (?, ?)", (102, "Nimal"))
+cur.execute("UPDATE Student SET name = ? WHERE id = ?", ("Kamal Perera", 101))
+cur.execute("DELETE FROM Student WHERE id = ?", (102,))
+conn.commit()  # needed after INSERT/UPDATE/DELETE
+
+cur.execute("SELECT * FROM Student")
+rows = cur.fetchall()
+for row in rows:
     print(row)
+cur.close()
 conn.close()
 
 def linear_search(arr, target):  # sequential, O(N)
