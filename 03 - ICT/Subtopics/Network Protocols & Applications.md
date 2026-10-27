@@ -102,6 +102,8 @@ A typical Ethernet frame contains:
 > [!IMPORTANT] The frame is link-by-link
 > The source and destination MAC addresses in a frame belong to the **current link**, not necessarily the original sender and final receiver. When a router receives a frame, it removes the old frame, examines the IP packet, and builds a **new frame** with new MAC addresses for the next link.
 
+The exact frame format and maximum frame size can depend on the **link technology and link quality**; different link types may use different frame formats.
+
 ### 3.1 Frame vs packet vs segment
 
 | PDU | Layer | Main address | Typical protocol |

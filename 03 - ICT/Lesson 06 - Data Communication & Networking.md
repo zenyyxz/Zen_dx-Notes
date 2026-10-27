@@ -217,6 +217,26 @@ How devices are arranged and connected.
 - **Mesh**: Every device connects to every other device. High reliability and redundancy, but very expensive and complex to wire.
 - **Tree**: A combination of Bus and Star.
 
+```mermaid
+graph TD
+    subgraph Bus
+        T1[Terminator] --- B1[PC1] --- B2[PC2] --- B3[PC3] --- T2[Terminator]
+    end
+    subgraph Star
+        H((Hub/Switch)) --- S1[PC1]
+        H --- S2[PC2]
+        H --- S3[PC3]
+    end
+    subgraph Ring
+        R1[PC1] --- R2[PC2] --- R3[PC3] --- R4[PC4] --- R1
+    end
+    subgraph Mesh
+        M1[PC1] --- M2[PC2]
+        M1 --- M3[PC3]
+        M2 --- M3
+    end
+```
+
 > [!NOTE] Why all-to-all is impractical
 > For $n$ devices, a full mesh needs $\frac{n(n-1)}{2}$ separate links. This grows rapidly and becomes expensive and difficult to wire. A **bus** or **star** topology is a practical way to share one medium or one central device instead.
 
