@@ -13,14 +13,30 @@ tags:
   - Encryption
   - Security
   - Digital-Signatures
+  - Protocols
+  - MAC
+  - TCP-UDP
+  - DNS
+  - HTTP
+  - ISP
+  - DSL
+  - NAT
+  - Proxy
   - Flashcards
 ---
 # :LiGlobe: Lesson 06: Data Communication & Computer Networking
 
 > [!ABSTRACT] Scope
-> A comprehensive guide to understanding how computers talk to each other. We will cover the physical properties of signals, the media they travel on, how we ensure they arrive intact, the devices that direct them, and the logical models (OSI & TCP/IP) that govern the entire process.
+> A comprehensive guide to understanding how computers talk to each other. We cover the physical properties of signals, the media they travel on, how data is encoded and checked, how devices share a medium, the devices that direct traffic, the OSI/TCP-IP models, transport and application protocols, Internet access, and network security.
 >
-> **6.11 focus:** encryption, digital signatures, threats and protection for networked systems.
+> **Coverage:** 6.1–6.12. The core notes below cover 6.1–6.3, 6.5, 6.10 and 6.11; the remaining sections are summarised here and expanded in the detailed subtopics.
+>
+> **Detailed subtopics:**
+> - [[Subtopics/Network Protocols & Applications|Network Protocols & Applications]] — 6.6, 6.8, 6.9
+> - [[Subtopics/IP Addressing & Subnetting|IP Addressing & Subnetting]] — 6.7
+> - [[Subtopics/PSTN, ISPs & Home Internet|PSTN, ISPs & Home Internet]] — 6.4, 6.12
+>
+> **6.11 focus:** encryption, digital signatures, threats and protection for networked systems (§11).
 
 ---
 
@@ -48,6 +64,26 @@ Data communication is the exchange of data between two or more devices via some 
 - **Period ($T$)**: Time taken for one cycle. ($T = 1/f$).
 - **Wavelength ($\lambda$)**: Distance between two consecutive identical points on the wave.
 - **Phase**: The position of the wave at a specific point in time (often measured in degrees from 0 to 360).
+
+#### Digital vs. analog signals
+
+| Signal | Nature | Values | Example |
+| :--- | :--- | :--- | :--- |
+| **Analog** | Continuous wave | Can take any value within a range | Human voice, light, temperature sensor output |
+| **Digital** | Discrete levels | Usually two levels representing 0 and 1 | Computer data on a wire |
+
+#### Propagation speed
+
+**Propagation speed ($v$)** is the speed at which a wave travels through a medium. It depends on the medium:
+
+- In free space (vacuum), electromagnetic waves travel at about $3 \times 10^8$ m/s.
+- In copper and optical fibre, they travel more slowly than in free space.
+
+The relationship between speed, frequency and wavelength is:
+
+$$v = f \times \lambda$$
+
+where $v$ is propagation speed, $f$ is frequency and $\lambda$ is wavelength. If the speed changes, the wavelength changes for the same frequency.
 
 ---
 
@@ -92,6 +128,57 @@ Sending multiple signals over a **single** communication link simultaneously.
 - **FDM (Frequency Division Multiplexing)**: The total bandwidth is divided into separate frequency bands (like radio stations).
 - **WDM (Wavelength Division Multiplexing)**: Used in Fiber Optics. Different signals use different colors of light.
 
+### 3.4 Signal Elements, Synchronization and Parity (6.3)
+
+#### Signal elements and bit rate
+
+A **signal element** is the shortest unit of a digital signal. A protocol must agree on which signal element represents which bit.
+
+- **Bit rate** = number of bits transmitted per second (bps).
+- **Baud rate** = number of signal elements transmitted per second.
+- If one signal element carries one bit, bit rate = baud rate.
+- If one signal element carries multiple bits (using multiple voltage levels, frequencies or phases), bit rate is higher than baud rate:
+
+$$\text{bit rate} = \text{baud rate} \times \text{bits per signal element}$$
+
+For **Manchester encoding**, each bit is represented by two signal elements, so the signal (baud) rate is twice the bit rate. This is the price paid for reliable clock recovery.
+
+#### NRZ-L and NRZ-I
+
+- **NRZ-L (Non-Return to Zero Level)**: two different voltage levels represent 0 and 1; the level stays constant for the whole bit interval.
+- **NRZ-I (Non-Return to Zero Inverted)**: a **transition** at the start of a bit represents 1; no transition represents 0.
+
+Long runs of the same bit can make the receiver lose track of bit boundaries. Manchester encoding avoids this by placing a transition in the middle of every bit.
+
+#### Why synchronization is needed
+
+The sender and receiver must agree on **when each bit starts and ends**. Their clocks are never perfectly identical. If they drift apart, the receiver may sample the signal at the wrong time and read the wrong bits.
+
+Solutions include:
+
+- Sending a separate **clock signal** alongside the data.
+- Using a **self-clocking** encoding such as Manchester, where every bit contains a timing transition.
+- Using framing and start/stop bits to resynchronise at known points.
+
+#### Parity
+
+A **parity bit** is an extra bit added to the data so that the total number of 1s is either:
+
+- **Even** (even parity), or
+- **Odd** (odd parity).
+
+Example: the data `1011001` contains four 1s.
+
+| Parity type | Parity bit | Total number of 1s |
+| :--- | :--- | :--- |
+| **Even parity** | `0` | 4 (even) |
+| **Odd parity** | `1` | 5 (odd) |
+
+The receiver counts the 1s and checks whether the parity matches. A mismatch means an error has been detected.
+
+> [!WARNING] Limits of parity
+> Simple parity can detect an **odd number** of flipped bits, but it cannot detect an even number of errors (for example, two bits flipping). It can **detect** errors but cannot **correct** them. Stronger methods include checksums and CRCs.
+
 ---
 
 ## 4. Transmission Media
@@ -130,19 +217,44 @@ How devices are arranged and connected.
 - **Mesh**: Every device connects to every other device. High reliability and redundancy, but very expensive and complex to wire.
 - **Tree**: A combination of Bus and Star.
 
+> [!NOTE] Why all-to-all is impractical
+> For $n$ devices, a full mesh needs $\frac{n(n-1)}{2}$ separate links. This grows rapidly and becomes expensive and difficult to wire. A **bus** or **star** topology is a practical way to share one medium or one central device instead.
+
 ---
 
 ## 6. Network Devices & Media Access Control (MAC)
 
-When multiple devices share a medium, they need rules to avoid talking over each other (**Collisions**).
-- **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)**: Used in wired Ethernet. Devices "listen" to the wire. If clear, they transmit. If two transmit at once, a collision occurs, they detect it, stop, wait a random time, and retry.
-- **CSMA/CA (Collision Avoidance)**: Used in Wi-Fi.
+> [!INFO] Full protocol subtopic
+> See [[Subtopics/Network Protocols & Applications|Network Protocols & Applications]] for the detailed treatment of LANs, MAC addresses, frames, ALOHA, Ethernet, broadcast/unicast, TCP/UDP, DNS and HTTP.
 
-### Devices
-- **Repeater**: (Layer 1) Amplifies a weak signal to extend its range.
-- **Hub**: (Layer 1) Connects multiple devices. It is a "dumb" device—when it receives data on one port, it broadcasts it to **all** other ports. Creates high traffic and collisions.
-- **Switch**: (Layer 2) Intelligent. It learns the **MAC Addresses** of connected devices. When data arrives, it forwards it *only* to the specific destination port.
-- **Router**: (Layer 3) Connects different networks together (e.g., your LAN to the Internet). Routes packets based on **IP Addresses**.
+### 6.1 LAN, MAC addresses and frames (6.6)
+
+A **Local Area Network (LAN)** connects devices within a limited area such as a home, school, office or campus.
+
+- A **MAC address** is a **48-bit** address assigned to a network interface. It is written as six 8-bit blocks in hexadecimal, e.g. `4A:8F:3C:4F:9E:3D`.
+- A **frame** is the Data Link layer unit of transmission. It carries the network-layer packet and includes the source and destination MAC addresses of the **current link**.
+- A router removes the incoming frame and builds a new frame for the next link; the IP packet remains the same (unless NAT changes it).
+- **Unicast** sends to one specific receiver; **broadcast** sends to all devices on the local network. The Ethernet broadcast address is `FF:FF:FF:FF:FF:FF`.
+
+### 6.2 Orderly access to the medium (6.6)
+
+When several devices share a medium, they need a **MAC protocol** to ensure orderly access and avoid collisions.
+
+| Protocol | Key idea |
+| :--- | :--- |
+| **Pure ALOHA** | Transmit whenever ready; collisions are frequent; retransmit after a random delay. |
+| **Slotted ALOHA** | Transmit only at the start of a time slot; fewer collisions, but synchronisation is needed. |
+| **CSMA/CD** | Listen before transmitting; detect collisions; stop, send a jam signal, back off and retry. Used in classic wired Ethernet. |
+| **CSMA/CA** | Try to avoid collisions using waiting times and acknowledgements. Used in Wi-Fi. |
+
+The evolution is: **ALOHA → Slotted ALOHA → CSMA → CSMA/CD (Ethernet)**.
+
+### 6.3 Devices
+
+- **Repeater**: (Layer 1) Regenerates and amplifies a weak signal to extend its range.
+- **Hub**: (Layer 1) Connects multiple devices. It is a "dumb" device — when it receives data on one port, it broadcasts it to **all** other ports. Creates high traffic and collisions.
+- **Switch**: (Layer 2) Intelligent. It learns the **MAC addresses** of connected devices. When data arrives, it forwards it *only* to the specific destination port for a unicast frame.
+- **Router**: (Layer 3) Connects different networks together (e.g., your LAN to the Internet). Routes packets based on **IP addresses**.
 - **Modem**: Modulates digital data into analog signals (for phone lines) and demodulates them back.
 - **Firewall**: Filters incoming and outgoing traffic based on security rules to protect the network.
 
@@ -155,9 +267,9 @@ To make networking standard, the ISO created the 7-Layer OSI model. The Internet
 | OSI Layer (1 to 7) | TCP/IP Layer | Function | Protocol/Device | Data Unit |
 | :--- | :--- | :--- | :--- | :--- |
 | **7. Application** | Application | Interfaces with user apps (browsers, email) | HTTP, FTP, DNS | Data |
-| **6. Presentation** | Application | Data formatting, encryption (see §8), compression | SSL/TLS, JPEG | Data |
+| **6. Presentation** | Application | Data formatting, encryption (see §11), compression | SSL/TLS, JPEG | Data |
 | **5. Session** | Application | Establishes and maintains connections | RPC, NetBIOS | Data |
-| **4. Transport** | Transport | End-to-end reliable delivery, Error recovery | TCP, UDP, Port #'s | Segment |
+| **4. Transport** | Transport | End-to-end delivery; TCP adds reliability, UDP does not | TCP, UDP, port numbers | Segment |
 | **3. Network** | Internet | Routing across different networks, logical addressing | IP, Routers | Packet |
 | **2. Data Link** | Network Access | Physical addressing, node-to-node delivery | MAC, Ethernet, Switch | Frame |
 | **1. Physical** | Network Access | Transmitting raw bits over physical media | Cables, Hubs | Bits |
@@ -166,17 +278,190 @@ To make networking standard, the ISO created the 7-Layer OSI model. The Internet
 - As data moves **down** the sender's OSI layers, each layer adds its own header (like putting a letter in an envelope, and then putting that envelope in a box). This is **Encapsulation**.
 - As data moves **up** the receiver's layers, headers are stripped off. This is **Decapsulation**.
 
-> [!INFO] IPv4 & Subnetting
-> For a detailed breakdown of IP Classes, CIDR, and how to calculate subnets, see the [[Subtopics/IP Addressing & Subnetting|IP Addressing & Subnetting Guide]].
+> [!INFO] IPv4, DHCP and delivery (6.7)
+> IP provides a **uniform logical address** that is independent of MAC addresses and the underlying LAN technology. A **gateway/router** connects networks and forwards packets using a **routing table**. **DHCP** automatically assigns IP configuration to hosts. IP uses **packet switching** and **best-effort delivery** — it does not guarantee delivery, ordering or timing; TCP adds reliability.
+>
+> For IP classes, CIDR, subnetting, DHCP, routing and packet switching, see the [[Subtopics/IP Addressing & Subnetting|IP Addressing & Subnetting Guide]].
 
 ---
 
-## 8. Network Security: Encryption & Digital Signatures (6.11)
+## 8. Transport Protocols: TCP, UDP & Ports (6.8)
+
+> [!INFO] Full protocol subtopic
+> The detailed explanation, diagrams and flashcards are in [[Subtopics/Network Protocols & Applications|Network Protocols & Applications]].
+
+### 8.1 From host-to-host to process-to-process
+
+An IP address identifies a **host**, but a host runs many applications at once. The Transport layer must deliver data to the correct **application process**. It does this using **port numbers**.
+
+- A **port** is a logical endpoint used by a process.
+- A **port number** is a 16-bit number (0–65535).
+- A **socket** is an IP address plus a port number, e.g. `192.168.1.10:49152`.
+
+> [!IMPORTANT] Exam sentence
+> IP delivers data from **host to host**; TCP/UDP deliver data from **process to process** using port numbers.
+
+### 8.2 Ports and multiplexing
+
+**Multiplexing** means multiple application processes share one IP address, with different port numbers distinguishing their data. At the receiver, **demultiplexing** uses the destination port number to deliver each piece of data to the correct process.
+
+| Range | Name | Use |
+| :--- | :--- | :--- |
+| `0–1023` | Well-known ports | Standard services such as HTTP and DNS |
+| `1024–49151` | Registered ports | Registered applications and services |
+| `49152–65535` | Dynamic / ephemeral ports | Temporarily chosen by clients |
+
+### 8.3 UDP and TCP
+
+| Feature | UDP | TCP |
+| :--- | :--- | :--- |
+| Connection | Connectionless | Connection-oriented |
+| Reliability | No acknowledgements or retransmission | Reliable, with acknowledgements and retransmission |
+| Ordering | Not guaranteed | In-order delivery |
+| Congestion control | No | Yes |
+| Overhead | Low | Higher |
+| Typical applications | DNS, SNMP, streaming, VoIP, DHCP, TFTP | Web, email, FTP, SSH |
+
+**UDP** is simple and fast but provides no guarantees. **TCP** provides a reliable, ordered byte stream and is used when data must not be lost or reordered.
+
+> [!NOTE] Supporting detail
+> TCP uses a **three-way handshake** (SYN, SYN-ACK, ACK) to establish a connection. UDP sends datagrams without a handshake.
+
+### 8.4 Common ports
+
+| Service | Port | Transport |
+| :--- | :--- | :--- |
+| HTTP | 80 | TCP |
+| HTTPS | 443 | TCP |
+| DNS | 53 | UDP (TCP for large responses/zone transfers) |
+| SMTP | 25 | TCP |
+| FTP | 20/21 | TCP |
+| SSH | 22 | TCP |
+| DHCP | 67/68 | UDP |
+
+---
+
+## 9. Internet Applications: DNS, HTTP & Client–Server (6.9)
+
+> [!INFO] Full protocol subtopic
+> The detailed explanation, DNS diagrams and HTTP examples are in [[Subtopics/Network Protocols & Applications|Network Protocols & Applications]].
+
+### 9.1 DNS
+
+People prefer names such as `www.school.edu.lk`, but routers need IP addresses. **DNS (Domain Name System)** translates human-friendly domain names into IP addresses.
+
+DNS is **hierarchical and distributed**:
+
+- **Root** → **top-level domain** (`.lk`, `.com`, `.org`) → **second-level domain** (`edu.lk`) → **subdomain/host** (`www.school.edu.lk`).
+- Each domain is responsible for managing the names under it.
+- A resolver queries the root, TLD and authoritative servers, then caches the answer for a limited time (TTL).
+- DNS normally uses **UDP port 53**; TCP is used for large responses and zone transfers.
+
+### 9.2 HTTP
+
+**HTTP (Hypertext Transfer Protocol)** is an application-layer **request–response** protocol used by the web. It is **stateless**: each request is independent; cookies and sessions add state.
+
+A simple request:
+
+```http
+GET /index.html HTTP/1.1
+Host: www.school.edu.lk
+```
+
+A simple response:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html
+```
+
+Common status codes: **200 OK**, **301/302 redirect**, **403 Forbidden**, **404 Not Found**, **500 Internal Server Error**.
+
+HTTP itself is not encrypted. **HTTPS = HTTP over TLS**, normally using TCP port **443**.
+
+### 9.3 Client–server model
+
+```mermaid
+graph LR
+    B["Browser (client)"] -->|DNS query| D["DNS resolver"]
+    D -->|IP address| B
+    B -->|HTTP request| S["Web server"]
+    S -->|HTTP response| B
+```
+
+The **client–server model** partitions tasks between **clients** that request services and **servers** that provide them. For a web page:
+
+1. The browser resolves the server name with DNS.
+2. It opens a TCP connection to the server (port 80 or 443).
+3. It sends an HTTP request.
+4. The server sends an HTTP response.
+5. The browser renders the page and requests additional resources.
+
+---
+
+## 10. PSTN, ISPs & Home Internet (6.4, 6.12)
+
+> [!INFO] Full subtopic
+> The detailed explanation, diagrams and flashcards are in [[Subtopics/PSTN, ISPs & Home Internet|PSTN, ISPs & Home Internet]].
+
+### 10.1 PSTN
+
+The **Public Switched Telephone Network (PSTN)** is the traditional telephone network. It provides a **circuit between two points** that can carry **analog voice**.
+
+- It uses **circuit switching**: a dedicated path is set up, used for the call, then released.
+- The **local loop** connects the subscriber to the local exchange.
+- Circuit switching is good for continuous voice but inefficient for bursty computer data.
+
+### 10.2 Modems and dial-up
+
+A **modem** (modulator–demodulator):
+
+- **Modulates** digital computer data into an analog signal for the telephone line.
+- **Demodulates** the received analog signal back into digital data.
+
+A **dial-up** connection uses a modem and a telephone line to dial an ISP’s node. It is slow (about 56 kbps), occupies the telephone line, and is sensitive to noise.
+
+### 10.3 ISP
+
+An **Internet Service Provider (ISP)** is an organisation that provides access to the Internet. It typically:
+
+- Provides a connection (dial-up, DSL, cable, fibre, wireless or satellite).
+- Assigns public IP addresses (often dynamically).
+- Routes customer traffic to and from the Internet.
+- Provides DNS resolvers and may provide email or hosting.
+
+### 10.4 DSL and ADSL
+
+**DSL (Digital Subscriber Line)** sends digital data over existing copper telephone lines. It uses **frequency division multiplexing** to separate voice and data, so both can be used at the same time. It is usually **always-on** and **distance-sensitive**.
+
+**ADSL (Asymmetric DSL)** gives more **downstream** than **upstream** capacity, matching typical home usage.
+
+Advantages of DSL/ADSL:
+
+- Independent voice and data services.
+- Better security/isolation than a shared cable segment.
+- Higher speed than dial-up, always-on, and often cost-effective.
+
+### 10.5 NAT and proxies
+
+A home LAN normally uses **private IP addresses**. The router receives a **public IP address** from the ISP and assigns private addresses to devices via **DHCP**. **NAT** translates private addresses/ports to the public address/port so many devices can share one public IP.
+
+A **proxy server** is an intermediary between clients and the Internet. It can cache, filter, log, authenticate and share Internet access.
+
+| Feature | NAT | Proxy |
+| :--- | :--- | :--- |
+| Layer | Layer 3 (network) | Layer 7 (application) |
+| Connection | Does not terminate the connection | Terminates the client connection and opens a new one |
+| Main use | IP address conservation | Filtering, caching, logging, access control |
+
+---
+
+## 11. Network Security: Encryption & Digital Signatures (6.11)
 
 > [!NOTE] Syllabus focus
 > 6.11 asks you to explain **why confidentiality and authentication matter**, how **public/private keys** encrypt and sign messages, and how to protect networked systems from threats. Hashing, certificates, TLS details and at-rest examples below are supporting concepts that show how real systems apply encryption.
 
-### 8.1 Security goals
+### 11.1 Security goals
 
 **Encryption** converts **plaintext** into **ciphertext** using an algorithm and a **key**, so that only someone with the correct key can recover the plaintext. **Cryptography** is the science of securing information; **cryptanalysis** is the attempt to break it.
 
@@ -190,7 +475,7 @@ To make networking standard, the ISO created the 7-Layer OSI model. The Internet
 > [!IMPORTANT] Internet default
 > The Internet does **not** provide confidentiality or authentication by itself. Encryption and digital signatures are added to provide them (TG 6.11).
 
-### 8.2 Basic model
+### 11.2 Basic model
 
 `Plaintext` → **encryption algorithm + key** → `ciphertext` → **decryption algorithm + key** → `plaintext`
 
@@ -206,7 +491,7 @@ flowchart LR
     D --> R["Plaintext"]
 ```
 
-### 8.3 Symmetric key encryption
+### 11.3 Symmetric key encryption
 
 **Same key** is used to encrypt and decrypt. Also called **secret-key encryption**.
 
@@ -221,7 +506,7 @@ flowchart LR
 > [!WARNING] Key-distribution problem
 > Symmetric encryption is fast, but the shared key must reach both parties securely. Real systems therefore often use **asymmetric** cryptography to establish a symmetric **session key** (hybrid encryption).
 
-### 8.4 Asymmetric key encryption
+### 11.4 Asymmetric key encryption
 
 Each user has a **key pair**:
 
@@ -251,7 +536,7 @@ flowchart LR
 > **Public key encrypts, private key decrypts** — true for **confidentiality**.
 > For a **digital signature**, it is the opposite: the sender signs with their **private key**, and anyone verifies with the sender's **public key**.
 
-### 8.5 Hybrid encryption & TLS
+### 11.5 Hybrid encryption & TLS
 
 Real systems combine both:
 
@@ -263,7 +548,7 @@ This is how **HTTPS/TLS**, **SSH** and **VPNs** work. In **HTTPS/TLS**, a **digi
 > [!NOTE] HTTPS is not "only asymmetric"
 > The TLS handshake uses asymmetric cryptography; the bulk of the traffic is protected with fast symmetric encryption.
 
-### 8.6 Hashing vs encryption
+### 11.6 Hashing vs encryption
 
 | | **Encryption** | **Hashing** |
 |---|---|---|
@@ -282,7 +567,7 @@ This is how **HTTPS/TLS**, **SSH** and **VPNs** work. In **HTTPS/TLS**, a **digi
 > [!NOTE] Encoding is not encryption
 > **Base64** and similar encodings are reversible **without a key**; they are for data representation, not security.
 
-### 8.7 Digital signatures
+### 11.7 Digital signatures
 
 A **digital signature** proves **who signed** a message and that the message was **not changed**.
 
@@ -318,7 +603,7 @@ flowchart LR
 > [!CAUTION] Digital signature ≠ scanned signature
 > It is a cryptographic value, not a picture of a handwritten signature.
 
-### 8.8 Encryption in transit vs at rest
+### 11.8 Encryption in transit vs at rest
 
 | Context | Examples | What it protects |
 |---|---|---|
@@ -333,7 +618,7 @@ flowchart LR
 > [!IMPORTANT] Encryption vs access control
 > Access control (permissions/ACLs) decides who may open a file while the OS is running. Encryption protects data at rest if the disk is stolen or the OS is bypassed. Use both.
 
-### 8.9 Threats & protection (6.11)
+### 11.9 Threats & protection (6.11)
 
 | Threat | Description |
 |---|---|
@@ -353,7 +638,7 @@ flowchart LR
 > [!IMPORTANT] Encryption is one layer
 > Encryption does not stop malware, phishing or unauthorised access by itself. Use it together with firewalls, antivirus, updates and user awareness.
 
-### 8.10 Key management & exam traps
+### 11.10 Key management & exam traps
 
 **Key management:** public keys need trust (certificates); private keys must be protected. A **lost key means lost data**; a **stolen key** allows decryption or impersonation. Back up recovery keys and revoke compromised certificates.
 
@@ -447,3 +732,41 @@ Virus vs Trojan vs malware? :: A virus often attaches to files and spreads when 
 What is phishing? :: A fraudulent message or website pretending to be trustworthy in order to steal passwords, card numbers or other sensitive data.
 
 Firewall vs antivirus? :: A firewall filters network traffic using rules; antivirus detects, blocks or quarantines malicious software.
+
+What is the difference between an analog signal and a digital signal? :: An analog signal is continuous and can take many values; a digital signal uses discrete levels, usually two levels representing 0 and 1.
+
+What is the relationship between propagation speed, frequency and wavelength? :: v = f × λ: propagation speed equals frequency multiplied by wavelength.
+
+What is the difference between bit rate and baud rate? :: Bit rate is the number of bits per second; baud rate is the number of signal elements per second. If one signal element carries multiple bits, bit rate is higher than baud rate.
+
+What is a parity bit? :: An extra bit added so that the total number of 1s is even (even parity) or odd (odd parity); it detects some errors but cannot correct them.
+
+How long is a MAC address? :: 48 bits (6 bytes), written as six hexadecimal blocks separated by colons.
+
+What is the difference between a frame and a packet? :: A packet is the Network-layer PDU carrying IP addresses; a frame is the Data Link-layer PDU that encapsulates the packet and carries MAC addresses for the current link.
+
+What is the difference between pure ALOHA and slotted ALOHA? :: Pure ALOHA transmits whenever ready; slotted ALOHA allows transmission only at time-slot boundaries, reducing collisions but requiring synchronisation.
+
+Why is a port number needed? :: An IP address identifies a host, but many processes run on that host; the port number identifies the correct application process.
+
+Why does DNS normally use UDP? :: DNS queries are small and benefit from UDP’s low overhead and speed; TCP is used for large responses and zone transfers.
+
+What is a simple HTTP GET request? :: A request line such as `GET /index.html HTTP/1.1`, followed by headers such as `Host: www.example.com`.
+
+What does it mean that HTTP is stateless? :: Each request is handled independently, so the server does not automatically remember earlier requests; cookies or sessions add state.
+
+What is the role of an ISP? :: An ISP provides Internet access, assigns public IP addresses, routes customer traffic, and often provides DNS and other services.
+
+Why is ADSL called asymmetric? :: Downstream capacity is greater than upstream capacity, matching typical home usage where downloads are larger than uploads.
+
+What does NAT do in a home network? :: It translates private IP addresses and ports to the router’s public IP address and port, allowing many devices to share one public IP.
+
+At which OSI layers do NAT and a proxy operate? :: NAT operates at Layer 3 (network); a proxy operates at Layer 7 (application).
+
+What configuration does a DHCP server normally provide to a client? :: An IP address, subnet mask, default gateway, DNS server addresses and a lease time.
+
+How does packet switching differ from circuit switching? :: Packet switching shares links and forwards independent packets without a dedicated path; circuit switching reserves a dedicated path for the session.
+
+Name two guarantees that IP does not provide. :: IP does not guarantee delivery, ordering, freedom from duplicates or bounded delay; it is best effort.
+
+What is the role of a default gateway in a home network? :: It is the router that receives traffic destined for other networks and forwards it toward the destination.

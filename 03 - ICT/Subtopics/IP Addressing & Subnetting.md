@@ -8,11 +8,14 @@ tags:
   - Subnetting
   - IPv4
   - CIDR
+  - DHCP
+  - Routing
+  - Packet-Switching
 ---
 # :LiGlobe2: Subtopic: IPv4 Addressing & Subnetting Guide
 
 > [!ABSTRACT] Core Focus
-> A complete beginner-to-advanced guide on how IP addresses work, the difference between Network and Host IDs, IP Classes, Private vs. Public IPs, and step-by-step subnetting (CIDR, FLSM, VLSM). Includes **top-down division of the whole IPv4 space**, prefix↔mask↔subnet-count tables, reverse design from host requirements, a VLSM allocation example, special prefixes (/30, /31, /32), and the classic exam traps.
+> A complete beginner-to-advanced guide on how IP addresses work, the difference between Network and Host IDs, IP Classes, Private vs. Public IPs, and step-by-step subnetting (CIDR, FLSM, VLSM). Includes **top-down division of the whole IPv4 space**, prefix↔mask↔subnet-count tables, reverse design from host requirements, a VLSM allocation example, special prefixes (/30, /31, /32), and the classic exam traps. Also covers TG **6.7**: gateway, DHCP, routing, packet switching and best-effort delivery.
 
 ---
 
@@ -39,11 +42,14 @@ In the early days of the internet, IP addresses were divided into strict "Classe
 
 | Class | First Bits | 1st Octet Range | Default Subnet Mask | Network / Host Structure | Max Hosts per Network | Use Case |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **A** | `0` | 0 - 127 | 255.0.0.0 | **N**.H.H.H | $2^{24} - 2$ ($\approx 16.7$ Million) | Massive networks |
+| **A** | `0` | 1 - 126 | 255.0.0.0 | **N**.H.H.H | $2^{24} - 2$ ($\approx 16.7$ Million) | Massive networks |
 | **B** | `10` | 128 - 191 | 255.255.0.0 | **N.N**.H.H | $2^{16} - 2$ (65,534) | Medium to large |
 | **C** | `110` | 192 - 223 | 255.255.255.0 | **N.N.N**.H | $2^8 - 2$ (254) | Small networks (Homes/Offices) |
 | **D** | `1110` | 224 - 239 | N/A | N/A | N/A | Multicast (sending to a group) |
 | **E** | `1111` | 240 - 255 | N/A | N/A | N/A | Experimental / Research |
+
+> [!NOTE] Class A edge cases
+> `0.x.x.x` is reserved and `127.x.x.x` is the loopback range, so usable Class A networks run from **1 through 126**. The loopback range is `127.0.0.0/8`.
 
 > [!WARNING] The "- 2" Rule
 > Why do we subtract 2 when calculating maximum hosts? Because in every network:
@@ -332,6 +338,136 @@ Even with subnetting and NAT, we ran out of IPv4 addresses (there are only $\app
 
 ---
 
+## 10. IP Configuration, Routing & Packet Switching (6.7)
+
+> [!NOTE] TG 6.7 focus
+> 6.7 goes beyond subnetting. It asks how separate LANs are joined into an internetwork: the role of a **gateway**, why a uniform **IP address** is needed, how **DHCP** assigns addresses, how **routers** find a path, how **packet switching** works, and what **best-effort delivery** means.
+
+### 10.1 Gateway
+
+A **gateway** is a router that connects two or more networks and has the information needed to forward packets toward their destination.
+
+- A host sends traffic for another network to its **default gateway**.
+- The gateway examines the destination IP address and forwards the packet to the next router or directly to the destination network.
+- In a home network, the home router acts as the default gateway for all devices.
+
+> [!IMPORTANT] Gateway vs router
+> In this syllabus, a gateway is essentially a **router equipped with routing information** that connects different networks. The terms are often used interchangeably, but “gateway” emphasises the **exit point** from one network to another.
+
+### 10.2 Why a uniform IP addressing scheme is needed
+
+MAC addresses are **flat** and local to a link. They do not tell a router where a network is located. A separate, **uniform logical address** is needed so that:
+
+- Every device can be identified regardless of the LAN technology (Ethernet, Wi-Fi, fibre, etc.).
+- Addresses can be grouped into **networks** and **subnets**.
+- Routers can decide which network a packet belongs to.
+- The address can remain the same while the packet crosses many different links.
+
+This is the role of the **IP address**. IP is independent of the MAC protocol and the underlying LAN technology.
+
+| Feature | MAC address | IP address |
+| :--- | :--- | :--- |
+| Layer | Data Link (Layer 2) | Network (Layer 3) |
+| Structure | Flat, 48 bits | Hierarchical, 32 bits (IPv4) or 128 bits (IPv6) |
+| Scope | Local link | End-to-end across networks |
+| Used by | Switches | Routers |
+| Changes when moving to another network? | No (the interface keeps its MAC) | Usually yes (the host gets a new IP for the new network) |
+
+### 10.3 DHCP
+
+**DHCP (Dynamic Host Configuration Protocol)** automatically assigns IP configuration to hosts when they join a network. Instead of an administrator configuring every device manually, a DHCP server provides:
+
+- An IP address.
+- A subnet mask.
+- A default gateway.
+- DNS server addresses.
+- A **lease time** for how long the address may be used.
+
+A typical DHCP exchange is remembered as **DORA**:
+
+| Step | Message | Meaning |
+| :--- | :--- | :--- |
+| **D** | Discover | Client broadcasts: “Is there a DHCP server?” |
+| **O** | Offer | Server offers an available IP address and settings |
+| **R** | Request | Client requests the offered address |
+| **A** | Acknowledge | Server confirms the lease |
+
+> [!NOTE] Supporting detail
+> A DHCP server usually keeps a **pool** of addresses. A **lease** expires after a set time and may be renewed. A **reservation** permanently ties a specific MAC address to a specific IP. If no DHCP server responds, a Windows host may self-assign an **APIPA** address in `169.254.0.0/16`.
+
+### 10.4 Routing and routers
+
+**Routing** is the process of finding a suitable path from a source to a destination through one or more networks.
+
+A **router**:
+
+- Connects different networks.
+- Examines the destination IP address of each packet.
+- Looks up the destination in its **routing table**.
+- Forwards the packet to the **next hop** or out of the correct interface.
+
+A routing table typically contains:
+
+| Field | Meaning |
+| :--- | :--- |
+| **Destination network** | The network being reached (e.g. `192.168.2.0/24`) |
+| **Next hop** | The next router’s IP address |
+| **Interface** | The router port used to reach it |
+| **Metric** | A cost value used to choose the best route |
+| **Default route** | `0.0.0.0/0` — used when no more specific route matches |
+
+Routers exchange routing information with other routers so that their tables stay up to date. Routes may be **static** (configured manually) or **dynamic** (learned automatically using a routing protocol).
+
+### 10.5 Packet switching
+
+In a **packet-switched** network, a message is broken into smaller units called **packets**. Each packet:
+
+- Contains part of the original data.
+- Has a header with source and destination information.
+- May carry switching information such as sequence numbers.
+- Is forwarded **independently** of the other packets.
+
+Packets from the same message may take different paths, arrive out of order, or be delayed. The destination reassembles them. If a packet is lost, TCP can retransmit it; UDP does not.
+
+| Feature | Circuit switching | Packet switching |
+| :--- | :--- | :--- |
+| Path | Dedicated path reserved for the session | No dedicated path; packets share links |
+| Resource use | Reserved even when idle | Shared statistically; more efficient for bursty data |
+| Ordering | Preserved by the circuit | Not guaranteed |
+| Delay | Low and predictable | Variable (queuing, different routes) |
+| Typical use | Traditional telephone calls | Internet and most data networks |
+
+### 10.6 Best-effort delivery
+
+IP provides **best-effort delivery**. This means IP tries to deliver a packet, but it does **not guarantee**:
+
+- That the packet will arrive.
+- That packets will arrive in order.
+- That duplicate packets will be prevented.
+- That delay will stay within a limit.
+
+IP is therefore **connectionless** and **unreliable** by itself. Reliability is added by higher layers:
+
+- **TCP** detects loss, requests retransmission and restores order.
+- **UDP** does not add reliability; the application must handle loss if it matters.
+
+> [!IMPORTANT] Exam sentence
+> IP offers **best-effort, connectionless packet delivery**. It does not guarantee delivery, ordering or timing; TCP provides reliability on top of IP.
+
+### 10.7 Worked example: reaching a web server
+
+A host `192.168.1.10/24` wants to reach `203.0.113.10`.
+
+1. The host compares the destination with its own subnet. `203.0.113.10` is outside `192.168.1.0/24`.
+2. The host sends the packet to its **default gateway**, usually `192.168.1.1`.
+3. The home router performs **NAT**, replacing the private source address with its public address.
+4. The ISP’s router receives the packet and uses its **routing table** to choose the next hop.
+5. Each router forwards the packet independently; different packets may take different paths.
+6. The server receives the packet and sends a reply to the public address.
+7. NAT translates the reply back to `192.168.1.10`.
+
+---
+
 ## :LiRocket: Flashcards (Spaced Repetition)
 
 #flashcards
@@ -398,9 +534,32 @@ Why can a subnet mask never be 255.0.255.0? :: Mask bits must be contiguous 1s s
 
 What is the "− 2" rule and where does it apply? :: Network and broadcast addresses cannot be assigned, so usable hosts = 2^h − 2; it does not apply to the subnet count.
 
----
+What is a gateway? :: A router that connects two or more networks and has the routing information needed to forward packets toward their destination.
 
-## :LiBookText: See Also
+Why is a uniform IP address needed instead of relying only on MAC addresses? :: MAC addresses are flat and local to a link; IP addresses provide a hierarchical, network-independent address that routers can use across different LAN technologies.
 
-- [[Lesson 06 - Data Communication & Networking]] — networking context, OSI/TCP-IP, devices
-- [[Lesson 03 - Data Representation & Arithmetic]] — binary, powers of two, bitwise operations
+What does DHCP do? :: It automatically assigns IP configuration to hosts — IP address, subnet mask, default gateway, DNS servers and a lease time.
+
+What are the four steps of DHCP (DORA)? :: Discover, Offer, Request, Acknowledge.
+
+What is a DHCP lease? :: The period for which a DHCP server allows a client to use an assigned IP address; it can be renewed.
+
+What is routing? :: The process of finding a suitable path from a source to a destination through one or more networks.
+
+What is a routing table? :: A table in a router listing destination networks, next hops, interfaces and metrics used to decide where to forward packets.
+
+What is a default gateway? :: The router a host sends packets to when the destination is outside the host’s own subnet.
+
+What is a default route? :: The route 0.0.0.0/0, used when no more specific route in the routing table matches the destination.
+
+What is packet switching? :: Breaking a message into packets that are forwarded independently across shared links, possibly by different paths, and reassembled at the destination.
+
+What is the main difference between circuit switching and packet switching? :: Circuit switching reserves a dedicated path for the session; packet switching shares links and forwards independent packets without a dedicated path.
+
+What is best-effort delivery? :: IP tries to deliver packets but does not guarantee delivery, ordering, no duplicates or bounded delay.
+
+Does IP guarantee that packets arrive in order? :: No — IP is connectionless and best effort; packets may arrive out of order, be delayed or be lost.
+
+Which protocol adds reliability on top of IP? :: TCP, using acknowledgements, sequence numbers and retransmission. UDP does not add reliability.
+
+Why does a host send an off-subnet packet to its default gateway? :: The destination is outside the host’s subnet, so the host cannot deliver it directly and sends it to the router that can forward it onward.

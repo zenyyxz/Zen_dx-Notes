@@ -25,7 +25,7 @@ tags:
 | **03** | Data Representation & Computer Arithmetic     | Number Systems, 2's Comp, ASCII/Unicode         |   [[Lesson 03 - Data Representation & Arithmetic]]    |
 | **04** | Digital Logic Gates & Circuits                | Gates, Boolean Laws, K-Maps, Adders/Mux         |    [[Lesson 04 - Digital Logic Gates & Circuits]]     |
 | **05** | Operating Systems                             | Process, Memory, Storage, File Management       |           [[Lesson 05 - Operating Systems]]           |
-| **06** | Data Communication & Computer Networking      | OSI/TCP-IP, Transmission, IP & Subnetting       |    [[Lesson 06 - Data Communication & Networking]]    |
+| **06** | Data Communication & Computer Networking      | OSI/TCP-IP, Protocols, IP, PSTN/ISP            |    [[Lesson 06 - Data Communication & Networking]]    |
 | **07** | System Analysis & Design                      | SDLC, SSADM, DFD, ERD, Feasibility, Testing     |       [[Lesson 07 - System Analysis & Design]]        |
 | **08** | Database Management Systems                   | Relational Model, ER Mapping, 1NF-3NF, SQL      |      [[Lesson 08 - Database Management Systems]]      |
 | **09** | Programming & Algorithms                      | Algorithms, Flowcharts, Python Syntax & Structs |       [[Lesson 09 - Programming & Algorithms]]        |
@@ -46,6 +46,8 @@ Below are deep-dive technical notes for core exam topics:
 - :LiSettings: **Operating Systems**: [[Subtopics/OS Process & Memory Management|OS Process & Memory Management]]
 - :LiHardDrive: **Storage Access**: [[Subtopics/Sequential Direct & Random Access|Sequential, Direct & Random Access]]
 - :LiGlobe2: **Networking**: [[Subtopics/IP Addressing & Subnetting|IPv4 Addressing & Subnetting Guide]]
+- :LiGlobe2: **Network Protocols**: [[Subtopics/Network Protocols & Applications|MAC, TCP/UDP, DNS & HTTP]]
+- :LiGlobe2: **Internet Access**: [[Subtopics/PSTN, ISPs & Home Internet|PSTN, ISPs & Home Internet]]
 - :LiBarChartBig: **Systems Design**: [[Subtopics/System Analysis DFD & ER Modeling|DFD & ER Diagram Modeling]]
 - :LiCuboid: **Databases**: [[Subtopics/Database Normalization (1NF, 2NF, 3NF)|Database Normalization (1NF, 2NF, 3NF)]]
 - :LiDatabase: **SQL**: [[Subtopics/SQL Query Language Guide|SQL Query Language Guide]]
