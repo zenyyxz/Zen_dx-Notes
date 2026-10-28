@@ -147,6 +147,7 @@ A **Sequential Circuit**'s ==output depends on **both current inputs and past st
   - **Flip-Flop**: An **edge-triggered bistable circuit** that stores **1 bit**; changes state only on a clock transition.
 - Controlled by a **Clock Signal**.
 - Used to construct CPU registers, counters, and RAM memory cells.
+<!--SR:!2026-11-01,4,270-->
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)
@@ -157,6 +158,7 @@ Why are NAND and NOR gates called Universal Gates? :: Because any Boolean functi
 <!--SR:!2026-11-10,14,290-->
 
 State De Morgan's First Law. :: $\overline{A \cdot B} = \overline{A} + \overline{B}$.
+<!--SR:!2026-11-01,4,270-->
 
 State De Morgan's Second Law. :: $\overline{A + B} = \overline{A} \cdot \overline{B}$.
 <!--SR:!2026-12-22,56,310-->
@@ -165,11 +167,13 @@ What is the Boolean expression for the output of an XOR gate with inputs A and B
 <!--SR:!2026-11-12,16,290-->
 
 What is the Boolean simplified result of $A + \overline{A}B$? :: $A + B$ (Absorption Law).
+<!--SR:!2026-11-01,4,270-->
 
 What is a minterm? :: An AND (product) term containing every variable exactly once; it is 1 for exactly one truth-table input combination. For a row, use an uncomplemented variable for input 1 and a complemented variable for input 0.
 <!--SR:!2026-11-11,15,290-->
 
 What is a maxterm? :: An OR (sum) term containing every variable exactly once; it is 0 for exactly one truth-table input combination. For a row, use a complemented variable for input 1 and an uncomplemented variable for input 0.
+<!--SR:!2026-11-01,4,270-->
 
 What are the Boolean expressions for Sum and Carry in a Half Adder? :: $Sum = A \oplus B$, $Carry = A \cdot B$.
 <!--SR:!2026-11-08,12,270-->

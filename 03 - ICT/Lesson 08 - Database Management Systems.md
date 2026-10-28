@@ -130,6 +130,7 @@ ORDER BY Student.Name ASC;
 #flashcards
 
 What is the difference between Cardinality and Degree in relational database terminology? :: Cardinality is the total number of tuples (rows); Degree is the total number of attributes (columns) in a relation.
+<!--SR:!2026-10-31,3,250-->
 
 What is a Foreign Key, and what rule does it enforce? :: An attribute in a table that references the Primary Key of another table; it enforces Referential Integrity.
 <!--SR:!2026-10-30,3,250-->

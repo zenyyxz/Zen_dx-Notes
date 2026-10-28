@@ -409,7 +409,7 @@ sequenceDiagram
     CU->>ALU: A = ACC, B = MDR, op = ADD
     ALU->>ACC: ACC <- ACC + MDR
     ALU->>FL: update Z, C, N, V
-    Note over CU,FL: Store stage complete; next fetch begins
+    Note over CU,FL: Store stage complete, next fetch begins
 ```
 
 ### 7.4 Clock, machine cycle and instruction cycle

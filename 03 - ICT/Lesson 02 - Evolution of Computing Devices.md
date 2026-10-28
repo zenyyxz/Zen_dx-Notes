@@ -170,6 +170,7 @@ What is special vs general purpose? :: Special = one dedicated task (ATM); Gener
 <!--SR:!2026-11-10,14,290-->
 
 Order super/mainframe/mini/micro by size. :: Super (fastest parallel) > Mainframe (multi-user) > Mini (department server) > Micro (single-user PC/phone).
+<!--SR:!2026-11-01,4,270-->
 
 What technology enabled Fourth Generation computers? :: Very Large Scale Integration (VLSI) microprocessors.
 <!--SR:!2026-12-23,57,310-->
@@ -180,6 +181,7 @@ What is the Stored Program Concept? :: The concept where both data and program i
 Name the 3 main components of the CPU. :: 1. Control Unit (CU), 2. Arithmetic Logic Unit (ALU), 3. Registers.
 
 What is the difference between a Data Bus and an Address Bus? :: Data Bus is bidirectional and carries actual data; Address Bus is unidirectional and carries memory location addresses from the CPU.
+<!--SR:!2026-11-01,4,270-->
 
 If an address bus has 16 lines (16-bit), how many unique memory locations can it address? :: $2^{16} = 65,536$ memory locations (64 KB).
 <!--SR:!2026-12-25,59,310-->

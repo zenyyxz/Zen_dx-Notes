@@ -191,6 +191,7 @@ What is a file (logical vs physical view)? :: Named bytes; logical = user record
 <!--SR:!2026-11-12,16,290-->
 
 List 4 file attributes. :: Name, type/extension, owner, location, organization, permissions, dates, size.
+<!--SR:!2026-11-01,4,270-->
 
 What is FAT vs NTFS? :: FAT = MS-DOS table at fixed location, 2 copies; NTFS = recovery, Unicode, large disks, permissions/encryption.
 <!--SR:!2026-11-07,11,270-->
@@ -202,6 +203,7 @@ What is defragmentation? :: Rearranging scattered fragments to eliminate unusabl
 <!--SR:!2026-11-06,10,270-->
 
 What are the 3 parts of disk formatting? :: Low-level prep, partitioning (visible to OS), high-level new file system.
+<!--SR:!2026-11-01,4,270-->
 
 What is a Process vs Program? :: Program is static code; process is program in execution with PID/PCB/state.
 
@@ -209,6 +211,7 @@ Name I/O-bound vs CPU-bound processes. :: I/O-bound needs much I/O; CPU-bound ne
 <!--SR:!2026-11-12,16,290-->
 
 What is an interrupt and handling? :: Async event altering execution (I/O done); OS saves state to PCB, runs another, restores on interrupt.
+<!--SR:!2026-11-01,4,270-->
 
 What is a Process Control Block (PCB)? :: A data structure in the OS containing all information about a specific process (PID, state, CPU registers, memory pointers).
 <!--SR:!2026-11-07,11,270-->
@@ -219,6 +222,7 @@ What extra states does the 7-state model add? :: Suspended Ready and Suspended B
 <!--SR:!2026-11-03,7,250-->
 
 Compare long, short, medium-term schedulers. :: Long (job, admit, slowest), short (CPU/dispatcher, fastest), medium (swapping, middle).
+<!--SR:!2026-11-01,4,270-->
 
 What is the difference between Preemptive and Non-Preemptive CPU scheduling? :: Preemptive scheduling allows the OS to forcibly interrupt a running process (e.g., Round Robin); Non-Preemptive scheduling lets a process run until it voluntarily yields or terminates (e.g., FCFS).
 <!--SR:!2026-11-08,12,270-->

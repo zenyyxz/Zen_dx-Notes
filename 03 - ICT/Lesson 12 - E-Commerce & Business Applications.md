@@ -343,6 +343,7 @@ What is group purchasing? :: Several buyers combine their orders into one large 
 Pure brick vs pure click vs brick & click? :: Pure brick = physical stores only; pure click = online only; brick & click = both physical and online channels.
 
 What is B2E? :: Business-to-Employee: a business provides products or services to its employees, such as payroll, training or an HR portal.
+<!--SR:!2026-11-01,4,270-->
 
 Virtual storefront vs online marketplace? :: A virtual storefront is one business selling through its own website; an online marketplace hosts many independent sellers.
 
@@ -351,8 +352,10 @@ What is an information broker? :: A business or individual that collects, organi
 Content provider vs online service provider? :: A content provider creates/distributes content; an online service provider delivers services over the Internet (ISP, cloud storage, email, hosting).
 
 What is a portal? :: A website that acts as a gateway to information, resources and services, such as an enterprise or customer portal.
+<!--SR:!2026-11-01,4,270-->
 
 What is a virtual community? :: A group of people who interact online around shared interests, goals or backgrounds.
+<!--SR:!2026-11-01,4,270-->
 
 Give one advantage and one disadvantage of e-business. :: Advantage: global reach/lower costs/convenience; disadvantage: less personal contact, security/privacy risks, Internet dependence or no physical inspection.
 
@@ -362,19 +365,23 @@ What are the main product-commercialisation threats in e-commerce? :: Intellectu
 
 What is e-marketing? :: The use of digital channels and technologies to promote products or services to potential customers.
 
-What is SEO? :: Optimising a website's content and structure to rank higher in organic search results.
+What is search engine optimization (SEO)? :: Optimising a website's content and structure to rank higher in organic search results.
+<!--SR:!2026-11-01,4,270-->
 
 How are databases used in marketing? :: To segment customers, personalise messages, measure campaigns and improve targeting.
 
 How is AI used in marketing? :: Predictive analytics, recommendation engines, chatbots/NLP, dynamic content and campaign optimisation.
+<!--SR:!2026-11-01,4,270-->
 
 What is mobile marketing? :: Optimising marketing for mobile devices using mobile-friendly sites/ads, apps, push notifications, location-based marketing and SMS.
 
 How can ICT create competitive advantage? :: Through global reach, lower costs, personalisation, data-driven decisions, faster response and 24/7 availability.
 
 What is the TG example of a cryptocurrency/micro-payment? :: Bitcoin — a digital currency recorded on a blockchain, not issued by a central bank.
+<!--SR:!2026-11-01,4,270-->
 
 How does a payment gateway process an online card payment? :: Customer → merchant → gateway → processor/card network → issuing bank → approval/decline → merchant; settlement happens later.
+<!--SR:!2026-11-01,4,270-->
 
 What is a third-party payment system? :: An independent provider such as PayPal, Apple Pay or Google Pay that links a customer's card/bank and lets buyer and seller transact without sharing bank details.
 

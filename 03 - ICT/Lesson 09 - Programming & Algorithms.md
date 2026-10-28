@@ -341,13 +341,16 @@ What are the 4 steps of problem solving (9.1)? :: Understand problem, define bou
 <!--SR:!2026-11-12,16,290-->
 
 What is modularization + stepwise refinement? :: Split into modules, refine top-down from main task to detailed steps; show with structure charts.
+<!--SR:!2026-11-01,4,270-->
 
 What is a structure chart? :: It shows the module hierarchy: boxes are modules, lines/arrows show control or data flow; it is not an execution-order flowchart.
+<!--SR:!2026-10-31,3,250-->
 
 Name 3 ways to represent algorithms. :: Flowcharts, pseudocode, hand traces.
 <!--SR:!2026-11-07,11,270-->
 
 What is a hand trace? :: Manually recording each variable's value step by step in a trace table to verify an algorithm's logic.
+<!--SR:!2026-11-01,4,270-->
 
 What is the difference between a Compiler and an Interpreter? :: A Compiler translates the entire source code into machine code at once prior to execution; an Interpreter translates and executes source code line-by-line at runtime.
 <!--SR:!2026-11-10,14,290-->
@@ -387,6 +390,7 @@ What are basic file operations/modes? :: Open, close, read, write, append; modes
 <!--SR:!2026-11-04,8,250-->
 
 How to manage DB data in Python? :: Connect (sqlite3), create a cursor, execute SELECT/INSERT/UPDATE/DELETE, commit changes, fetch results and close.
+<!--SR:!2026-11-01,4,270-->
 
 How do you update or delete a row in SQLite from Python? :: Run UPDATE or DELETE with `?` placeholders, then `commit()`; `rowcount` reports the affected rows.
 

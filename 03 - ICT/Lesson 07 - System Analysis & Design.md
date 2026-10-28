@@ -426,44 +426,58 @@ flowchart LR
 #flashcards
 
 Define a system. :: An orderly grouping of interrelated and interdependent components linked by a plan to achieve a specific objective, accepting inputs and producing outputs within a boundary.
+<!--SR:!2026-11-01,4,270-->
 
 Name 3 classifications of systems with examples. :: Open/closed, natural/manmade, living/physical; e.g. open IS vs closed lab experiment.
+<!--SR:!2026-11-01,4,270-->
 
 What is the difference between an open and a closed system? :: An open system interacts with its environment across its boundary (respiratory system, information system); a closed system is isolated from environmental influences (blood circulation).
+<!--SR:!2026-11-01,4,270-->
 
 What are the elements of a system? :: Input, process, output, feedback, control, boundary, environment and subsystems.
 
 What is the difference between TPS, MIS, and DSS? :: TPS records transactions; MIS reports from TPS for managers; DSS models/what-if for decisions.
 
 Which information system serves strategic-level executives with dashboards? :: ESS (Executive Support System).
+<!--SR:!2026-11-01,4,270-->
 
 Which system maps, models and queries data by location? :: GIS (Geographic Information System).
 
 Which system separates content from presentation and supports collaborative digital content? :: CMS (Content Management System).
+<!--SR:!2026-11-01,4,270-->
 
 What is an expert system, and who builds its knowledge base? :: An AI system that reproduces expert decision-making; a knowledge engineer encodes the expert's rules.
 
 What makes a system a "smart system"? :: It senses, actuates and controls in a predictive/adaptive way, often with autonomous closed-loop control and networking.
 
 List the SDLC stages in the Waterfall model. :: Feasibility study -> Requirement analysis -> System design -> Implementation -> Testing -> Deployment -> Maintenance.
+<!--SR:!2026-11-01,4,270-->
 
 What is the main characteristic of the Spiral SDLC model? :: High emphasis on risk analysis and iterative development cycles.
 
 Name the four phases of each Spiral iteration. :: Determine objectives/alternatives/constraints -> risk analysis -> develop and validate -> plan the next iteration.
+<!--SR:!2026-11-01,4,270-->
 
 When to use Prototyping vs Spiral? :: Prototyping when requirements unclear; Spiral for large high-risk projects.
+<!--SR:!2026-11-01,4,270-->
 
 What does SSADM cover? :: Structured analysis + logical/physical design stages (not coding/testing).
+<!--SR:!2026-11-01,4,270-->
 
 List the five SSADM stages. :: Feasibility study -> Requirements analysis -> Requirements specification -> Logical system specification -> Physical design.
+<!--SR:!2026-11-01,4,270-->
 
 What are the two phases of preliminary investigation? :: Problem definition (preliminary survey and scope) and the feasibility study.
+<!--SR:!2026-11-01,4,270-->
 
 What are the 3 preliminary investigation tasks? :: Identify current problems, prioritize information-system needs, and study feasibility.
+<!--SR:!2026-10-31,3,250-->
 
 What are the 4 NIE feasibility types? :: Technical, Economic, Operational, Organizational (Legal/Schedule are TELOS extras, not TG 7.5).
+<!--SR:!2026-11-01,4,270-->
 
 What does economic feasibility use to justify the investment? :: Cost–benefit analysis.
+<!--SR:!2026-11-01,4,270-->
 
 What is the output of a feasibility study? :: A formal report on the nature and scope of the proposed solution, leading to project approval or rejection.
 
@@ -472,22 +486,29 @@ Distinguish functional vs non-functional requirements. :: Functional = what it d
 What do "shall" and "should" mean in IEEE requirements? :: "Shall" = essential/mandatory; "should" = desirable/nice to have.
 
 What is a Business Activity Model (BAM)? :: A start-off model showing the business activities performed by actors in the system environment and their associations.
+<!--SR:!2026-11-01,4,270-->
 
 What tools draw in 7.6? :: BAM, context/Level 1 DFD, document flow, EPD, LDS; then propose/select BSO.
 
 What are the four components of a DFD? :: External entities, data flows, processes and data stores.
+<!--SR:!2026-11-01,4,270-->
 
 What are the three properties of a DFD process, and of a data store? :: Process: ID, name, location. Data store: ID, type, name.
+<!--SR:!2026-10-31,3,250-->
 
 What are the four data store types in SSADM? :: Manual (M), Computerised (D), Temporary (T), Manual Temporary T(M).
+<!--SR:!2026-10-31,3,250-->
 
 How are data flows between two external entities drawn? :: As dashed arrows; normal flows are solid arrows.
 
 What must every DFD process have? :: At least one input AND one output flow (else black hole/miracle).
+<!--SR:!2026-11-01,4,270-->
 
 What is the role of the document flow diagram? :: It is the bridge between the context diagram and the Level 1 DFD, showing how documents/data pass through the system.
+<!--SR:!2026-11-01,4,270-->
 
 What is the difference between a physical and a logical DFD? :: Physical shows how data is actually processed/stored in the current system; logical shows how it should be processed/stored in the proposed system.
+<!--SR:!2026-10-31,3,250-->
 
 What is an EPD and data dictionary? :: EPD = pseudocode for each elementary process; dictionary = metadata catalogue of tables/fields.
 
@@ -502,16 +523,19 @@ How is a physical DFD converted to a logical DFD? :: Remove process locations, t
 Map the logical schema to the relational schema. :: Entity -> table; attribute -> field; instance -> record; unique attribute -> primary key.
 
 What does the data dictionary contain? :: Metadata — the actual database descriptions used by the DBMS.
+<!--SR:!2026-11-01,4,270-->
 
 What is a test case? :: A set of actions executed to verify a feature, documented by QA; in practice it records inputs/steps, expected output and preconditions.
 
 White box vs black box? :: White tests internal code paths; black tests inputs/outputs without code.
+<!--SR:!2026-11-01,4,270-->
 
 Where do black-box test cases come from? :: From the requirements specification and intended functionality.
 
 Name 4 tests in order. :: Unit -> integration -> system -> acceptance. (Alpha/beta are industry variants of acceptance testing, not TG terms.)
 
 Who performs unit, integration, system and acceptance testing? :: Unit = programmers (white box); integration = integration testers/test team (white or black box); system = independent test team (black box); acceptance = test team independent of the programmers/users (black box).
+<!--SR:!2026-11-01,4,270-->
 
 What is alpha vs beta testing? :: Alpha is acceptance testing at the developer's site by internal staff; beta is by real users at their own site.
 
@@ -526,11 +550,14 @@ What are the four maintenance types? :: Corrective (fix errors), adaptive (new r
 What is gap analysis for off-the-shelf? :: Compare business process needs vs package features to find misfits, then reengineer process or customize package.
 
 What three choices exist for each COTS gap? :: Ignore/remove the requirement, reengineer the business process, or extend/customise the package.
+<!--SR:!2026-11-01,4,270-->
 
 What is business process mapping? :: Subject-matter experts draw step-by-step diagrams of how the business is currently carried out, so those activities can be mapped onto the package workflow.
 
 Business process reengineering vs customisation? :: Reengineering changes the business process (to suit the package); customisation changes the package (to suit the business).
+<!--SR:!2026-10-31,3,250-->
 
 What costs must be compared for a COTS package? :: Investment, operational and maintenance costs.
 
 Why can COTS packages reduce competitive advantage? :: Competitors can buy and use the same package, so it does not differentiate the business.
+<!--SR:!2026-11-01,4,270-->

@@ -689,7 +689,7 @@ What is the difference between Bandwidth and Throughput? :: Bandwidth is the the
 <!--SR:!2026-10-30,3,250-->
 
 What is the purpose of Manchester Encoding? :: It ensures there is a voltage transition in the middle of every bit, allowing the receiver to easily synchronize its clock with the sender and prevent timing errors.
-<!--SR:!2026-10-28,1,210-->
+<!--SR:!2026-10-30,2,210-->
 
 Why is Fiber Optic cable immune to Electromagnetic Interference (EMI)? :: Because it transmits data using light pulses through glass/plastic instead of electrical signals through copper.
 <!--SR:!2026-11-10,14,290-->
@@ -712,14 +712,17 @@ What is the difference between TCP and UDP? :: TCP is reliable, connection-orien
 <!--SR:!2026-11-07,11,270-->
 
 Define encryption. :: Converting plaintext into ciphertext with an algorithm and key so that only authorised parties can recover the plaintext.
+<!--SR:!2026-11-01,4,270-->
 
 Symmetric vs asymmetric encryption? :: Symmetric uses the same key for encryption and decryption; asymmetric uses a public/private key pair.
 
 Which key encrypts a message for confidentiality? :: The receiver's public key; only the receiver's private key can decrypt it.
 
 Which key signs a digital signature, and which verifies it? :: The sender signs with their private key; anyone verifies with the sender's public key.
+<!--SR:!2026-11-01,4,270-->
 
 Why is asymmetric encryption not used for bulk data? :: It is much slower than symmetric encryption; it is used for key exchange, small data and digital signatures.
+<!--SR:!2026-11-01,4,270-->
 
 What is hybrid encryption (e.g. TLS)? :: Asymmetric cryptography authenticates/establishes a shared session key, then symmetric encryption protects the bulk data.
 
@@ -732,14 +735,19 @@ How is a digital signature created? :: Hash the message, sign/encrypt the hash w
 What does a digital signature provide? :: Authentication, integrity and non-repudiation — not confidentiality.
 
 What is a digital certificate? :: A CA-signed document binding a public key to an identity, used to trust public keys and prevent impersonation.
+<!--SR:!2026-10-31,3,250-->
 
 Does the Internet provide confidentiality and authentication by default? :: No — encryption and digital signatures must add them.
+<!--SR:!2026-11-01,4,270-->
 
 Why is key management critical? :: A lost key means lost data; a stolen key allows decryption or impersonation.
+<!--SR:!2026-11-01,4,270-->
 
 Is Base64 encryption? :: No — it is reversible encoding without a key and provides no confidentiality.
+<!--SR:!2026-11-01,4,270-->
 
 What is non-repudiation? :: The sender cannot later deny having signed or sent the message; provided by a digital signature.
+<!--SR:!2026-11-01,4,270-->
 
 What is the key-distribution problem? :: Symmetric encryption requires both parties to share the same secret key securely before communicating.
 
@@ -756,12 +764,16 @@ Firewall vs antivirus? :: A firewall filters network traffic using rules; antivi
 What is the difference between an analog signal and a digital signal? :: An analog signal is continuous and can take many values; a digital signal uses discrete levels, usually two levels representing 0 and 1.
 
 What is the relationship between propagation speed, frequency and wavelength? :: v = f × λ: propagation speed equals frequency multiplied by wavelength.
+<!--SR:!2026-11-01,4,270-->
 
 What is the difference between bit rate and baud rate? :: Bit rate is the number of bits per second; baud rate is the number of signal elements per second. If one signal element carries multiple bits, bit rate is higher than baud rate.
+<!--SR:!2026-10-29,1,230-->
 
 What is a parity bit? :: An extra bit added so that the total number of 1s is even (even parity) or odd (odd parity); it detects some errors but cannot correct them.
+<!--SR:!2026-10-31,3,250-->
 
 How long is a MAC address? :: 48 bits (6 bytes), written as six hexadecimal blocks separated by colons.
+<!--SR:!2026-10-31,3,250-->
 
 What is the difference between a frame and a packet? :: A packet is the Network-layer PDU carrying IP addresses; a frame is the Data Link-layer PDU that encapsulates the packet and carries MAC addresses for the current link.
 
@@ -770,14 +782,18 @@ What is the difference between pure ALOHA and slotted ALOHA? :: Pure ALOHA trans
 Why is a port number needed? :: An IP address identifies a host, but many processes run on that host; the port number identifies the correct application process.
 
 Why does DNS normally use UDP? :: DNS queries are small and benefit from UDP’s low overhead and speed; TCP is used for large responses and zone transfers.
+<!--SR:!2026-10-31,3,250-->
 
 What is a simple HTTP GET request? :: A request line such as `GET /index.html HTTP/1.1`, followed by headers such as `Host: www.example.com`.
+<!--SR:!2026-11-01,4,270-->
 
 What does it mean that HTTP is stateless? :: Each request is handled independently, so the server does not automatically remember earlier requests; cookies or sessions add state.
 
 What is the role of an ISP? :: An ISP provides Internet access, assigns public IP addresses, routes customer traffic, and often provides DNS and other services.
+<!--SR:!2026-11-01,4,270-->
 
 Why is ADSL called asymmetric? :: Downstream capacity is greater than upstream capacity, matching typical home usage where downloads are larger than uploads.
+<!--SR:!2026-11-01,4,270-->
 
 What does NAT do in a home network? :: It translates private IP addresses and ports to the router’s public IP address and port, allowing many devices to share one public IP.
 
@@ -790,3 +806,4 @@ How does packet switching differ from circuit switching? :: Packet switching sha
 Name two guarantees that IP does not provide. :: IP does not guarantee delivery, ordering, freedom from duplicates or bounded delay; it is best effort.
 
 What is the role of a default gateway in a home network? :: It is the router that receives traffic destined for other networks and forwards it toward the destination.
+<!--SR:!2026-11-01,4,270-->

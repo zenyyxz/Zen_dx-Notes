@@ -237,6 +237,7 @@ List 4 modern computer applications of Hexadecimal numbers. :: 1. RAM/CPU memory
 <!--SR:!2026-12-04,38,290-->
 
 Convert $(13.625)_{10}$ to Binary. :: $(1101.101)_2$.
+<!--SR:!2026-11-01,4,270-->
 
 Convert $(11010110.1011)_2$ to Hexadecimal. :: $(D6.B)_{16}$.
 <!--SR:!2026-11-11,15,290-->
@@ -248,6 +249,7 @@ What is the range of signed integers that can be stored in an 8-bit register usi
 <!--SR:!2026-12-11,45,290-->
 
 What is the 8-bit 2's complement representation of $-25_{10}$? :: `11100111`.
+<!--SR:!2026-11-01,4,270-->
 
 How is arithmetic overflow detected in 2's complement addition? :: When adding two numbers of the same sign produces a result with an opposite sign bit, or when carry-in to MSB differs from carry-out of MSB.
 <!--SR:!2026-11-12,16,290-->
@@ -256,4 +258,4 @@ How many non-printable control characters and printable characters exist in stan
 <!--SR:!2026-11-22,26,270-->
 
 What are the decimal ASCII values for `'0'`, `'A'`, and `'a'`? :: `'0'` = 48, `'A'` = 65, `'a'` = 97.
-<!--SR:!2026-09-29,4,270-->
+<!--SR:!2026-11-13,16,290-->
