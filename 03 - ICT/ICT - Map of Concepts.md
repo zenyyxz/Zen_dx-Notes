@@ -30,7 +30,7 @@ tags:
 | **08** | Database Management Systems                   | Relational Model, ER Mapping, 1NF-3NF, SQL      |      [[Lesson 08 - Database Management Systems]]      |
 | **09** | Programming & Algorithms                      | Algorithms, Flowcharts, Python Syntax & Structs |       [[Lesson 09 - Programming & Algorithms]]        |
 | **10** | Web Development (HTML, CSS, PHP)              | HTML5, CSS3, Client/Server Scripting, PHP/MySQL |   [[Lesson 10 - Web Development (HTML, CSS, PHP)]]    |
-| **11** | Internet of Things & Embedded Systems         | Sensors, Actuators, Arduino, Cloud Architecture | [[Lesson 11 - Internet of Things & Embedded Systems]] |
+| **11** | Internet of Things & Embedded Systems         | Embedded Systems, Arduino, Sensors, IoT Apps    | [[Lesson 11 - Internet of Things & Embedded Systems]] |
 | **12** | E-Commerce & Business Applications            | E-Business Models, E-Payments, ERP/CRM/SCM      |  [[Lesson 12 - E-Commerce & Business Applications]]   |
 | **13** | New Trends & Future Directions in ICT         | AI/ML, Cloud Computing, Cyber Security, Ethics  |    [[Lesson 13 - New Trends & Future Directions]]     |
 
