@@ -218,22 +218,53 @@ How devices are arranged and connected.
 - **Tree**: A combination of Bus and Star.
 
 ```mermaid
-graph TD
-    subgraph Bus
-        T1[Terminator] --- B1[PC1] --- B2[PC2] --- B3[PC3] --- T2[Terminator]
+graph TB
+    subgraph P2P["Point-to-Point"]
+        P1[PC1] === P2[PC2]
     end
-    subgraph Star
-        H((Hub/Switch)) --- S1[PC1]
-        H --- S2[PC2]
-        H --- S3[PC3]
+```
+
+```mermaid
+graph TB
+    subgraph STAR["Star"]
+        SH((Switch)) --- S1[PC1]
+        SH --- S2[PC2]
+        SH --- S3[PC3]
+        SH --- S4[PC4]
     end
-    subgraph Ring
-        R1[PC1] --- R2[PC2] --- R3[PC3] --- R4[PC4] --- R1
+```
+
+```mermaid
+graph TB
+    subgraph RING["Ring"]
+        R1[PC1] ---> R2[PC2]
+        R2 ---> R3[PC3]
+        R3 ---> R4[PC4]
+        R4 ---> R1
     end
-    subgraph Mesh
+```
+
+```mermaid
+graph TB
+    subgraph MESH["Mesh"]
         M1[PC1] --- M2[PC2]
         M1 --- M3[PC3]
+        M1 --- M4[PC4]
         M2 --- M3
+        M2 --- M4
+        M3 --- M4
+    end
+```
+
+```mermaid
+graph TB
+    subgraph TREE["Tree"]
+        TR((Root switch)) --- TA((Switch A))
+        TR --- TB((Switch B))
+        TA --- T1[PC1]
+        TA --- T2[PC2]
+        TB --- T3[PC3]
+        TB --- T4[PC4]
     end
 ```
 
