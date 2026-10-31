@@ -450,7 +450,7 @@ Example: `Employee(EmpID, Name)` and `Dependent(EmpID, DepName, Relationship)` w
 > Normalization does not change the meaning of the data. It changes **how the data is grouped into tables** so that each fact is stored in one place.
 
 > [!INFO] Deep Dive Note
-> For a full worked example from UNF to 3NF and additional normalization flashcards, see [[Subtopics/Database Normalization (1NF, 2NF, 3NF)|Database Normalization Guide]].
+> For the detailed 0NF–3NF conditions, conversion methods, a full UNF → 3NF worked example and additional flashcards, see [[Subtopics/Database Normalization (1NF, 2NF, 3NF)|Database Normalization Guide]].
 
 ### 6.2 Redundancy and Anomalies
 
@@ -519,107 +519,6 @@ flowchart LR
 | **1NF** | All values are **atomic**; no repeating groups; each row is unique; each column has a consistent data type; a primary key is defined | Multivalued/repeating groups |
 | **2NF** | Must be in **1NF** and have **no partial dependency**; every non-key attribute must depend on the **whole** primary key | Partial dependencies |
 | **3NF** | Must be in **2NF** and have **no transitive dependency**; non-key attributes must depend only on candidate keys | Transitive dependencies |
-
-#### 0NF (Zero Normal Form / Unnormalized Form)
-
-- Data is unorganized and may be stored in one large table.
-- May contain **repeating groups** or **multivalued fields**.
-- Example:
-
-| SID | Name | SubName |
-|---|---|---|
-| 101 | Akon | Maths |
-| 102 | Bkon | Maths, ICT |
-| 103 | Ckon | Physics, BIO |
-
-`SubName` contains multiple values in one cell, so this is **0NF**.
-
-#### 1NF (First Normal Form)
-
-Rules:
-
-1. **Atomic values** — each cell contains one indivisible value.
-2. **No repeating groups** — no lists, sets or arrays in a cell.
-3. **Unique rows** — no duplicate rows.
-4. **Single-valued columns** — one value per row.
-5. **Consistent data types** — each column has one data type.
-6. **Primary key defined**.
-
-Converting 0NF to 1NF:
-
-- **Solution 1**: flatten repeating values into separate rows.
-
-| SID | Name | SubName |
-|---|---|---|
-| 101 | Akon | Maths |
-| 102 | Bkon | Maths |
-| 102 | Bkon | ICT |
-| 103 | Ckon | Physics |
-| 103 | Ckon | BIO |
-
-Primary key = `(SID, SubName)`. This is 1NF but still has redundancy (student name repeats).
-
-- **Solution 2**: create separate columns for each repeated value (`Sub1`, `Sub2`, …). This often creates many NULLs.
-- **Solution 3**: split into separate tables, such as `Student(SID, Name)`, `Subject(SubID, SubName)` and `StudentSubject(SID, SubID)`. This is usually the best design.
-
-#### 2NF (Second Normal Form)
-
-Rules:
-
-1. The table must already be in **1NF**.
-2. There must be **no partial dependency**.
-3. Every non-key attribute must depend on the **entire composite primary key**, not just part of it.
-
-> [!NOTE] 2NF only matters for composite keys
-> If a table is in 1NF and its primary key is a **single attribute**, it is automatically in 2NF because a partial dependency is impossible with a one-attribute key.
-
-**Example 1NF table**
-
-| SID | CID | SName | CName | Grade |
-|---|---|---|---|---|
-| 101 | 1 | Akon | S.Eng | A |
-| 102 | 2 | Bkon | CS | A |
-| 102 | 3 | Bkon | AIDS | C |
-| 103 | 4 | Dkon | Archt. | B |
-
-Primary key = `(SID, CID)`.
-
-Partial dependencies:
-
-- `SID → SName`
-- `CID → CName`
-
-Convert to 2NF:
-
-- `Student(SID, SName)` — PK `SID`
-- `Course(CID, CName)` — PK `CID`
-- `StudentCourse(SID, CID, Grade)` — PK `(SID, CID)`
-
-#### 3NF (Third Normal Form)
-
-Rules:
-
-1. The table must already be in **2NF**.
-2. There must be **no transitive dependency**.
-3. A non-key attribute must not depend on another non-key attribute.
-
-**Example 2NF table with a transitive dependency**
-
-| SID | SName | FacID | FacName |
-|---|---|---|---|
-| 101 | Akon | 1 | Engineering |
-| 102 | Bkon | 3 | Computing |
-| 103 | Ckon | 3 | Computing |
-| 104 | Dkon | 3 | Computing |
-
-Primary key = `SID`.
-
-Here `SID → FacID` and `FacID → FacName`, so `SID → FacName` is transitive.
-
-Convert to 3NF:
-
-- `Student(SID, SName, FacID)` — PK `SID`; FK `FacID → Faculty.FacID`
-- `Faculty(FacID, FacName)` — PK `FacID`
 
 > [!NOTE] Denormalization
 > **Denormalization** intentionally reintroduces some redundancy (for example, duplicating a column to avoid expensive joins) to improve read performance. It speeds up some queries but increases storage, update cost and the risk of anomalies. Normalize first; denormalize only with a measured performance reason.
