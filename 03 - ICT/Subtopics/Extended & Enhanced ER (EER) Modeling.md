@@ -17,9 +17,12 @@ tags:
   - Composition
 ---
 
-> [!ABSTRACT] Not-Syllabus Deep Dive
+> [!ABSTRACT] Advanced Deep Dive
 > - **Enhanced / Extended Entity-Relationship (EER)** modeling extends basic ER with inheritance, specialization, aggregation, and composition.
-> These concepts are **not in the AL ICT syllabus**, but strengthen schema design and systems analysis skills.
+> TG 8.2 requires only an **introduction** to EER (specialization, generalization and inheritance); the advanced concepts below are an extension.
+
+> [!INFO] Parent Lesson
+> This deep dive is used in [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
 
 ---
 

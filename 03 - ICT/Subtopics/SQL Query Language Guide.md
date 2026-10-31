@@ -16,6 +16,9 @@ tags:
 > [!ABSTRACT] Core Focus
 > SQL command categories, table creation, constraints, data manipulation, queries, conditions, sorting, grouping, aggregate functions, and joins.
 
+> [!INFO] Parent Lesson
+> This deep dive is used in [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ---
 ## 1. SQL Command Categories
 

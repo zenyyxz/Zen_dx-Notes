@@ -15,6 +15,9 @@ tags:
 > [!ABSTRACT] Core Focus
 > Functional dependencies, identifying anomalies (Insertion, Deletion, Update), and step-by-step normalization from Unnormalized Form (UNF) to 3NF.
 
+> [!INFO] Parent Lesson
+> This deep dive is used in [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ---
 ## 1. Functional Dependency Concepts
 

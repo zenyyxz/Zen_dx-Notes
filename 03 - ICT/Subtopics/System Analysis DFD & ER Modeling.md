@@ -18,6 +18,9 @@ tags:
 > [!WARNING] What the syllabus actually prescribes
 > The NIE Teacher's Guide specifies DFD **components, properties, levels and rules**. It does **not** name Gane & Sarson, Yourdon or DeMarco, and the 2020 paper only says *"using standard symbols"*. The shapes in §3 are **conventions** — pick one set and use it consistently. The rules in §4 are the examinable part.
 
+> [!INFO] Used In
+> The DFM material supports [[Lesson 07 - System Analysis & Design|Lesson 07]]; the ER modelling and ERD-to-schema material supports [[Lesson 08 - Database Management Systems|Lesson 08]].
+
 ---
 
 ## 1. What Data Flow Modelling Is

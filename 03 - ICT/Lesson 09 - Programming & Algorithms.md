@@ -273,6 +273,9 @@ conn.close()
 - `commit()` is needed after INSERT, UPDATE or DELETE; SELECT does not change data, so it does not need commit.
 - `fetchone()` gets one row; `fetchall()` gets all remaining rows; `rowcount` reports how many rows the last statement changed.
 
+> [!INFO] Related Note
+> For the relational theory behind these SQL statements — keys, normalization, constraints and joins — see [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ---
 ## 5. Searching & Sorting Algorithms (9.13)
 

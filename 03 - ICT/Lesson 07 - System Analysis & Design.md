@@ -303,6 +303,9 @@ Then:
 **Record specification:** the record layout — field order and lengths.
 **Data dictionary:** an integral part of the database holding **metadata** (data about data) — the actual database descriptions used by the DBMS.
 
+> [!INFO] Related Note
+> For the database side of this design — keys, ER-to-relational mapping, normalization and SQL — see [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ---
 
 ## 7. Build + Test (7.8)

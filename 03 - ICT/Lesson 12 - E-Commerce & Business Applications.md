@@ -262,6 +262,9 @@ Databases store customer data such as purchase history, preferences and interact
 > [!WARNING] Privacy
 > Customer databases must be handled lawfully: obtain consent, protect the data and avoid misuse.
 
+> [!INFO] Related Note
+> For database fundamentals and how customer data is structured and queried, see [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ### 9.4 AI in marketing
 
 - **Predictive analytics** — forecast customer behaviour, demand and sales.

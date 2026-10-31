@@ -33,6 +33,9 @@ tags:
 >[!note]
 Data  --->  ( Processing / Transformation )  --->  Information  --->  Knowledge
 
+> [!INFO] Related Note
+> For how databases store, organize and retrieve this data, see [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ---
 ## 2. Life Cycle of Data
 Data undergoes a structured life cycle inside an information system:

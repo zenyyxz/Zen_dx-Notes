@@ -411,6 +411,9 @@ mysqli_close($conn);
 > [!INFO] Deep Dive Note
 > For PHP variables, operators, `if/switch/loops`, functions/scope, built-ins, `$_GET` vs `$_POST`, procedural vs OOP MySQLi, `real_escape_string`, and INSERT/SELECT/UPDATE/CREATE examples, read: [[Subtopics/PHP & MySQL Server-Side Scripting|PHP & MySQL Server-Side Scripting Guide]].
 
+> [!INFO] Related Note
+> For the relational database theory behind these SQL statements — keys, normalization and constraints — see [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+
 ---
 ## 10.8 Publishes and Maintains Web Sites
 
