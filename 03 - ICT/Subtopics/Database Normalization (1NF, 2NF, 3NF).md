@@ -16,7 +16,7 @@ tags:
 > Functional dependencies, identifying anomalies (Insertion, Deletion, Update), and step-by-step normalization from Unnormalized Form (UNF) to 3NF.
 
 > [!INFO] Parent Lesson
-> This deep dive is used in [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+> This deep dive supports [[Lesson 08 - Database Management Systems#6. Normalization (8.7)|Lesson 08 §6: Normalization]].
 
 ---
 ## 1. Functional Dependency Concepts

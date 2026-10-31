@@ -19,7 +19,7 @@ tags:
 > The NIE Teacher's Guide specifies DFD **components, properties, levels and rules**. It does **not** name Gane & Sarson, Yourdon or DeMarco, and the 2020 paper only says *"using standard symbols"*. The shapes in §3 are **conventions** — pick one set and use it consistently. The rules in §4 are the examinable part.
 
 > [!INFO] Used In
-> The DFM material supports [[Lesson 07 - System Analysis & Design|Lesson 07]]; the ER modelling and ERD-to-schema material supports [[Lesson 08 - Database Management Systems|Lesson 08]].
+> The DFM material supports [[Lesson 07 - System Analysis & Design|Lesson 07]]; the ER modelling material supports [[Lesson 08 - Database Management Systems#4. ER Modeling (8.2)|Lesson 08 §4]] and ERD-to-schema mapping supports [[Lesson 08 - Database Management Systems#5. Mapping ER Diagrams to Relational Schema (8.4)|§5]].
 
 ---
 

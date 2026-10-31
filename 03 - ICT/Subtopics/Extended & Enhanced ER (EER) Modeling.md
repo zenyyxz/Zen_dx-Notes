@@ -22,7 +22,7 @@ tags:
 > TG 8.2 requires only an **introduction** to EER (specialization, generalization and inheritance); the advanced concepts below are an extension.
 
 > [!INFO] Parent Lesson
-> This deep dive is used in [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+> This deep dive supports [[Lesson 08 - Database Management Systems#4.5 Introduction to EER (Extended ER)|Lesson 08 §4.5: Introduction to EER]].
 
 ---
 

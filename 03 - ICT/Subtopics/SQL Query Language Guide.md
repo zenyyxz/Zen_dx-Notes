@@ -17,7 +17,7 @@ tags:
 > SQL command categories, table creation, constraints, data manipulation, queries, conditions, sorting, grouping, aggregate functions, and joins.
 
 > [!INFO] Parent Lesson
-> This deep dive is used in [[Lesson 08 - Database Management Systems|Lesson 08: Database Management Systems]].
+> SQL starts at [[Lesson 08 - Database Management Systems#7.4 SQL Classification|Lesson 08 §7.4: SQL Classification]] and continues with a compact quick-reference in §7.5; this note carries the full detail and worked examples.
 
 ---
 ## 1. SQL Command Categories
@@ -96,8 +96,21 @@ ALTER TABLE Student ADD Email VARCHAR(100);
 ALTER TABLE Student MODIFY Name VARCHAR(75);
 ALTER TABLE Student DROP COLUMN Email;
 
+-- Add / drop a primary key (use ADD only if the table has none)
+ALTER TABLE Student ADD PRIMARY KEY (StudentID);
+ALTER TABLE Student DROP PRIMARY KEY;
+
+-- Add / drop a foreign key (MySQL syntax)
+ALTER TABLE Student ADD CONSTRAINT fk_student_class
+    FOREIGN KEY (ClassID) REFERENCES Class(ClassID);
+ALTER TABLE Student DROP FOREIGN KEY fk_student_class;
+
 TRUNCATE TABLE Student; -- removes all rows, keeps table structure
 DROP TABLE Student;     -- removes table structure and data
+
+-- Inspect structure
+DESCRIBE Student;
+SHOW TABLES;
 ```
 
 > `TRUNCATE` is usually classified as **DDL**. It removes all records but keeps the table.
@@ -218,7 +231,22 @@ INNER JOIN Student B ON A.ClassID = B.ClassID AND A.StudentID <> B.StudentID;
 ```
 
 ---
-## 8. Quick Practice
+## 8. SQL Exam Traps
+
+> [!WARNING] High-frequency mistakes
+> 1. **`DROP DATABASE`** deletes the whole database; **`DROP TABLE`** deletes one table.
+> 2. **`DELETE`** is DML and can use `WHERE`; **`TRUNCATE`** removes all rows and is DDL; **`DROP`** removes the structure too.
+> 3. **`ALTER TABLE ... ADD PRIMARY KEY (...)`** adds a key to an existing table; it does not create a new table.
+> 4. Use **`IS NULL`** or **`IS NOT NULL`**, never `= NULL`.
+> 5. **`COUNT(*)`** counts all rows; **`COUNT(column)`** ignores NULLs in that column.
+> 6. **`WHERE`** filters rows before grouping; **`HAVING`** filters groups.
+> 7. A **foreign key** must reference a **primary key or unique key**.
+> 8. **`CHAR(n)`** is fixed-length and padded with spaces; **`VARCHAR(n)`** is variable-length.
+> 9. **`SELECT`** is DQL, even though it is often taught alongside DML.
+> 10. A **primary key** cannot be NULL; a **unique key** usually can be NULL.
+
+---
+## 9. Quick Practice
 
 ```sql
 -- Create table

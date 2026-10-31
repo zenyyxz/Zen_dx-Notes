@@ -43,16 +43,10 @@ tags:
 
 ### 1.1 Data vs Information
 
-| Aspect | **Data** | **Information** |
-|---|---|---|
-| **Meaning** | Raw, unprocessed facts or figures | Data that has been processed, organized and interpreted |
-| **Context** | Has no meaning on its own | Has meaning and context |
-| **Form** | Numbers, text, symbols, images, audio | Summaries, reports, trends, conclusions |
-| **Example** | `85`, `Kamal`, `2026-10-31` | “Kamal scored 85 marks for ICT in 2026.” |
-| **Role** | Input to processing | Output used for decision-making |
+**Data** are raw, unprocessed facts; **information** is data that has been processed, organized and interpreted so that it has meaning and can support decisions. The same item can be data in one context and information in another.
 
-> [!NOTE] Data and information are not fixed categories
-> The same item can be **data** in one situation and **information** in another. Data becomes information once it is processed, organized and interpreted by a person or system.
+> [!INFO] Related Note
+> For the full comparison, the characteristics of valuable information and the data life cycle, see [[Lesson 01 - Basic Concepts of ICT|Lesson 01 §1–3]].
 
 ### 1.2 Structured vs Unstructured Data
 
@@ -72,15 +66,6 @@ tags:
 - **Database**: an organized collection of structured data, stored electronically or manually, so that it can be easily accessed, managed and updated.
 - **DBMS (Database Management System)**: software that provides an interface between the database and its users/application programs. It lets users define, create, update, query and control a database.
 - **Database system**: the complete environment made up of the **database**, **DBMS**, **application programs**, **users**, **hardware** and **metadata**.
-
-| Aspect | **With a Database** | **Without a Database** |
-|---|---|---|
-| **Organization** | Systematic and structured | Scattered and unstructured |
-| **Efficiency** | Faster data management and retrieval | Time-consuming searches |
-| **Data integrity** | Consistent and accurate | Higher error rates |
-| **Scalability** | Adapts to growth | Difficult to manage increasing data |
-| **Accessibility** | Quick access for authorized users | Cumbersome retrieval |
-| **Security** | Data protection and access controls | Vulnerable to unauthorized access |
 
 > [!IMPORTANT] Data dictionary
 > A **data dictionary** is an integral part of a database. It stores **metadata** — data about data — such as table names, field names, data types, sizes, keys and constraints. The DBMS uses it to understand and manage the database.
@@ -109,7 +94,7 @@ A **database model** defines how data is structured, how records are related, an
 | **Hierarchical** | Tree with one root and parent–child links | One-to-many only; one parent per child | Fast navigation for strict hierarchies | Rigid; poor for many-to-many; hard to change | Organizational charts, file systems |
 | **Network** | Graph of records linked by pointers | Many-to-many; a child may have several parents | Handles complex relationships; fast direct access | Complex design; no universal standard | Telecommunications, CAD |
 | **Relational** | Tables (relations) of rows and columns | PK–FK relationships; 1:1, 1:N, M:N via junction tables | High integrity, flexible, SQL, normalization | Complex queries may need joins; less suitable for very complex data types | Business applications, general-purpose databases |
-| **Object-Relational** | Relational tables + object-oriented features | Supports complex objects and relationships | Handles multimedia, spatial and complex data | More complex design, management and querying | Complex applications, OOP environments |
+| **Object-Relational** | Relational tables + objects, classes, inheritance and methods | Supports complex objects and relationships | Handles multimedia, spatial and complex data | More complex design, management and querying | Complex applications, OOP environments |
 
 ### 2.1 Comparison of Models
 
@@ -120,14 +105,6 @@ A **database model** defines how data is structured, how records are related, an
 | **Ease of querying** | Difficult, manual | Difficult; predefined paths | Complex; pointer traversal | Easy with SQL | Complex; extended SQL or OOP methods |
 | **Performance** | High for simple data | High for hierarchical queries | High for complex relationships | Moderate to high | Moderate; added complexity |
 | **Complex data** | Limited | Limited to hierarchy | Supports complex relationships | Simple to moderately complex | Supports complex data types |
-
-### 2.2 Key Points About Each Model
-
-- **Flat file system**: data is stored in one file or sheet without a relational structure. Fields are separated by delimiters (comma, tab). It is easy to create but has **no constraints**, **no relationships**, and suffers from **data duplication**. Examples: CSV, TXT, Excel sheets, JSON, log files.
-- **Hierarchical model**: records form a **tree**. Each parent can have many children, but each child has only **one parent**. Access follows a path from the root. It is good for strict one-to-many hierarchies but cannot represent many-to-many relationships naturally.
-- **Network model**: records form a **graph** and can have **multiple parents**. Relationships are maintained with **pointers**. It supports many-to-many relationships but is complex to design and maintain.
-- **Relational model**: data is stored in **tables (relations)**. Each table has a **primary key**, and relationships are created with **foreign keys**. It is the model used by SQL databases and is the main focus of this lesson.
-- **Object-relational model**: a hybrid of the relational and object-oriented models. Tables can contain **objects**, and the database supports **classes, inheritance and methods**, making it suitable for complex data such as multimedia and spatial data.
 
 > [!TIP] Exam angle
 > If a question asks for the **most suitable model** for ordinary business data with many relationships and SQL queries, the answer is usually the **relational model**. If it asks about a strict tree such as an organizational chart, think **hierarchical**. If it asks about complex objects/multimedia, think **object-relational**.
@@ -473,7 +450,7 @@ Example: `Employee(EmpID, Name)` and `Dependent(EmpID, DepName, Relationship)` w
 > Normalization does not change the meaning of the data. It changes **how the data is grouped into tables** so that each fact is stored in one place.
 
 > [!INFO] Deep Dive Note
-> For a second worked example and additional normalization flashcards, see [[Subtopics/Database Normalization (1NF, 2NF, 3NF)|Database Normalization Guide]].
+> For a full worked example from UNF to 3NF and additional normalization flashcards, see [[Subtopics/Database Normalization (1NF, 2NF, 3NF)|Database Normalization Guide]].
 
 ### 6.2 Redundancy and Anomalies
 
@@ -644,53 +621,6 @@ Convert to 3NF:
 - `Student(SID, SName, FacID)` — PK `SID`; FK `FacID → Faculty.FacID`
 - `Faculty(FacID, FacName)` — PK `FacID`
 
-### 6.5 Full Worked Normalization Example
-
-**Given 1NF relation**
-
-`StudentCourse(SID, SName, CID, CName, FacID, FacName, Grade)`
-
-Primary key = `(SID, CID)`.
-
-**Partial dependencies**
-
-- `SID → SName`
-- `CID → CName, FacID, FacName`
-
-**Convert to 2NF**
-
-- `Student(SID, SName)`
-- `Course(CID, CName, FacID, FacName)`
-- `StudentCourse(SID, CID, Grade)`
-
-**Transitive dependency in `Course`**
-
-- `CID → FacID`
-- `FacID → FacName`
-- Therefore `CID → FacName` is transitive.
-
-**Convert to 3NF**
-
-- `Student(SID, SName)`
-- `Course(CID, CName, FacID)`
-- `Faculty(FacID, FacName)`
-- `StudentCourse(SID, CID, Grade)`
-
-Now each fact is stored once:
-
-- student name only in `Student`,
-- course name only in `Course`,
-- faculty name only in `Faculty`,
-- grades only in `StudentCourse`.
-
-### 6.6 Summary: What Each Normal Form Removes
-
-| Anomaly / dependency | 0NF | 1NF | 2NF | 3NF |
-|---|---|---|---|---|
-| **Multivalued / repeating group** | Present | Removed | Removed | Removed |
-| **Partial dependency** | Present | Present | Removed | Removed |
-| **Transitive dependency** | Present | Present | Present | Removed |
-
 > [!NOTE] Denormalization
 > **Denormalization** intentionally reintroduces some redundancy (for example, duplicating a column to avoid expensive joins) to improve read performance. It speeds up some queries but increases storage, update cost and the risk of anomalies. Normalize first; denormalize only with a measured performance reason.
 
@@ -752,200 +682,22 @@ A **Database Management System (DBMS)** is software that provides an interface f
 > Many school notes group `SELECT` under DML because it works with data. Strictly, it is **DQL**. In an exam, state the category your syllabus uses, but do not call `SELECT` a DDL command.
 
 > [!INFO] Deep Dive Note
-> For SQL data types, constraints and join examples, see [[Subtopics/SQL Query Language Guide|SQL Query Language Guide]]. For using SQL from PHP, see [[Lesson 10 - Web Development (HTML, CSS, PHP)|Lesson 10 §10.7]].
+> The full SQL detail — data types, constraints, DDL/DML commands, `SELECT`, sorting/grouping, aggregates and joins — lives in [[Subtopics/SQL Query Language Guide|SQL Query Language Guide]]. For using SQL from PHP, see [[Lesson 10 - Web Development (HTML, CSS, PHP)|Lesson 10 §10.7]].
 
-### 7.5 DDL Examples
+### 7.5 SQL Essentials
 
-```sql
--- Create and select a database
-CREATE DATABASE school_db;
-USE school_db;
-
--- Create parent table
-CREATE TABLE Class (
-    ClassID INT PRIMARY KEY,
-    ClassName VARCHAR(20) NOT NULL
-);
-
--- Create child table with PK, FK and CHECK constraints
-CREATE TABLE Student (
-    StudentID INT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL,
-    DOB DATE,
-    Marks INT CHECK (Marks >= 0 AND Marks <= 100),
-    ClassID INT,
-    FOREIGN KEY (ClassID) REFERENCES Class(ClassID)
-);
-
--- Change table structure
-ALTER TABLE Student ADD Email VARCHAR(100);
-ALTER TABLE Student MODIFY Name VARCHAR(75);
-ALTER TABLE Student DROP COLUMN Email;
-
--- Add / drop a primary key (use ADD only if the table has none)
-ALTER TABLE Student ADD PRIMARY KEY (StudentID);
-ALTER TABLE Student DROP PRIMARY KEY;
-
--- Add / drop a foreign key (MySQL syntax)
-ALTER TABLE Student
-    ADD CONSTRAINT fk_student_class
-    FOREIGN KEY (ClassID) REFERENCES Class(ClassID);
-ALTER TABLE Student DROP FOREIGN KEY fk_student_class;
-
--- Remove all rows but keep the table
-TRUNCATE TABLE Student;
-
--- Remove the table completely
-DROP TABLE Student;
-
--- Remove the database completely
-DROP DATABASE school_db;
-
--- Inspect structure
-DESCRIBE Student;
-SHOW TABLES;
-```
-
-> [!WARNING] `DROP DATABASE` vs `DROP TABLE`
-> - `DROP TABLE Student;` removes one table and all its data.
-> - `DROP DATABASE school_db;` removes the entire database, including all tables.
-> - `TRUNCATE TABLE Student;` removes all rows but keeps the table structure.
-> - `DELETE FROM Student;` removes rows as a DML operation and can be rolled back in many DBMSs.
-
-### 7.6 DML Examples
-
-```sql
--- Insert a record
-INSERT INTO Student (StudentID, Name, DOB, Marks, ClassID)
-VALUES (101, 'Kamal Perera', '2008-04-12', 85, 12);
-
--- Update a record
-UPDATE Student
-SET Marks = 90
-WHERE StudentID = 101;
-
--- Delete a record
-DELETE FROM Student
-WHERE StudentID = 101;
-```
-
-### 7.7 SELECT Queries
-
-Basic clause order:
-
-```sql
-SELECT   columns
-FROM     table
-WHERE    row_condition
-GROUP BY grouping_columns
-HAVING   group_condition
-ORDER BY sorting_columns;
-```
-
-Examples:
-
-```sql
--- All columns and rows
-SELECT * FROM Student;
-
--- Selected columns with a condition
-SELECT StudentID, Name, Marks
-FROM Student
-WHERE Marks >= 75;
-
--- Remove duplicates
-SELECT DISTINCT ClassID FROM Student;
-
--- Pattern matching: % = any sequence, _ = one character
-SELECT Name
-FROM Student
-WHERE Name LIKE 'K%';
-
--- Range and list conditions
-SELECT Name
-FROM Student
-WHERE Marks BETWEEN 50 AND 75;
-
-SELECT Name
-FROM Student
-WHERE ClassID IN (12, 13, 14);
-
--- NULL testing
-SELECT Name
-FROM Student
-WHERE Email IS NULL;
-
--- Sorting
-SELECT Name, Marks
-FROM Student
-ORDER BY Marks DESC;
-
--- Grouping and aggregate functions
-SELECT ClassID, COUNT(*) AS StudentCount, AVG(Marks) AS AverageMarks
-FROM Student
-GROUP BY ClassID
-HAVING AVG(Marks) >= 75;
-```
-
-| Aggregate function | Meaning |
+| Task | Core statement |
 |---|---|
-| `COUNT()` | Counts rows or non-NULL values |
-| `SUM()` | Total |
-| `AVG()` | Average |
-| `MIN()` | Minimum |
-| `MAX()` | Maximum |
+| **Create** | `CREATE TABLE Student (StudentID INT PRIMARY KEY, Name VARCHAR(50) NOT NULL, ClassID INT, FOREIGN KEY (ClassID) REFERENCES Class(ClassID));` |
+| **Change** | `ALTER TABLE Student ADD Email VARCHAR(100);` |
+| **Insert** | `INSERT INTO Student (StudentID, Name, ClassID) VALUES (101, 'Kamal', 12);` |
+| **Update / delete** | `UPDATE Student SET Marks = 90 WHERE StudentID = 101;` / `DELETE FROM Student WHERE StudentID = 101;` |
+| **Remove** | `DROP TABLE Student;` removes the table; `TRUNCATE TABLE Student;` removes only the rows. |
+| **Query** | `SELECT Name, Marks FROM Student WHERE Marks >= 75 ORDER BY Marks DESC;` |
+| **Join** | `SELECT s.Name, c.ClassName FROM Student s INNER JOIN Class c ON s.ClassID = c.ClassID;` |
 
 > [!IMPORTANT] `WHERE` vs `HAVING`
-> `WHERE` filters **rows before grouping**. `HAVING` filters **groups after `GROUP BY`**. Aggregate functions cannot normally be used in `WHERE`; use `HAVING` instead.
-
-### 7.8 Joins
-
-A **join** combines rows from two or more tables based on a related column, usually a **primary key–foreign key** pair.
-
-```sql
--- INNER JOIN: only matching rows
-SELECT Student.Name, Class.ClassName
-FROM Student
-INNER JOIN Class ON Student.ClassID = Class.ClassID;
-
--- LEFT JOIN: all rows from the left table, plus matches from the right
-SELECT Student.Name, Class.ClassName
-FROM Student
-LEFT JOIN Class ON Student.ClassID = Class.ClassID;
-
--- RIGHT JOIN: all rows from the right table, plus matches from the left
-SELECT Student.Name, Class.ClassName
-FROM Student
-RIGHT JOIN Class ON Student.ClassID = Class.ClassID;
-
--- SELF JOIN: join a table to itself
-SELECT A.Name AS EmployeeName, B.Name AS ManagerName
-FROM Employee A
-INNER JOIN Employee B ON A.ManagerID = B.EmpID;
-```
-
-| Join | Returns |
-|---|---|
-| **INNER JOIN** | Only rows with matching values in both tables |
-| **LEFT JOIN** | All rows from the left table; unmatched right-side columns are NULL |
-| **RIGHT JOIN** | All rows from the right table; unmatched left-side columns are NULL |
-| **FULL OUTER JOIN** | All rows from both tables, matched where possible |
-| **CROSS JOIN** | Cartesian product of both tables |
-| **SELF JOIN** | A table joined to itself |
-
-### 7.9 SQL Exam Traps
-
-> [!WARNING] High-frequency mistakes
-> 1. **`DROP DATABASE`** deletes the whole database; **`DROP TABLE`** deletes one table.
-> 2. **`DELETE`** is DML and can use `WHERE`; **`TRUNCATE`** removes all rows and is DDL; **`DROP`** removes the structure too.
-> 3. **`ALTER TABLE ... ADD PRIMARY KEY (...)`** adds a key to an existing table; it does not create a new table.
-> 4. Use **`IS NULL`** or **`IS NOT NULL`**, never `= NULL`.
-> 5. **`COUNT(*)`** counts all rows; **`COUNT(column)`** ignores NULLs in that column.
-> 6. **`WHERE`** filters rows before grouping; **`HAVING`** filters groups.
-> 7. A **foreign key** must reference a **primary key or unique key**.
-> 8. **`CHAR(n)`** is fixed-length and padded with spaces; **`VARCHAR(n)`** is variable-length.
-> 9. **`SELECT`** is DQL, even though it is often taught alongside DML.
-> 10. A **primary key** cannot be NULL; a **unique key** usually can be NULL.
+> `WHERE` filters **rows before grouping**; `HAVING` filters **groups after `GROUP BY`**. Aggregate functions go in `HAVING`, not `WHERE`.
 
 ---
 
