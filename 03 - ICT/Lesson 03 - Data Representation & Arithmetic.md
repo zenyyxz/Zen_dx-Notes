@@ -221,6 +221,7 @@ Non-numeric data (letters, punctuation, symbols, emojis) must be encoded into bi
 #flashcards
 
 Why did the Babylonian base-60 number system prove advantageous for calculations? :: Base 60 is highly divisible by many numbers ($2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$), simplifying fraction calculations.
+<!--SR:!2026-11-04,4,270-->
 
 What major contribution did mathematician Brahmagupta make to number systems in 628 CE? :: He formally defined zero ($0$) as a number and established mathematical rules for arithmetic involving zero.
 <!--SR:!2026-12-30,64,310-->
@@ -229,6 +230,7 @@ State 3 major drawbacks of Non-Positional Number Systems like Roman Numerals. ::
 <!--SR:!2026-11-23,59,310-->
 
 What is the difference between face value and place value of a digit in a positional system? :: Face value is the intrinsic value of the digit itself; place value is the weight assigned to the position of the digit ($r^{\text{position}}$).
+<!--SR:!2026-11-04,4,270-->
 
 Why do digital computers use the Binary number system instead of Decimal? :: Computer electronic circuits operate reliably on two voltage states (High/Low, ON/OFF), making binary highly noise-tolerant and physically reliable.
 <!--SR:!2026-11-06,10,270-->

@@ -605,10 +605,10 @@ A **Database Management System (DBMS)** is software that provides an interface f
 #flashcards
 
 What is the difference between Cardinality and Degree in relational database terminology? :: Cardinality is the total number of tuples (rows); Degree is the total number of attributes (columns) in a relation.
-<!--SR:!2026-10-31,3,250-->
+<!--SR:!2026-11-12,12,270-->
 
 What is a Foreign Key, and what rule does it enforce? :: An attribute in a table that references the Primary Key of another table; it enforces Referential Integrity.
-<!--SR:!2026-10-30,3,250-->
+<!--SR:!2026-11-10,10,270-->
 
 State the rule for 1st Normal Form (1NF). :: All attributes must contain atomic (indivisible) values, and a Primary Key must be defined.
 <!--SR:!2026-11-24,60,310-->
@@ -617,86 +617,126 @@ State the rule for 2nd Normal Form (2NF). :: The table must be in 1NF, and all p
 <!--SR:!2026-11-10,14,290-->
 
 State the rule for 3rd Normal Form (3NF). :: The table must be in 2NF, and all transitive functional dependencies must be eliminated (no non-key attribute should depend on another non-key attribute).
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between DDL and DML in SQL? :: DDL defines/modifies database structures (e.g., `CREATE`, `ALTER`, `DROP`, `TRUNCATE`); DML changes records inside tables (e.g., `INSERT`, `UPDATE`, `DELETE`). `SELECT` retrieves data and is often treated as DQL.
 <!--SR:!2026-12-26,60,310-->
 
 What is a database? :: An organized collection of structured data that can be easily accessed, managed and updated.
+<!--SR:!2026-11-04,4,270-->
 
 What is a DBMS? :: Software that provides an interface between a database and its users/applications, allowing data to be defined, stored, retrieved, updated and controlled.
+<!--SR:!2026-11-03,3,250-->
 
 What is the difference between a database and a DBMS? :: A database is the organized collection of data; a DBMS is the software that manages and controls access to that data.
+<!--SR:!2026-11-04,4,270-->
 
 What are the five main database models in the syllabus? :: Flat file, hierarchical, network, relational and object-relational.
+<!--SR:!2026-11-04,4,270-->
 
 Which database model stores data in tables with primary and foreign keys and uses SQL? :: The relational model.
+<!--SR:!2026-11-04,4,270-->
 
 What is the main limitation of the hierarchical model? :: It only supports one-to-many relationships because each child record can have only one parent.
+<!--SR:!2026-11-04,4,270-->
 
 What is the main advantage of the network model over the hierarchical model? :: It supports many-to-many relationships because a record can have multiple parents.
+<!--SR:!2026-11-04,4,270-->
 
 What is a domain in a relational database? :: The set of allowed values for an attribute, defined by its data type, range or a predefined list.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between a relation schema and a relation instance? :: A relation schema is the structure/definition of a table; a relation instance is the actual set of rows stored at a particular time.
+<!--SR:!2026-11-04,4,270-->
 
 What is a super key? :: Any set of attributes that uniquely identifies each tuple in a relation; it may contain extra attributes.
+<!--SR:!2026-11-04,4,270-->
 
 What is a candidate key? :: A minimal super key — a set of attributes that uniquely identifies each tuple and from which no attribute can be removed without losing uniqueness.
+<!--SR:!2026-11-04,4,270-->
 
 What is an alternate key? :: A candidate key that is not chosen as the primary key.
+<!--SR:!2026-11-04,4,270-->
 
 What is a composite key? :: A primary key made of two or more attributes that together uniquely identify a record.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between a primary key and a unique key? :: A primary key uniquely identifies each row and cannot be NULL; a unique key also enforces uniqueness but usually allows NULL values.
+<!--SR:!2026-11-04,4,270-->
 
 What is referential integrity? :: The rule that a foreign key value must match an existing primary/unique key value in the referenced table, or be NULL.
+<!--SR:!2026-11-04,4,270-->
 
 What is an entity in ER modelling? :: A distinct real-world object, person, place, event or concept about which data is stored.
+<!--SR:!2026-11-04,4,270-->
 
 What is an entity identifier? :: An attribute or set of attributes that uniquely identifies each entity instance; it becomes the primary key in the relational schema.
+<!--SR:!2026-11-04,4,270-->
 
 What is a composite attribute? :: An attribute that can be divided into smaller sub-attributes, such as `Name` into first, middle and last names.
+<!--SR:!2026-11-04,4,270-->
 
 What is a multivalued attribute, and how is it mapped? :: An attribute that can hold multiple values for one entity; it is mapped to a separate table with a foreign key back to the owner entity.
+<!--SR:!2026-11-04,4,270-->
 
 What is a derived attribute? :: An attribute calculated from other stored attributes, such as `Age` from `DateOfBirth`; it is usually not stored.
+<!--SR:!2026-11-04,4,270-->
 
 What is the degree of a relationship? :: The number of entity types participating in the relationship: unary, binary, ternary or n-ary.
+<!--SR:!2026-11-04,4,270-->
 
 What is the cardinality of a relationship? :: The number of instances of one entity that can be associated with instances of another: one-to-one, one-to-many or many-to-many.
+<!--SR:!2026-11-04,4,270-->
 
 What is total participation? :: Every instance of the entity must participate in the relationship; shown with a double line.
+<!--SR:!2026-11-04,4,270-->
 
 What is a weak entity? :: An entity that cannot exist independently of an owner entity; it has a partial key and a composite primary key made of the owner's PK plus its partial key.
+<!--SR:!2026-11-04,4,270-->
 
 How is a one-to-many relationship mapped to tables? :: Put the primary key of the “one” side into the “many” side table as a foreign key.
+<!--SR:!2026-11-04,4,270-->
 
 How is a many-to-many relationship mapped to tables? :: Create a junction table containing the primary keys of both entities as foreign keys; the composite of these keys is usually the primary key.
+<!--SR:!2026-11-04,4,270-->
 
 How is a multivalued attribute mapped to tables? :: Create a separate table with a foreign key to the owner entity and a column for the value; the primary key is usually the owner PK plus the value.
 
 What is a functional dependency `X → Y`? :: For each value of `X`, there is exactly one corresponding value of `Y`.
+<!--SR:!2026-11-04,4,270-->
 
 What is a partial dependency? :: A non-key attribute depends on only part of a composite primary key.
+<!--SR:!2026-11-04,4,270-->
 
 What is a transitive dependency? :: A non-key attribute depends on another non-key attribute (`X → Y` and `Y → Z`, so `X → Z`).
+<!--SR:!2026-11-04,4,270-->
 
 What is 0NF? :: An unnormalized relation that may contain repeating groups, multivalued fields or nested data, with no normalization rules applied.
+<!--SR:!2026-11-04,4,270-->
 
 What does 1NF require? :: Atomic values, no repeating groups, unique rows, single-valued columns, consistent data types and a primary key.
+<!--SR:!2026-11-04,4,270-->
 
 What does 2NF require? :: The table must be in 1NF and have no partial dependencies; every non-key attribute must depend on the entire primary key.
+<!--SR:!2026-11-04,4,270-->
 
 What does 3NF require? :: The table must be in 2NF and have no transitive dependencies; non-key attributes must depend only on candidate keys.
+<!--SR:!2026-11-04,4,270-->
 
 What is an insert anomaly? :: A problem where a new fact cannot be inserted without also inserting unrelated data, caused by a poorly structured table.
+<!--SR:!2026-11-04,4,270-->
 
 What is an update anomaly? :: A problem where the same fact is stored in multiple rows, so updating one row but not all causes inconsistency.
+<!--SR:!2026-11-04,4,270-->
 
 What is a delete anomaly? :: A problem where deleting one fact accidentally removes other unrelated facts that should have been kept.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between `DELETE`, `TRUNCATE` and `DROP`? :: `DELETE` removes selected/all rows as DML; `TRUNCATE` removes all rows but keeps the table structure; `DROP` removes the table structure and data completely.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between `WHERE` and `HAVING`? :: `WHERE` filters rows before grouping; `HAVING` filters groups after `GROUP BY`.
+<!--SR:!2026-11-04,4,270-->
 
 What does `INNER JOIN` return? :: Only rows with matching values in both joined tables.
+<!--SR:!2026-11-04,4,270-->

@@ -176,16 +176,19 @@ OS tracks every location, decides who gets how much/when, allocates/deallocates.
 #flashcards
 
 What is an Operating System? :: System software that acts as an interface between computer hardware and the user/applications, managing hardware resources and execution.
+<!--SR:!2026-11-04,4,270-->
 
 What are the 4 stages of OS evolution? :: No OS (serial), Simple Batch (tape), Multiprogrammed Batch (multi-program memory), Time-Sharing (context switch, interactive).
 <!--SR:!2026-11-12,16,290-->
 
 What are the NIE main functions of an OS? :: Providing interfaces/abstractions, process management, resource management, security and protection.
+<!--SR:!2026-11-04,4,270-->
 
 Classify OS by NIE users/tasks. :: Single-single, single-multi, multi-multi, plus multi-threading, real-time, time-sharing.
+<!--SR:!2026-11-04,4,270-->
 
 What is multiprogramming vs time-sharing? :: Multiprogramming maximises CPU use by many in-memory programs; time-sharing minimises response via rapid switching.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 What is a file (logical vs physical view)? :: Named bytes; logical = user records/pixels, physical = OS possibly non-contiguous blocks.
 <!--SR:!2026-11-12,16,290-->
@@ -206,6 +209,7 @@ What are the 3 parts of disk formatting? :: Low-level prep, partitioning (visibl
 <!--SR:!2026-11-01,4,270-->
 
 What is a Process vs Program? :: Program is static code; process is program in execution with PID/PCB/state.
+<!--SR:!2026-11-04,4,270-->
 
 Name I/O-bound vs CPU-bound processes. :: I/O-bound needs much I/O; CPU-bound needs much computation.
 <!--SR:!2026-11-12,16,290-->
@@ -217,6 +221,7 @@ What is a Process Control Block (PCB)? :: A data structure in the OS containing 
 <!--SR:!2026-11-07,11,270-->
 
 Name the 5 states in the standard Process State Model. :: 1. New, 2. Ready, 3. Running, 4. Waiting (Blocked), 5. Terminated.
+<!--SR:!2026-11-04,4,270-->
 
 What extra states does the 7-state model add? :: Suspended Ready and Suspended Blocked for swapped-out processes.
 <!--SR:!2026-11-03,7,250-->
@@ -231,17 +236,19 @@ Define turnaround, waiting, response, throughput. :: Turnaround completion-arriv
 <!--SR:!2026-11-12,16,290-->
 
 What is a context switch? :: Saving/restoring CPU registers + PCB to share CPU; pure overhead.
+<!--SR:!2026-11-04,4,270-->
 
 What is Paging in memory management? :: A memory management scheme that divides logical memory into fixed-size Pages and physical memory into fixed-size Frames.
-<!--SR:!2026-10-30,3,250-->
+<!--SR:!2026-11-10,10,270-->
 
 What is the MMU base-register example? :: Base 10000 + user 100 = physical 10100; user never sees real address.
-<!--SR:!2026-10-30,3,250-->
+<!--SR:!2026-11-11,11,270-->
 
 What is Virtual Memory? :: A technique that allows a computer to execute processes larger than physical RAM by storing portions of data on secondary storage and loading pages on demand.
 <!--SR:!2026-11-12,16,290-->
 
 What is Page Fault? :: An interrupt raised when a program accesses a page that is not currently loaded into physical RAM.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 What is spooling and a device driver? :: Spooling = simultaneous peripheral buffer for slow I/O overlap; driver = software interface depending on hardware+OS.
+<!--SR:!2026-11-04,4,270-->

@@ -448,13 +448,13 @@ if (command == "ON") {
 #flashcards
 
 What is an Embedded System? :: A specialized computer system designed to perform dedicated control functions within a larger mechanical or electrical system.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 What is the main structural difference between a Microprocessor and a Microcontroller? :: A microprocessor is mainly the CPU and needs external RAM/ROM/I/O; a microcontroller integrates the CPU, RAM, ROM/Flash, timers and I/O ports on one chip.
 <!--SR:!2026-11-12,16,290-->
 
 What is the difference between a Sensor and an Actuator? :: A Sensor converts physical parameters into electrical signals (input); an Actuator converts electrical signals into physical actions (output).
-<!--SR:!2026-10-30,3,250-->
+<!--SR:!2026-11-11,11,270-->
 
 Name 2 Analog Sensors and 2 Digital Sensors used in IoT. :: Analog: LDR (Light Dependent Resistor), LM35 (Temperature); Digital: PIR (Motion Sensor), Ultrasonic (HC-SR04).
 <!--SR:!2026-12-07,41,290-->
@@ -463,51 +463,74 @@ List the 4 layers of the common IoT architecture model. :: 1. Sensing/Perception
 <!--SR:!2026-11-21,25,270-->
 
 What is the IPO model in an embedded system? :: Input from sensors, processing by the controller, and output through actuators.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between an embedded system and a general-purpose computer? :: An embedded system runs a dedicated control program with limited resources; a general-purpose computer runs many applications with a full OS and user interface.
+<!--SR:!2026-11-04,4,270-->
 
 What is a microcontroller-based development system? :: Hardware plus software tools used to design, program and test microcontroller applications.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between a development system and a development board? :: A development system includes the board and software tools; a development board is the hardware platform with the microcontroller and support circuits.
+<!--SR:!2026-11-04,4,270-->
 
 What are the RX and TX pins used for? :: Serial communication: RX receives data and TX transmits data one bit at a time.
+<!--SR:!2026-11-04,4,270-->
 
 What is the purpose of the USB port on an Arduino? :: It provides programming, serial communication and power through the USB-to-serial connection.
+<!--SR:!2026-11-04,4,270-->
 
 What is the Arduino IDE used for? :: Writing, compiling and uploading programs to an Arduino-compatible board.
+<!--SR:!2026-11-04,4,270-->
 
 What is an LDR? :: A light-dependent resistor whose resistance changes with light intensity; it is used as an analog light sensor.
+<!--SR:!2026-11-04,4,270-->
 
 What is an LM35? :: An analog temperature sensor whose output changes by about 10 mV per °C.
+<!--SR:!2026-11-04,4,270-->
 
 What is a reed switch? :: A magnetic switch that opens or closes in the presence of a magnetic field; it is used for door/window detection.
+<!--SR:!2026-11-03,3,250-->
 
 What is a relay? :: An electrically operated switch that lets a low-voltage controller safely switch a high-voltage load.
+<!--SR:!2026-11-04,4,270-->
 
 What is the common control pattern for a simple embedded application? :: Read the sensor, compare or process the value, then drive an actuator.
 
 Name the four simple microcontroller applications required by the TG. :: LED blink/on-off, LDR light control, temperature-controlled fan, and reed-switch door detection.
 
 What is IoT (Internet of Things)? :: A system of interconnected devices that communicate and exchange data over the Internet.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between IoT and an embedded system? :: An embedded system may work offline; IoT adds network connectivity, data exchange and often cloud services.
+<!--SR:!2026-11-04,4,270-->
 
 Why is IoT useful in daily life? :: It provides convenience, automation, remote monitoring, efficiency, safety and data-driven decisions.
+<!--SR:!2026-11-04,4,270-->
 
 What are the enabling technologies of IoT? :: Sensors/actuators, embedded processing, wireless connectivity, cloud/edge computing, data analytics/AI, security and power management.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between Wi-Fi and LoRa? :: Wi-Fi gives higher data rates over short range with higher power; LoRa gives long range and low power with a low data rate.
+<!--SR:!2026-11-03,3,250-->
 
 What is MQTT? :: A lightweight publish/subscribe messaging protocol used by IoT devices and a broker.
+<!--SR:!2026-11-04,4,270-->
 
 Describe the architecture of a remote switch IoT application. :: Smartphone app → cloud/MQTT broker → Wi-Fi router → ESP32/ESP8266 → relay → lamp, with status sent back to the app.
+<!--SR:!2026-11-04,4,270-->
 
 Why is a relay used in a remote switch? :: It isolates the low-voltage microcontroller from the high-voltage appliance and safely switches the load.
+<!--SR:!2026-11-04,4,270-->
 
 What are the main security risks of IoT? :: Weak passwords, unencrypted data, unauthorised control, data breaches, botnets and physical safety risks.
+<!--SR:!2026-11-04,4,270-->
 
 What are the social consequences of IoT? :: Privacy and surveillance concerns, dependence on networks, digital divide, e-waste, job changes and safety issues.
+<!--SR:!2026-11-04,4,270-->
 
 What are the main technical challenges of IoT? :: Sensitive data, weak security, massive data volumes, unreliable connectivity, scalability, faulty sensors, cost and interoperability.
+<!--SR:!2026-11-03,3,250-->
 
 How can IoT security be improved? :: Use encryption, authentication, access control, updates, network segmentation, secure defaults and auditing.
+<!--SR:!2026-11-04,4,270-->

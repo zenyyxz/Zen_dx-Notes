@@ -323,36 +323,46 @@ ICT can give a business an edge through:
 #flashcards
 
 What is the difference between E-Business and E-Commerce? :: E-Business includes all electronically conducted internal and external business activities; E-Commerce is specifically the buying and selling of goods/services online over the internet.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 Give an example of a C2C E-Commerce platform. :: eBay or ikman.lk.
 <!--SR:!2026-12-10,44,290-->
 
 What is a Payment Gateway? :: An e-commerce application service provider that authorizes and securely processes credit card or digital payments for online merchants.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 What is an ERP (Enterprise Resource Planning) system? :: An integrated software system that manages core business functions (Finance, HR, Inventory, Sales) across an entire organization in a single centralized database.
+<!--SR:!2026-11-03,3,250-->
 
 What is the role of a Customer Relationship Management (CRM) system? :: To track and manage all interactions with current and potential customers to improve business relationships and customer retention.
+<!--SR:!2026-11-04,4,270-->
 
 What is Teleworking? :: Performing job responsibilities remotely outside of a central office using ICT tools and internet connectivity.
+<!--SR:!2026-11-04,4,270-->
 
 What is the digital economy? :: Economic activity based mainly on digital technologies, especially the Internet; examples include Amazon, eBay and Google.
+<!--SR:!2026-11-04,4,270-->
 
 What is a reverse auction? :: The buyer posts a requirement and sellers compete by bidding down the price; the lowest bid usually wins.
+<!--SR:!2026-11-04,4,270-->
 
 What is group purchasing? :: Several buyers combine their orders into one large order to obtain a volume discount or better terms.
+<!--SR:!2026-11-04,4,270-->
 
 Pure brick vs pure click vs brick & click? :: Pure brick = physical stores only; pure click = online only; brick & click = both physical and online channels.
+<!--SR:!2026-11-04,4,270-->
 
 What is B2E? :: Business-to-Employee: a business provides products or services to its employees, such as payroll, training or an HR portal.
 <!--SR:!2026-11-01,4,270-->
 
 Virtual storefront vs online marketplace? :: A virtual storefront is one business selling through its own website; an online marketplace hosts many independent sellers.
+<!--SR:!2026-11-03,3,250-->
 
 What is an information broker? :: A business or individual that collects, organises and sells information from public sources.
+<!--SR:!2026-11-03,3,250-->
 
 Content provider vs online service provider? :: A content provider creates/distributes content; an online service provider delivers services over the Internet (ISP, cloud storage, email, hosting).
+<!--SR:!2026-11-04,4,270-->
 
 What is a portal? :: A website that acts as a gateway to information, resources and services, such as an enterprise or customer portal.
 <!--SR:!2026-11-01,4,270-->
@@ -361,24 +371,31 @@ What is a virtual community? :: A group of people who interact online around sha
 <!--SR:!2026-11-01,4,270-->
 
 Give one advantage and one disadvantage of e-business. :: Advantage: global reach/lower costs/convenience; disadvantage: less personal contact, security/privacy risks, Internet dependence or no physical inspection.
+<!--SR:!2026-11-04,4,270-->
 
 What are the main privacy threats in e-commerce? :: Data breaches, identity theft, data misuse and weak regulatory compliance; protect with consent, security and privacy by design.
+<!--SR:!2026-11-04,4,270-->
 
 What are the main product-commercialisation threats in e-commerce? :: Intellectual-property theft, counterfeiting, price wars and overreliance on platforms.
+<!--SR:!2026-11-04,4,270-->
 
 What is e-marketing? :: The use of digital channels and technologies to promote products or services to potential customers.
+<!--SR:!2026-11-04,4,270-->
 
 What is search engine optimization (SEO)? :: Optimising a website's content and structure to rank higher in organic search results.
 <!--SR:!2026-11-01,4,270-->
 
 How are databases used in marketing? :: To segment customers, personalise messages, measure campaigns and improve targeting.
+<!--SR:!2026-11-04,4,270-->
 
 How is AI used in marketing? :: Predictive analytics, recommendation engines, chatbots/NLP, dynamic content and campaign optimisation.
 <!--SR:!2026-11-01,4,270-->
 
 What is mobile marketing? :: Optimising marketing for mobile devices using mobile-friendly sites/ads, apps, push notifications, location-based marketing and SMS.
+<!--SR:!2026-11-04,4,270-->
 
 How can ICT create competitive advantage? :: Through global reach, lower costs, personalisation, data-driven decisions, faster response and 24/7 availability.
+<!--SR:!2026-11-04,4,270-->
 
 What is the TG example of a cryptocurrency/micro-payment? :: Bitcoin — a digital currency recorded on a blockchain, not issued by a central bank.
 <!--SR:!2026-11-01,4,270-->
@@ -387,7 +404,10 @@ How does a payment gateway process an online card payment? :: Customer → merch
 <!--SR:!2026-11-01,4,270-->
 
 What is a third-party payment system? :: An independent provider such as PayPal, Apple Pay or Google Pay that links a customer's card/bank and lets buyer and seller transact without sharing bank details.
+<!--SR:!2026-11-04,4,270-->
 
 What are secure credit-card payment practices? :: Use HTTPS/TLS, 3D Secure/OTP, encryption and tokenisation; do not store plain card data.
+<!--SR:!2026-11-04,4,270-->
 
 Give an example of ICT in a business function. :: Accounting software automates transactions; HRIS manages employee data; CAD/CAM supports production; EDI links supply-chain partners; unified communications supports collaboration.
+<!--SR:!2026-11-04,4,270-->

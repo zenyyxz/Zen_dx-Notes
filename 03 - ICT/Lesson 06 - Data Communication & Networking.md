@@ -717,10 +717,10 @@ flowchart LR
 #flashcards
 
 What is the difference between Bandwidth and Throughput? :: Bandwidth is the theoretical maximum capacity of a channel, while throughput is the actual, realized data transfer rate (which is always less than or equal to bandwidth due to overhead and latency).
-<!--SR:!2026-10-30,3,250-->
+<!--SR:!2026-11-12,12,270-->
 
 What is the purpose of Manchester Encoding? :: It ensures there is a voltage transition in the middle of every bit, allowing the receiver to easily synchronize its clock with the sender and prevent timing errors.
-<!--SR:!2026-10-30,2,210-->
+<!--SR:!2026-11-06,6,230-->
 
 Why is Fiber Optic cable immune to Electromagnetic Interference (EMI)? :: Because it transmits data using light pulses through glass/plastic instead of electrical signals through copper.
 <!--SR:!2026-11-10,14,290-->
@@ -729,15 +729,16 @@ In a Star Topology, what happens if the central switch fails? :: The entire netw
 <!--SR:!2026-11-08,12,270-->
 
 What is the difference between a Hub and a Switch? :: A hub broadcasts incoming data to all connected ports (causing collisions), whereas a switch inspects the MAC address and forwards the data only to the specific destination port.
-<!--SR:!2026-10-30,3,250-->
+<!--SR:!2026-11-10,10,270-->
 
 What is the main function of the Network Layer (Layer 3) in the OSI model? :: Routing packets across different networks using logical IP addresses.
 <!--SR:!2026-11-11,15,290-->
 
 What is Encapsulation in networking? :: The process of adding protocol headers (and sometimes trailers) to data as it moves down the OSI layers from the Application layer to the Physical layer.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 What does CSMA/CD stand for and where is it used? :: Carrier Sense Multiple Access with Collision Detection. It is used in wired Ethernet networks to manage medium access and handle collisions.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between TCP and UDP? :: TCP is reliable, connection-oriented, and guarantees ordered delivery. UDP is fast, connectionless, and does not guarantee delivery (used for live streaming).
 <!--SR:!2026-11-07,11,270-->
@@ -748,6 +749,7 @@ Define encryption. :: Converting plaintext into ciphertext with an algorithm and
 Symmetric vs asymmetric encryption? :: Symmetric uses the same key for encryption and decryption; asymmetric uses a public/private key pair.
 
 Which key encrypts a message for confidentiality? :: The receiver's public key; only the receiver's private key can decrypt it.
+<!--SR:!2026-11-04,4,270-->
 
 Which key signs a digital signature, and which verifies it? :: The sender signs with their private key; anyone verifies with the sender's public key.
 <!--SR:!2026-11-01,4,270-->
@@ -756,17 +758,22 @@ Why is asymmetric encryption not used for bulk data? :: It is much slower than s
 <!--SR:!2026-11-01,4,270-->
 
 What is hybrid encryption (e.g. TLS)? :: Asymmetric cryptography authenticates/establishes a shared session key, then symmetric encryption protects the bulk data.
+<!--SR:!2026-11-04,4,270-->
 
 Difference between hashing and encryption? :: Encryption is reversible with a key and provides confidentiality; hashing is one-way and provides integrity/password verification.
+<!--SR:!2026-11-04,4,270-->
 
 What is a salt? :: A random value stored with a password hash so identical passwords produce different hashes and rainbow tables fail.
+<!--SR:!2026-11-04,4,270-->
 
 How is a digital signature created? :: Hash the message, sign/encrypt the hash with the sender's private key, then send the message plus signature.
+<!--SR:!2026-11-04,4,270-->
 
 What does a digital signature provide? :: Authentication, integrity and non-repudiation — not confidentiality.
+<!--SR:!2026-11-04,4,270-->
 
 What is a digital certificate? :: A CA-signed document binding a public key to an identity, used to trust public keys and prevent impersonation.
-<!--SR:!2026-10-31,3,250-->
+<!--SR:!2026-11-11,11,270-->
 
 Does the Internet provide confidentiality and authentication by default? :: No — encryption and digital signatures must add them.
 <!--SR:!2026-11-01,4,270-->
@@ -781,44 +788,54 @@ What is non-repudiation? :: The sender cannot later deny having signed or sent t
 <!--SR:!2026-11-01,4,270-->
 
 What is the key-distribution problem? :: Symmetric encryption requires both parties to share the same secret key securely before communicating.
+<!--SR:!2026-11-04,4,270-->
 
 Give two examples of encryption at rest. :: Full-disk encryption (BitLocker/LUKS/FileVault) and file/folder encryption (EFS/fscrypt).
+<!--SR:!2026-11-04,4,270-->
 
 Encryption vs access control? :: Access control decides who may use a resource; encryption protects data if it is intercepted or the storage is stolen. Use both.
+<!--SR:!2026-11-04,4,270-->
 
 Virus vs Trojan vs malware? :: A virus often attaches to files and spreads when executed; a Trojan disguises itself as legitimate software; malware is the umbrella term for malicious software.
+<!--SR:!2026-11-04,4,270-->
 
 What is phishing? :: A fraudulent message or website pretending to be trustworthy in order to steal passwords, card numbers or other sensitive data.
+<!--SR:!2026-11-04,4,270-->
 
 Firewall vs antivirus? :: A firewall filters network traffic using rules; antivirus detects, blocks or quarantines malicious software.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between an analog signal and a digital signal? :: An analog signal is continuous and can take many values; a digital signal uses discrete levels, usually two levels representing 0 and 1.
+<!--SR:!2026-11-04,4,270-->
 
 What is the relationship between propagation speed, frequency and wavelength? :: v = f × λ: propagation speed equals frequency multiplied by wavelength.
 <!--SR:!2026-11-01,4,270-->
 
 What is the difference between bit rate and baud rate? :: Bit rate is the number of bits per second; baud rate is the number of signal elements per second. If one signal element carries multiple bits, bit rate is higher than baud rate.
-<!--SR:!2026-10-29,1,230-->
+<!--SR:!2026-11-03,3,250-->
 
 What is a parity bit? :: An extra bit added so that the total number of 1s is even (even parity) or odd (odd parity); it detects some errors but cannot correct them.
-<!--SR:!2026-10-31,3,250-->
+<!--SR:!2026-11-11,11,270-->
 
 How long is a MAC address? :: 48 bits (6 bytes), written as six hexadecimal blocks separated by colons.
-<!--SR:!2026-10-31,3,250-->
+<!--SR:!2026-11-10,10,270-->
 
 What is the difference between a frame and a packet? :: A packet is the Network-layer PDU carrying IP addresses; a frame is the Data Link-layer PDU that encapsulates the packet and carries MAC addresses for the current link.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between pure ALOHA and slotted ALOHA? :: Pure ALOHA transmits whenever ready; slotted ALOHA allows transmission only at time-slot boundaries, reducing collisions but requiring synchronisation.
 
 Why is a port number needed? :: An IP address identifies a host, but many processes run on that host; the port number identifies the correct application process.
+<!--SR:!2026-11-04,4,270-->
 
 Why does DNS normally use UDP? :: DNS queries are small and benefit from UDP’s low overhead and speed; TCP is used for large responses and zone transfers.
-<!--SR:!2026-10-31,3,250-->
+<!--SR:!2026-11-10,10,270-->
 
 What is a simple HTTP GET request? :: A request line such as `GET /index.html HTTP/1.1`, followed by headers such as `Host: www.example.com`.
 <!--SR:!2026-11-01,4,270-->
 
 What does it mean that HTTP is stateless? :: Each request is handled independently, so the server does not automatically remember earlier requests; cookies or sessions add state.
+<!--SR:!2026-11-04,4,270-->
 
 What is the role of an ISP? :: An ISP provides Internet access, assigns public IP addresses, routes customer traffic, and often provides DNS and other services.
 <!--SR:!2026-11-01,4,270-->
@@ -827,14 +844,19 @@ Why is ADSL called asymmetric? :: Downstream capacity is greater than upstream c
 <!--SR:!2026-11-01,4,270-->
 
 What does NAT do in a home network? :: It translates private IP addresses and ports to the router’s public IP address and port, allowing many devices to share one public IP.
+<!--SR:!2026-11-04,4,270-->
 
 At which OSI layers do NAT and a proxy operate? :: NAT operates at Layer 3 (network); a proxy operates at Layer 7 (application).
+<!--SR:!2026-11-04,4,270-->
 
 What configuration does a DHCP server normally provide to a client? :: An IP address, subnet mask, default gateway, DNS server addresses and a lease time.
+<!--SR:!2026-11-04,4,270-->
 
 How does packet switching differ from circuit switching? :: Packet switching shares links and forwards independent packets without a dedicated path; circuit switching reserves a dedicated path for the session.
+<!--SR:!2026-11-03,3,250-->
 
 Name two guarantees that IP does not provide. :: IP does not guarantee delivery, ordering, freedom from duplicates or bounded delay; it is best effort.
+<!--SR:!2026-11-04,4,270-->
 
 What is the role of a default gateway in a home network? :: It is the router that receives traffic destined for other networks and forwards it toward the destination.
 <!--SR:!2026-11-01,4,270-->

@@ -438,7 +438,7 @@ mysqli_close($conn);
 #flashcards
 
 What is the difference between HTML `GET` and `POST` form submission methods? :: `GET` appends form data to the URL (limited data, less secure); `POST` sends data inside the HTTP request body (secure, handles large data).
-<!--SR:!2026-10-31,3,230-->
+<!--SR:!2026-11-09,9,250-->
 
 What are the 4 main CSS selectors mentioned in the AL ICT syllabus? :: Element selector, ID selector, Class selector, and Group selector.
 <!--SR:!2026-11-07,11,270-->
@@ -447,21 +447,25 @@ What tag is used in HTML5 to embed an external CSS file? :: `<link rel="styleshe
 <!--SR:!2026-11-11,15,290-->
 
 What is the HTML tag used to group related elements in a form? :: The `<fieldset>` tag, often used with `<legend>`.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 What is the difference between a local link and an external link in HTML? :: A local link points to another page on the same website, while an external link points to a completely different website.
 <!--SR:!2026-11-12,16,290-->
 
 Who created the WWW and when, and what body maintains standards? :: Tim Berners-Lee in 1989 at CERN; W3C maintains standards.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between WWW and Internet? :: WWW is a hypertext service using HTTP on top of the Internet; Internet is the global network infrastructure using TCP/IP.
 <!--SR:!2026-11-08,12,270-->
 
 What are the three parts of a URL? :: Protocol, domain name, path.
+<!--SR:!2026-11-04,4,270-->
 
 What is the priority order of CSS sources? :: Inline > Internal = External (last wins) > browser default; `!important` overrides all.
+<!--SR:!2026-11-04,4,270-->
 
 What does the CSS box model consist of from inside out? :: Content -> padding -> border -> margin, plus border-radius/box-shadow.
+<!--SR:!2026-11-04,4,270-->
 
 What is the LVHA order for link pseudo-classes? :: `:link`, `:visited`, `:hover`, `:active` (plus `:focus`).
 <!--SR:!2026-11-06,10,270-->

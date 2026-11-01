@@ -165,6 +165,7 @@ What key technological innovation characterized Second Generation computers? :: 
 <!--SR:!2026-11-12,16,290-->
 
 Classify computers by technology with one example each. :: Analog (continuous, e.g. thermometer), Digital (discrete 0/1, e.g. PC), Hybrid (both, e.g. ICU monitor).
+<!--SR:!2026-11-04,4,270-->
 
 What is special vs general purpose? :: Special = one dedicated task (ATM); General = many tasks via programs (PC).
 <!--SR:!2026-11-10,14,290-->
@@ -179,6 +180,7 @@ What is the Stored Program Concept? :: The concept where both data and program i
 <!--SR:!2026-11-12,16,290-->
 
 Name the 3 main components of the CPU. :: 1. Control Unit (CU), 2. Arithmetic Logic Unit (ALU), 3. Registers.
+<!--SR:!2026-11-04,4,270-->
 
 What is the difference between a Data Bus and an Address Bus? :: Data Bus is bidirectional and carries actual data; Address Bus is unidirectional and carries memory location addresses from the CPU.
 <!--SR:!2026-11-01,4,270-->
@@ -196,7 +198,7 @@ Which is faster, DRAM or SRAM? :: SRAM.
 <!--SR:!2026-11-11,15,290-->
 
 Who invented transistor at Bell Labs in 1947?::William Shockley, John Barden and Walter Brattain.
-<!--SR:!2026-10-29,2,230-->
+<!--SR:!2026-11-07,7,250-->
 
 Which computer bus carries information from the processor to the I/O devices?::Data bus.
 <!--SR:!2026-11-11,15,290-->
@@ -205,5 +207,7 @@ Who is the father of modern computer science?::Alan Turing.
 <!--SR:!2026-12-29,63,310-->
 
 Name first general purpose computer, commercially sold computer and store program computer.:: ENIAC, UNIVAC, and EDSAC
+<!--SR:!2026-11-04,4,270-->
 
 Explain the differences of Direct access, Sequential access, and Random access.::**Sequential access** reads data linearly from the beginning (like a cassette tape), **direct access** jumps to a specific block's physical vicinity and then searches locally (like a hard drive), while **random access** reaches any exact location instantly with uniform, constant time (like RAM).
+<!--SR:!2026-11-04,4,270-->

@@ -333,6 +333,7 @@ C++ equivalents: neither `f(int x)` (copy) nor `f(int& x)` (true alias). There i
 - **`==` vs `is`.** `==` compares values (like overloaded `==`), `is` compares identity (`&a == &b`). Never use `is` for numbers/strings: small-int cache `[-5,256]` and interning make `256 is 256` true but `257 is 257` unpredictable.
 - **int never overflows.** Python `int` is arbitrary-precision (like `boost::multiprecision::cpp_int`), not `int32`. No UB, just slower. `float` *is* still IEEE754 double like C++ `double`.
 - **`range` is lazy, slice is a copy.** `range(1,6)` generates on the fly (not `vector<int>`). `a[0:2]` allocates a new list (not `string_view` / reference).
+<!--SR:!2026-11-04,4,270!2026-11-04,4,270-->
 
 ---
 
@@ -347,7 +348,7 @@ What is modularization + stepwise refinement? :: Split into modules, refine top-
 <!--SR:!2026-11-01,4,270-->
 
 What is a structure chart? :: It shows the module hierarchy: boxes are modules, lines/arrows show control or data flow; it is not an execution-order flowchart.
-<!--SR:!2026-10-31,3,250-->
+<!--SR:!2026-11-10,10,270-->
 
 Name 3 ways to represent algorithms. :: Flowcharts, pseudocode, hand traces.
 <!--SR:!2026-11-07,11,270-->
@@ -380,8 +381,10 @@ What does input() return and how to get int? :: Always string; use int(input()) 
 <!--SR:!2026-11-10,14,290-->
 
 What is the typical structure of a Python program? :: Imports, constants, function definitions, then the main logic.
+<!--SR:!2026-11-04,4,270-->
 
 What is operator precedence in Python? :: Main order: () > ** > unary (+x -x ~x) > * / // % > + - > << >> > & > ^ > | > comparisons/in/not in/is/is not > not > and > or > conditional > assignment; ** right-to-left.
+<!--SR:!2026-11-04,4,270-->
 
 What is local vs global scope? :: Local inside func, global outside; lifetime is duration variable exists.
 <!--SR:!2026-11-06,10,270-->
@@ -396,14 +399,18 @@ How to manage DB data in Python? :: Connect (sqlite3), create a cursor, execute 
 <!--SR:!2026-11-01,4,270-->
 
 How do you update or delete a row in SQLite from Python? :: Run UPDATE or DELETE with `?` placeholders, then `commit()`; `rowcount` reports the affected rows.
+<!--SR:!2026-11-04,4,270-->
 
 What is sequential search complexity? :: O(N), check 0 to N-1.
+<!--SR:!2026-11-04,4,270-->
 
 What is the precondition for executing a Binary Search algorithm on an array? :: The array must be sorted in ascending or descending order.
+<!--SR:!2026-11-04,4,270-->
 
 What is the worst-case Time Complexity of Bubble Sort? :: $O(N^2)$.
 <!--SR:!2026-11-11,15,290-->
 
 What is Python argument passing (C++ view)? :: Pass-by-object-reference: function gets copy of reference; rebinding param does not affect caller, mutating shared object does.
+<!--SR:!2026-11-04,4,270-->
 
 When to use `is` vs `==` in Python? :: `==` for values, `is` for identity; never use `is` for numbers/strings due to caching.
