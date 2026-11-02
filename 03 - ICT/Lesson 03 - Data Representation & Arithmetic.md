@@ -239,7 +239,7 @@ List 4 modern computer applications of Hexadecimal numbers. :: 1. RAM/CPU memory
 <!--SR:!2026-12-04,38,290-->
 
 Convert $(13.625)_{10}$ to Binary. :: $(1101.101)_2$.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-16,14,290-->
 
 Convert $(11010110.1011)_2$ to Hexadecimal. :: $(D6.B)_{16}$.
 <!--SR:!2026-11-11,15,290-->

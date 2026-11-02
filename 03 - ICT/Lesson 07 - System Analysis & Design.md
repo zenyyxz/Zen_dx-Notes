@@ -472,7 +472,7 @@ What does SSADM cover? :: Structured analysis + logical/physical design stages (
 <!--SR:!2026-11-01,4,270-->
 
 List the five SSADM stages. :: Feasibility study -> Requirements analysis -> Requirements specification -> Logical system specification -> Physical design.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-17,15,290-->
 
 What are the two phases of preliminary investigation? :: Problem definition (preliminary survey and scope) and the feasibility study.
 <!--SR:!2026-11-01,4,270-->

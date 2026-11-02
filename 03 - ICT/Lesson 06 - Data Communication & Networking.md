@@ -785,7 +785,7 @@ Is Base64 encryption? :: No — it is reversible encoding without a key and prov
 <!--SR:!2026-11-01,4,270-->
 
 What is non-repudiation? :: The sender cannot later deny having signed or sent the message; provided by a digital signature.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-18,16,290-->
 
 What is the key-distribution problem? :: Symmetric encryption requires both parties to share the same secret key securely before communicating.
 <!--SR:!2026-11-04,4,270-->
