@@ -147,7 +147,7 @@ A **Sequential Circuit**'s ==output depends on **both current inputs and past st
   - **Flip-Flop**: An **edge-triggered bistable circuit** that stores **1 bit**; changes state only on a clock transition.
 - Controlled by a **Clock Signal**.
 - Used to construct CPU registers, counters, and RAM memory cells.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-17,15,290-->
 
 ---
 ## :LiRocket: Flashcards (Spaced Repetition)

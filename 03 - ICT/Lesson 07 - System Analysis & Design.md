@@ -457,7 +457,7 @@ What makes a system a "smart system"? :: It senses, actuates and controls in a p
 <!--SR:!2026-11-03,3,250-->
 
 List the SDLC stages in the Waterfall model. :: Feasibility study -> Requirement analysis -> System design -> Implementation -> Testing -> Deployment -> Maintenance.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-14,12,270-->
 
 What is the main characteristic of the Spiral SDLC model? :: High emphasis on risk analysis and iterative development cycles.
 <!--SR:!2026-11-04,4,270-->
@@ -469,7 +469,7 @@ When to use Prototyping vs Spiral? :: Prototyping when requirements unclear; Spi
 <!--SR:!2026-11-01,4,270-->
 
 What does SSADM cover? :: Structured analysis + logical/physical design stages (not coding/testing).
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-16,14,290-->
 
 List the five SSADM stages. :: Feasibility study -> Requirements analysis -> Requirements specification -> Logical system specification -> Physical design.
 <!--SR:!2026-11-17,15,290-->

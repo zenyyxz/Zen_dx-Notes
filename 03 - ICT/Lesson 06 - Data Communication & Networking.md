@@ -838,7 +838,7 @@ What does it mean that HTTP is stateless? :: Each request is handled independent
 <!--SR:!2026-11-04,4,270-->
 
 What is the role of an ISP? :: An ISP provides Internet access, assigns public IP addresses, routes customer traffic, and often provides DNS and other services.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-17,15,290-->
 
 Why is ADSL called asymmetric? :: Downstream capacity is greater than upstream capacity, matching typical home usage where downloads are larger than uploads.
 <!--SR:!2026-11-01,4,270-->

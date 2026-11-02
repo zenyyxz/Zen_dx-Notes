@@ -389,7 +389,7 @@ How are databases used in marketing? :: To segment customers, personalise messag
 <!--SR:!2026-11-04,4,270-->
 
 How is AI used in marketing? :: Predictive analytics, recommendation engines, chatbots/NLP, dynamic content and campaign optimisation.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-18,16,290-->
 
 What is mobile marketing? :: Optimising marketing for mobile devices using mobile-friendly sites/ads, apps, push notifications, location-based marketing and SMS.
 <!--SR:!2026-11-04,4,270-->
