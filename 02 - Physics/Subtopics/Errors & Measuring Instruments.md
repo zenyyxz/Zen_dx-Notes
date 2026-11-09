@@ -10,6 +10,7 @@ tags:
   - Micrometer
   - Spherometer
   - Travelling-Microscope
+  - Flashcards
 ---
 
 # :LiRuler: Subtopic: Errors & Measuring Instruments Guide
@@ -131,3 +132,34 @@ $$R = \frac{a^2}{6h} + \frac{h}{2}$$
 
 > [!TIP] Minimizing Experimental Uncertainty
 > In any calculation $Z = A^p B^q / C^r$, the quantity with the **highest exponent** contributes the greatest relative uncertainty. In experimental design, the instrument with the highest sensitivity (lowest least count) must always be allocated to measuring that parameter.
+
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+How is the Least Count of a Vernier Caliper derived from scale divisions? :: $\text{LC} = 1\text{ MSD} - 1\text{ VSD} = \frac{1\text{ MSD}}{n}$ (where $n$ is total vernier divisions spanning $n-1$ MSD).
+
+What is the Least Count of a Vernier caliper where 20 vernier divisions equal 19 main scale millimeter divisions? :: $\text{LC} = \frac{1\text{ mm}}{20} = 0.05\text{ mm}$.
+
+How is a positive zero error identified and corrected on a Vernier caliper? :: Vernier zero lies to the right of main scale zero; error is $+k \times \text{LC}$; corrected reading is $\text{Observed} - \text{Zero Error}$.
+
+How is a negative zero error calculated on a Vernier caliper with $n$ divisions and coinciding division $k$? :: $\text{Zero Error} = -(n - k) \times \text{LC}$.
+
+How is pitch defined for a micrometer screw gauge? :: The linear distance moved by the spindle on the main scale per one complete revolution of the thimble.
+
+What is the formula for the Least Count of a micrometer screw gauge? :: $\text{LC} = \frac{\text{Pitch}}{\text{Total Head Scale Divisions (HSD)}}$.
+
+Why must a micrometer screw gauge be tightened using the ratchet instead of the thimble? :: The ratchet mechanism slips when proper pressure is reached, ensuring uniform contact pressure and preventing deformation of the object or damage to the screw threads.
+
+What is backlash error in screw-based instruments and how is it prevented? :: Play/looseness between screw threads and nut due to wear; avoided by always rotating the screw in the same forward direction when taking a measurement.
+
+In the spherometer formula $R = \frac{a^2}{6h} + \frac{h}{2}$, what do symbols $a$ and $h$ represent? :: $a$ is the average distance between the three outer fixed legs; $h$ is the vertical displacement (sagitta) of the central screw relative to a flat plane.
+
+How is the zero reading $h_0$ of a spherometer verified on a flat glass plate? :: The central screw is adjusted until all four points touch simultaneously, verified when a thin paper strip placed under any leg offers resistance or the instrument just begins to rock.
+
+What is the primary advantage of using a travelling microscope over mechanical calipers? :: It allows contact-free, non-destructive measurement of fragile, internal, or liquid surfaces (such as capillary tube bore and liquid menisci).
+
+In the calculation $Z = \frac{A^2 B}{C^3}$, which variable's measurement contributes the largest percentage error? :: Variable $C$, because its percentage uncertainty is multiplied by its exponent $3$ ($\% \Delta Z = 2\% \Delta A + \% \Delta B + 3\% \Delta C$).

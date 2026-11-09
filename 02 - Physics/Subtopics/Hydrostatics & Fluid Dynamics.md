@@ -11,6 +11,7 @@ tags:
   - Bernoulli
   - HaresApparatus
   - Hydrometers
+  - Flashcards
 ---
 
 # :LiDroplet: Subtopic: Hydrostatics & Fluid Dynamics Guide
@@ -185,3 +186,36 @@ Draws liquid over an elevation out of a reservoir into a lower container:
 - **Maximum operating height**: Pressure at highest point of siphon bend cannot drop below vapor pressure of liquid ($\approx 0$):
   $$P_{\text{crest}} = P_{\text{atm}} - h_{\text{max}} \rho g > 0 \implies h_{\text{max}} < \frac{P_{\text{atm}}}{\rho g}$$
   *(For water, $h_{\text{max}} \approx \frac{10^5}{1000 \times 10} = 10\text{ m}$).*
+
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+State the relationship for liquid column heights $h_1, h_2$ and densities $\rho_1, \rho_2$ in Hare's apparatus. :: $h_1 \rho_1 g = h_2 \rho_2 g \implies \frac{h_1}{h_2} = \frac{\rho_2}{\rho_1}$ (heights are inversely proportional to densities).
+
+Why is the graphical method ($h_1$ vs. $h_2$) preferred when using Hare's apparatus? :: Plotting $h_1$ vs. $h_2$ produces a straight line through the origin with gradient $m = \frac{\rho_2}{\rho_1}$, which eliminates meniscus reading errors and beaker end zero errors.
+
+State Archimedes' Principle. :: When a body is wholly or partially immersed in a fluid at rest, it experiences an upward buoyant force (upthrust) equal to the weight of the fluid displaced by the body.
+
+What is the formula for the apparent weight $W_{\text{app}}$ of an object of true weight $W$ and relative density $\rho_r$ immersed in a liquid? :: $W_{\text{app}} = W\left(1 - \frac{1}{\rho_r}\right)$.
+
+State the Principle of Flotation. :: A floating body in equilibrium displaces a volume of liquid whose weight is equal to the total weight of the floating body.
+
+Why are the graduation marks on the stem of a constant mass hydrometer non-linearly spaced? :: Submerged stem length is inversely proportional to density ($x \propto \frac{1}{\rho}$); since $\left|\frac{dx}{d\rho}\right| = \frac{M}{a\rho^2}$, increments shrink at higher densities, placing divisions closer together at the bottom.
+
+What two structural design features increase the sensitivity of a constant mass hydrometer? :: 1. A narrow stem (small cross-sectional area $a$); 2. A large total volume / mass $M$ of the lower bulb.
+
+State the 4 fundamental properties of an ideal fluid in fluid dynamics. :: 1. Incompressible ($\rho = \text{constant}$), 2. Non-viscous ($\eta = 0$), 3. Steady flow, 4. Irrotational flow.
+
+State the Equation of Continuity for steady streamline flow of an incompressible fluid. :: $A_1 v_1 = A_2 v_2 = Q = \text{constant}$ (where $Q$ is volume flow rate in $\text{m}^3\;\text{s}^{-1}$).
+
+State Bernoulli's Equation for the steady streamline flow of an ideal fluid. :: $P + \frac{1}{2}\rho v^2 + \rho gh = \text{constant}$.
+
+In a Venturi meter, why does static pressure drop at the throat constriction? :: By the equation of continuity, cross-sectional area drops so fluid velocity increases ($v_2 > v_1$); by Bernoulli's principle, an increase in kinetic energy density necessitates a drop in static pressure ($P_2 < P_1$).
+
+State Torricelli's Law for the speed of efflux from an orifice at depth $h$ below the open surface. :: $v = \sqrt{2gh}$.
+
+What limits the maximum operational height $h_{\text{max}}$ over which a siphon can draw water? :: Atmospheric pressure; pressure at the crest cannot drop below liquid vapor pressure: $h_{\text{max}} < \frac{P_{\text{atm}}}{\rho g} \approx 10\text{ m}$ for water.

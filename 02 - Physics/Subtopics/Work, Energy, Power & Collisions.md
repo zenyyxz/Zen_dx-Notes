@@ -10,6 +10,7 @@ tags:
   - Power
   - Collisions
   - MomentumConservation
+  - Flashcards
 ---
 
 # :LiZap: Subtopic: Work, Energy, Power & Collisions Guide
@@ -147,3 +148,34 @@ A bullet of mass $m$ fired horizontally with speed $v_0$ into a suspended wooden
    $$\frac{1}{2}(m + M)V^2 = (m + M)gh \implies V = \sqrt{2gh}$$
 3. **Muzzle Velocity of Bullet**:
    $$v_0 = \left(\frac{m + M}{m}\right) \sqrt{2gh}$$
+
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+How is conservative force related to potential energy function $U(x)$? :: $F(x) = -\frac{dU}{dx}$.
+
+How are stable and unstable equilibrium distinguished mathematically on a potential energy curve $U(x)$? :: Both have $\frac{dU}{dx} = 0$; Stable has $\frac{d^2U}{dx^2} > 0$ (local minimum); Unstable has $\frac{d^2U}{dx^2} < 0$ (local maximum).
+
+What is the equivalent spring constant of two springs $k_1$ and $k_2$ in series? :: $\frac{1}{k_{\text{eq}}} = \frac{1}{k_1} + \frac{1}{k_2} \implies k_{\text{eq}} = \frac{k_1 k_2}{k_1 + k_2}$.
+
+What is the equivalent spring constant of two springs $k_1$ and $k_2$ in parallel? :: $k_{\text{eq}} = k_1 + k_2$.
+
+What is the formula for tractive force $F_{\text{engine}}$ developed by an engine of power $P$ at instantaneous speed $v$? :: $F_{\text{engine}} = \frac{P}{v}$.
+
+What is the maximum steady speed of a vehicle of engine power $P$ against constant resistance $F_{\text{res}}$ on a level road? :: $v_{\text{max}} = \frac{P}{F_{\text{res}}}$.
+
+What is the maximum steady speed of a vehicle of mass $M$ climbing an incline of angle $\theta$ with resistance $F_{\text{res}}$? :: $v_{\text{max}} = \frac{P}{F_{\text{res}} + M g \sin\theta}$.
+
+Define the Coefficient of Restitution $e$ between two colliding bodies. :: $e = \frac{\text{Relative speed of separation}}{\text{Relative speed of approach}} = \frac{v_2 - v_1}{u_1 - u_2}$.
+
+What happens to velocities when two identical masses ($m_1 = m_2$) collide head-on perfectly elastically ($e = 1$)? :: The two bodies completely exchange their velocities ($v_1 = u_2, v_2 = u_1$).
+
+State the formula for kinetic energy loss $\Delta E_k$ in an inelastic head-on collision. :: $\Delta E_k = \frac{1}{2}\left(\frac{m_1 m_2}{m_1 + m_2}\right)(1 - e^2)(u_1 - u_2)^2$.
+
+In an oblique collision between two smooth spheres, what happens to velocity components along the common tangent? :: They remain completely unchanged because no force acts along the common tangent ($v_{1t} = u_{1t}$ and $v_{2t} = u_{2t}$).
+
+In a ballistic pendulum, what is the formula for bullet muzzle speed $v_0$ in terms of bullet mass $m$, block mass $M$, and swing height $h$? :: $v_0 = \left(\frac{m + M}{m}\right)\sqrt{2gh}$.

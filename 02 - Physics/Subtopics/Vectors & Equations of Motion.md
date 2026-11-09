@@ -9,6 +9,7 @@ tags:
   - Kinematics
   - ProjectileMotion
   - RelativeVelocity
+  - Flashcards
 ---
 
 # :LiRocket: Subtopic: Vectors & Equations of Motion Guide
@@ -105,3 +106,30 @@ $$R = \frac{u^2 \sin 2\theta}{g}$$
 >   Substituting $t = \frac{x}{u\cos\theta}$ into $y = (u\sin\theta)t - \frac{1}{2}gt^2$:
 >   $$y = x\tan\theta - \frac{g x^2}{2u^2 \cos^2\theta} = x\tan\theta - \frac{g x^2 (1 + \tan^2\theta)}{2u^2}$$
 >   This represents an inverted parabola.
+
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+How is the relative velocity of body $A$ with respect to body $B$ defined? :: $\vec{v}_{A/B} = \vec{v}_A - \vec{v}_B = \vec{v}_A + (-\vec{v}_B)$.
+
+In river crossing, what is the heading angle required to cross in the shortest possible time? :: Steer perpendicular to the river banks ($\theta = 90^\circ$ relative to bank); $t_{\text{min}} = \frac{d}{v_{b/w}}$.
+
+Under what physical condition can a boat cross a flowing river directly opposite with zero drift? :: The boat speed in still water must be strictly greater than the river speed ($v_{b/w} > v_w$); heading angle is $\sin\alpha = \frac{v_w}{v_{b/w}}$ upstream.
+
+If rain is falling vertically at speed $v_r$ and a person walks horizontally at speed $v_p$, at what angle with the vertical must the umbrella be held? :: $\tan\theta = \frac{v_p}{v_r}$ inclined forward in the direction of motion.
+
+What does the area under an Acceleration-Time ($a-t$) graph represent? :: The net change in velocity ($\Delta v = v - u = \int a dt$).
+
+State the derivation for the Time of Flight $T$ of a projectile launched at speed $u$ and angle $\theta$. :: Vertical displacement $s_y = 0 \implies (u\sin\theta)T - \frac{1}{2}gT^2 = 0 \implies T = \frac{2u\sin\theta}{g}$.
+
+State the derivation for the Maximum Vertical Height $H_{\text{max}}$ of a projectile. :: Vertical velocity $v_y = 0 \implies (u\sin\theta)^2 - 2g H_{\text{max}} = 0 \implies H_{\text{max}} = \frac{u^2\sin^2\theta}{2g}$.
+
+State the derivation for the Horizontal Range $R$ of a projectile. :: $R = u_x \cdot T = (u\cos\theta)\left(\frac{2u\sin\theta}{g}\right) = \frac{u^2 \sin 2\theta}{g}$.
+
+Why do launch angles $\theta$ and $90^\circ - \theta$ produce identical ranges? :: $\sin(2(90^\circ - \theta)) = \sin(180^\circ - 2\theta) = \sin 2\theta$, so range $R = \frac{u^2\sin 2\theta}{g}$ is identical.
+
+State the Cartesian equation of the trajectory of a projectile launched from the origin. :: $y = x\tan\theta - \frac{g x^2}{2u^2 \cos^2\theta} = x\tan\theta - \frac{g x^2 (1 + \tan^2\theta)}{2u^2}$.

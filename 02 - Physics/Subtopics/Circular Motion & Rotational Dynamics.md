@@ -9,6 +9,7 @@ tags:
   - Rotation
   - MomentOfInertia
   - AngularMomentum
+  - Flashcards
 ---
 
 # :LiRotateCw: Subtopic: Circular Motion & Rotational Dynamics Guide
@@ -109,3 +110,34 @@ $$I_1 \omega_1 = I_2 \omega_2$$
 ### Classical Demonstrations:
 - **Spinning Figure Skater / Diver**: Pulling arms inward decreases mass distribution radius $\implies I$ decreases $\implies \omega$ increases sharply.
 - **Planetary Motion (Kepler's Second Law)**: Near perihelion ($r$ small), speed increases to maintain constant areal velocity ($L = m r v = \text{constant}$).
+
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+State the formula for centripetal acceleration in terms of speed $v$, radius $r$, and angular velocity $\omega$. :: $a_c = \frac{v^2}{r} = \omega^2 r = v\omega$ (directed radially inward).
+
+What is the maximum safe speed for a car negotiating an unbanked circular curve of radius $r$ with friction coefficient $\mu_s$? :: $v_{\text{max}} = \sqrt{\mu_s r g}$.
+
+Derive the design banking angle $\theta$ for a curved road of radius $r$ at speed $v$ without depending on friction. :: $N\sin\theta = \frac{mv^2}{r}$ and $N\cos\theta = mg \implies \tan\theta = \frac{v^2}{rg}$.
+
+In vertical circular motion on a light string, what are the minimum speeds at the top and bottom to complete the loop? :: Top: $v_{\text{top}} = \sqrt{rg}$; Bottom: $v_{\text{bottom}} = \sqrt{5rg}$.
+
+What is the difference between string tension at the lowest and highest points of a vertical circle? :: $T_{\text{bottom}} - T_{\text{top}} = 6mg$.
+
+State the Moment of Inertia of a uniform circular disc of mass $M$ and radius $R$ about its central perpendicular axis. :: $I = \frac{1}{2}MR^2$.
+
+State the Moment of Inertia of a solid sphere of mass $M$ and radius $R$ about its diameter. :: $I = \frac{2}{5}MR^2$.
+
+State the Moment of Inertia of a thin spherical shell of mass $M$ and radius $R$ about its diameter. :: $I = \frac{2}{3}MR^2$.
+
+State the Parallel Axis Theorem for Moment of Inertia. :: $I = I_{\text{cm}} + Md^2$ (where $d$ is the perpendicular distance from the center of mass axis).
+
+State the Perpendicular Axis Theorem for a flat planar lamina in the $xy$-plane. :: $I_z = I_x + I_y$.
+
+What is the total kinetic energy of a body of mass $M$, radius $R$, and radius of gyration $k$ rolling without slipping at speed $v_{\text{cm}}$? :: $E_{k,\text{total}} = \frac{1}{2} M v_{\text{cm}}^2 \left(1 + \frac{k^2}{R^2}\right)$.
+
+State the Principle of Conservation of Angular Momentum. :: When the net external torque acting on a rotating system is zero ($\Sigma \tau_{\text{ext}} = 0$), the total angular momentum is conserved: $L = I\omega = \text{constant}$.

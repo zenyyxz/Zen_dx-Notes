@@ -10,6 +10,7 @@ tags:
   - CentreOfGravity
   - LamisTheorem
   - Moments
+  - Flashcards
 ---
 
 # :LiScale: Subtopic: Equilibrium & Centre of Gravity Guide
@@ -167,3 +168,34 @@ As the angle of inclination $\theta$ is steadily increased:
   1. Weight $W$ (vertically downward at midpoint).
   2. Tension $T$ in string (along string line).
   3. Hinge reaction $\vec{R}$ (direction found by the **concurrency theorem**: line of action of hinge reaction must pass through intersection of weight and tension lines).
+
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+State the Concurrency Theorem for three coplanar forces in equilibrium. :: If a body is in equilibrium under three non-parallel coplanar forces, their lines of action must intersect at a single common point.
+
+State Lami's Theorem for three concurrent forces in equilibrium. :: $\frac{P}{\sin\alpha} = \frac{Q}{\sin\beta} = \frac{R}{\sin\gamma}$ (where $\alpha, \beta, \gamma$ are the angles opposite forces $P, Q, R$).
+
+Why is the torque of a couple independent of the pivot axis chosen? :: The opposite forces create a moment $F(x + d) - F(x) = Fd$, which depends only on the separation distance $d$ between lines of action.
+
+Where is the Centre of Gravity of a uniform semicircular wire of radius $r$ located? :: On its radius of symmetry at distance $\frac{2r}{\pi} \approx 0.637r$ from the center.
+
+Where is the Centre of Gravity of a uniform semicircular lamina of radius $r$ located? :: On its radius of symmetry at distance $\frac{4r}{3\pi} \approx 0.424r$ from the straight diameter base.
+
+Where is the Centre of Gravity of a solid right circular cone of height $h$ located? :: On its central axis of symmetry at distance $\frac{1}{4}h$ from its base.
+
+Where is the Centre of Gravity of a hollow conical shell of height $h$ located? :: On its central axis of symmetry at distance $\frac{1}{3}h$ from its circular base.
+
+Where is the Centre of Gravity of a solid hemisphere of radius $r$ located? :: On its axis of symmetry at distance $\frac{3}{8}r$ from the flat circular face.
+
+Where is the Centre of Gravity of a hollow hemispherical shell of radius $r$ located? :: On its axis of symmetry at distance $\frac{1}{2}r$ from the flat circular rim.
+
+How is the Centre of Gravity of a composite body containing a cavity calculated? :: By treating the cavity as negative mass/area: $\bar{x} = \frac{A_1 x_1 - A_2 x_2}{A_1 - A_2}$.
+
+What is the condition for a rectangular block of width $b$ and height $h$ resting on an incline to slide before toppling? :: $\mu_s < \frac{b}{h}$ (angle of repose $\theta_{\text{slide}} < \theta_{\text{topple}}$).
+
+When a pulling force $P$ is applied horizontally at height $y$ to a block of width $b$ and mass $M$, what is the condition for toppling? :: $P \ge \frac{M g b}{2y}$ (taking moments about the leading base edge where the normal reaction shifts).
