@@ -46,6 +46,7 @@ Below are deep-dive technical notes for high-yield A/L exam derivations and prob
 
 - :LiEqualNot: **Inequalities**: [[Subtopics/Inequalities & Absolute Values|Inequalities & Absolute Values Guide]]
 - :LiPuzzle: **Polynomials**: [[Subtopics/Polynomials & Partial Fractions|Polynomials & Partial Fractions Guide]]
+- :LiSquareDot: **Quadratics**: [[Subtopics/Quadratic Functions & Equations Guide|Quadratic Functions & Equations Guide]]
 - :LiAlertCircle: **Complex**: [[Subtopics/Complex Numbers & Argand Diagrams|Complex Numbers & Argand Diagrams]]
 - :LiTriangleDashed: **Trigonometry**: [[Subtopics/Trigonometric Identities & Equations|Trigonometric Identities & Equations]]
 - :LiArrowBigUp: **Calculus I**: [[Subtopics/Differentiation & Curve Sketching|Differentiation & Curve Sketching]]
