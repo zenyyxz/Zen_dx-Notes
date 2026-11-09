@@ -259,10 +259,10 @@ $$f' = f \left(\frac{v \pm v_o}{v \mp v_s}\right)$$
 
 ```mermaid
 graph TD
-    DE["Doppler Cases"] --> S_App["Source Approaching (v_s): λ' = (v - v_s)/f ⇒ f' = f [v / (v - v_s)]"]
-    DE --> S_Rec["Source Receding (v_s): λ' = (v + v_s)/f ⇒ f' = f [v / (v + v_s)]"]
-    DE --> O_App["Observer Approaching (v_o): v_rel = v + v_o ⇒ f' = f [(v + v_o) / v]"]
-    DE --> O_Rec["Observer Receding (v_o): v_rel = v - v_o ⇒ f' = f [(v - v_o) / v]"]
+    DE["Doppler Cases"] --> S_App["Source Approaching: λ decreases ⇒ f' = f × v / v minus v_s"]
+    DE --> S_Rec["Source Receding: λ increases ⇒ f' = f × v / v plus v_s"]
+    DE --> O_App["Observer Approaching: v_rel = v + v_o ⇒ f' = f × (v + v_o) / v"]
+    DE --> O_Rec["Observer Receding: v_rel = v - v_o ⇒ f' = f × (v - v_o) / v"]
 ```
 
 - **Wind Velocity ($w$) Correction**:

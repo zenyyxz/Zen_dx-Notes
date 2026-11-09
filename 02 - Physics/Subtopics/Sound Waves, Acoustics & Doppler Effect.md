@@ -139,10 +139,10 @@ $$f' = f \left(\frac{v \pm v_o}{v \mp v_s}\right)$$
 
 ```mermaid
 graph TD
-    Dop["Doppler Shift Cases"] --> S_App["Source Approaching (v_s): λ decreases<br>f' = f [v / (v - v_s)] > f"]
-    Dop --> S_Rec["Source Receding (v_s): λ increases<br>f' = f [v / (v + v_s)] < f"]
-    Dop --> O_App["Observer Approaching (v_o): v_rel increases<br>f' = f [(v + v_o) / v] > f"]
-    Dop --> O_Rec["Observer Receding (v_o): v_rel decreases<br>f' = f [(v - v_o) / v] < f"]
+    Dop["Doppler Shift Cases"] --> S_App["Source Approaching: λ decreases<br>f' = f × v / (v - v_s)  — higher pitch"]
+    Dop --> S_Rec["Source Receding: λ increases<br>f' = f × v / (v + v_s)  — lower pitch"]
+    Dop --> O_App["Observer Approaching: v_rel increases<br>f' = f × (v + v_o) / v  — higher pitch"]
+    Dop --> O_Rec["Observer Receding: v_rel decreases<br>f' = f × (v - v_o) / v  — lower pitch"]
 ```
 
 ### Analytical Derivations:

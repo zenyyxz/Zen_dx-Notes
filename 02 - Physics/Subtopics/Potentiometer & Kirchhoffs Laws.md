@@ -121,7 +121,7 @@ Four resistors $P, Q, R, S$ arranged in a bridge network with a galvanometer $G$
 graph TD
     A["Junction A"] -->|P| B["Junction B"]
     A -->|R| D["Junction D"]
-    B -->|Galvanometer G (Ig = 0)| D
+    B -->|Galvanometer G: Ig = 0| D
     B -->|Q| C["Junction C"]
     D -->|S| C
 ```

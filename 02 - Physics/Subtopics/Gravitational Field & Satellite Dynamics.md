@@ -72,8 +72,8 @@ $$\frac{GM_1}{x^2} = \frac{GM_2}{(D - x)^2} \implies \frac{\sqrt{M_1}}{x} = \fra
 
 ```mermaid
 graph TD
-    Var["Variations in g"] --> Alt["1. Altitude h above Earth<br>g_h = g [R / (R + h)]² ≈ g [1 - (2h / R)]"]
-    Var --> Dep["2. Depth d below Earth<br>g_d = g [1 - (d / R)]"]
+    Var["Variations in g"] --> Alt["1. Altitude h above Earth<br>g_h = g × R/(R+h) squared ≈ g × (1 - 2h/R)"]
+    Var --> Dep["2. Depth d below Earth<br>g_d = g × (1 - d/R)"]
     Var --> Lat["3. Latitude θ (Rotation of Earth)<br>g_θ = g - ω² R cos² θ"]
     Var --> Shape["4. Oblate Spheroid Shape<br>R_equator > R_pole ⇒ g_pole > g_equator"]
 ```

@@ -359,7 +359,7 @@ Coefficient of restitution: $e = \frac{v_2 - v_1}{u_1 - u_2}$.
 graph TD
     Circ["Circular Motion Applications"] --> Flat["Flat Curve (Friction only): v_max = √(μ_s r g)"]
     Circ --> Bank["Banked Curve (No friction): tan θ = v²/(r g)"]
-    Circ --> BankF["Banked Curve with Friction: v_max = √[r g (tan θ + μ) / (1 - μ tan θ)]"]
+    Circ --> BankF["Banked Curve with Friction: v_max = √ r·g·(tan θ + μ) / (1 - μ tan θ)"]
     Circ --> Vert["Vertical Circle: v_top ≥ √(r g), v_bottom ≥ √(5 r g), T_bottom - T_top = 6 mg"]
 ```
 

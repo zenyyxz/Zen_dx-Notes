@@ -126,8 +126,8 @@ $$\Delta U \approx \frac{GMm h}{R^2} = m\left(\frac{GM}{R^2}\right)h = mgh$$
 
 ```mermaid
 graph TD
-    GVar["Factors Affecting g on Earth"] --> Alt["1. Altitude h:<br>g_h = g [R / (R + h)]² ≈ g [1 - (2h / R)]"]
-    GVar --> Dep["2. Depth d:<br>g_d = g [1 - (d / R)] (Linear decay)"]
+    GVar["Factors Affecting g on Earth"] --> Alt["1. Altitude h:<br>g_h = g × R/(R+h) squared ≈ g × (1 - 2h/R)"]
+    GVar --> Dep["2. Depth d:<br>g_d = g × (1 - d/R)  — Linear decay"]
     GVar --> Lat["3. Latitude θ (Earth's Rotation):<br>g_θ = g - ω² R cos² θ"]
     GVar --> Shape["4. Shape of Earth (Oblate Spheroid):<br>R_eq > R_pole ⇒ g_pole > g_eq"]
 ```

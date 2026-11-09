@@ -171,10 +171,10 @@ $$\Delta Q = m L$$
 
 ```mermaid
 graph LR
-    Solid["Solid"] -->|Melting (+L_f)| Liquid["Liquid"]
-    Liquid -->|Boiling (+L_v)| Gas["Gas / Vapour"]
-    Liquid -->|Freezing (-L_f)| Solid
-    Gas -->|Condensing (-L_v)| Liquid
+    Solid["Solid"] -->|Melting absorbs L_f| Liquid["Liquid"]
+    Liquid -->|Boiling absorbs L_v| Gas["Gas / Vapour"]
+    Liquid -->|Freezing releases L_f| Solid
+    Gas -->|Condensing releases L_v| Liquid
 ```
 
 ### Specific Latent Heats:

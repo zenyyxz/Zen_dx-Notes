@@ -33,9 +33,9 @@ A BJT is a three-layer semiconductor sandwich with two p-n junctions:
 
 ```mermaid
 graph LR
-    Emitter["Emitter (n⁺)<br>Heavily Doped"] -->|Electrons Injected (100%)| Base["Base (p⁻)<br>Ultra-thin, Lightly Doped"]
-    Base -->|Recombination (1-2%)| Ib["Base Current IB"]
-    Base -->|Swept Across (98-99%)| Collector["Collector (n)<br>High Reverse Bias"]
+    Emitter["Emitter (n⁺)<br>Heavily Doped"] -->|All electrons injected| Base["Base (p⁻)<br>Ultra-thin, Lightly Doped"]
+    Base -->|~1-2% recombine| Ib["Base Current IB"]
+    Base -->|~98-99% swept across| Collector["Collector (n)<br>High Reverse Bias"]
     Collector --> Ic["Collector Current IC"]
 ```
 

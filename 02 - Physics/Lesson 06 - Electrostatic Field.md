@@ -46,7 +46,7 @@ $$F = \frac{1}{4\pi\varepsilon} \frac{|q_1 q_2|}{r^2}$$
 
 ```mermaid
 graph LR
-    Q1["Point Charge q₁"] <-->|Electrostatic Force F = (1 / 4πε) · (q₁q₂ / r²)| Q2["Point Charge q₂"]
+    Q1["Point Charge q₁"] <-->|Electrostatic Force F = q₁q₂ / 4πε r²| Q2["Point Charge q₂"]
 ```
 
 - **Permittivity of Free Space ($\varepsilon_0$):**

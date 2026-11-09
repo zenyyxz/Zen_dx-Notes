@@ -48,9 +48,10 @@ Below are deep-dive technical notes for high-yield A/L exam practicals and theor
 - :LiFlame: **Calorimetry & Heat Transfer**: [[Subtopics/Calorimetry, Phase Changes & Heat Transfer|Calorimetry, Phase Changes & Heat Transfer]]
 - :LiOrbit: **Gravitation & Orbits**: [[Subtopics/Gravitational Field & Satellite Dynamics|Gravitational Field & Satellite Dynamics]]
 - :LiCloudLightning: **Electrostatics**: [[Subtopics/Electric Fields & Capacitors|Electric Fields & Capacitors]]
+- :LiMagnet: **Magnetism**: [[Subtopics/Magnetic Fields & Forces|Magnetic Fields & Forces]]
 - :LiPlug: **Electricity**: [[Subtopics/Potentiometer & Kirchhoffs Laws|Potentiometer & Kirchhoff's Laws]]
 - :LiHousePlug: **Electronics**: [[Subtopics/Transistors & Operational Amplifiers|Transistors & Operational Amplifiers]]
-- :LiGlassWater: **Matter**: [[Subtopics/Elasticity & Viscosity|Elasticity & Viscosity]]
+- :LiGlassWater: **Matter**: [[Subtopics/Elasticity & Viscosity|Elasticity, Viscosity & Surface Tension]]
 - :LiAtom: **Modern Physics**: [[Subtopics/Photoelectric Effect & Radioactivity|Photoelectric Effect & Radioactivity]]
 
 ---
