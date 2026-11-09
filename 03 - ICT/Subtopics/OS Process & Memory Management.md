@@ -320,6 +320,7 @@ What are the five process states? :: New, Ready, Running, Waiting and Terminated
 Which transitions occur when a process requests I/O and when I/O completes? :: Running → Waiting when it requests I/O; Waiting → Ready when I/O completes.
 
 What two states does the seven-state model add, and why? :: Suspended Ready and Suspended Blocked; the medium-term scheduler swaps processes to disk under memory pressure.
+<!--SR:!2026-11-13,4,270-->
 
 What is the convoy effect in FCFS? :: Short processes wait behind a long CPU-bound process, increasing average waiting time.
 
@@ -332,6 +333,7 @@ What happens if the Round Robin quantum is too small or too large? :: Too small 
 How does aging solve priority starvation? :: It gradually raises the priority of processes that have waited a long time.
 
 What is a multilevel feedback queue? :: Multiple queues with different priorities; processes move between queues based on behaviour to improve responsiveness and reduce starvation.
+<!--SR:!2026-11-12,3,250-->
 
 What are the three requirements of the critical-section problem? :: Mutual exclusion, progress and bounded waiting.
 
@@ -340,6 +342,7 @@ What is the difference between a mutex and a semaphore? :: A mutex is a binary l
 What are the four Coffman conditions for deadlock? :: Mutual exclusion, hold and wait, no preemption and circular wait.
 
 What is the difference between deadlock prevention and avoidance? :: Prevention negates one necessary condition; avoidance uses an algorithm such as Banker's to keep the system in a safe state.
+<!--SR:!2026-11-12,3,250-->
 
 What is the difference between internal and external fragmentation? :: Internal = wasted space inside an allocated block (paging); external = free memory scattered in small holes (segmentation/dynamic partitioning).
 
@@ -358,6 +361,7 @@ What does a segment-table entry contain? :: A base address and a limit (length).
 What is demand paging, and what is a page fault? :: Demand paging loads pages only when accessed; a page fault occurs when the required page is not in physical memory.
 
 Compare FIFO, LRU and OPT page replacement. :: FIFO replaces the oldest page; LRU replaces the least recently used; OPT replaces the page used farthest in the future.
+<!--SR:!2026-11-13,4,270-->
 
 What is Belady's anomaly? :: FIFO can produce more page faults when more frames are available.
 

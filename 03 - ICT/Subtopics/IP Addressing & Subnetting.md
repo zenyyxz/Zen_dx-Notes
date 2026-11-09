@@ -509,6 +509,7 @@ What is a /32 used for? :: A single host route — exactly one address.
 What is the classic prefix for a router-to-router WAN link, and how many hosts? :: /30, giving 2 usable addresses.
 
 How many hosts are needed for a /25, and how many are usable? :: 128 addresses, 126 usable.
+<!--SR:!2026-11-13,4,270-->
 
 If you need 100 hosts, what is the smallest subnet? :: /25 (2^7 − 2 = 126 usable).
 
@@ -545,6 +546,7 @@ What are the four steps of DHCP (DORA)? :: Discover, Offer, Request, Acknowledge
 What is a DHCP lease? :: The period for which a DHCP server allows a client to use an assigned IP address; it can be renewed.
 
 What is routing? :: The process of finding a suitable path from a source to a destination through one or more networks.
+<!--SR:!2026-11-13,4,270-->
 
 What is a routing table? :: A table in a router listing destination networks, next hops, interfaces and metrics used to decide where to forward packets.
 

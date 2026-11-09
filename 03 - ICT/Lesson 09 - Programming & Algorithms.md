@@ -333,7 +333,7 @@ C++ equivalents: neither `f(int x)` (copy) nor `f(int& x)` (true alias). There i
 - **`==` vs `is`.** `==` compares values (like overloaded `==`), `is` compares identity (`&a == &b`). Never use `is` for numbers/strings: small-int cache `[-5,256]` and interning make `256 is 256` true but `257 is 257` unpredictable.
 - **int never overflows.** Python `int` is arbitrary-precision (like `boost::multiprecision::cpp_int`), not `int32`. No UB, just slower. `float` *is* still IEEE754 double like C++ `double`.
 - **`range` is lazy, slice is a copy.** `range(1,6)` generates on the fly (not `vector<int>`). `a[0:2]` allocates a new list (not `string_view` / reference).
-<!--SR:!2026-11-04,4,270!2026-11-04,4,270-->
+<!--SR:!2026-11-23,15,290!2026-11-24,16,290-->
 
 ---
 
@@ -345,16 +345,16 @@ What are the 4 steps of problem solving (9.1)? :: Understand problem, define bou
 <!--SR:!2026-11-12,16,290-->
 
 What is modularization + stepwise refinement? :: Split into modules, refine top-down from main task to detailed steps; show with structure charts.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-18,15,290-->
 
 What is a structure chart? :: It shows the module hierarchy: boxes are modules, lines/arrows show control or data flow; it is not an execution-order flowchart.
 <!--SR:!2026-11-10,10,270-->
 
 Name 3 ways to represent algorithms. :: Flowcharts, pseudocode, hand traces.
-<!--SR:!2026-11-07,11,270-->
+<!--SR:!2026-12-19,41,290-->
 
 What is a hand trace? :: Manually recording each variable's value step by step in a trace table to verify an algorithm's logic.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is the difference between a Compiler and an Interpreter? :: A Compiler translates the entire source code into machine code at once prior to execution; an Interpreter translates and executes source code line-by-line at runtime.
 <!--SR:!2026-11-10,14,290-->
@@ -363,7 +363,7 @@ What is source vs object code? :: Source is human-readable .py/.c; object is mac
 <!--SR:!2026-11-10,14,290-->
 
 What is hybrid translation + linker? :: Compile to intermediate then interpret (Java bytecode); linker joins objects + libraries to exe. Python also uses bytecode but is usually called interpreted.
-<!--SR:!2026-11-06,10,270-->
+<!--SR:!2026-12-14,38,290-->
 
 Which flowchart symbol is used for Decision making? :: Diamond.
 <!--SR:!2026-11-12,16,290-->
@@ -381,36 +381,37 @@ What does input() return and how to get int? :: Always string; use int(input()) 
 <!--SR:!2026-11-10,14,290-->
 
 What is the typical structure of a Python program? :: Imports, constants, function definitions, then the main logic.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is operator precedence in Python? :: Main order: () > ** > unary (+x -x ~x) > * / // % > + - > << >> > & > ^ > | > comparisons/in/not in/is/is not > not > and > or > conditional > assignment; ** right-to-left.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-20,14,290-->
 
 What is local vs global scope? :: Local inside func, global outside; lifetime is duration variable exists.
-<!--SR:!2026-11-06,10,270-->
+<!--SR:!2026-12-16,38,290-->
 
 What is the difference between a Python List and a Tuple? :: A List is mutable (can be modified) and defined using square brackets `[]`; a Tuple is immutable (cannot be modified) and defined using parentheses `()`.
 <!--SR:!2026-11-11,15,290-->
 
 What are basic file operations/modes? :: Open, close, read, write, append; modes w/r/a, use with for auto-close.
-<!--SR:!2026-11-04,8,250-->
+<!--SR:!2026-12-06,28,270-->
 
 How to manage DB data in Python? :: Connect (sqlite3), create a cursor, execute SELECT/INSERT/UPDATE/DELETE, commit changes, fetch results and close.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 How do you update or delete a row in SQLite from Python? :: Run UPDATE or DELETE with `?` placeholders, then `commit()`; `rowcount` reports the affected rows.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is sequential search complexity? :: O(N), check 0 to N-1.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 What is the precondition for executing a Binary Search algorithm on an array? :: The array must be sorted in ascending or descending order.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is the worst-case Time Complexity of Bubble Sort? :: $O(N^2)$.
 <!--SR:!2026-11-11,15,290-->
 
 What is Python argument passing (C++ view)? :: Pass-by-object-reference: function gets copy of reference; rebinding param does not affect caller, mutating shared object does.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-21,15,290-->
 
 When to use `is` vs `==` in Python? :: `==` for values, `is` for identity; never use `is` for numbers/strings due to caching.
+<!--SR:!2026-11-13,4,270-->

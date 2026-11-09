@@ -221,7 +221,7 @@ Non-numeric data (letters, punctuation, symbols, emojis) must be encoded into bi
 #flashcards
 
 Why did the Babylonian base-60 number system prove advantageous for calculations? :: Base 60 is highly divisible by many numbers ($2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$), simplifying fraction calculations.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-23,15,290-->
 
 What major contribution did mathematician Brahmagupta make to number systems in 628 CE? :: He formally defined zero ($0$) as a number and established mathematical rules for arithmetic involving zero.
 <!--SR:!2026-12-30,64,310-->
@@ -230,10 +230,10 @@ State 3 major drawbacks of Non-Positional Number Systems like Roman Numerals. ::
 <!--SR:!2026-11-23,59,310-->
 
 What is the difference between face value and place value of a digit in a positional system? :: Face value is the intrinsic value of the digit itself; place value is the weight assigned to the position of the digit ($r^{\text{position}}$).
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 Why do digital computers use the Binary number system instead of Decimal? :: Computer electronic circuits operate reliably on two voltage states (High/Low, ON/OFF), making binary highly noise-tolerant and physically reliable.
-<!--SR:!2026-11-06,10,270-->
+<!--SR:!2026-12-15,39,290-->
 
 List 4 modern computer applications of Hexadecimal numbers. :: 1. RAM/CPU memory addresses, 2. HTML/CSS color codes (`#FF5733`), 3. IPv6 addresses, 4. Windows error codes (`0x0000007B`).
 <!--SR:!2026-12-04,38,290-->
@@ -251,7 +251,7 @@ What is the range of signed integers that can be stored in an 8-bit register usi
 <!--SR:!2026-12-11,45,290-->
 
 What is the 8-bit 2's complement representation of $-25_{10}$? :: `11100111`.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-16,10,270-->
 
 How is arithmetic overflow detected in 2's complement addition? :: When adding two numbers of the same sign produces a result with an opposite sign bit, or when carry-in to MSB differs from carry-out of MSB.
 <!--SR:!2026-11-12,16,290-->

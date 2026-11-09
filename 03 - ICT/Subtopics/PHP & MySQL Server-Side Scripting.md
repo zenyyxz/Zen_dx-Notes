@@ -205,6 +205,7 @@ How is PHP embedded in an HTML page? :: Inside `<?php ... ?>` tags.
 What are PHP variable naming rules? :: A variable starts with `$`, followed by a letter or underscore; names are case-sensitive.
 
 What operator concatenates strings in PHP? :: `.`; `.=` appends to a string.
+<!--SR:!2026-11-13,4,270-->
 
 What is `var_dump()` used for? :: Printing a variable's type and value for debugging.
 
@@ -235,5 +236,6 @@ What is the difference between `implode()` and `explode()`? :: `implode()` joins
 What is the difference between `sort()`, `asort()` and `ksort()`? :: `sort()` sorts values and reindexes; `asort()` sorts by value while preserving keys; `ksort()` sorts by key.
 
 What does XAMPP or WAMP provide? :: A local Apache/PHP/MySQL environment for running PHP scripts.
+<!--SR:!2026-11-13,4,270-->
 
 Which PHP extension does the syllabus use for MySQL? :: MySQLi; PDO is another available extension.

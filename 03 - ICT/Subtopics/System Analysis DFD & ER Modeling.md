@@ -257,6 +257,7 @@ What is the highest level of abstraction in a DFD? :: The context diagram (Level
 What is the role of the document flow diagram? :: It is the bridge between the context diagram and the Level 1 DFD, showing how documents and data pass through the system.
 
 What must a Level 1 DFD be consistent with? :: The context diagram — the same external flows and boundary.
+<!--SR:!2026-11-13,4,270-->
 
 What is balancing in DFDs? :: A child DFD must conserve all the parent process's inputs and outputs; no new external flows may appear.
 

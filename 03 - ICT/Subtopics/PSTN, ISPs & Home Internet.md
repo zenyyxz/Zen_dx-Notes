@@ -411,6 +411,7 @@ How does DSL separate voice and data? :: It uses frequency division multiplexing
 What is ADSL? :: Asymmetric Digital Subscriber Line — a DSL type in which downstream capacity is greater than upstream capacity.
 
 Why is ADSL suitable for homes? :: Home users usually download much more than they upload, so greater downstream capacity matches typical usage.
+<!--SR:!2026-11-12,3,250-->
 
 Give two advantages of DSL/ADSL. :: Independent voice and data services, and higher speed than dial-up; also always-on and cost-effective.
 

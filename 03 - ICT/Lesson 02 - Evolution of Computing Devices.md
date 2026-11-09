@@ -156,7 +156,7 @@ flowchart LR
 #flashcards
 
 Who is known as the Father of Computing, and what machine did he design? :: Charles Babbage; the Analytical Engine.
-<!--SR:!2026-11-06,10,270-->
+<!--SR:!2026-12-14,38,290-->
 
 Who was the first computer programmer? :: Ada Lovelace.
 <!--SR:!2026-12-22,56,310-->
@@ -165,13 +165,13 @@ What key technological innovation characterized Second Generation computers? :: 
 <!--SR:!2026-11-12,16,290-->
 
 Classify computers by technology with one example each. :: Analog (continuous, e.g. thermometer), Digital (discrete 0/1, e.g. PC), Hybrid (both, e.g. ICU monitor).
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is special vs general purpose? :: Special = one dedicated task (ATM); General = many tasks via programs (PC).
 <!--SR:!2026-11-10,14,290-->
 
 Order super/mainframe/mini/micro by size. :: Super (fastest parallel) > Mainframe (multi-user) > Mini (department server) > Micro (single-user PC/phone).
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What technology enabled Fourth Generation computers? :: Very Large Scale Integration (VLSI) microprocessors.
 <!--SR:!2026-12-23,57,310-->
@@ -180,10 +180,10 @@ What is the Stored Program Concept? :: The concept where both data and program i
 <!--SR:!2026-11-12,16,290-->
 
 Name the 3 main components of the CPU. :: 1. Control Unit (CU), 2. Arithmetic Logic Unit (ALU), 3. Registers.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 What is the difference between a Data Bus and an Address Bus? :: Data Bus is bidirectional and carries actual data; Address Bus is unidirectional and carries memory location addresses from the CPU.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-19,16,290-->
 
 If an address bus has 16 lines (16-bit), how many unique memory locations can it address? :: $2^{16} = 65,536$ memory locations (64 KB).
 <!--SR:!2026-12-25,59,310-->
@@ -198,7 +198,7 @@ Which is faster, DRAM or SRAM? :: SRAM.
 <!--SR:!2026-11-11,15,290-->
 
 Who invented transistor at Bell Labs in 1947?::William Shockley, John Barden and Walter Brattain.
-<!--SR:!2026-11-07,7,250-->
+<!--SR:!2026-11-26,18,250-->
 
 Which computer bus carries information from the processor to the I/O devices?::Data bus.
 <!--SR:!2026-11-11,15,290-->
@@ -207,7 +207,7 @@ Who is the father of modern computer science?::Alan Turing.
 <!--SR:!2026-12-29,63,310-->
 
 Name first general purpose computer, commercially sold computer and store program computer.:: ENIAC, UNIVAC, and EDSAC
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 Explain the differences of Direct access, Sequential access, and Random access.::**Sequential access** reads data linearly from the beginning (like a cassette tape), **direct access** jumps to a specific block's physical vicinity and then searches locally (like a hard drive), while **random access** reaches any exact location instantly with uniform, constant time (like RAM).
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->

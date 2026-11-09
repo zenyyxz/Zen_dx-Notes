@@ -399,6 +399,7 @@ What is a LAN? :: A network that connects devices within a limited area such as 
 How long is a MAC address and how is it written? :: 48 bits (6 bytes), written as six 8-bit blocks in hexadecimal separated by colons, e.g. 4A:8F:3C:4F:9E:3D.
 
 What is the difference between a MAC address and an IP address? :: A MAC address is a flat link-layer address identifying an interface on the local link; an IP address is a logical network-layer address used by routers to route between networks.
+<!--SR:!2026-11-13,4,270-->
 
 What is a frame? :: The Data Link layer PDU that encapsulates a network-layer packet and adds link-layer control information, including source and destination MAC addresses.
 
@@ -429,6 +430,7 @@ What is a port number? :: A 16-bit number that identifies a process or service o
 What is a socket? :: The combination of an IP address and a port number, e.g. 192.168.1.10:49152.
 
 What is multiplexing in the Transport layer? :: Multiple application processes share one IP address, and their data is distinguished by different port numbers.
+<!--SR:!2026-11-10,1,230-->
 
 What are the key properties of UDP? :: Connectionless, no acknowledgements or retransmission, no guaranteed ordering, no congestion control, low overhead and low delay.
 

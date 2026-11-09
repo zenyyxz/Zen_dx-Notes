@@ -214,6 +214,7 @@ What does XML stand for? :: eXtensible Markup Language.
 What is XML used for? :: Storing and transporting structured data in plain text using self-describing, user-defined tags.
 
 Is XML a programming language? :: No — it is a markup language with no logic or computation.
+<!--SR:!2026-11-13,4,270-->
 
 How do XML tags differ from HTML tags? :: XML tags are user-defined and describe data; HTML tags are predefined and describe presentation.
 

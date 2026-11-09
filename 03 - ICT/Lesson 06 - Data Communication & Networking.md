@@ -720,13 +720,13 @@ What is the difference between Bandwidth and Throughput? :: Bandwidth is the the
 <!--SR:!2026-11-12,12,270-->
 
 What is the purpose of Manchester Encoding? :: It ensures there is a voltage transition in the middle of every bit, allowing the receiver to easily synchronize its clock with the sender and prevent timing errors.
-<!--SR:!2026-11-06,6,230-->
+<!--SR:!2026-11-28,20,250-->
 
 Why is Fiber Optic cable immune to Electromagnetic Interference (EMI)? :: Because it transmits data using light pulses through glass/plastic instead of electrical signals through copper.
 <!--SR:!2026-11-10,14,290-->
 
 In a Star Topology, what happens if the central switch fails? :: The entire network goes down, as all devices rely on the central switch to communicate.
-<!--SR:!2026-11-08,12,270-->
+<!--SR:!2026-12-25,47,290-->
 
 What is the difference between a Hub and a Switch? :: A hub broadcasts incoming data to all connected ports (causing collisions), whereas a switch inspects the MAC address and forwards the data only to the specific destination port.
 <!--SR:!2026-11-10,10,270-->
@@ -735,84 +735,85 @@ What is the main function of the Network Layer (Layer 3) in the OSI model? :: Ro
 <!--SR:!2026-11-11,15,290-->
 
 What is Encapsulation in networking? :: The process of adding protocol headers (and sometimes trailers) to data as it moves down the OSI layers from the Application layer to the Physical layer.
-<!--SR:!2026-11-07,7,250-->
+<!--SR:!2026-12-02,24,270-->
 
 What does CSMA/CD stand for and where is it used? :: Carrier Sense Multiple Access with Collision Detection. It is used in wired Ethernet networks to manage medium access and handle collisions.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-19,11,270-->
 
 What is the difference between TCP and UDP? :: TCP is reliable, connection-oriented, and guarantees ordered delivery. UDP is fast, connectionless, and does not guarantee delivery (used for live streaming).
-<!--SR:!2026-11-07,11,270-->
+<!--SR:!2026-12-19,41,290-->
 
 Define encryption. :: Converting plaintext into ciphertext with an algorithm and key so that only authorised parties can recover the plaintext.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 Symmetric vs asymmetric encryption? :: Symmetric uses the same key for encryption and decryption; asymmetric uses a public/private key pair.
+<!--SR:!2026-11-13,4,270-->
 
 Which key encrypts a message for confidentiality? :: The receiver's public key; only the receiver's private key can decrypt it.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-20,14,290-->
 
 Which key signs a digital signature, and which verifies it? :: The sender signs with their private key; anyone verifies with the sender's public key.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-19,16,290-->
 
 Why is asymmetric encryption not used for bulk data? :: It is much slower than symmetric encryption; it is used for key exchange, small data and digital signatures.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 What is hybrid encryption (e.g. TLS)? :: Asymmetric cryptography authenticates/establishes a shared session key, then symmetric encryption protects the bulk data.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-23,15,290-->
 
 Difference between hashing and encryption? :: Encryption is reversible with a key and provides confidentiality; hashing is one-way and provides integrity/password verification.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is a salt? :: A random value stored with a password hash so identical passwords produce different hashes and rainbow tables fail.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 How is a digital signature created? :: Hash the message, sign/encrypt the hash with the sender's private key, then send the message plus signature.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 What does a digital signature provide? :: Authentication, integrity and non-repudiation — not confidentiality.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,16,290-->
 
 What is a digital certificate? :: A CA-signed document binding a public key to an identity, used to trust public keys and prevent impersonation.
 <!--SR:!2026-11-11,11,270-->
 
 Does the Internet provide confidentiality and authentication by default? :: No — encryption and digital signatures must add them.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-23,15,290-->
 
 Why is key management critical? :: A lost key means lost data; a stolen key allows decryption or impersonation.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 Is Base64 encryption? :: No — it is reversible encoding without a key and provides no confidentiality.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 What is non-repudiation? :: The sender cannot later deny having signed or sent the message; provided by a digital signature.
 <!--SR:!2026-11-18,16,290-->
 
 What is the key-distribution problem? :: Symmetric encryption requires both parties to share the same secret key securely before communicating.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 Give two examples of encryption at rest. :: Full-disk encryption (BitLocker/LUKS/FileVault) and file/folder encryption (EFS/fscrypt).
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 Encryption vs access control? :: Access control decides who may use a resource; encryption protects data if it is intercepted or the storage is stolen. Use both.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 Virus vs Trojan vs malware? :: A virus often attaches to files and spreads when executed; a Trojan disguises itself as legitimate software; malware is the umbrella term for malicious software.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-25,16,290-->
 
 What is phishing? :: A fraudulent message or website pretending to be trustworthy in order to steal passwords, card numbers or other sensitive data.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 Firewall vs antivirus? :: A firewall filters network traffic using rules; antivirus detects, blocks or quarantines malicious software.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-23,15,290-->
 
 What is the difference between an analog signal and a digital signal? :: An analog signal is continuous and can take many values; a digital signal uses discrete levels, usually two levels representing 0 and 1.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,16,290-->
 
 What is the relationship between propagation speed, frequency and wavelength? :: v = f × λ: propagation speed equals frequency multiplied by wavelength.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 What is the difference between bit rate and baud rate? :: Bit rate is the number of bits per second; baud rate is the number of signal elements per second. If one signal element carries multiple bits, bit rate is higher than baud rate.
-<!--SR:!2026-11-03,3,250-->
+<!--SR:!2026-11-19,11,270-->
 
 What is a parity bit? :: An extra bit added so that the total number of 1s is even (even parity) or odd (odd parity); it detects some errors but cannot correct them.
 <!--SR:!2026-11-11,11,270-->
@@ -821,42 +822,43 @@ How long is a MAC address? :: 48 bits (6 bytes), written as six hexadecimal bloc
 <!--SR:!2026-11-10,10,270-->
 
 What is the difference between a frame and a packet? :: A packet is the Network-layer PDU carrying IP addresses; a frame is the Data Link-layer PDU that encapsulates the packet and carries MAC addresses for the current link.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is the difference between pure ALOHA and slotted ALOHA? :: Pure ALOHA transmits whenever ready; slotted ALOHA allows transmission only at time-slot boundaries, reducing collisions but requiring synchronisation.
+<!--SR:!2026-11-13,4,270-->
 
 Why is a port number needed? :: An IP address identifies a host, but many processes run on that host; the port number identifies the correct application process.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-21,15,290-->
 
 Why does DNS normally use UDP? :: DNS queries are small and benefit from UDP’s low overhead and speed; TCP is used for large responses and zone transfers.
 <!--SR:!2026-11-10,10,270-->
 
 What is a simple HTTP GET request? :: A request line such as `GET /index.html HTTP/1.1`, followed by headers such as `Host: www.example.com`.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-23,15,290-->
 
 What does it mean that HTTP is stateless? :: Each request is handled independently, so the server does not automatically remember earlier requests; cookies or sessions add state.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,14,290-->
 
 What is the role of an ISP? :: An ISP provides Internet access, assigns public IP addresses, routes customer traffic, and often provides DNS and other services.
 <!--SR:!2026-11-17,15,290-->
 
 Why is ADSL called asymmetric? :: Downstream capacity is greater than upstream capacity, matching typical home usage where downloads are larger than uploads.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-18,15,290-->
 
 What does NAT do in a home network? :: It translates private IP addresses and ports to the router’s public IP address and port, allowing many devices to share one public IP.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-22,16,290-->
 
 At which OSI layers do NAT and a proxy operate? :: NAT operates at Layer 3 (network); a proxy operates at Layer 7 (application).
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-23,15,290-->
 
 What configuration does a DHCP server normally provide to a client? :: An IP address, subnet mask, default gateway, DNS server addresses and a lease time.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-24,16,290-->
 
 How does packet switching differ from circuit switching? :: Packet switching shares links and forwards independent packets without a dedicated path; circuit switching reserves a dedicated path for the session.
-<!--SR:!2026-11-03,3,250-->
+<!--SR:!2026-11-17,11,270-->
 
 Name two guarantees that IP does not provide. :: IP does not guarantee delivery, ordering, freedom from duplicates or bounded delay; it is best effort.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-21,12,270-->
 
 What is the role of a default gateway in a home network? :: It is the router that receives traffic destined for other networks and forwards it toward the destination.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-24,16,290-->

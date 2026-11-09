@@ -413,6 +413,7 @@ Which transitive dependency is removed in the 3NF step? :: `InstructorID → Ins
 Why is `StudentCourse` a junction table? :: It links Student and Course in a many-to-many relationship using both foreign keys.
 
 Does normalization usually increase the number of tables? :: Yes; it reduces redundancy but may require more joins.
+<!--SR:!2026-11-13,4,270-->
 
 What is denormalization? :: Intentionally reintroducing redundancy to improve read performance, at the cost of storage and possible anomalies.
 

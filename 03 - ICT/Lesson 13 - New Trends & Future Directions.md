@@ -89,16 +89,16 @@ What is Supervised Learning in Machine Learning? :: Training a machine learning 
 <!--SR:!2026-11-12,16,290-->
 
 Define the 3 main Cloud Computing service models: IaaS, PaaS, and SaaS. :: 1. IaaS: Rents raw infrastructure (VMs, storage), 2. PaaS: Provides development platform to build applications, 3. SaaS: Delivers complete ready-to-use software apps over the internet.
-<!--SR:!2026-11-04,4,270-->
+<!--SR:!2026-11-19,10,270-->
 
 What is a Qubit in Quantum Computing? :: The basic unit of quantum information that can represent 0, 1, or a superposition of both simultaneously.
-<!--SR:!2026-11-01,4,270-->
+<!--SR:!2026-11-20,14,290-->
 
 What is the difference between a Computer Virus and a Computer Worm? :: A Virus requires a host executable file and user action to spread; a Worm is a standalone program that self-replicates across networks automatically without host files.
 <!--SR:!2026-11-10,14,290-->
 
 What is Phishing? :: A cyber attack using deceptive emails or websites that impersonate trusted entities to trick users into revealing sensitive credentials.
-<!--SR:!2026-11-07,11,270-->
+<!--SR:!2026-12-18,40,290-->
 
 What is Green Computing? :: The environmentally sustainable design, manufacture, use, and disposal of computers, servers, and associated subsystems with minimal environmental impact.
-<!--SR:!2026-11-07,11,270-->
+<!--SR:!2026-12-18,40,290-->
