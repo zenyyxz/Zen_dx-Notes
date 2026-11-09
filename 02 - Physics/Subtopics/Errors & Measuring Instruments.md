@@ -9,40 +9,125 @@ tags:
   - Vernier
   - Micrometer
   - Spherometer
+  - Travelling-Microscope
 ---
 
-# 📏 Subtopic: Errors & Measuring Instruments Guide
+# :LiRuler: Subtopic: Errors & Measuring Instruments Guide
 
 > [!ABSTRACT] Core Focus
-> Systematic vs Random errors, Least Count formulas, zero error corrections, error propagation in calculations, Vernier Caliper, Micrometer Screw Gauge, and Spherometer practical procedures.
+> Detailed practical reference for Sri Lankan GCE A/L Physics laboratory work: Systematic vs. random errors, Least Count derivations, positive & negative zero error corrections, backlash errors, error propagation calculus, and procedural steps for Vernier Caliper, Micrometer Screw Gauge, Spherometer, and Travelling Microscope.
 
 ---
 
-## 1. Least Count & Zero Errors
+## 1. Principles of Precision Measurement
 
-### Vernier Caliper:
-$$\text{Least Count (LC)} = 1\text{ MSD} - 1\text{ VSD} = rac{1\text{ MSD}}{\text{Total Vernier Divisions}}$$
-- **Positive Zero Error**: Vernier 0 is to the **right** of Main Scale 0 ($+$ correction subtracted from reading).
-- **Negative Zero Error**: Vernier 0 is to the **left** of Main Scale 0 ($-$ correction added to reading).
-- **Corrected Reading**: $\text{Corrected Reading} = \text{Observed Reading} - \text{Zero Error}$
+### Least Count (LC)
+The **Least Count** of an instrument is the smallest physical magnitude that can be directly measured or resolved on its calibrated scale.
 
-### Micrometer Screw Gauge:
-$$\text{Pitch} = rac{\text{Distance moved on main scale}}{\text{Number of full rotations}}$$
-$$\text{Least Count (LC)} = rac{\text{Pitch}}{\text{Number of Head Scale Divisions (HSD)}}$$
-
-### Spherometer:
-Measures small thickness or radius of curvature $R$ of spherical surfaces:
-$$R = rac{a^2}{6h} + rac{h}{2}$$
-Where $a$ is the average distance between the 3 fixed legs and $h$ is the height measured by the central screw.
+```mermaid
+graph LR
+    LC["Least Count (LC)"] --> MR["Metre Ruler: 1 mm"]
+    LC --> VC["Vernier Caliper: 0.1 mm / 0.05 mm"]
+    LC --> MSG["Micrometer Screw Gauge: 0.01 mm"]
+    LC --> SPH["Spherometer: 0.01 mm"]
+    LC --> TM["Travelling Microscope: 0.01 mm"]
+```
 
 ---
 
-## 2. Error Propagation Formula Summary
+## 2. Vernier Caliper Laboratory Guide
 
-| Operation | Equation | Absolute Error $\Delta Z$ / Fractional Error $rac{\Delta Z}{Z}$ |
-| :--- | :--- | :--- |
-| Sum | $Z = A + B$ | $\Delta Z = \Delta A + \Delta B$ |
-| Difference | $Z = A - B$ | $\Delta Z = \Delta A + \Delta B$ |
-| Product | $Z = A \cdot B$ | $rac{\Delta Z}{Z} = rac{\Delta A}{A} + rac{\Delta B}{B}$ |
-| Quotient | $Z = A / B$ | $rac{\Delta Z}{Z} = rac{\Delta A}{A} + rac{\Delta B}{B}$ |
-| Power | $Z = A^n \cdot B^m$ | $rac{\Delta Z}{Z} = n rac{\Delta A}{A} + m rac{\Delta B}{B}$ |
+### Mathematical Principle:
+A Vernier scale has $n$ divisions that span the exact length of $(n-1)$ main scale divisions:
+$$n \cdot \text{VSD} = (n - 1) \cdot \text{MSD}$$
+$$1 \cdot \text{VSD} = \left(\frac{n - 1}{n}\right) \text{MSD}$$
+
+$$\text{Least Count (LC)} = 1\text{ MSD} - 1\text{ VSD} = 1\text{ MSD} - \left(\frac{n-1}{n}\right)\text{MSD} = \frac{1\text{ MSD}}{n}$$
+
+- **Standard Metric Caliper**: $1\text{ MSD} = 1\text{ mm}$, $n = 10 \implies \text{LC} = \frac{1\text{ mm}}{10} = 0.1\text{ mm}$.
+- **High-Precision Caliper**: $1\text{ MSD} = 1\text{ mm}$, $n = 20 \implies \text{LC} = \frac{1\text{ mm}}{20} = 0.05\text{ mm}$.
+- **Ultra-Fine Caliper**: $1\text{ MSD} = 1\text{ mm}$, $n = 50 \implies \text{LC} = \frac{1\text{ mm}}{50} = 0.02\text{ mm}$.
+
+### Reading Formula:
+$$\text{Observed Reading} = \text{MSR} + (\text{Coinciding Vernier Division } k \times \text{LC})$$
+
+### Zero Errors & Step-by-Step Corrections:
+1. **Positive Zero Error ($+e$)**:
+   - *Condition*: When jaws are closed without specimen, Vernier zero lies to the **right** of the main scale zero mark.
+   - *Identification*: Find the $k^{\text{th}}$ vernier division that aligns perfectly with a main scale line.
+   - *Error Magnitude*: $+e = + (k \times \text{LC})$.
+   - *Correction*: $\text{Corrected Reading} = \text{Observed Reading} - e$.
+2. **Negative Zero Error ($-e$)**:
+   - *Condition*: When jaws are closed, Vernier zero lies to the **left** of the main scale zero mark.
+   - *Identification*: Find the coinciding vernier division $k$ (counting from 0 to $n$).
+   - *Error Magnitude*: $-e = - (n - k) \times \text{LC}$.
+   - *Correction*: $\text{Corrected Reading} = \text{Observed Reading} - (-e) = \text{Observed Reading} + e$.
+
+### Core A/L Laboratory Practicals:
+- **Hollow Cylinder Density**:
+  - External diameter ($D$): Measured across perpendicular diameters at top, middle, and bottom using external jaws.
+  - Internal diameter ($d$): Measured across orthogonal orientations using internal jaws.
+  - Depth / Height ($h$): Measured using sliding depth probe resting vertically against inner base.
+  - Volume: $V = \frac{\pi}{4}(D^2 - d^2)h$.
+
+---
+
+## 3. Micrometer Screw Gauge Laboratory Guide
+
+### Mathematical Principle:
+Operates on the screw-and-nut pitch principle:
+$$\text{Pitch} = \frac{\text{Linear distance advanced on sleeve}}{\text{Number of complete rotations of thimble}}$$
+$$\text{Least Count (LC)} = \frac{\text{Pitch}}{\text{Total number of circular / head scale divisions (HSD)}}$$
+
+$$\text{Observed Reading} = \text{Linear Main Scale Reading} + (\text{Coinciding Circular Division } p \times \text{LC})$$
+
+### Zero Errors:
+When spindle and anvil touch via the ratchet:
+- **Positive Zero Error**: Circular scale zero is **below** the sleeve index line $\implies +e = +(p \times \text{LC})$.
+- **Negative Zero Error**: Circular scale zero is **above** the sleeve index line $\implies -e = -(N - p) \times \text{LC}$ (where $N = 50$ or $100$).
+
+### Key Procedural Precautions:
+- **Use the Ratchet Knob**: Always rotate the screw using the ratchet knob until it slips with clicks. This prevents specimen deformation and guarantees uniform contact pressure.
+- **Backlash Error**: Mechanical play due to screw thread clearance. Eliminate by always rotating the spindle in the **same forward direction** when reaching the specimen surface.
+
+---
+
+## 4. Spherometer Laboratory Guide
+
+### Radius of Curvature Formula:
+A spherometer measures the sagitta height $h$ of a spherical surface supported on an equilateral triangle of side $a$:
+$$R = \frac{a^2}{6h} + \frac{h}{2}$$
+
+### Practical Procedure:
+1. **Determine Plane Zero ($h_0$)**: Place spherometer on an optically flat glass plate. Rotate central screw downward until all four points touch simultaneously (verified using paper-strip friction test). Record scale reading $h_0$.
+2. **Determine Surface Reading ($h_1$)**: Place on curved lens/mirror surface. Rotate central screw until contact is achieved. Record reading $h_1$.
+3. **Calculate Sagitta ($h$)**: $h = |h_1 - h_0|$.
+4. **Leg Separation ($a$)**: Press the spherometer legs onto plain paper to produce 3 indentations. Measure distances $a_1, a_2, a_3$ with a millimeter ruler:
+   $$a = \frac{a_1 + a_2 + a_3}{3}$$
+
+---
+
+## 5. Travelling Microscope Laboratory Guide
+
+### Setup & Handling:
+- Consists of a compound microscope sliding on horizontal and vertical tracks fitted with millimeter scales and Vernier scales ($\text{LC} = 0.01\text{ mm}$).
+- **Key Advantage**: Measures internal dimensions or fragile specimens contact-free.
+- **Operation**:
+  - Focus eyepiece onto crosswires.
+  - Focus objective onto specimen boundary without parallax.
+  - Move crosswire unidirectionally from one edge to the opposite edge to measure diameter $d = |x_2 - x_1|$, avoiding screw backlash.
+
+---
+
+## 6. Error Propagation Formula Summary
+
+| Operation | Equation | Maximum Absolute Error ($\Delta Z$) | Maximum Fractional Error ($\frac{\Delta Z}{Z}$) |
+| :--- | :--- | :--- | :--- |
+| **Sum** | $Z = A + B$ | $\Delta Z = \Delta A + \Delta B$ | $\frac{\Delta Z}{Z} = \frac{\Delta A + \Delta B}{A + B}$ |
+| **Difference** | $Z = A - B$ | $\Delta Z = \Delta A + \Delta B$ | $\frac{\Delta Z}{Z} = \frac{\Delta A + \Delta B}{A - B}$ |
+| **Product** | $Z = A \cdot B$ | $\Delta Z = B \Delta A + A \Delta B$ | $\frac{\Delta Z}{Z} = \frac{\Delta A}{A} + \frac{\Delta B}{B}$ |
+| **Quotient** | $Z = \frac{A}{B}$ | $\Delta Z = Z \left(\frac{\Delta A}{A} + \frac{\Delta B}{B}\right)$ | $\frac{\Delta Z}{Z} = \frac{\Delta A}{A} + \frac{\Delta B}{B}$ |
+| **General Power** | $Z = \frac{A^p B^q}{C^r}$ | $\Delta Z = Z \left(p \frac{\Delta A}{A} + q \frac{\Delta B}{B} + r \frac{\Delta C}{C}\right)$ | $\frac{\Delta Z}{Z} = p \frac{\Delta A}{A} + q \frac{\Delta B}{B} + r \frac{\Delta C}{C}$ |
+
+> [!TIP] Minimizing Experimental Uncertainty
+> In any calculation $Z = A^p B^q / C^r$, the quantity with the **highest exponent** contributes the greatest relative uncertainty. In experimental design, the instrument with the highest sensitivity (lowest least count) must always be allocated to measuring that parameter.
