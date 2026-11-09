@@ -36,8 +36,11 @@ tags:
 Below are deep-dive technical notes for high-yield A/L exam practicals and theories:
 
 - :LiRuler: **Measurements**: [[Subtopics/Errors & Measuring Instruments|Errors & Measuring Instruments]]
-- :LiRocket: **Mechanics**: [[Subtopics/Vectors & Equations of Motion|Vectors & Equations of Motion]]
-- :LiRedoDot: **Rotation**: [[Subtopics/Circular Motion & Rotational Dynamics|Circular Motion & Rotational Dynamics]]
+- :LiRocket: **Kinematics & Vectors**: [[Subtopics/Vectors & Equations of Motion|Vectors & Equations of Motion]]
+- :LiScale: **Statics & Equilibrium**: [[Subtopics/Equilibrium & Centre of Gravity|Equilibrium & Centre of Gravity]]
+- :LiZap: **Work, Energy & Momentum**: [[Subtopics/Work, Energy, Power & Collisions|Work, Energy, Power & Collisions]]
+- :LiRotateCw: **Rotation & Dynamics**: [[Subtopics/Circular Motion & Rotational Dynamics|Circular Motion & Rotational Dynamics]]
+- :LiDroplet: **Fluids & Hydrodynamics**: [[Subtopics/Hydrostatics & Fluid Dynamics|Hydrostatics & Fluid Dynamics]]
 - :LiWaves: **Oscillations**: [[Subtopics/Simple Harmonic Motion & Waves|Simple Harmonic Motion & Waves]]
 - :LiGlasses: **Optics**: [[Subtopics/Geometrical Optics & Optical Instruments|Geometrical Optics & Optical Instruments]]
 - :LiThermometer: **Thermodynamics**: [[Subtopics/Ideal Gases & Thermodynamics|Ideal Gases & Thermodynamics]]
