@@ -14,8 +14,7 @@ tags:
   - Telescope
   - Flashcards
 ---
-
-# 🔍 Subtopic: Geometrical Optics & Optical Instruments Guide
+# :LiGlasses: Subtopic: Geometrical Optics & Optical Instruments Guide
 
 > [!ABSTRACT] Core Focus
 > Comprehensive analytical reference for Geometrical Optics in Sri Lankan GCE A/L Physics: Laws of refraction, Snell's law, Total Internal Reflection, prism minimum deviation derivation, thin lens formulas and lens maker's equation, human eye defects and corrections, and ray diagrams, magnification derivations, and tube lengths for compound microscopes and astronomical telescopes.

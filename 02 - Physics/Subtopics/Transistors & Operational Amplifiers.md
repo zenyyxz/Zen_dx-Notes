@@ -10,7 +10,7 @@ tags:
   - Gain
 ---
 
-# 🎛️ Subtopic: Transistors & Operational Amplifiers Guide
+# :LiCircuitBoard: Subtopic: Transistors & Operational Amplifiers Guide
 
 > [!ABSTRACT] Core Focus
 > BJT Common-Emitter characteristics, load line analysis, Op-Amp golden rules, and derivation of inverting and non-inverting amplifier gains.

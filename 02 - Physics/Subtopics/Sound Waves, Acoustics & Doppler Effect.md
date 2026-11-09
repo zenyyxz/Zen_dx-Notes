@@ -14,8 +14,7 @@ tags:
   - Decibels
   - Flashcards
 ---
-
-# 📢 Subtopic: Sound Waves, Acoustics & Doppler Effect Guide
+# :LiAudioWaveform: Subtopic: Sound Waves, Acoustics & Doppler Effect Guide
 
 > [!ABSTRACT] Core Focus
 > Advanced analytical guide for Sound and Acoustics in Sri Lankan GCE A/L Physics: Speed of sound (Newton-Laplace formula), open and closed organ pipes, end correction derivations, resonance tube practical methodology, sound intensity in decibels ($\text{dB}$), beat phenomenon, and comprehensive Doppler effect derivations across moving media and observers.

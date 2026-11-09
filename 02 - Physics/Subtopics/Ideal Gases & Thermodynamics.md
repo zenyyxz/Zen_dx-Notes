@@ -9,15 +9,16 @@ tags:
   - Thermodynamics
   - HeatTransfer
 ---
-
-# 🌡️ Subtopic: Ideal Gases & Thermodynamics Guide
+# :LiThermometer: Subtopic: Ideal Gases & Thermodynamics Guide
 
 > [!ABSTRACT] Core Focus
-> Kinetic theory pressure derivation $P = rac{1}{3}ho\overline{c^2}$, first law of thermodynamics, molar heat capacities ($C_p, C_v$), and conduction/radiation equations.
+> Kinetic theory pressure derivation $P = rac{1}{3}
+ho\overline{c^2}$, first law of thermodynamics, molar heat capacities ($C_p, C_v$), and conduction/radiation equations.
 
 ---
 
-## 1. Kinetic Pressure Derivation ($P = rac{1}{3}ho\overline{c^2}$)
+## 1. Kinetic Pressure Derivation ($P = rac{1}{3}
+ho\overline{c^2}$)
 
 Consider $N$ molecules of mass $m$ in a cube of side $L$:
 1. Change in momentum per collision at wall: $\Delta p = 2 m u_x$
@@ -26,7 +27,8 @@ Consider $N$ molecules of mass $m$ in a cube of side $L$:
 4. Total pressure on area $A = L^2$: $P = rac{\sum F}{L^2} = rac{m}{L^3} \sum u_x^2 = rac{N m}{V} \overline{u_x^2}$
 5. Since isotropic motion: $\overline{c^2} = \overline{u_x^2} + \overline{u_y^2} + \overline{u_z^2} = 3 \overline{u_x^2} \implies \overline{u_x^2} = rac{1}{3} \overline{c^2}$
 6. Substituting gives:
-   $$P = rac{1}{3} ho \overline{c^2}$$
+   $$P = rac{1}{3} 
+ho \overline{c^2}$$
 
 ---
 

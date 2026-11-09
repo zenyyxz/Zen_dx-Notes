@@ -12,7 +12,6 @@ tags:
   - MomentumConservation
   - Flashcards
 ---
-
 # :LiZap: Subtopic: Work, Energy, Power & Collisions Guide
 
 > [!ABSTRACT] Core Focus

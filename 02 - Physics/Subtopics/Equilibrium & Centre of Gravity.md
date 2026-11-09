@@ -12,7 +12,6 @@ tags:
   - Moments
   - Flashcards
 ---
-
 # :LiScale: Subtopic: Equilibrium & Centre of Gravity Guide
 
 > [!ABSTRACT] Core Focus

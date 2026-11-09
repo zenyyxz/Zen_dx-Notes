@@ -10,8 +10,7 @@ tags:
   - StokesLaw
   - SurfaceTension
 ---
-
-# 💧 Subtopic: Elasticity & Viscosity Guide
+# :LiDroplet: Subtopic: Elasticity & Viscosity Guide
 
 > [!ABSTRACT] Core Focus
 > Young's Modulus measurement by Searle's apparatus, Poiseuille's flow equation, Stokes' law terminal velocity derivation, and capillary rise equation.

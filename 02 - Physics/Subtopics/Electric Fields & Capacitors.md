@@ -9,8 +9,7 @@ tags:
   - Capacitors
   - Energy
 ---
-
-# ⚡ Subtopic: Electric Fields & Capacitors Guide
+# :LiZap Subtopic: Electric Fields & Capacitors Guide
 
 > [!ABSTRACT] Core Focus
 > Gauss's law applications (field due to sphere, sheet, cylinder), parallel plate capacitor capacitance derivation, dielectric breakdown, and RC time constant.

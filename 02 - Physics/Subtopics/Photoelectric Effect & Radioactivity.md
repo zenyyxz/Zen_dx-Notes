@@ -10,7 +10,7 @@ tags:
   - HalfLife
 ---
 
-# ☢️ Subtopic: Photoelectric Effect & Radioactivity Guide
+# :LiRadiation: Subtopic: Photoelectric Effect & Radioactivity Guide
 
 > [!ABSTRACT] Core Focus
 > Einstein's photoelectric effect curves, stopping potential, decay law $N = N_0 e^{-\lambda t}$, half-life derivation, and binding energy calculation.
@@ -20,7 +20,9 @@ tags:
 ## 1. Photoelectric Effect Key Graphs
 
 - **Stopping Potential vs Frequency**:
-  $$e V_s = h f - \Phi \implies V_s = \left(rac{h}{e}ight) f - \left(rac{\Phi}{e}ight)$$
+  $$e V_s = h f - \Phi \implies V_s = \left(rac{h}{e}
+ight) f - \left(rac{\Phi}{e}
+ight)$$
   - Slope of $V_s$ vs $f$ graph equals $rac{h}{e}$ (universal constant).
   - X-intercept equals threshold frequency $f_0$.
 

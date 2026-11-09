@@ -12,8 +12,7 @@ tags:
   - Sonometer
   - Flashcards
 ---
-
-# 🌊 Subtopic: Simple Harmonic Motion & Waves Guide
+# :LiWaves: Subtopic: Simple Harmonic Motion & Waves Guide
 
 > [!ABSTRACT] Core Focus
 > Detailed analytical and experimental guide for Simple Harmonic Motion (SHM) and Wave Mechanics in Sri Lankan GCE A/L Physics: Phasor representation, energy distribution in SHM, simple pendulum and mass-spring derivations, damped and forced resonance, transverse waves on stretched strings, sonometer laws, and wave superposition.

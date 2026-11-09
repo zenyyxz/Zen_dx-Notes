@@ -11,7 +11,6 @@ tags:
   - AngularMomentum
   - Flashcards
 ---
-
 # :LiRotateCw: Subtopic: Circular Motion & Rotational Dynamics Guide
 
 > [!ABSTRACT] Core Focus
