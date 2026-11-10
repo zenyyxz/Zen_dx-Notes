@@ -58,6 +58,7 @@ Below are deep-dive technical notes for high-yield A/L exam derivations and prob
 - :LiAlignCenter: **Statics**: [[Subtopics/Statics & Coplanar Force Equilibrium|Statics & Coplanar Force Equilibrium]]
 - :LiLoaderPinwheel: **Friction**: [[Subtopics/Friction & Rigid Body Dynamics|Friction & Rigid Body Dynamics]]
 - :LiBowArrow: **Projectiles**: [[Subtopics/Projectiles & Kinematics|Projectiles & Kinematics Guide]]
+- :LiZap: **Relative Motion & Acceleration**: [[Subtopics/Relative Acceleration|Relative Acceleration Guide]]
 - :LiBrickWallFire: **Collisions**: [[Subtopics/Impulse & Elastic Collisions|Impulse & Elastic Collisions]]
 - :LiTimer: **SHM**: [[Subtopics/Simple Harmonic Motion in Mechanics|Simple Harmonic Motion in Mechanics]]
 - :LiDice3: **Probability**: [[Subtopics/Probability & Descriptive Statistics|Probability & Descriptive Statistics]]

@@ -237,3 +237,8 @@ If $ax^2 + bx + c = 0$ has roots $\alpha, \beta$, what equation has roots $\frac
 State the condition for $a_1 x^2 + b_1 x + c_1 = 0$ and $a_2 x^2 + b_2 x + c_2 = 0$ to have a common root. :: $(c_1 a_2 - c_2 a_1)^2 = (a_1 b_2 - a_2 b_1)(b_1 c_2 - b_2 c_1)$.
 
 Prove that a proper quadratic equation $ax^2 + bx + c = 0$ ($a \ne 0$) cannot have more than two distinct roots. :: If it had 3 distinct roots $x_1, x_2, x_3$, then $a(x_2 - x_1)(x_1 + x_2) + b(x_2 - x_1) = 0 \implies a(x_1+x_2)+b=0$ and similarly $a(x_2+x_3)+b=0$. Subtracting forces $a(x_3-x_1)=0 \implies a=0$, contradicting $a \ne 0$.
+
+If $\alpha, \beta$ are the roots of $ax^2+bx+c=0$, what is the quadratic equation whose roots are $-\alpha, -\beta$? :: $ax^2 - bx + c = 0$ (replace $x$ with $-x$). <!--SR:!2026-11-20,1,230-->
+
+What is the condition for a quadratic polynomial $ax^2+bx+c$ to be a perfect square? :: $a > 0$ and Discriminant $\Delta = b^2 - 4ac = 0$. <!--SR:!2026-11-20,1,230-->
+

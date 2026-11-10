@@ -7,8 +7,12 @@ tags:
   - Subtopic
   - Probability
   - Statistics
+  - Flashcards
 ---
 # :LiDices: Subtopic: Probability & Descriptive Statistics Guide
+
+> [!NOTE] Parent Lesson
+> This is a companion guide to [[../Lesson 14 - Work, Power, SHM, Collisions & Probability|Lesson 14 — Work, Power, SHM, Collisions & Probability]]
 
 > [!ABSTRACT] Core Focus
 > Addition and multiplication laws of probability, conditional probability, Bayes' theorem, discrete/continuous random variables, expectation, variance, standard deviation, common distributions, and descriptive statistics measures.
@@ -205,3 +209,37 @@ $$\text{Var}\left(\sum a_i X_i\right) = \sum a_i^2 \text{Var}(X_i)$$
 | Normal | $\mu, \sigma^2$ | $\mu$ | $\sigma^2$ | $(-\infty, \infty)$ |
 | Exponential | $\lambda$ | $1/\lambda$ | $1/\lambda^2$ | $[0, \infty)$ |
 | Uniform | $a, b$ | $(a+b)/2$ | $(b-a)^2/12$ | $[a, b]$ |
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+State the general Addition Law of probability for two events $A$ and $B$. :: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. <!--SR:!2026-11-20,1,230-->
+
+What does it mean for two events $A$ and $B$ to be mutually exclusive? :: $A \cap B = \emptyset \implies P(A \cap B) = 0$, meaning they cannot occur simultaneously. <!--SR:!2026-11-20,1,230-->
+
+State the formula for conditional probability $P(A|B)$. :: $P(A|B) = \frac{P(A \cap B)}{P(B)}$ for $P(B) > 0$. <!--SR:!2026-11-21,2,250-->
+
+What is the condition for two events $A$ and $B$ to be statistically independent? :: $P(A \cap B) = P(A)P(B)$. <!--SR:!2026-11-21,2,250-->
+
+State the Total Probability Theorem for a partition $\{A_1, A_2, \dots, A_n\}$ of the sample space. :: $P(B) = \sum_{i=1}^n P(B|A_i)P(A_i)$. <!--SR:!2026-11-22,3,250-->
+
+State Bayes' Theorem for finding posterior probability $P(A_k|B)$. :: $P(A_k|B) = \frac{P(B|A_k)P(A_k)}{\sum_{i=1}^n P(B|A_i)P(A_i)}$. <!--SR:!2026-11-22,3,250-->
+
+State the formula for the expectation $E(X)$ of a discrete random variable $X$. :: $E(X) = \sum x_i P(X = x_i)$. <!--SR:!2026-11-23,4,250-->
+
+State the computational formula for the variance $\text{Var}(X)$ of a random variable $X$. :: $\text{Var}(X) = E(X^2) - [E(X)]^2$. <!--SR:!2026-11-23,4,250-->
+
+How do expectation and variance behave under linear transformation $Y = aX + b$? :: $E(aX + b) = aE(X) + b$; $\text{Var}(aX + b) = a^2\text{Var}(X)$. <!--SR:!2026-11-24,5,250-->
+
+For a Binomial distribution $X \sim B(n, p)$, what are the mean and variance? :: Mean $\mu = np$; Variance $\sigma^2 = np(1 - p)$. <!--SR:!2026-11-24,5,250-->
+
+For a Poisson distribution $X \sim \text{Po}(\lambda)$, what are the mean and variance? :: Mean $\mu = \lambda$; Variance $\sigma^2 = \lambda$ (both equal $\lambda$). <!--SR:!2026-11-25,6,250-->
+
+What is the formula for the sample variance $s^2$ of $n$ observations? :: $s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}$. <!--SR:!2026-11-25,6,250-->
+
+What is the Interquartile Range (IQR)? :: $\text{IQR} = Q_3 - Q_1$, the difference between the third quartile (75th percentile) and the first quartile (25th percentile). <!--SR:!2026-11-26,7,250-->
+
+State the Central Limit Theorem (CLT) for a sample mean $\bar{X}$ from a population with mean $\mu$ and variance $\sigma^2$. :: For large $n$ ($n \ge 30$), $\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$ approximately, regardless of the underlying population distribution. <!--SR:!2026-11-26,7,250-->
