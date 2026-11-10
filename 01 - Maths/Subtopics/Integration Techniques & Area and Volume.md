@@ -9,9 +9,13 @@ tags:
   - DefiniteIntegrals
   - IBP
   - U-Substitution
+  - Flashcards
 ---
 
 # :LiFunctionSquare: Subtopic — Integration Techniques, Area & Volume
+
+> [!NOTE] Parent Lesson
+> This is a companion guide to [[../Lesson 09 - Integral Calculus & Applications|Lesson 09 — Integral Calculus & Applications]]
 
 > [!ABSTRACT] Syllabus Scope
 > Integration by substitution (trigonometric, algebraic, rationalising), integration by parts (ILATE / priority rules), standard integral formulas, properties of definite integrals, and applications to area between curves and volumes of revolution.
@@ -241,3 +245,11 @@ Write the formula for volume of revolution about the $x$-axis. :: $V = \pi \int_
 How do you split $\int \frac{Ax+B}{ax^2+bx+c}\,dx$? :: Derivative of denominator gives $\ln|ax^2+bx+c|$; remainder handled like $\int \frac{dx}{ax^2+bx+c}$ <!--SR:!2026-10-04,4,270-->
 
 What is $\int \sin^2 x\,dx$? :: $\frac{x}{2} - \frac{\sin 2x}{4} + C$ or $\frac{x - \sin x\cos x}{2} + C$ <!--SR:!2026-10-04,4,270-->
+
+What is the substitution used for $\int \frac{dx}{a+b\cos x}$? :: $t = \tan(x/2)$ <!--SR:!2026-11-20,1,230-->
+
+What is the substitution used for $\int \frac{dx}{a\cos^2 x + b\sin^2 x}$? :: $t = \tan x$ <!--SR:!2026-11-21,2,250-->
+
+State King's Property for definite integrals on $[0, a]$. :: $\int_0^a f(x)\,dx = \int_0^a f(a-x)\,dx$ <!--SR:!2026-11-22,3,250-->
+
+What is the volume of revolution about the $y$-axis from $y=c$ to $y=d$? :: $V_y = \pi \int_c^d x^2\,dy$ <!--SR:!2026-11-23,4,250-->

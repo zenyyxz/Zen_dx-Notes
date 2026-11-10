@@ -48,6 +48,8 @@ Below are deep-dive technical notes for high-yield A/L exam derivations and prob
 - :LiPuzzle: **Polynomials**: [[Subtopics/Polynomials & Partial Fractions|Polynomials & Partial Fractions Guide]]
 - :LiSquareDot: **Quadratics**: [[Subtopics/Quadratic Functions & Equations Guide|Quadratic Functions & Equations Guide]]
 - :LiAlertCircle: **Complex**: [[Subtopics/Complex Numbers & Argand Diagrams|Complex Numbers & Argand Diagrams]]
+- :LiListOrdered: **Sequences & Induction**: [[Subtopics/Sequences, Series & Mathematical Induction Guide|Sequences, Series & Mathematical Induction Guide]]
+- :LiBinary: **Combinatorics & Binomial**: [[Subtopics/Permutations, Combinations & Binomial Expansion Guide|Permutations, Combinations & Binomial Expansion Guide]]
 - :LiTriangleDashed: **Trigonometry**: [[Subtopics/Trigonometric Identities & Equations|Trigonometric Identities & Equations]]
 - :LiArrowBigUp: **Calculus I**: [[Subtopics/Differentiation & Curve Sketching|Differentiation & Curve Sketching]]
 - :LiArrowBigDown: **Calculus II**: [[Subtopics/Integration Techniques & Area and Volume|Integration Techniques & Area & Volume]]

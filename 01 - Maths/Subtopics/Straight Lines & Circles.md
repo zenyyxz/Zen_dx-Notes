@@ -7,9 +7,13 @@ tags:
   - Subtopic
   - StraightLines
   - Circles
+  - Flashcards
 ---
 
 # :LiGitGraph: Subtopic: Straight Lines & Circles Guide
+
+> [!NOTE] Parent Lesson
+> This is a companion guide to [[../Lesson 10 - Coordinate Geometry (Lines & Circles)|Lesson 10 — Coordinate Geometry (Lines & Circles)]]
 
 > [!ABSTRACT] Core Focus
 > Straight lines (distance, ratio theorem, line forms, parametric, point-to-line distance, parallel-line distance, angle, family of lines); circles (standard forms, tangency $p=r$, chord of contact, chord midpoint, radical axis, orthogonal circles $2g_1g_2+2f_1f_2=c_1+c_2$, director circle, relative positions, locus problems).
@@ -284,3 +288,38 @@ $$(x-h)^2+(y-k)^2 = 2r^2$$
 | Orthogonal circles | $2g_1g_2+2f_1f_2=c_1+c_2$ |
 | Director circle | $x^2+y^2=2r^2$ |
 | Length of tangent | $\sqrt{S_{11}}$ |
+
+---
+
+## :LiRocket: Flashcards (Spaced Repetition)
+
+#flashcards
+
+What is the parametric equation of a straight line through $(x_1, y_1)$ making angle $\theta$ with positive $x$-axis? :: $\frac{x-x_1}{\cos\theta} = \frac{y-y_1}{\sin\theta} = r$, giving $x = x_1 + r\cos\theta$ and $y = y_1 + r\sin\theta$. <!--SR:!2026-11-20,1,230-->
+
+What is the normal form of a straight line equation? :: $x\cos\alpha + y\sin\alpha = p$ where $p \ge 0$ is perpendicular distance from the origin and $\alpha$ is angle of normal. <!--SR:!2026-11-20,1,230-->
+
+How do you find the angle between two straight lines with slopes $m_1$ and $m_2$? :: $\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right|$. <!--SR:!2026-11-21,2,250-->
+
+What is the perpendicular condition for two straight lines in general form $A_1x+B_1y+C_1=0$ and $A_2x+B_2y+C_2=0$? :: $A_1A_2 + B_1B_2 = 0$. <!--SR:!2026-11-21,2,250-->
+
+What is the equation of the line passing through intersection of lines $L_1=0$ and $L_2=0$? :: $L_1 + \lambda L_2 = 0$ ($\lambda \in \mathbb{R}$). <!--SR:!2026-11-22,3,250-->
+
+What is the condition for $x^2 + y^2 + 2gx + 2fy + c = 0$ to represent a real circle? :: $g^2 + f^2 - c > 0$. <!--SR:!2026-11-22,3,250-->
+
+State the tangency condition of line $y = mx + c$ to circle $x^2 + y^2 = r^2$. :: $c^2 = r^2(1 + m^2)$ or $y = mx \pm r\sqrt{1+m^2}$. <!--SR:!2026-11-23,4,250-->
+
+What is the equation of the chord of contact from external point $(x_1, y_1)$ to circle $S=0$? :: $T = 0 \iff xx_1 + yy_1 + g(x+x_1) + f(y+y_1) + c = 0$. <!--SR:!2026-11-23,4,250-->
+
+What is the equation of a chord with known midpoint $M(x_1, y_1)$ on circle $S=0$? :: $T = S_{11}$. <!--SR:!2026-11-24,5,250-->
+
+What is the radical axis of two circles $S_1 = 0$ and $S_2 = 0$, and what is its geometric property? :: $S_1 - S_2 = 0$; it is perpendicular to the line joining the centres and is the locus of points with equal tangent lengths to both circles. <!--SR:!2026-11-24,5,250-->
+
+State the algebraic condition for two circles to intersect orthogonally. :: $2g_1g_2 + 2f_1f_2 = c_1 + c_2$. <!--SR:!2026-11-25,6,250-->
+
+What is the director circle of a circle with centre $(h, k)$ and radius $r$? :: $(x-h)^2 + (y-k)^2 = 2r^2$ (locus of points from which perpendicular tangents can be drawn). <!--SR:!2026-11-25,6,250-->
+
+How many common tangents exist when two circles are separate ($d > r_1 + r_2$)? :: 4 common tangents (2 direct, 2 transverse). <!--SR:!2026-11-26,7,250-->
+
+How many common tangents exist when two circles touch externally ($d = r_1 + r_2$)? :: 3 common tangents. <!--SR:!2026-11-26,7,250-->
+
