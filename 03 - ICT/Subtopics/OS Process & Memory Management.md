@@ -314,10 +314,12 @@ FIFO can have **more page faults with more frames**.
 #flashcards
 
 What information is stored in a Process Control Block (PCB)? :: PID, process state, program counter, CPU registers, memory-allocation pointers and I/O status.
+<!--SR:!2026-11-14,4,270-->
 
 What are the five process states? :: New, Ready, Running, Waiting and Terminated.
 
 Which transitions occur when a process requests I/O and when I/O completes? :: Running → Waiting when it requests I/O; Waiting → Ready when I/O completes.
+<!--SR:!2026-11-14,4,270-->
 
 What two states does the seven-state model add, and why? :: Suspended Ready and Suspended Blocked; the medium-term scheduler swaps processes to disk under memory pressure.
 <!--SR:!2026-11-13,4,270-->
@@ -329,8 +331,10 @@ Why is SJF optimal, and what is its main drawback? :: It minimises average waiti
 How does Round Robin prevent starvation? :: Each process gets a fixed time quantum and is preempted, so every ready process gets a turn.
 
 What happens if the Round Robin quantum is too small or too large? :: Too small causes excessive context switches; too large makes it behave like FCFS.
+<!--SR:!2026-11-13,3,250-->
 
 How does aging solve priority starvation? :: It gradually raises the priority of processes that have waited a long time.
+<!--SR:!2026-11-14,4,270-->
 
 What is a multilevel feedback queue? :: Multiple queues with different priorities; processes move between queues based on behaviour to improve responsiveness and reduce starvation.
 <!--SR:!2026-11-12,3,250-->
@@ -338,8 +342,10 @@ What is a multilevel feedback queue? :: Multiple queues with different prioritie
 What are the three requirements of the critical-section problem? :: Mutual exclusion, progress and bounded waiting.
 
 What is the difference between a mutex and a semaphore? :: A mutex is a binary lock with ownership; a semaphore is an integer with wait/signal operations and can be counting or binary.
+<!--SR:!2026-11-13,3,250-->
 
 What are the four Coffman conditions for deadlock? :: Mutual exclusion, hold and wait, no preemption and circular wait.
+<!--SR:!2026-11-11,1,230-->
 
 What is the difference between deadlock prevention and avoidance? :: Prevention negates one necessary condition; avoidance uses an algorithm such as Banker's to keep the system in a safe state.
 <!--SR:!2026-11-12,3,250-->
@@ -349,6 +355,7 @@ What is the difference between internal and external fragmentation? :: Internal 
 Compare first-fit, best-fit and worst-fit. :: First-fit uses the first hole large enough; best-fit uses the smallest sufficient hole; worst-fit uses the largest hole.
 
 What is compaction? :: Combining scattered free memory blocks into one large block; it requires dynamic relocation.
+<!--SR:!2026-11-11,1,230-->
 
 What is the difference between paging and segmentation? :: Paging uses fixed-size pages/frames and suffers internal fragmentation; segmentation uses variable-size logical units and suffers external fragmentation.
 
@@ -359,6 +366,7 @@ How is a logical address translated in paging? :: The page number indexes the pa
 What does a segment-table entry contain? :: A base address and a limit (length).
 
 What is demand paging, and what is a page fault? :: Demand paging loads pages only when accessed; a page fault occurs when the required page is not in physical memory.
+<!--SR:!2026-11-14,4,270-->
 
 Compare FIFO, LRU and OPT page replacement. :: FIFO replaces the oldest page; LRU replaces the least recently used; OPT replaces the page used farthest in the future.
 <!--SR:!2026-11-13,4,270-->

@@ -103,7 +103,7 @@ List 5 key characteristics of valuable information. :: Timeliness, Accuracy, Con
 <!--SR:!2026-11-11,15,290-->
 
 What is Big Data? :: Extremely large and complex datasets that traditional data processing software cannot handle effectively.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-05,56,310-->
 
 Name the 5 V's of Big Data. :: Volume, Velocity, Variety, Veracity, Value.
 <!--SR:!2026-11-20,56,310-->
@@ -115,4 +115,4 @@ State 4 main drawbacks of manual data processing methods. :: 1. Inconsistency an
 <!--SR:!2026-12-21,55,310-->
 
 What are the 3 main types of E-Governance services? :: 1. G2C (Government to Citizen), 2. G2B (Government to Business), 3. G2G (Government to Government).
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-03,54,310-->

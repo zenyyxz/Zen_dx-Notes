@@ -723,13 +723,13 @@ What is the purpose of Manchester Encoding? :: It ensures there is a voltage tra
 <!--SR:!2026-11-28,20,250-->
 
 Why is Fiber Optic cable immune to Electromagnetic Interference (EMI)? :: Because it transmits data using light pulses through glass/plastic instead of electrical signals through copper.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-06,57,310-->
 
 In a Star Topology, what happens if the central switch fails? :: The entire network goes down, as all devices rely on the central switch to communicate.
 <!--SR:!2026-12-25,47,290-->
 
 What is the difference between a Hub and a Switch? :: A hub broadcasts incoming data to all connected ports (causing collisions), whereas a switch inspects the MAC address and forwards the data only to the specific destination port.
-<!--SR:!2026-11-10,10,270-->
+<!--SR:!2026-12-18,38,290-->
 
 What is the main function of the Network Layer (Layer 3) in the OSI model? :: Routing packets across different networks using logical IP addresses.
 <!--SR:!2026-11-11,15,290-->
@@ -819,7 +819,7 @@ What is a parity bit? :: An extra bit added so that the total number of 1s is ev
 <!--SR:!2026-11-11,11,270-->
 
 How long is a MAC address? :: 48 bits (6 bytes), written as six hexadecimal blocks separated by colons.
-<!--SR:!2026-11-10,10,270-->
+<!--SR:!2026-12-17,37,290-->
 
 What is the difference between a frame and a packet? :: A packet is the Network-layer PDU carrying IP addresses; a frame is the Data Link-layer PDU that encapsulates the packet and carries MAC addresses for the current link.
 <!--SR:!2026-11-22,14,290-->
@@ -831,7 +831,7 @@ Why is a port number needed? :: An IP address identifies a host, but many proces
 <!--SR:!2026-11-21,15,290-->
 
 Why does DNS normally use UDP? :: DNS queries are small and benefit from UDP’s low overhead and speed; TCP is used for large responses and zone transfers.
-<!--SR:!2026-11-10,10,270-->
+<!--SR:!2026-12-17,37,290-->
 
 What is a simple HTTP GET request? :: A request line such as `GET /index.html HTTP/1.1`, followed by headers such as `Host: www.example.com`.
 <!--SR:!2026-11-23,15,290-->

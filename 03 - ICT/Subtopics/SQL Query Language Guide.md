@@ -37,28 +37,28 @@ tags:
 
 ### Common SQL Data Types
 
-| Category | Data Type | Description | Example |
-|----------|-----------|-------------|---------|
-| **Numeric (Exact)** | `INT` / `INTEGER` | Whole numbers (typically 4 bytes) | `StudentID INT` |
-| | `SMALLINT` | Small integers (2 bytes) | `Age SMALLINT` |
-| | `BIGINT` | Large integers (8 bytes) | `BigID BIGINT` |
-| | `DECIMAL(p,s)` / `NUMERIC(p,s)` | Fixed-point exact decimals | `Salary DECIMAL(10,2)` |
-| **Numeric (Approximate)** | `FLOAT(n)` | Single-precision floating point | `Weight FLOAT` |
-| | `DOUBLE` / `REAL` | Double-precision floating point | `Price DOUBLE` |
-| **Character Strings** | `CHAR(n)` | **Fixed-length** string (padded with spaces) | `Gender CHAR(1)` |
-| | `VARCHAR(n)` | **Variable-length** string (max n) | `Name VARCHAR(50)` |
-| | `TEXT` / `LONGTEXT` | Large text (up to 65K / 4GB) | `Description TEXT` |
-| **Binary Strings** | `BINARY(n)` | Fixed-length binary | `Hash BINARY(32)` |
-| | `VARBINARY(n)` | Variable-length binary | `FileData VARBINARY(MAX)` |
-| | `BLOB` / `LONGBLOB` | Binary large objects (images, files) | `Photo BLOB` |
-| **Date & Time** | `DATE` | Date only (YYYY-MM-DD) | `DOB DATE` |
-| | `TIME` | Time only (HH:MM:SS) | `StartTime TIME` |
-| | `DATETIME` | Date + Time (YYYY-MM-DD HH:MM:SS) | `CreatedAt DATETIME` |
-| | `TIMESTAMP` | Auto-updating timestamp | `UpdatedAt TIMESTAMP` |
-| | `YEAR` | Year only (YYYY) | `EnrollmentYear YEAR` |
-| **Other** | `BOOLEAN` / `BIT` | True/False (stored as 1/0) | `IsActive BOOLEAN` |
-| | `ENUM('a','b','c')` | Predefined list of allowed values | `Status ENUM('A','I')` |
-| | `JSON` | JSON documents (MySQL 5.7+, PostgreSQL) | `Config JSON` |
+| Category                  | Data Type                       | Description                                  | Example                   |
+| ------------------------- | ------------------------------- | -------------------------------------------- | ------------------------- |
+| **Numeric (Exact)**       | `INT` / `INTEGER`               | Whole numbers (typically 4 bytes)            | `StudentID INT`           |
+|                           | `SMALLINT`                      | Small integers (2 bytes)                     | `Age SMALLINT`            |
+|                           | `BIGINT`                        | Large integers (8 bytes)                     | `BigID BIGINT`            |
+|                           | `DECIMAL(p,s)` / `NUMERIC(p,s)` | Fixed-point exact decimals                   | `Salary DECIMAL(10,2)`    |
+| **Numeric (Approximate)** | `FLOAT(n)`                      | Single-precision floating point              | `Weight FLOAT`            |
+|                           | `DOUBLE` / `REAL`               | Double-precision floating point              | `Price DOUBLE`            |
+| **Character Strings**     | `CHAR(n)`                       | **Fixed-length** string (padded with spaces) | `Gender CHAR(1)`          |
+|                           | `VARCHAR(n)`                    | **Variable-length** string (max n)           | `Name VARCHAR(50)`        |
+|                           | `TEXT` / `LONGTEXT`             | Large text (up to 65K / 4GB)                 | `Description TEXT`        |
+| **Binary Strings**        | `BINARY(n)`                     | Fixed-length binary                          | `Hash BINARY(32)`         |
+|                           | `VARBINARY(n)`                  | Variable-length binary                       | `FileData VARBINARY(MAX)` |
+|                           | `BLOB` / `LONGBLOB`             | Binary large objects (images, files)         | `Photo BLOB`              |
+| **Date & Time**           | `DATE`                          | Date only (YYYY-MM-DD)                       | `DOB DATE`                |
+|                           | `TIME`                          | Time only (HH:MM:SS)                         | `StartTime TIME`          |
+|                           | `DATETIME`                      | Date + Time (YYYY-MM-DD HH:MM:SS)            | `CreatedAt DATETIME`      |
+|                           | `TIMESTAMP`                     | Auto-updating timestamp                      | `UpdatedAt TIMESTAMP`     |
+|                           | `YEAR`                          | Year only (YYYY)                             | `EnrollmentYear YEAR`     |
+| **Other**                 | `BOOLEAN` / `BIT`               | True/False (stored as 1/0)                   | `IsActive BOOLEAN`        |
+|                           | `ENUM('a','b','c')`             | Predefined list of allowed values            | `Status ENUM('A','I')`    |
+|                           | `JSON`                          | JSON documents (MySQL 5.7+, PostgreSQL)      | `Config JSON`             |
 
 ### Constraints
 

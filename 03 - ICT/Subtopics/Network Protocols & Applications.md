@@ -422,33 +422,40 @@ What is CSMA/CA and where is it used? :: Collision Avoidance: stations try to av
 What is the difference between broadcast and unicast? :: Broadcast sends one message to all devices on the local network; unicast sends data to one specific receiver.
 
 What destination MAC address is used for an Ethernet broadcast? :: FF:FF:FF:FF:FF:FF.
+<!--SR:!2026-11-11,1,230-->
 
 Why is an IP address alone not enough to deliver data to an application? :: Many processes run on one host, so a port number is also needed to identify the correct application process.
 
 What is a port number? :: A 16-bit number that identifies a process or service on a host, used with an IP address to deliver data to the correct application.
+<!--SR:!2026-11-14,4,270-->
 
 What is a socket? :: The combination of an IP address and a port number, e.g. 192.168.1.10:49152.
 
 What is multiplexing in the Transport layer? :: Multiple application processes share one IP address, and their data is distinguished by different port numbers.
-<!--SR:!2026-11-10,1,230-->
+<!--SR:!2026-11-11,1,210-->
 
 What are the key properties of UDP? :: Connectionless, no acknowledgements or retransmission, no guaranteed ordering, no congestion control, low overhead and low delay.
+<!--SR:!2026-11-14,4,270-->
 
 What are the key properties of TCP? :: Connection-oriented, reliable, in-order delivery using sequence numbers, acknowledgements and retransmission, with flow and congestion control.
+<!--SR:!2026-11-14,4,270-->
 
 Why is DNS needed? :: Humans prefer names, but routers need IP addresses; DNS translates human-friendly domain names into IP addresses.
 
 Describe the DNS hierarchy. :: Root → top-level domain (e.g. .lk) → second-level domain (e.g. edu.lk) → subdomain/host (e.g. www.school.edu.lk).
 
 How is the DNS namespace managed? :: It is hierarchical and distributed: each domain is responsible for managing the names under it, with parent domains delegating authority.
+<!--SR:!2026-11-14,4,270-->
 
 What are the main steps of DNS resolution? :: Check cache, ask a resolver, query root and TLD servers for referrals, query the authoritative server, receive the IP address and cache it.
 
 Which transport protocol and port does DNS normally use? :: UDP port 53 for normal queries; TCP port 53 for large responses and zone transfers.
+<!--SR:!2026-11-14,4,270-->
 
 What is HTTP? :: An application-layer request–response protocol used by clients and servers to transfer web pages and other resources.
 
 What does a simple HTTP GET request contain? :: A request line with the method, path and HTTP version, followed by headers such as Host and Accept.
+<!--SR:!2026-11-14,4,270-->
 
 What do HTTP status codes 200 and 404 mean? :: 200 means OK; 404 means the requested resource was not found.
 

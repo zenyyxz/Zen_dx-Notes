@@ -231,12 +231,14 @@ After mapping: **normalise to 3NF**, then write **table specifications** (fields
 #flashcards
 
 What is Data Flow Modelling (DFM)? :: Modelling how data moves, is processed and is stored in a system, using a set of DFDs plus textual descriptions (EPDs).
+<!--SR:!2026-11-14,4,270-->
 
 What are the four components of a DFD? :: External entities, data flows, processes and data stores.
 
 What are the properties of a DFD process? :: ID, Name and Location; the name should be a verb phrase.
 
 What are the properties and types of a data store? :: ID, Type and Name; types M (manual), D (computerised), T (temporary), T(M) (manual temporary).
+<!--SR:!2026-11-14,4,270-->
 
 What is an external entity in a DFD? :: A person, organisation or other system outside the system boundary that supplies or receives data.
 
@@ -266,18 +268,21 @@ What is the difference between a physical and a logical DFD? :: Physical shows h
 How is a physical DFD converted to a logical DFD? :: Remove process locations, transform each process location into an external entity, remove purely human activities, add new processes, regroup by function and write EPDs.
 
 Does the NIE syllabus mandate Gane & Sarson notation? :: No — the TG specifies components, properties and rules but does not name a notation; the paper says "standard symbols".
+<!--SR:!2026-11-14,4,270-->
 
 Name the two common DFD notation sets. :: Yourdon/DeMarco (circle process) and Gane & Sarson (rounded-rectangle process).
 
 What does a DFD deliberately NOT show? :: Sequence, timing, decisions and control flow — it shows data flow only.
 
 In an ERD, what does a diamond represent? :: A relationship between entities.
+<!--SR:!2026-11-13,3,250-->
 
 What does a double oval represent in an ERD? :: A multivalued attribute.
 
 What does a dashed oval represent in an ERD? :: A derived attribute.
 
 What is cardinality in an ERD? :: The number of occurrences of each entity that participate in a relationship — 1:1, 1:N or M:N.
+<!--SR:!2026-11-14,4,270-->
 
 What is total vs partial participation? :: Total (mandatory) means every occurrence must participate; partial (optional) means some may not.
 

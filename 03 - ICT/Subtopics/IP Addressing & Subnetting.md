@@ -477,10 +477,13 @@ What does the `/N` in CIDR notation mean? :: The number of leading 1 bits in the
 How many equal subnets does borrowing *n* bits create? :: 2^n subnets.
 
 How do you calculate the number of subnets after changing the prefix? :: 2^(new prefix − original prefix).
+<!--SR:!2026-11-14,4,270-->
 
 Which mask divides the entire IPv4 address space into 4 equal subnets? :: /2 → 192.0.0.0. Because 4 = 2^2, so 2 bits are borrowed from /0.
+<!--SR:!2026-11-14,4,270-->
 
 Why is /4 the wrong answer for "4 subnets"? :: /4 borrows 4 bits and creates 2^4 = 16 subnets; 4 subnets need only 2 bits (/2).
+<!--SR:!2026-11-14,4,270-->
 
 How many addresses are in each /2 subnet? :: 2^30 = 1,073,741,824 addresses (a quarter of the IPv4 space).
 
@@ -489,20 +492,24 @@ What is the subnet mask for /26? :: 255.255.255.192.
 What prefix is the mask 255.255.255.224? :: /27.
 
 What prefix is the mask 255.255.255.252? :: /30.
+<!--SR:!2026-11-14,4,270-->
 
 How do you find the number of addresses per subnet? :: 2^h, where h = 32 − prefix length.
 
 How do you find the number of usable hosts per subnet? :: 2^h − 2, removing the network address and broadcast address.
+<!--SR:!2026-11-14,4,270-->
 
 What is the block size (magic number)? :: 2^h — the increment between consecutive subnet network addresses.
 
 How do you calculate the network address from an IP and mask? :: Bitwise AND of the IP address and the subnet mask.
+<!--SR:!2026-11-14,4,270-->
 
 How do you calculate the broadcast address? :: Set all host bits to 1, i.e. next network address − 1.
 
 What are the first and last usable host addresses in a subnet? :: First = network address + 1; last = broadcast address − 1.
 
 How many usable hosts does a /31 provide? :: 2 on a point-to-point link (RFC 3021), because no network/broadcast addresses are reserved.
+<!--SR:!2026-11-14,4,270-->
 
 What is a /32 used for? :: A single host route — exactly one address.
 
@@ -514,6 +521,7 @@ How many hosts are needed for a /25, and how many are usable? :: 128 addresses, 
 If you need 100 hosts, what is the smallest subnet? :: /25 (2^7 − 2 = 126 usable).
 
 If you need 2 hosts, which prefix should you use? :: /30 traditionally; /31 on a modern point-to-point link.
+<!--SR:!2026-11-14,4,270-->
 
 What is the difference between FLSM and VLSM? :: FLSM makes all subnets the same size; VLSM makes them different sizes based on each requirement, wasting fewer addresses.
 
@@ -536,6 +544,7 @@ Why can a subnet mask never be 255.0.255.0? :: Mask bits must be contiguous 1s s
 What is the "− 2" rule and where does it apply? :: Network and broadcast addresses cannot be assigned, so usable hosts = 2^h − 2; it does not apply to the subnet count.
 
 What is a gateway? :: A router that connects two or more networks and has the routing information needed to forward packets toward their destination.
+<!--SR:!2026-11-14,4,270-->
 
 Why is a uniform IP address needed instead of relying only on MAC addresses? :: MAC addresses are flat and local to a link; IP addresses provide a hierarchical, network-independent address that routers can use across different LAN technologies.
 
@@ -549,8 +558,10 @@ What is routing? :: The process of finding a suitable path from a source to a de
 <!--SR:!2026-11-13,4,270-->
 
 What is a routing table? :: A table in a router listing destination networks, next hops, interfaces and metrics used to decide where to forward packets.
+<!--SR:!2026-11-14,4,270-->
 
 What is a default gateway? :: The router a host sends packets to when the destination is outside the host’s own subnet.
+<!--SR:!2026-11-11,1,230-->
 
 What is a default route? :: The route 0.0.0.0/0, used when no more specific route in the routing table matches the destination.
 

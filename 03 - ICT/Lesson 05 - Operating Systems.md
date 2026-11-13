@@ -239,7 +239,7 @@ What is a context switch? :: Saving/restoring CPU registers + PCB to share CPU; 
 <!--SR:!2026-11-23,15,290-->
 
 What is Paging in memory management? :: A memory management scheme that divides logical memory into fixed-size Pages and physical memory into fixed-size Frames.
-<!--SR:!2026-11-10,10,270-->
+<!--SR:!2026-12-19,39,290-->
 
 What is the MMU base-register example? :: Base 10000 + user 100 = physical 10100; user never sees real address.
 <!--SR:!2026-11-11,11,270-->

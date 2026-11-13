@@ -383,8 +383,10 @@ A typical sequence:
 #flashcards
 
 What is the PSTN? :: The traditional public switched telephone network, designed to provide a circuit between two points that can carry analog voice.
+<!--SR:!2026-11-13,3,250-->
 
 What is circuit switching? :: A switching method that establishes and reserves a dedicated path between sender and receiver for the whole communication session.
+<!--SR:!2026-11-13,3,250-->
 
 What are the three stages of a circuit-switched call? :: Circuit setup, data/voice transfer, and circuit teardown.
 
@@ -401,6 +403,7 @@ How does a dial-up connection work? :: A modem dials the ISP’s telephone numbe
 Give three limitations of dial-up. :: Low speed (about 56 kbps), the telephone line is occupied, and it is slow/noisy and often charged by time.
 
 What is an ISP? :: An Internet Service Provider — an organisation that provides individuals and organisations with access to the Internet.
+<!--SR:!2026-11-14,4,270-->
 
 What are three roles of an ISP? :: Provide Internet access, assign public IP addresses, and route customer traffic; they may also provide DNS and email services.
 
@@ -416,14 +419,17 @@ Why is ADSL suitable for homes? :: Home users usually download much more than th
 Give two advantages of DSL/ADSL. :: Independent voice and data services, and higher speed than dial-up; also always-on and cost-effective.
 
 Why is DSL distance-sensitive? :: Signal quality decreases as the copper line length between the customer and the ISP exchange increases.
+<!--SR:!2026-11-13,3,250-->
 
 What is a public IP address? :: A globally routable IP address assigned by an ISP that can be reached over the Internet.
+<!--SR:!2026-11-14,4,270-->
 
 What is a private IP address? :: An address used inside a private network that is not directly routable on the public Internet.
 
 What does NAT do? :: Network Address Translation remaps private IP addresses/ports to a public address/port so many devices can share one public IP.
 
 What is stored in a NAT table? :: Mappings between internal private IP:port pairs and external public IP:port pairs, used to translate replies back to the correct device.
+<!--SR:!2026-11-14,4,270-->
 
 Why is NAT important for IPv4? :: It conserves the limited supply of public IPv4 addresses by allowing many private devices to share one public address.
 
@@ -434,9 +440,11 @@ What is a proxy server? :: An intermediary between clients and the Internet that
 Give three functions of a proxy server. :: Caching, content filtering, logging/monitoring; it can also authenticate users and share a public IP.
 
 What is the main difference between NAT and a proxy? :: NAT operates at Layer 3 and translates addresses; a proxy operates at Layer 7 and terminates/relays application-level connections.
+<!--SR:!2026-11-14,4,270-->
 
 What is a forward proxy? :: A proxy placed between internal clients and the Internet; clients are configured to send their requests through it.
 
 What is a reverse proxy? :: A proxy placed in front of web servers; external clients connect to it and it forwards requests to backend servers.
+<!--SR:!2026-11-14,4,270-->
 
 What is the path of a typical home Internet request? :: Device → home router (NAT/DHCP) → DSL modem → PSTN/ISP access line → ISP core → Internet.

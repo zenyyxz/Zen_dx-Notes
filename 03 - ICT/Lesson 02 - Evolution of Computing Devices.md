@@ -28,7 +28,7 @@ tags:
 - **Analytical Engine (Charles Babbage)**: First general-purpose mechanical computer concept featuring input, mill (CPU), store (memory), and output. ==Charles Babbage== is the *Father of Computing*. ==**Ada Lovelace**== was the *First Computer Programmer*.
 - **ENIAC (Electronic Numerical Integrator and Computer)**: First general-purpose fully electronic digital computer (used vacuum tubes).
 - **EDVAC (Electronic Discrete Variable Automatic Computer)**: First computer to implement the **Stored Program Concept**.
-<!--SR:!2026-12-24,58,310!2026-11-10,14,290-->
+<!--SR:!2026-12-24,58,310!2027-01-04,55,310-->
 
 ---
 ## 2. Generations of Computers
@@ -168,7 +168,7 @@ Classify computers by technology with one example each. :: Analog (continuous, e
 <!--SR:!2026-11-22,14,290-->
 
 What is special vs general purpose? :: Special = one dedicated task (ATM); General = many tasks via programs (PC).
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-03,54,310-->
 
 Order super/mainframe/mini/micro by size. :: Super (fastest parallel) > Mainframe (multi-user) > Mini (department server) > Micro (single-user PC/phone).
 <!--SR:!2026-11-22,14,290-->
@@ -189,7 +189,7 @@ If an address bus has 16 lines (16-bit), how many unique memory locations can it
 <!--SR:!2026-12-25,59,310-->
 
 What is the difference between SRAM and DRAM? :: SRAM uses flip-flops, is faster, does not require refreshing, and is used for cache; DRAM uses capacitors, requires periodic refreshing, and is used for main memory.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-07,58,310-->
 
 How is data erased in an EPROM compared to an EEPROM? :: EPROM is erased using Ultraviolet (UV) light; EEPROM is erased electrically.
 <!--SR:!2026-12-20,54,310-->

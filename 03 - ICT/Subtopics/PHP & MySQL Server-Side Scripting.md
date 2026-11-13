@@ -208,18 +208,23 @@ What operator concatenates strings in PHP? :: `.`; `.=` appends to a string.
 <!--SR:!2026-11-13,4,270-->
 
 What is `var_dump()` used for? :: Printing a variable's type and value for debugging.
+<!--SR:!2026-11-14,4,270-->
 
 What is the difference between `isset()` and `empty()`? :: `isset()` is true if a variable is set and not NULL; `empty()` is true for values such as `""`, `0`, `"0"`, NULL, false or an empty array.
+<!--SR:!2026-11-14,4,270-->
 
 What is the difference between `==` and `===` in PHP? :: `==` compares values after type juggling; `===` requires the same value and the same type.
+<!--SR:!2026-11-14,4,270-->
 
 Why is POST not automatically secure? :: POST hides data from the URL, but it still needs HTTPS and validation; POST by itself does not encrypt data.
 
 How do you confirm a POST request and read a form field? :: Check `$_SERVER["REQUEST_METHOD"] == "POST"`, then read `$_POST['fieldname']`.
+<!--SR:!2026-11-11,1,230-->
 
 Why use `htmlspecialchars()` when displaying user input? :: It escapes HTML characters and helps prevent cross-site scripting (XSS).
 
 What does `mysqli_query()` return for a SELECT versus an INSERT? :: A result object for SELECT; `true` or `false` for non-SELECT queries.
+<!--SR:!2026-11-14,4,270-->
 
 How do you fetch the next row as an associative array? :: `mysqli_fetch_assoc($result)`; it returns `null` when there are no more rows.
 

@@ -132,12 +132,15 @@ Binary search, sets, recursion, try/except are Extension — not required by 9.1
 What is the difference between a Python list and a tuple? :: A list is mutable and uses `[]`; a tuple is immutable and uses `()`.
 
 What is a Python dictionary? :: A mutable collection of key-value pairs with unique keys.
+<!--SR:!2026-11-14,4,270-->
 
 What is a Python set? :: An unordered, mutable collection with no duplicate elements. It is an extension topic in this note.
 
 What does `input()` return? :: Always a string; use `int()` or `float()` to convert it for calculations.
+<!--SR:!2026-11-14,4,270-->
 
 What is the difference between `/` and `//` in Python? :: `/` performs true division; `//` performs floor division (rounds down).
+<!--SR:!2026-11-14,4,270-->
 
 What is the precedence and associativity of `**`? :: It has higher precedence than `* / // %`, and it is evaluated right-to-left.
 
@@ -146,8 +149,10 @@ What is the difference between `append()` and `insert()`? :: `append()` adds an 
 What does `pop()` do? :: Removes and returns the last item by default, or the item at a given index.
 
 What does the slice `s[1:3]` return? :: Items from index 1 up to but not including index 3.
+<!--SR:!2026-11-14,4,270-->
 
 How do you add or update a dictionary key? :: `d[key] = value`.
+<!--SR:!2026-11-14,4,270-->
 
 How do you iterate over a dictionary's key-value pairs? :: `for key, value in d.items():`.
 
@@ -156,6 +161,7 @@ What does `range(1, 6)` produce? :: 1, 2, 3, 4, 5; the stop value is excluded.
 What is a default parameter? :: A parameter value used when the caller omits the argument, e.g. `def greet(name="Guest")`.
 
 What is the difference between local and global scope? :: Local variables exist inside a function; global variables exist outside. Use `global x` to modify a global inside a function.
+<!--SR:!2026-11-14,4,270-->
 
 What do file modes `w`, `r` and `a` do? :: `w` writes/truncates, `r` reads, and `a` appends.
 

@@ -72,6 +72,7 @@ Given minterms: $F(A, B, C) = \Sigma m(1, 3, 5, 7)$
 What is a Karnaugh map used for? :: To simplify Boolean expressions graphically into a minimal Sum-of-Products (SOP) expression.
 
 What code orders K-map rows and columns? :: Gray code: 00, 01, 11, 10 — adjacent cells differ by only one bit.
+<!--SR:!2026-11-14,4,270-->
 
 How many cells does an n-variable K-map have? :: 2^n cells.
 
@@ -80,14 +81,18 @@ In a 3-variable K-map, what labels the rows and columns? :: Rows: A (0, 1); colu
 In a 4-variable K-map, what labels the rows and columns? :: Rows: AB; columns: CD; both in Gray order.
 
 What sizes can a K-map group have? :: Powers of 2: 1, 2, 4, 8 or 16 adjacent 1-cells.
+<!--SR:!2026-11-14,4,270-->
 
 Why should groups be as large as possible? :: A larger group eliminates more variables, giving a simpler expression.
+<!--SR:!2026-11-14,4,270-->
 
 How many variables does a group of 2^k cells eliminate? :: k variables; the remaining variables stay constant.
+<!--SR:!2026-11-14,4,270-->
 
 Can K-map groups wrap around the edges? :: Yes; top/bottom and left/right edges are treated as adjacent.
 
 Can groups overlap, and must every 1 be covered? :: Yes, groups may overlap; every 1-cell must be in at least one group.
+<!--SR:!2026-11-14,4,270-->
 
 What is a Sum-of-Products (SOP) expression? :: An OR of AND terms, for example $AB + \overline{A}C$.
 

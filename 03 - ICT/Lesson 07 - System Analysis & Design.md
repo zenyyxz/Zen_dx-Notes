@@ -114,13 +114,13 @@ flowchart LR
 
 ### 3.2 Development models
 
-| Model | Approach | Best when | Main weakness |
-|---|---|---|---|
-| **Waterfall** | Strictly sequential; each stage's output feeds the next | Requirements are **clear and stable** | Inflexible; changes are expensive |
-| **Spiral** | Iterative **+** sequential; each loop = objectives → risk analysis → development → planning | **Medium/high risk**, complex requirements, changes expected | Complex and costly; needs risk expertise |
-| **Agile** | Time slices (**sprints**); deliver working features each release | Requirements are fixed **or** changing; fast feedback needed | Weak documentation; needs user involvement |
-| **Prototyping** | Build a **partial** working version for user feedback | Requirements **unclear** | Users may mistake prototype for final product |
-| **RAD** | Functional modules developed **in parallel** as prototypes, then integrated | Need **rapid delivery** with reusable components | Needs skilled team and stable module interfaces |
+| Model           | Approach                                                                                    | Best when                                                    | Main weakness                                   |
+| --------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------- |
+| **Waterfall**   | Strictly sequential; each stage's output feeds the next                                     | Requirements are **clear and stable**                        | Inflexible; changes are expensive               |
+| **Spiral**      | Iterative **+** sequential; each loop = objectives → risk analysis → development → planning | **Medium/high risk**, complex requirements, changes expected | Complex and costly; needs risk expertise        |
+| **Agile**       | Time slices (**sprints**); deliver working features each release                            | Requirements are fixed **or** changing; fast feedback needed | Weak documentation; needs user involvement      |
+| **Prototyping** | Build a **partial** working version for user feedback                                       | Requirements **unclear**                                     | Users may mistake prototype for final product   |
+| **RAD**         | Functional modules developed **in parallel** as prototypes, then integrated                 | Need **rapid delivery** with reusable components             | Needs skilled team and stable module interfaces |
 
 **Spiral phases (each iteration):** 1) determine objectives/alternatives/constraints → 2) **risk analysis** → 3) develop and validate the product → 4) plan the next iteration.
 

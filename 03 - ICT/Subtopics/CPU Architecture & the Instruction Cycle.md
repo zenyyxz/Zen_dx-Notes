@@ -576,6 +576,7 @@ Two ideas make this concrete:
 What are the three functional parts of a CPU? :: Control Unit (CU), Arithmetic Logic Unit (ALU), and registers.
 
 What is the job of the Control Unit? :: Fetch and decode instructions, generate control signals, sequence the datapath, update/load the PC, and handle interrupts — it does not compute data.
+<!--SR:!2026-11-14,4,270-->
 
 What is the job of the ALU? :: Perform arithmetic (add, subtract, compare, inc/dec), logic (AND, OR, XOR, NOT) and shift/rotate operations, and set the status flags.
 
@@ -590,20 +591,24 @@ What does the Accumulator hold? :: The ALU operand and the ALU result; it is the
 What does MAR hold, and which bus does it drive? :: The address currently being read or written; it drives the address bus.
 
 What does MDR hold, and which bus is it on? :: The data or instruction being transferred; it sits on the bidirectional data bus.
+<!--SR:!2026-11-14,4,270-->
 
 Which registers never touch the system bus directly? :: PC, IR and ACC — only MAR (address) and MDR (data) interface with the bus.
 
 State the four fetch micro-operations. :: MAR <- PC; MDR <- M[MAR] (Read); IR <- MDR; PC <- PC + n.
+<!--SR:!2026-11-14,4,270-->
 
 What happens during the decode stage? :: The CU decodes the opcode in IR, identifies operands and addressing mode, and selects the datapath and control signals.
 
 What happens during the execute stage? :: The ALU performs the operation on its operands (or the CU computes an address / loads the PC for a branch).
 
 What happens during the store/writeback stage? :: The result is written to ACC or a register, or via MDR to memory (MAR <- dest, MDR <- result, Write).
+<!--SR:!2026-11-13,3,250-->
 
 What are the four ALU status flags? :: Z (zero), C (carry), N/S (negative/sign), V (overflow).
 
 Who sets the flags and who uses them? :: The ALU sets them; the Control Unit tests them for conditional branches.
+<!--SR:!2026-11-14,4,270-->
 
 Difference between carry and overflow? :: Carry = unsigned overflow (carry out of MSB); overflow = signed overflow (carry into MSB differs from carry out).
 
@@ -612,8 +617,10 @@ How does the ALU subtract without a subtractor? :: It adds the two's complement:
 Does the ALU access main memory? :: No. The CU/datapath fetches operands into registers/MDR; the ALU only computes.
 
 What are the micro-operations of STORE X? :: MAR <- X; MDR <- ACC; M[MAR] <- MDR with a Write signal.
+<!--SR:!2026-11-14,4,270-->
 
 What are the micro-operations of a JUMP X? :: PC <- X (no ALU operation and no memory read).
+<!--SR:!2026-11-14,4,270-->
 
 What does CALL do to the stack? :: SP <- SP - 1; M[SP] <- PC (return address); PC <- target.
 

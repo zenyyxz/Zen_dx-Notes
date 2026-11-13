@@ -95,7 +95,7 @@ What is a Qubit in Quantum Computing? :: The basic unit of quantum information t
 <!--SR:!2026-11-20,14,290-->
 
 What is the difference between a Computer Virus and a Computer Worm? :: A Virus requires a host executable file and user action to spread; a Worm is a standalone program that self-replicates across networks automatically without host files.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-05,56,310-->
 
 What is Phishing? :: A cyber attack using deceptive emails or websites that impersonate trusted entities to trick users into revealing sensitive credentials.
 <!--SR:!2026-12-18,40,290-->

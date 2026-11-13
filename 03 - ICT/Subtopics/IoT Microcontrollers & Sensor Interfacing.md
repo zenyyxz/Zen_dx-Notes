@@ -155,6 +155,7 @@ Which microcontroller is used on the classic Arduino Uno? :: The ATmega328P, an 
 How many digital and analog pins does the classic Arduino Uno expose? :: 14 digital pins (0–13) and 6 analog input pins (A0–A5).
 
 What is the difference between digital and analog pins on Arduino? :: Digital pins read/write HIGH or LOW; analog input pins read a variable voltage through the ADC.
+<!--SR:!2026-11-14,4,270-->
 
 Which digital pins support PWM? :: Pins marked with `~`; `analogWrite()` works only on those pins.
 
@@ -169,6 +170,7 @@ What is the purpose of `loop()`? :: It runs continuously after `setup()` and con
 What does `pinMode(pin, MODE)` do? :: Configures a digital pin as `INPUT` or `OUTPUT`.
 
 What do `digitalWrite(pin, HIGH)` and `LOW` mean? :: HIGH outputs the board's logic voltage (5 V on a 5 V board, on); LOW outputs 0 V (off).
+<!--SR:!2026-11-14,4,270-->
 
 What does `digitalRead(pin)` return? :: The digital state: `HIGH` or `LOW`.
 
@@ -185,3 +187,4 @@ What does `delay(1000)` do? :: Pauses the program for 1000 milliseconds (1 secon
 What is the role of a microcontroller in an IoT device? :: It reads sensors, processes data, controls actuators and communicates with other devices.
 
 In the note's LDR example, why does a low sensor value turn on the LED? :: The circuit is wired so lower readings mean a darker environment; the code switches the LED on when the value is below 300.
+<!--SR:!2026-11-14,4,270-->

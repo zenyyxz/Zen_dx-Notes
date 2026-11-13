@@ -155,7 +155,7 @@ A **Sequential Circuit**'s ==output depends on **both current inputs and past st
 #flashcards
 
 Why are NAND and NOR gates called Universal Gates? :: Because any Boolean function or basic logic gate can be implemented using exclusively NAND gates or exclusively NOR gates.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-03,54,310-->
 
 State De Morgan's First Law. :: $\overline{A \cdot B} = \overline{A} + \overline{B}$.
 <!--SR:!2026-11-25,16,290-->

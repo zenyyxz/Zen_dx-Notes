@@ -217,10 +217,12 @@ Is XML a programming language? :: No — it is a markup language with no logic o
 <!--SR:!2026-11-13,4,270-->
 
 How do XML tags differ from HTML tags? :: XML tags are user-defined and describe data; HTML tags are predefined and describe presentation.
+<!--SR:!2026-11-14,4,270-->
 
 Is XML case-sensitive? :: Yes — `<Title>` and `<title>` are different elements, and opening/closing tags must match exactly.
 
 How many root elements must an XML document have? :: Exactly one.
+<!--SR:!2026-11-14,4,270-->
 
 What makes an XML document "well-formed"? :: It follows all XML syntax rules: one root, all tags closed, correct nesting, case-matched tags, quoted attributes, escaped special characters.
 

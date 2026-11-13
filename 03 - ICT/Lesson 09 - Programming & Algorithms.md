@@ -348,7 +348,7 @@ What is modularization + stepwise refinement? :: Split into modules, refine top-
 <!--SR:!2026-11-18,15,290-->
 
 What is a structure chart? :: It shows the module hierarchy: boxes are modules, lines/arrows show control or data flow; it is not an execution-order flowchart.
-<!--SR:!2026-11-10,10,270-->
+<!--SR:!2026-12-18,38,290-->
 
 Name 3 ways to represent algorithms. :: Flowcharts, pseudocode, hand traces.
 <!--SR:!2026-12-19,41,290-->
@@ -357,10 +357,10 @@ What is a hand trace? :: Manually recording each variable's value step by step i
 <!--SR:!2026-11-22,14,290-->
 
 What is the difference between a Compiler and an Interpreter? :: A Compiler translates the entire source code into machine code at once prior to execution; an Interpreter translates and executes source code line-by-line at runtime.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-06,57,310-->
 
 What is source vs object code? :: Source is human-readable .py/.c; object is machine-readable .o/.obj linked then run.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-07,58,310-->
 
 What is hybrid translation + linker? :: Compile to intermediate then interpret (Java bytecode); linker joins objects + libraries to exe. Python also uses bytecode but is usually called interpreted.
 <!--SR:!2026-12-14,38,290-->
@@ -372,13 +372,13 @@ What are the 3 fundamental control structures in programming? :: 1. Sequence, 2.
 <!--SR:!2026-11-11,15,290-->
 
 Compare imperative vs declarative vs OOP. :: Imperative how (C/Python), declarative what (SQL/Prolog), OOP objects/classes with encapsulation/inheritance.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-04,55,310-->
 
 What are IDE basic features? :: Open/save, compile/execute, debugging (breakpoints/step).
 <!--SR:!2026-11-11,15,290-->
 
 What does input() return and how to get int? :: Always string; use int(input()) / float() / str() casting.
-<!--SR:!2026-11-10,14,290-->
+<!--SR:!2027-01-07,58,310-->
 
 What is the typical structure of a Python program? :: Imports, constants, function definitions, then the main logic.
 <!--SR:!2026-11-22,14,290-->
