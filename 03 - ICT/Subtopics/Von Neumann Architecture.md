@@ -122,6 +122,7 @@ What is the stored program concept? :: Instructions and data share the same prim
 <!--SR:!2026-11-25,16,290-->
 
 Name the 3 buses and directions. :: Address (CPU->memory, one-way), Data (two-way), Control (commands/interrupts).
+<!--SR:!2026-11-17,4,270-->
 
 What does the PC hold and when does it change? :: Address of next instruction; incremented after Fetch (or overwritten on jump).
 <!--SR:!2026-11-21,12,270-->
@@ -139,7 +140,7 @@ What is the Von Neumann Bottleneck? :: Single shared bus means CPU cannot fetch 
 <!--SR:!2026-11-17,8,250-->
 
 Name two cures for the bottleneck. :: Cache (L1/L2/L3) and Harvard-style separate instruction/data paths.
-<!--SR:!2026-11-12,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 Von Neumann vs Harvard in one line? :: Von Neumann = one memory/bus for all; Harvard = separate instruction and data memories/buses.
-<!--SR:!2026-11-12,3,250-->
+<!--SR:!2026-11-25,12,270-->

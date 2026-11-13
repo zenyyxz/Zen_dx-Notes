@@ -210,11 +210,13 @@ Two vocabularies can use the same tag name (`<title>` for a book vs a web page).
 #flashcards
 
 What does XML stand for? :: eXtensible Markup Language.
+<!--SR:!2026-11-17,4,270-->
 
 What is XML used for? :: Storing and transporting structured data in plain text using self-describing, user-defined tags.
+<!--SR:!2026-11-17,4,270-->
 
 Is XML a programming language? :: No — it is a markup language with no logic or computation.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-28,15,290-->
 
 How do XML tags differ from HTML tags? :: XML tags are user-defined and describe data; HTML tags are predefined and describe presentation.
 <!--SR:!2026-11-14,4,270-->
@@ -227,6 +229,7 @@ How many root elements must an XML document have? :: Exactly one.
 What makes an XML document "well-formed"? :: It follows all XML syntax rules: one root, all tags closed, correct nesting, case-matched tags, quoted attributes, escaped special characters.
 
 What is the difference between well-formed and valid XML? :: Well-formed = correct syntax; valid = well-formed AND conforms to a DTD or XSD grammar.
+<!--SR:!2026-11-17,4,270-->
 
 Must every XML element have a closing tag? :: Yes — either `<tag>…</tag>` or the self-closing `<tag/>`.
 
@@ -239,8 +242,10 @@ What are the five predefined XML entities? :: `&lt;` (<), `&gt;` (>), `&amp;` (&
 Where must the XML declaration appear? :: As the very first line of the document, if it is used at all.
 
 What is a DTD? :: Document Type Definition — a grammar defining the allowed elements, order and attributes of an XML document.
+<!--SR:!2026-11-17,4,270-->
 
 What is XSD? :: XML Schema Definition — a newer, XML-written grammar that also defines data types; more powerful than DTD.
+<!--SR:!2026-11-16,3,250-->
 
 Difference between an element and an attribute? :: An element holds data/structure and can have children; an attribute holds a single metadata value and cannot have children.
 
@@ -249,6 +254,7 @@ What is an XML namespace? :: A prefix bound to a URI that makes tag names unique
 What is the difference between DOM and SAX parsing? :: DOM builds the whole tree in memory (read/modify); SAX streams events without storing the tree (low memory, read-only).
 
 Name three real uses of XML. :: Configuration files, data exchange/web services (SOAP), RSS feeds, SVG, or Office `.docx`/`.xlsx` files.
+<!--SR:!2026-11-17,4,270-->
 
 ---
 

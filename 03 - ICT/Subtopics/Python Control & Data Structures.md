@@ -143,6 +143,7 @@ What is the difference between `/` and `//` in Python? :: `/` performs true divi
 <!--SR:!2026-11-14,4,270-->
 
 What is the precedence and associativity of `**`? :: It has higher precedence than `* / // %`, and it is evaluated right-to-left.
+<!--SR:!2026-11-17,4,270-->
 
 What is the difference between `append()` and `insert()`? :: `append()` adds an item to the end; `insert(i, x)` inserts at index `i`.
 
@@ -172,6 +173,7 @@ What does `line.strip().split(",")` do? :: Removes surrounding whitespace/newlin
 What are the steps to query SQLite from Python? :: Connect, create a cursor, execute SQL, commit changes, fetch results and close the connection.
 
 Why use `?` placeholders in SQL? :: They pass values safely as data, preventing SQL injection and handling quoting.
+<!--SR:!2026-11-17,4,270-->
 
 What is the time complexity of linear search? :: O(N).
 

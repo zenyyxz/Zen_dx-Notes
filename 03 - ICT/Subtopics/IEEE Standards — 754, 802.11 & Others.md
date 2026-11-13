@@ -186,11 +186,13 @@ How many bits for the exponent in 32-bit IEEE 754 single precision? :: 8 bits (b
 <!--SR:!2026-11-25,16,290-->
 
 How is 64-bit IEEE 754 double laid out? :: 1 sign + 11 exponent (bias 1023) + 52 mantissa (~15-17 digits); C++ `double`.
+<!--SR:!2026-11-17,4,270-->
 
 What does IEEE 802.11 refer to? :: The family of wireless LAN (Wi-Fi) standards.
 <!--SR:!2026-11-25,16,290-->
 
 What is the common name for IEEE 802.3? :: Ethernet (wired local area network standard).
+<!--SR:!2026-11-17,4,270-->
 
 What is IEEE 1394 better known as? :: FireWire (high-speed serial bus for peripherals and media devices).
 <!--SR:!2026-11-21,12,270-->

@@ -717,7 +717,7 @@ flowchart LR
 #flashcards
 
 What is the difference between Bandwidth and Throughput? :: Bandwidth is the theoretical maximum capacity of a channel, while throughput is the actual, realized data transfer rate (which is always less than or equal to bandwidth due to overhead and latency).
-<!--SR:!2026-11-12,12,270-->
+<!--SR:!2026-12-28,45,290-->
 
 What is the purpose of Manchester Encoding? :: It ensures there is a voltage transition in the middle of every bit, allowing the receiver to easily synchronize its clock with the sender and prevent timing errors.
 <!--SR:!2026-11-28,20,250-->
@@ -732,7 +732,7 @@ What is the difference between a Hub and a Switch? :: A hub broadcasts incoming 
 <!--SR:!2026-12-18,38,290-->
 
 What is the main function of the Network Layer (Layer 3) in the OSI model? :: Routing packets across different networks using logical IP addresses.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-13,61,310-->
 
 What is Encapsulation in networking? :: The process of adding protocol headers (and sometimes trailers) to data as it moves down the OSI layers from the Application layer to the Physical layer.
 <!--SR:!2026-12-02,24,270-->
@@ -747,7 +747,7 @@ Define encryption. :: Converting plaintext into ciphertext with an algorithm and
 <!--SR:!2026-11-24,16,290-->
 
 Symmetric vs asymmetric encryption? :: Symmetric uses the same key for encryption and decryption; asymmetric uses a public/private key pair.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-28,15,290-->
 
 Which key encrypts a message for confidentiality? :: The receiver's public key; only the receiver's private key can decrypt it.
 <!--SR:!2026-11-20,14,290-->
@@ -774,7 +774,7 @@ What does a digital signature provide? :: Authentication, integrity and non-repu
 <!--SR:!2026-11-22,16,290-->
 
 What is a digital certificate? :: A CA-signed document binding a public key to an identity, used to trust public keys and prevent impersonation.
-<!--SR:!2026-11-11,11,270-->
+<!--SR:!2026-11-19,6,250-->
 
 Does the Internet provide confidentiality and authentication by default? :: No — encryption and digital signatures must add them.
 <!--SR:!2026-11-23,15,290-->
@@ -816,7 +816,7 @@ What is the difference between bit rate and baud rate? :: Bit rate is the number
 <!--SR:!2026-11-19,11,270-->
 
 What is a parity bit? :: An extra bit added so that the total number of 1s is even (even parity) or odd (odd parity); it detects some errors but cannot correct them.
-<!--SR:!2026-11-11,11,270-->
+<!--SR:!2026-12-24,41,290-->
 
 How long is a MAC address? :: 48 bits (6 bytes), written as six hexadecimal blocks separated by colons.
 <!--SR:!2026-12-17,37,290-->
@@ -825,7 +825,7 @@ What is the difference between a frame and a packet? :: A packet is the Network-
 <!--SR:!2026-11-22,14,290-->
 
 What is the difference between pure ALOHA and slotted ALOHA? :: Pure ALOHA transmits whenever ready; slotted ALOHA allows transmission only at time-slot boundaries, reducing collisions but requiring synchronisation.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-28,15,290-->
 
 Why is a port number needed? :: An IP address identifies a host, but many processes run on that host; the port number identifies the correct application process.
 <!--SR:!2026-11-21,15,290-->

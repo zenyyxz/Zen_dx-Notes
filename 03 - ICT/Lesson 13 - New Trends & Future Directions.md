@@ -86,7 +86,7 @@ Cloud Computing delivers computing services (servers, storage, databases, networ
 #flashcards
 
 What is Supervised Learning in Machine Learning? :: Training a machine learning algorithm using a labeled dataset with known input and target output pairs.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-16,64,310-->
 
 Define the 3 main Cloud Computing service models: IaaS, PaaS, and SaaS. :: 1. IaaS: Rents raw infrastructure (VMs, storage), 2. PaaS: Provides development platform to build applications, 3. SaaS: Delivers complete ready-to-use software apps over the internet.
 <!--SR:!2026-11-19,10,270-->

@@ -162,7 +162,7 @@ Who was the first computer programmer? :: Ada Lovelace.
 <!--SR:!2026-12-22,56,310-->
 
 What key technological innovation characterized Second Generation computers? :: Transistors.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-15,63,310-->
 
 Classify computers by technology with one example each. :: Analog (continuous, e.g. thermometer), Digital (discrete 0/1, e.g. PC), Hybrid (both, e.g. ICU monitor).
 <!--SR:!2026-11-22,14,290-->
@@ -177,7 +177,7 @@ What technology enabled Fourth Generation computers? :: Very Large Scale Integra
 <!--SR:!2026-12-23,57,310-->
 
 What is the Stored Program Concept? :: The concept where both data and program instructions are stored together in the same memory space of a computer system.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-19,67,310-->
 
 Name the 3 main components of the CPU. :: 1. Control Unit (CU), 2. Arithmetic Logic Unit (ALU), 3. Registers.
 <!--SR:!2026-11-24,16,290-->
@@ -195,13 +195,13 @@ How is data erased in an EPROM compared to an EEPROM? :: EPROM is erased using U
 <!--SR:!2026-12-20,54,310-->
 
 Which is faster, DRAM or SRAM? :: SRAM.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-12,60,310-->
 
 Who invented transistor at Bell Labs in 1947?::William Shockley, John Barden and Walter Brattain.
 <!--SR:!2026-11-26,18,250-->
 
 Which computer bus carries information from the processor to the I/O devices?::Data bus.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-10,58,310-->
 
 Who is the father of modern computer science?::Alan Turing.
 <!--SR:!2026-12-29,63,310-->

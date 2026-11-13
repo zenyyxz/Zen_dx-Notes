@@ -75,6 +75,7 @@ What code orders K-map rows and columns? :: Gray code: 00, 01, 11, 10 — adjace
 <!--SR:!2026-11-14,4,270-->
 
 How many cells does an n-variable K-map have? :: 2^n cells.
+<!--SR:!2026-11-17,4,270-->
 
 In a 3-variable K-map, what labels the rows and columns? :: Rows: A (0, 1); columns: BC in Gray order (00, 01, 11, 10).
 
@@ -90,6 +91,7 @@ How many variables does a group of 2^k cells eliminate? :: k variables; the rema
 <!--SR:!2026-11-14,4,270-->
 
 Can K-map groups wrap around the edges? :: Yes; top/bottom and left/right edges are treated as adjacent.
+<!--SR:!2026-11-17,4,270-->
 
 Can groups overlap, and must every 1 be covered? :: Yes, groups may overlap; every 1-cell must be in at least one group.
 <!--SR:!2026-11-14,4,270-->

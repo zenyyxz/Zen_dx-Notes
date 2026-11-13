@@ -438,7 +438,7 @@ What is the difference between an open and a closed system? :: An open system in
 <!--SR:!2026-11-19,16,290-->
 
 What are the elements of a system? :: Input, process, output, feedback, control, boundary, environment and subsystems.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->
 
 What is the difference between TPS, MIS, and DSS? :: TPS records transactions; MIS reports from TPS for managers; DSS models/what-if for decisions.
 <!--SR:!2026-11-23,15,290-->
@@ -453,7 +453,7 @@ Which system separates content from presentation and supports collaborative digi
 <!--SR:!2026-11-22,14,290-->
 
 What is an expert system, and who builds its knowledge base? :: An AI system that reproduces expert decision-making; a knowledge engineer encodes the expert's rules.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->
 
 What makes a system a "smart system"? :: It senses, actuates and controls in a predictive/adaptive way, often with autonomous closed-loop control and networking.
 <!--SR:!2026-11-16,10,270-->
@@ -480,7 +480,7 @@ What are the two phases of preliminary investigation? :: Problem definition (pre
 <!--SR:!2026-11-22,14,290-->
 
 What are the 3 preliminary investigation tasks? :: Identify current problems, prioritize information-system needs, and study feasibility.
-<!--SR:!2026-11-12,12,270-->
+<!--SR:!2026-12-28,45,290-->
 
 What are the 4 NIE feasibility types? :: Technical, Economic, Operational, Organizational (Legal/Schedule are TELOS extras, not TG 7.5).
 <!--SR:!2026-11-22,14,290-->
@@ -507,10 +507,10 @@ What are the four components of a DFD? :: External entities, data flows, process
 <!--SR:!2026-11-23,15,290-->
 
 What are the three properties of a DFD process, and of a data store? :: Process: ID, name, location. Data store: ID, type, name.
-<!--SR:!2026-11-12,12,270-->
+<!--SR:!2026-12-27,44,290-->
 
 What are the four data store types in SSADM? :: Manual (M), Computerised (D), Temporary (T), Manual Temporary T(M).
-<!--SR:!2026-11-11,11,270-->
+<!--SR:!2026-12-26,43,290-->
 
 How are data flows between two external entities drawn? :: As dashed arrows; normal flows are solid arrows.
 <!--SR:!2026-11-23,15,290-->
@@ -522,7 +522,7 @@ What is the role of the document flow diagram? :: It is the bridge between the c
 <!--SR:!2026-11-24,16,290-->
 
 What is the difference between a physical and a logical DFD? :: Physical shows how data is actually processed/stored in the current system; logical shows how it should be processed/stored in the proposed system.
-<!--SR:!2026-11-11,11,270-->
+<!--SR:!2026-12-25,42,290-->
 
 What is an EPD and data dictionary? :: EPD = pseudocode for each elementary process; dictionary = metadata catalogue of tables/fields.
 <!--SR:!2026-11-23,15,290-->
@@ -537,7 +537,7 @@ What must each Business System Option contain? :: Functional description, high-l
 <!--SR:!2026-11-19,11,270-->
 
 How is a physical DFD converted to a logical DFD? :: Remove process locations, transform each process location into an external entity, remove purely human activities, add new processes, regroup by function, and write EPDs.
-<!--SR:!2026-11-12,9,250-->
+<!--SR:!2026-12-15,32,270-->
 
 Map the logical schema to the relational schema. :: Entity -> table; attribute -> field; instance -> record; unique attribute -> primary key.
 <!--SR:!2026-11-23,15,290-->
@@ -585,7 +585,7 @@ What is business process mapping? :: Subject-matter experts draw step-by-step di
 <!--SR:!2026-11-17,11,270-->
 
 Business process reengineering vs customisation? :: Reengineering changes the business process (to suit the package); customisation changes the package (to suit the business).
-<!--SR:!2026-11-12,12,270-->
+<!--SR:!2026-12-29,46,290-->
 
 What costs must be compared for a COTS package? :: Investment, operational and maintenance costs.
 <!--SR:!2026-11-23,15,290-->

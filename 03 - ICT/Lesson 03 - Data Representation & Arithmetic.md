@@ -242,7 +242,7 @@ Convert $(13.625)_{10}$ to Binary. :: $(1101.101)_2$.
 <!--SR:!2026-11-16,14,290-->
 
 Convert $(11010110.1011)_2$ to Hexadecimal. :: $(D6.B)_{16}$.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-09,57,310-->
 
 What are the two major drawbacks of Sign-Magnitude binary representation? :: 1. Dual representation of zero ($+0$ and $-0$), 2. Requires separate hardware circuits for addition and subtraction.
 <!--SR:!2026-12-12,46,290-->
@@ -254,10 +254,10 @@ What is the 8-bit 2's complement representation of $-25_{10}$? :: `11100111`.
 <!--SR:!2026-11-16,10,270-->
 
 How is arithmetic overflow detected in 2's complement addition? :: When adding two numbers of the same sign produces a result with an opposite sign bit, or when carry-in to MSB differs from carry-out of MSB.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-18,66,310-->
 
 How many non-printable control characters and printable characters exist in standard 7-bit ASCII? :: 33 non-printable control characters and 95 printable characters (Total $2^7 = 128$).
 <!--SR:!2026-11-22,26,270-->
 
 What are the decimal ASCII values for `'0'`, `'A'`, and `'a'`? :: `'0'` = 48, `'A'` = 65, `'a'` = 97.
-<!--SR:!2026-11-13,16,290-->
+<!--SR:!2027-01-15,63,310-->

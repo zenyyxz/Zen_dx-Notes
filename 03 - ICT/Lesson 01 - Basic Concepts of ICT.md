@@ -97,10 +97,10 @@ What is information? :: Data that has been processed, structured, and presented 
 <!--SR:!2026-11-19,55,310-->
 
 What are the 3 main phases of the Data Life Cycle? :: 1. Data Creation/Capture, 2. Data Management/Storage, 3. Removal of Obsolete Data.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-13,61,310-->
 
 List 5 key characteristics of valuable information. :: Timeliness, Accuracy, Contextual relevance, Enhanced understandability, Less uncertainty.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-11,59,310-->
 
 What is Big Data? :: Extremely large and complex datasets that traditional data processing software cannot handle effectively.
 <!--SR:!2027-01-05,56,310-->

@@ -342,7 +342,7 @@ C++ equivalents: neither `f(int x)` (copy) nor `f(int& x)` (true alias). There i
 #flashcards
 
 What are the 4 steps of problem solving (9.1)? :: Understand problem, define boundaries, plan solution, implement.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-17,65,310-->
 
 What is modularization + stepwise refinement? :: Split into modules, refine top-down from main task to detailed steps; show with structure charts.
 <!--SR:!2026-11-18,15,290-->
@@ -366,16 +366,16 @@ What is hybrid translation + linker? :: Compile to intermediate then interpret (
 <!--SR:!2026-12-14,38,290-->
 
 Which flowchart symbol is used for Decision making? :: Diamond.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-17,65,310-->
 
 What are the 3 fundamental control structures in programming? :: 1. Sequence, 2. Selection, 3. Iteration.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-13,61,310-->
 
 Compare imperative vs declarative vs OOP. :: Imperative how (C/Python), declarative what (SQL/Prolog), OOP objects/classes with encapsulation/inheritance.
 <!--SR:!2027-01-04,55,310-->
 
 What are IDE basic features? :: Open/save, compile/execute, debugging (breakpoints/step).
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-12,60,310-->
 
 What does input() return and how to get int? :: Always string; use int(input()) / float() / str() casting.
 <!--SR:!2027-01-07,58,310-->
@@ -390,7 +390,7 @@ What is local vs global scope? :: Local inside func, global outside; lifetime is
 <!--SR:!2026-12-16,38,290-->
 
 What is the difference between a Python List and a Tuple? :: A List is mutable (can be modified) and defined using square brackets `[]`; a Tuple is immutable (cannot be modified) and defined using parentheses `()`.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-10,58,310-->
 
 What are basic file operations/modes? :: Open, close, read, write, append; modes w/r/a, use with for auto-close.
 <!--SR:!2026-12-06,28,270-->
@@ -408,10 +408,10 @@ What is the precondition for executing a Binary Search algorithm on an array? ::
 <!--SR:!2026-11-22,14,290-->
 
 What is the worst-case Time Complexity of Bubble Sort? :: $O(N^2)$.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-12,60,310-->
 
 What is Python argument passing (C++ view)? :: Pass-by-object-reference: function gets copy of reference; rebinding param does not affect caller, mutating shared object does.
 <!--SR:!2026-11-21,15,290-->
 
 When to use `is` vs `==` in Python? :: `==` for values, `is` for identity; never use `is` for numbers/strings due to caching.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->

@@ -444,13 +444,13 @@ What are the 4 main CSS selectors mentioned in the AL ICT syllabus? :: Element s
 <!--SR:!2026-12-20,42,290-->
 
 What tag is used in HTML5 to embed an external CSS file? :: `<link rel="stylesheet" href="filename.css">`.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-14,62,310-->
 
 What is the HTML tag used to group related elements in a form? :: The `<fieldset>` tag, often used with `<legend>`.
 <!--SR:!2026-12-04,26,270-->
 
 What is the difference between a local link and an external link in HTML? :: A local link points to another page on the same website, while an external link points to a completely different website.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-14,62,310-->
 
 Who created the WWW and when, and what body maintains standards? :: Tim Berners-Lee in 1989 at CERN; W3C maintains standards.
 <!--SR:!2026-11-24,16,290-->
@@ -477,7 +477,7 @@ Name two relative and two absolute CSS units. :: Relative: `em`, `rem`, `%`, `vw
 <!--SR:!2026-12-17,39,290-->
 
 Where is the W3C CSS validation service hosted? :: `http://jigsaw.w3.org/css-validator`.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-09,57,310-->
 
 What attributes control merging in HTML tables? :: `colspan` for columns and `rowspan` for rows.
 <!--SR:!2026-11-24,16,290-->

@@ -495,11 +495,13 @@ What prefix is the mask 255.255.255.252? :: /30.
 <!--SR:!2026-11-14,4,270-->
 
 How do you find the number of addresses per subnet? :: 2^h, where h = 32 − prefix length.
+<!--SR:!2026-11-17,4,270-->
 
 How do you find the number of usable hosts per subnet? :: 2^h − 2, removing the network address and broadcast address.
 <!--SR:!2026-11-14,4,270-->
 
 What is the block size (magic number)? :: 2^h — the increment between consecutive subnet network addresses.
+<!--SR:!2026-11-17,4,270-->
 
 How do you calculate the network address from an IP and mask? :: Bitwise AND of the IP address and the subnet mask.
 <!--SR:!2026-11-14,4,270-->
@@ -512,11 +514,12 @@ How many usable hosts does a /31 provide? :: 2 on a point-to-point link (RFC 302
 <!--SR:!2026-11-14,4,270-->
 
 What is a /32 used for? :: A single host route — exactly one address.
+<!--SR:!2026-11-17,4,270-->
 
 What is the classic prefix for a router-to-router WAN link, and how many hosts? :: /30, giving 2 usable addresses.
 
 How many hosts are needed for a /25, and how many are usable? :: 128 addresses, 126 usable.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-28,15,290-->
 
 If you need 100 hosts, what is the smallest subnet? :: /25 (2^7 − 2 = 126 usable).
 
@@ -526,6 +529,7 @@ If you need 2 hosts, which prefix should you use? :: /30 traditionally; /31 on a
 What is the difference between FLSM and VLSM? :: FLSM makes all subnets the same size; VLSM makes them different sizes based on each requirement, wasting fewer addresses.
 
 In what order should VLSM subnets be allocated? :: Largest requirement first, so each block remains aligned and the remaining space stays contiguous.
+<!--SR:!2026-11-17,4,270-->
 
 What are the three private IPv4 ranges in CIDR notation? :: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.
 
@@ -538,6 +542,7 @@ What is the multicast range? :: 224.0.0.0/4 (Class D).
 How many /24 networks fit in the entire IPv4 space? :: 2^24 = 16,777,216.
 
 If 192.168.1.0/24 is split into 4 equal subnets, what are the prefixes and network addresses? :: /26 each: .0, .64, .128, .192.
+<!--SR:!2026-11-17,4,270-->
 
 Why can a subnet mask never be 255.0.255.0? :: Mask bits must be contiguous 1s starting from the most significant bit; a gap would make the network/host boundary ambiguous.
 
@@ -549,29 +554,32 @@ What is a gateway? :: A router that connects two or more networks and has the ro
 Why is a uniform IP address needed instead of relying only on MAC addresses? :: MAC addresses are flat and local to a link; IP addresses provide a hierarchical, network-independent address that routers can use across different LAN technologies.
 
 What does DHCP do? :: It automatically assigns IP configuration to hosts — IP address, subnet mask, default gateway, DNS servers and a lease time.
+<!--SR:!2026-11-17,4,270-->
 
 What are the four steps of DHCP (DORA)? :: Discover, Offer, Request, Acknowledge.
 
 What is a DHCP lease? :: The period for which a DHCP server allows a client to use an assigned IP address; it can be renewed.
 
 What is routing? :: The process of finding a suitable path from a source to a destination through one or more networks.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->
 
 What is a routing table? :: A table in a router listing destination networks, next hops, interfaces and metrics used to decide where to forward packets.
 <!--SR:!2026-11-14,4,270-->
 
 What is a default gateway? :: The router a host sends packets to when the destination is outside the host’s own subnet.
-<!--SR:!2026-11-11,1,230-->
+<!--SR:!2026-11-15,2,230-->
 
 What is a default route? :: The route 0.0.0.0/0, used when no more specific route in the routing table matches the destination.
 
 What is packet switching? :: Breaking a message into packets that are forwarded independently across shared links, possibly by different paths, and reassembled at the destination.
 
 What is the main difference between circuit switching and packet switching? :: Circuit switching reserves a dedicated path for the session; packet switching shares links and forwards independent packets without a dedicated path.
+<!--SR:!2026-11-17,4,270-->
 
 What is best-effort delivery? :: IP tries to deliver packets but does not guarantee delivery, ordering, no duplicates or bounded delay.
 
 Does IP guarantee that packets arrive in order? :: No — IP is connectionless and best effort; packets may arrive out of order, be delayed or be lost.
+<!--SR:!2026-11-17,4,270-->
 
 Which protocol adds reliability on top of IP? :: TCP, using acknowledgements, sequence numbers and retransmission. UDP does not add reliability.
 

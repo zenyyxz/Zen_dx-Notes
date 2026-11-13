@@ -124,7 +124,7 @@ K-Maps visually simplify Boolean expressions into **Sum of Products (SOP)** form
 ## 5. Combinational Logic Circuits
 
 A **Combinational Circuit** is a circuit whose ==output depends **solely on current inputs** (no memory).==
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-11,59,310-->
 
 ### A. Half Adder
 Adds two 1-bit binary numbers ($A, B$):
@@ -164,13 +164,13 @@ State De Morgan's Second Law. :: $\overline{A + B} = \overline{A} \cdot \overlin
 <!--SR:!2026-12-22,56,310-->
 
 What is the Boolean expression for the output of an XOR gate with inputs A and B? :: $F = A \oplus B = A\overline{B} + \overline{A}B$.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-18,66,310-->
 
 What is the Boolean simplified result of $A + \overline{A}B$? :: $A + B$ (Absorption Law).
 <!--SR:!2026-11-24,16,290-->
 
 What is a minterm? :: An AND (product) term containing every variable exactly once; it is 1 for exactly one truth-table input combination. For a row, use an uncomplemented variable for input 1 and a complemented variable for input 0.
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-14,62,310-->
 
 What is a maxterm? :: An OR (sum) term containing every variable exactly once; it is 0 for exactly one truth-table input combination. For a row, use a complemented variable for input 1 and an uncomplemented variable for input 0.
 <!--SR:!2026-11-22,14,290-->
@@ -179,7 +179,7 @@ What are the Boolean expressions for Sum and Carry in a Half Adder? :: $Sum = A 
 <!--SR:!2026-12-24,45,290-->
 
 What is the key structural difference between Combinational and Sequential logic circuits? :: Combinational circuits output depends only on current inputs (no memory); Sequential circuits output depends on current inputs and past state (has memory).
-<!--SR:!2026-11-11,15,290-->
+<!--SR:!2027-01-11,59,310-->
 
 What is the function of a Multiplexer (MUX)? :: It selects one data signal from multiple ($2^n$) input lines and routes it to a single output line based on $n$ select lines.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-17,65,310-->

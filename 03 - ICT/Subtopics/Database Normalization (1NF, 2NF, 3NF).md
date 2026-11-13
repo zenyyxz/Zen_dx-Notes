@@ -359,11 +359,13 @@ Every fact is now stored once, and the three anomalies are eliminated.
 #flashcards
 
 What is normalization? :: Organizing data into related tables so that each fact is stored once, reducing redundancy and insert/update/delete anomalies.
-<!--SR:!2026-11-13,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 Why is normalization needed? :: To remove redundancy and the insert, update and delete anomalies caused by storing several facts in one relation.
+<!--SR:!2026-11-17,4,270-->
 
 What is data redundancy? :: The same piece of data being stored in more than one place.
+<!--SR:!2026-11-17,4,270-->
 
 What is an insert anomaly? :: A new fact cannot be inserted without also inserting unrelated data, because the table mixes different facts.
 <!--SR:!2026-11-14,4,270-->
@@ -383,6 +385,7 @@ What is a transitive dependency? :: A non-prime attribute depends on another non
 <!--SR:!2026-11-14,4,270-->
 
 What is a prime attribute? :: An attribute that is part of any candidate key.
+<!--SR:!2026-11-16,3,250-->
 
 What is a non-prime attribute? :: An attribute that is not part of any candidate key.
 
@@ -393,10 +396,12 @@ What does 1NF require? :: Atomic values, no repeating groups, unique rows, consi
 What abnormality does 1NF remove? :: Multivalued attributes and repeating groups.
 
 What does 2NF require? :: 1NF plus no partial dependencies; every non-prime attribute must depend on the whole primary key.
+<!--SR:!2026-11-17,4,270-->
 
 What abnormality does 2NF remove? :: Partial dependencies and the anomalies they cause.
 
 When is a relation automatically in 2NF? :: When it is in 1NF and its primary key is a single attribute, because a partial dependency is impossible.
+<!--SR:!2026-11-17,4,270-->
 
 What does 3NF require? :: 2NF plus no transitive dependencies; no non-prime attribute may depend on another non-prime attribute.
 
@@ -410,18 +415,22 @@ How do you convert 1NF to 2NF? :: Remove partial dependencies by splitting attri
 How do you convert 2NF to 3NF? :: Remove transitive dependencies by moving the dependent non-prime attributes into a new table.
 
 What is a composite primary key? :: A primary key made of two or more attributes, such as `(StudentID, CourseID)`.
+<!--SR:!2026-11-17,4,270-->
 
 Which partial dependencies are removed in the worked example? :: `StudentID → StudentName` and `CourseID → CourseName, InstructorID, InstructorName, InstructorOffice`.
+<!--SR:!2026-11-17,4,270-->
 
 Which transitive dependency is removed in the 3NF step? :: `InstructorID → InstructorName, InstructorOffice`.
+<!--SR:!2026-11-17,4,270-->
 
 Why is `StudentCourse` a junction table? :: It links Student and Course in a many-to-many relationship using both foreign keys.
 <!--SR:!2026-11-14,4,270-->
 
 Does normalization usually increase the number of tables? :: Yes; it reduces redundancy but may require more joins.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-28,15,290-->
 
 What is denormalization? :: Intentionally reintroducing redundancy to improve read performance, at the cost of storage and possible anomalies.
 <!--SR:!2026-11-14,4,270-->
 
 When should you denormalize? :: Only after normalizing to 3NF, and only with a measured performance reason and a plan to keep duplicated data consistent.
+<!--SR:!2026-11-17,4,270-->

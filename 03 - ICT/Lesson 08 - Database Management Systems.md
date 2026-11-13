@@ -605,7 +605,7 @@ A **Database Management System (DBMS)** is software that provides an interface f
 #flashcards
 
 What is the difference between Cardinality and Degree in relational database terminology? :: Cardinality is the total number of tuples (rows); Degree is the total number of attributes (columns) in a relation.
-<!--SR:!2026-11-12,12,270-->
+<!--SR:!2026-12-27,44,290-->
 
 What is a Foreign Key, and what rule does it enforce? :: An attribute in a table that references the Primary Key of another table; it enforces Referential Integrity.
 <!--SR:!2026-12-18,38,290-->
@@ -701,7 +701,7 @@ How is a many-to-many relationship mapped to tables? :: Create a junction table 
 <!--SR:!2026-11-24,16,290-->
 
 How is a multivalued attribute mapped to tables? :: Create a separate table with a foreign key to the owner entity and a column for the value; the primary key is usually the owner PK plus the value.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->
 
 What is a functional dependency `X → Y`? :: For each value of `X`, there is exactly one corresponding value of `Y`.
 <!--SR:!2026-11-23,15,290-->

@@ -101,7 +101,7 @@ Define sequential (serial) access. :: Data is retrieved in a fixed linear order;
 <!--SR:!2026-11-25,16,290-->
 
 Define direct access. :: An item is reached by computing its storage address and moving the read/write mechanism there without reading intervening records. Access time is not constant (seek + rotational latency). Example: HDD, CD/DVD.
-<!--SR:!2026-11-12,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 Define random access. :: Any addressable location can be selected independently, with approximately equal access time for every address. Example: RAM (also ROM).
 <!--SR:!2026-11-25,16,290-->

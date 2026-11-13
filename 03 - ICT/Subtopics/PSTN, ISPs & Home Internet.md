@@ -383,10 +383,10 @@ A typical sequence:
 #flashcards
 
 What is the PSTN? :: The traditional public switched telephone network, designed to provide a circuit between two points that can carry analog voice.
-<!--SR:!2026-11-13,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 What is circuit switching? :: A switching method that establishes and reserves a dedicated path between sender and receiver for the whole communication session.
-<!--SR:!2026-11-13,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 What are the three stages of a circuit-switched call? :: Circuit setup, data/voice transfer, and circuit teardown.
 
@@ -399,6 +399,7 @@ What is modulation in a modem? :: Converting digital data from a computer into a
 What is demodulation in a modem? :: Converting a received analog signal back into digital data for the computer.
 
 How does a dial-up connection work? :: A modem dials the ISP’s telephone number over a PSTN line, establishes a connection, authenticates, and sends data as analog signals.
+<!--SR:!2026-11-17,4,270-->
 
 Give three limitations of dial-up. :: Low speed (about 56 kbps), the telephone line is occupied, and it is slow/noisy and often charged by time.
 
@@ -414,19 +415,21 @@ How does DSL separate voice and data? :: It uses frequency division multiplexing
 What is ADSL? :: Asymmetric Digital Subscriber Line — a DSL type in which downstream capacity is greater than upstream capacity.
 
 Why is ADSL suitable for homes? :: Home users usually download much more than they upload, so greater downstream capacity matches typical usage.
-<!--SR:!2026-11-12,3,250-->
+<!--SR:!2026-11-21,8,250-->
 
 Give two advantages of DSL/ADSL. :: Independent voice and data services, and higher speed than dial-up; also always-on and cost-effective.
 
 Why is DSL distance-sensitive? :: Signal quality decreases as the copper line length between the customer and the ISP exchange increases.
-<!--SR:!2026-11-13,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 What is a public IP address? :: A globally routable IP address assigned by an ISP that can be reached over the Internet.
 <!--SR:!2026-11-14,4,270-->
 
 What is a private IP address? :: An address used inside a private network that is not directly routable on the public Internet.
+<!--SR:!2026-11-17,4,270-->
 
 What does NAT do? :: Network Address Translation remaps private IP addresses/ports to a public address/port so many devices can share one public IP.
+<!--SR:!2026-11-17,4,270-->
 
 What is stored in a NAT table? :: Mappings between internal private IP:port pairs and external public IP:port pairs, used to translate replies back to the correct device.
 <!--SR:!2026-11-14,4,270-->
@@ -443,6 +446,7 @@ What is the main difference between NAT and a proxy? :: NAT operates at Layer 3 
 <!--SR:!2026-11-14,4,270-->
 
 What is a forward proxy? :: A proxy placed between internal clients and the Internet; clients are configured to send their requests through it.
+<!--SR:!2026-11-17,4,270-->
 
 What is a reverse proxy? :: A proxy placed in front of web servers; external clients connect to it and it forwards requests to backend servers.
 <!--SR:!2026-11-14,4,270-->

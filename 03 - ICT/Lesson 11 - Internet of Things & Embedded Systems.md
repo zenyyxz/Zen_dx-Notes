@@ -451,10 +451,10 @@ What is an Embedded System? :: A specialized computer system designed to perform
 <!--SR:!2026-12-03,25,270-->
 
 What is the main structural difference between a Microprocessor and a Microcontroller? :: A microprocessor is mainly the CPU and needs external RAM/ROM/I/O; a microcontroller integrates the CPU, RAM, ROM/Flash, timers and I/O ports on one chip.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-18,66,310-->
 
 What is the difference between a Sensor and an Actuator? :: A Sensor converts physical parameters into electrical signals (input); an Actuator converts electrical signals into physical actions (output).
-<!--SR:!2026-11-11,11,270-->
+<!--SR:!2026-12-22,39,290-->
 
 Name 2 Analog Sensors and 2 Digital Sensors used in IoT. :: Analog: LDR (Light Dependent Resistor), LM35 (Temperature); Digital: PIR (Motion Sensor), Ultrasonic (HC-SR04).
 <!--SR:!2026-12-07,41,290-->
@@ -493,13 +493,13 @@ What is a reed switch? :: A magnetic switch that opens or closes in the presence
 <!--SR:!2026-11-19,11,270-->
 
 What is a relay? :: An electrically operated switch that lets a low-voltage controller safely switch a high-voltage load.
-<!--SR:!2026-11-11,2,250-->
+<!--SR:!2026-11-20,7,270-->
 
 What is the common control pattern for a simple embedded application? :: Read the sensor, compare or process the value, then drive an actuator.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->
 
 Name the four simple microcontroller applications required by the TG. :: LED blink/on-off, LDR light control, temperature-controlled fan, and reed-switch door detection.
-<!--SR:!2026-11-12,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 What is IoT (Internet of Things)? :: A system of interconnected devices that communicate and exchange data over the Internet.
 <!--SR:!2026-11-22,14,290-->

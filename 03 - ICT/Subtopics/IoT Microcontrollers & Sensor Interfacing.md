@@ -153,6 +153,7 @@ void loop() {
 Which microcontroller is used on the classic Arduino Uno? :: The ATmega328P, an 8-bit AVR RISC microcontroller.
 
 How many digital and analog pins does the classic Arduino Uno expose? :: 14 digital pins (0–13) and 6 analog input pins (A0–A5).
+<!--SR:!2026-11-17,4,270-->
 
 What is the difference between digital and analog pins on Arduino? :: Digital pins read/write HIGH or LOW; analog input pins read a variable voltage through the ADC.
 <!--SR:!2026-11-14,4,270-->
@@ -175,12 +176,14 @@ What do `digitalWrite(pin, HIGH)` and `LOW` mean? :: HIGH outputs the board's lo
 What does `digitalRead(pin)` return? :: The digital state: `HIGH` or `LOW`.
 
 What does `analogRead(pin)` return? :: An integer from 0 to 1023 representing the analog voltage.
+<!--SR:!2026-11-17,4,270-->
 
 What does `analogWrite(pin, value)` do, and what is its value range? :: It generates a PWM signal on a `~` pin; the value range is 0–255.
 
 What is PWM used for? :: To simulate analog output by rapidly switching a digital pin on and off — for example, LED brightness or motor speed.
 
 What does `Serial.begin(9600)` do? :: Starts serial communication at 9600 baud for debugging or sending data.
+<!--SR:!2026-11-17,4,270-->
 
 What does `delay(1000)` do? :: Pauses the program for 1000 milliseconds (1 second).
 

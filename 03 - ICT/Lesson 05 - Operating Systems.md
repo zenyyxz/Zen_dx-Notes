@@ -179,7 +179,7 @@ What is an Operating System? :: System software that acts as an interface betwee
 <!--SR:!2026-11-23,15,290-->
 
 What are the 4 stages of OS evolution? :: No OS (serial), Simple Batch (tape), Multiprogrammed Batch (multi-program memory), Time-Sharing (context switch, interactive).
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-16,64,310-->
 
 What are the NIE main functions of an OS? :: Providing interfaces/abstractions, process management, resource management, security and protection.
 <!--SR:!2026-11-23,15,290-->
@@ -191,7 +191,7 @@ What is multiprogramming vs time-sharing? :: Multiprogramming maximises CPU use 
 <!--SR:!2026-12-02,24,270-->
 
 What is a file (logical vs physical view)? :: Named bytes; logical = user records/pixels, physical = OS possibly non-contiguous blocks.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-15,63,310-->
 
 List 4 file attributes. :: Name, type/extension, owner, location, organization, permissions, dates, size.
 <!--SR:!2026-11-24,16,290-->
@@ -212,7 +212,7 @@ What is a Process vs Program? :: Program is static code; process is program in e
 <!--SR:!2026-11-25,16,290-->
 
 Name I/O-bound vs CPU-bound processes. :: I/O-bound needs much I/O; CPU-bound needs much computation.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-19,67,310-->
 
 What is an interrupt and handling? :: Async event altering execution (I/O done); OS saves state to PCB, runs another, restores on interrupt.
 <!--SR:!2026-11-24,16,290-->
@@ -233,7 +233,7 @@ What is the difference between Preemptive and Non-Preemptive CPU scheduling? :: 
 <!--SR:!2026-12-23,45,290-->
 
 Define turnaround, waiting, response, throughput. :: Turnaround completion-arrival; waiting in ready queue; response first CPU-arrival; throughput procs/time.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-16,64,310-->
 
 What is a context switch? :: Saving/restoring CPU registers + PCB to share CPU; pure overhead.
 <!--SR:!2026-11-23,15,290-->
@@ -242,10 +242,10 @@ What is Paging in memory management? :: A memory management scheme that divides 
 <!--SR:!2026-12-19,39,290-->
 
 What is the MMU base-register example? :: Base 10000 + user 100 = physical 10100; user never sees real address.
-<!--SR:!2026-11-11,11,270-->
+<!--SR:!2026-12-23,40,290-->
 
 What is Virtual Memory? :: A technique that allows a computer to execute processes larger than physical RAM by storing portions of data on secondary storage and loading pages on demand.
-<!--SR:!2026-11-12,16,290-->
+<!--SR:!2027-01-19,67,310-->
 
 What is Page Fault? :: An interrupt raised when a program accesses a page that is not currently loaded into physical RAM.
 <!--SR:!2026-12-03,25,270-->

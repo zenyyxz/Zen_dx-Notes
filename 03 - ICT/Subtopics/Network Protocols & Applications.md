@@ -397,13 +397,15 @@ What is a network protocol? :: An agreement that defines the order and format of
 What is a LAN? :: A network that connects devices within a limited area such as a home, school, office or campus, usually owned by one person or organisation.
 
 How long is a MAC address and how is it written? :: 48 bits (6 bytes), written as six 8-bit blocks in hexadecimal separated by colons, e.g. 4A:8F:3C:4F:9E:3D.
+<!--SR:!2026-11-17,4,270-->
 
 What is the difference between a MAC address and an IP address? :: A MAC address is a flat link-layer address identifying an interface on the local link; an IP address is a logical network-layer address used by routers to route between networks.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-27,14,290-->
 
 What is a frame? :: The Data Link layer PDU that encapsulates a network-layer packet and adds link-layer control information, including source and destination MAC addresses.
 
 Which MAC addresses are placed in a frame header? :: The MAC address of the sending interface and the MAC address of the next device on the current link.
+<!--SR:!2026-11-17,4,270-->
 
 What happens to a frame when it reaches a router? :: The router removes the incoming frame, examines the IP packet, and creates a new frame with new MAC addresses for the next link.
 
@@ -412,17 +414,20 @@ Why is a MAC protocol needed? :: To ensure orderly access to a shared medium so 
 How does pure ALOHA work? :: A station transmits whenever it has data without checking the medium; collisions occur frequently and it retransmits after a random delay.
 
 How does slotted ALOHA improve on pure ALOHA? :: Time is divided into slots and stations may transmit only at slot boundaries, reducing collisions and roughly doubling maximum throughput.
+<!--SR:!2026-11-17,4,270-->
 
 What is CSMA/CD? :: Carrier Sense Multiple Access with Collision Detection: listen before transmitting, detect collisions, stop, send a jam signal, wait a random back-off time and retry.
+<!--SR:!2026-11-17,4,270-->
 
 Where is CSMA/CD used? :: In classic wired Ethernet on a shared half-duplex medium.
+<!--SR:!2026-11-17,4,270-->
 
 What is CSMA/CA and where is it used? :: Collision Avoidance: stations try to avoid collisions using waiting times and acknowledgements; used in Wi-Fi.
 
 What is the difference between broadcast and unicast? :: Broadcast sends one message to all devices on the local network; unicast sends data to one specific receiver.
 
 What destination MAC address is used for an Ethernet broadcast? :: FF:FF:FF:FF:FF:FF.
-<!--SR:!2026-11-11,1,230-->
+<!--SR:!2026-11-16,3,250-->
 
 Why is an IP address alone not enough to deliver data to an application? :: Many processes run on one host, so a port number is also needed to identify the correct application process.
 
@@ -432,7 +437,7 @@ What is a port number? :: A 16-bit number that identifies a process or service o
 What is a socket? :: The combination of an IP address and a port number, e.g. 192.168.1.10:49152.
 
 What is multiplexing in the Transport layer? :: Multiple application processes share one IP address, and their data is distinguished by different port numbers.
-<!--SR:!2026-11-11,1,210-->
+<!--SR:!2026-11-15,2,210-->
 
 What are the key properties of UDP? :: Connectionless, no acknowledgements or retransmission, no guaranteed ordering, no congestion control, low overhead and low delay.
 <!--SR:!2026-11-14,4,270-->
@@ -448,6 +453,7 @@ How is the DNS namespace managed? :: It is hierarchical and distributed: each do
 <!--SR:!2026-11-14,4,270-->
 
 What are the main steps of DNS resolution? :: Check cache, ask a resolver, query root and TLD servers for referrals, query the authoritative server, receive the IP address and cache it.
+<!--SR:!2026-11-17,4,270-->
 
 Which transport protocol and port does DNS normally use? :: UDP port 53 for normal queries; TCP port 53 for large responses and zone transfers.
 <!--SR:!2026-11-14,4,270-->
@@ -460,11 +466,13 @@ What does a simple HTTP GET request contain? :: A request line with the method, 
 What do HTTP status codes 200 and 404 mean? :: 200 means OK; 404 means the requested resource was not found.
 
 Why is HTTP called stateless? :: Each request is independent and the server does not automatically remember previous requests; cookies and sessions add state.
+<!--SR:!2026-11-17,4,270-->
 
 What is HTTPS? :: HTTP carried over TLS, providing encryption, integrity and server authentication; it normally uses TCP port 443.
 
 What is the client–server model? :: A distributed model in which clients request services or resources and servers provide them, often to many clients at once.
 
 In what order does a web request pass through the layers? :: HTTP → TCP (ports) → IP (IP addresses) → Ethernet/Wi-Fi frame (MAC addresses) → bits on the medium.
+<!--SR:!2026-11-17,4,270-->
 
 What is the difference between a switch and a router? :: A switch forwards frames using MAC addresses within a LAN; a router forwards packets using IP addresses between networks.

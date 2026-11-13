@@ -581,12 +581,14 @@ What is the job of the Control Unit? :: Fetch and decode instructions, generate 
 What is the job of the ALU? :: Perform arithmetic (add, subtract, compare, inc/dec), logic (AND, OR, XOR, NOT) and shift/rotate operations, and set the status flags.
 
 What does the Program Counter hold? :: The memory address of the next instruction to be fetched.
+<!--SR:!2026-11-17,4,270-->
 
 When is the PC incremented, and by how much? :: During the fetch stage, by the length of the instruction (n bytes/words); A/L texts simplify this to PC + 1.
 
 What does the Instruction Register hold? :: The current instruction (opcode and operands) while the CU decodes it; also called the Current Instruction Register (CIR).
 
 What does the Accumulator hold? :: The ALU operand and the ALU result; it is the implicit source/destination in accumulator (single-address) machines.
+<!--SR:!2026-11-16,3,250-->
 
 What does MAR hold, and which bus does it drive? :: The address currently being read or written; it drives the address bus.
 
@@ -594,6 +596,7 @@ What does MDR hold, and which bus is it on? :: The data or instruction being tra
 <!--SR:!2026-11-14,4,270-->
 
 Which registers never touch the system bus directly? :: PC, IR and ACC — only MAR (address) and MDR (data) interface with the bus.
+<!--SR:!2026-11-17,4,270-->
 
 State the four fetch micro-operations. :: MAR <- PC; MDR <- M[MAR] (Read); IR <- MDR; PC <- PC + n.
 <!--SR:!2026-11-14,4,270-->
@@ -601,9 +604,10 @@ State the four fetch micro-operations. :: MAR <- PC; MDR <- M[MAR] (Read); IR <-
 What happens during the decode stage? :: The CU decodes the opcode in IR, identifies operands and addressing mode, and selects the datapath and control signals.
 
 What happens during the execute stage? :: The ALU performs the operation on its operands (or the CU computes an address / loads the PC for a branch).
+<!--SR:!2026-11-17,4,270-->
 
 What happens during the store/writeback stage? :: The result is written to ACC or a register, or via MDR to memory (MAR <- dest, MDR <- result, Write).
-<!--SR:!2026-11-13,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 What are the four ALU status flags? :: Z (zero), C (carry), N/S (negative/sign), V (overflow).
 
@@ -613,6 +617,7 @@ Who sets the flags and who uses them? :: The ALU sets them; the Control Unit tes
 Difference between carry and overflow? :: Carry = unsigned overflow (carry out of MSB); overflow = signed overflow (carry into MSB differs from carry out).
 
 How does the ALU subtract without a subtractor? :: It adds the two's complement: A - B = A + (~B) + 1.
+<!--SR:!2026-11-17,4,270-->
 
 Does the ALU access main memory? :: No. The CU/datapath fetches operands into registers/MDR; the ALU only computes.
 
@@ -623,8 +628,10 @@ What are the micro-operations of a JUMP X? :: PC <- X (no ALU operation and no m
 <!--SR:!2026-11-14,4,270-->
 
 What does CALL do to the stack? :: SP <- SP - 1; M[SP] <- PC (return address); PC <- target.
+<!--SR:!2026-11-17,4,270-->
 
 What does RET do? :: PC <- M[SP]; SP <- SP + 1.
+<!--SR:!2026-11-17,4,270-->
 
 Hardwired vs microprogrammed control unit? :: Hardwired = fixed logic, fast, inflexible (RISC); microprogrammed = microinstructions in control memory, flexible, slower (CISC).
 

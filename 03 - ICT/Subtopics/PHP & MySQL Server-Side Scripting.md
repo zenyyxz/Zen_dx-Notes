@@ -205,7 +205,7 @@ How is PHP embedded in an HTML page? :: Inside `<?php ... ?>` tags.
 What are PHP variable naming rules? :: A variable starts with `$`, followed by a letter or underscore; names are case-sensitive.
 
 What operator concatenates strings in PHP? :: `.`; `.=` appends to a string.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-29,16,290-->
 
 What is `var_dump()` used for? :: Printing a variable's type and value for debugging.
 <!--SR:!2026-11-14,4,270-->
@@ -219,7 +219,7 @@ What is the difference between `==` and `===` in PHP? :: `==` compares values af
 Why is POST not automatically secure? :: POST hides data from the URL, but it still needs HTTPS and validation; POST by itself does not encrypt data.
 
 How do you confirm a POST request and read a form field? :: Check `$_SERVER["REQUEST_METHOD"] == "POST"`, then read `$_POST['fieldname']`.
-<!--SR:!2026-11-11,1,230-->
+<!--SR:!2026-11-16,3,250-->
 
 Why use `htmlspecialchars()` when displaying user input? :: It escapes HTML characters and helps prevent cross-site scripting (XSS).
 
@@ -237,10 +237,11 @@ What is the difference between procedural and OOP MySQLi querying? :: Procedural
 What does `die()` do? :: Stops script execution and optionally outputs a message.
 
 What is the difference between `implode()` and `explode()`? :: `implode()` joins array elements into a string; `explode()` splits a string into an array.
+<!--SR:!2026-11-14,1,230-->
 
 What is the difference between `sort()`, `asort()` and `ksort()`? :: `sort()` sorts values and reindexes; `asort()` sorts by value while preserving keys; `ksort()` sorts by key.
 
 What does XAMPP or WAMP provide? :: A local Apache/PHP/MySQL environment for running PHP scripts.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-27,14,290-->
 
 Which PHP extension does the syllabus use for MySQL? :: MySQLi; PDO is another available extension.

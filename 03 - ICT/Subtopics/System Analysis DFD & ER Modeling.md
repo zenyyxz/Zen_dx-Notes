@@ -241,6 +241,7 @@ What are the properties and types of a data store? :: ID, Type and Name; types M
 <!--SR:!2026-11-14,4,270-->
 
 What is an external entity in a DFD? :: A person, organisation or other system outside the system boundary that supplies or receives data.
+<!--SR:!2026-11-17,4,270-->
 
 What is an elementary process? :: A process that does not need further decomposition, described by an EPD in plain text or pseudocode.
 
@@ -251,15 +252,18 @@ What must every DFD process have? :: At least one input flow and at least one ou
 Can two data stores be connected directly? :: No — data must pass through a process.
 
 Can an external entity write directly to a data store? :: No — the flow must go through a process.
+<!--SR:!2026-11-17,4,270-->
 
 What does a context diagram contain? :: The entire system as one process, its external entities and the boundary data flows; no data stores and no internal processes.
+<!--SR:!2026-11-17,4,270-->
 
 What is the highest level of abstraction in a DFD? :: The context diagram (Level 0).
 
 What is the role of the document flow diagram? :: It is the bridge between the context diagram and the Level 1 DFD, showing how documents and data pass through the system.
+<!--SR:!2026-11-17,4,270-->
 
 What must a Level 1 DFD be consistent with? :: The context diagram — the same external flows and boundary.
-<!--SR:!2026-11-13,4,270-->
+<!--SR:!2026-11-27,14,290-->
 
 What is balancing in DFDs? :: A child DFD must conserve all the parent process's inputs and outputs; no new external flows may appear.
 
@@ -273,13 +277,15 @@ Does the NIE syllabus mandate Gane & Sarson notation? :: No — the TG specifies
 Name the two common DFD notation sets. :: Yourdon/DeMarco (circle process) and Gane & Sarson (rounded-rectangle process).
 
 What does a DFD deliberately NOT show? :: Sequence, timing, decisions and control flow — it shows data flow only.
+<!--SR:!2026-11-17,4,270-->
 
 In an ERD, what does a diamond represent? :: A relationship between entities.
-<!--SR:!2026-11-13,3,250-->
+<!--SR:!2026-11-25,12,270-->
 
 What does a double oval represent in an ERD? :: A multivalued attribute.
 
 What does a dashed oval represent in an ERD? :: A derived attribute.
+<!--SR:!2026-11-17,4,270-->
 
 What is cardinality in an ERD? :: The number of occurrences of each entity that participate in a relationship — 1:1, 1:N or M:N.
 <!--SR:!2026-11-14,4,270-->
@@ -287,10 +293,12 @@ What is cardinality in an ERD? :: The number of occurrences of each entity that 
 What is total vs partial participation? :: Total (mandatory) means every occurrence must participate; partial (optional) means some may not.
 
 How is a 1:N relationship converted to tables? :: Put the primary key of the "1" side as a foreign key in the "N" side table.
+<!--SR:!2026-11-17,4,270-->
 
 How is an M:N relationship converted to tables? :: Create a junction table whose primary key is the combination of both entities' primary keys.
 
 How is a multivalued attribute converted to tables? :: Create a separate table containing the attribute and a foreign key back to the entity.
+<!--SR:!2026-11-17,4,270-->
 
 ---
 
